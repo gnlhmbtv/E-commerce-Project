@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "5Rg1d08yU87fRElCy7IQaY1bytbCBB6SnfyYL4jNHHvDpPbZ1o7PE5ViepSvF9lCZRcm8OAUFcWD6eMiHixdWw==",
+  "dgSpecHash": "QIjEmr/duz08BlWajOtR/D+35WwQW5GissLsEVDAwPVEoOnSwACqhyt5lYFO5fIU6QQw5o8X84Wm90FejcQsvw==",
   "success": true,
   "projectFilePath": "C:\\Users\\user\\Desktop\\e-commerce_final\\API\\API.csproj",
   "expectedPackageFiles": [
@@ -16,7 +16,6 @@
     "C:\\Users\\user\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\3.1.1\\microsoft.entityframeworkcore.relational.3.1.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite\\3.1.1\\microsoft.entityframeworkcore.sqlite.3.1.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite.core\\3.1.1\\microsoft.entityframeworkcore.sqlite.core.3.1.1.nupkg.sha512",
-    "C:\\Users\\user\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\3.1.1\\microsoft.entityframeworkcore.tools.3.1.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\3.1.1\\microsoft.extensions.caching.abstractions.3.1.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.extensions.caching.memory\\3.1.1\\microsoft.extensions.caching.memory.3.1.1.nupkg.sha512",

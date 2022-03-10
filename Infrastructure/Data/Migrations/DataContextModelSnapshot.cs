@@ -22,16 +22,21 @@ namespace Infrastructure.Data.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Description")
-                        .HasColumnType("TEXT");
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasMaxLength(120);
 
                     b.Property<string>("Name")
-                        .HasColumnType("TEXT");
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasMaxLength(100);
 
                     b.Property<string>("PhotoUrl")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("ProductBrandId")
                         .HasColumnType("INTEGER");

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using API.Dto;
 using Core.Entities;
 using Core.Interfaces;
 using Core.Specifications;
@@ -29,19 +30,40 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Product>>> GetProducts()
+        public async Task<ActionResult<List<ProductReturnDto>>> GetProducts()
         {
             var spec = new ProductsWithTypesAndBrandsSpecification();
 
             var products = await _productsRepository.ListAsync(spec);
-            return Ok(products);
+            
+            return products.Select(p => new ProductReturnDto
+            {
+                Id = p.Id,
+                Name = p.Name,
+                Price = p.Price,
+                PhotoUrl = p.PhotoUrl,
+                Description = p.Description,
+                ProductBrand = p.ProductBrand.Name,
+                ProductType = p.ProductType.Name
+            }).ToList();
         }
         [HttpGet("{id}")]
-        public async Task<ActionResult<Product>> GetProduct(int id)
+        public async Task<ActionResult<ProductReturnDto>> GetProduct(int id)
         {
             var spec = new ProductsWithTypesAndBrandsSpecification(id);
 
-            return await _productsRepository.GetEntityWithSpec(spec);
+            var product =  await _productsRepository.GetEntityWithSpec(spec);
+
+            return new ProductReturnDto
+            {
+                Id = product.Id,
+                Name = product.Name,
+                PhotoUrl = product.PhotoUrl,
+                ProductBrand = product.ProductBrand.Name,
+                ProductType = product.ProductType.Name,
+                Description = product.Description,
+                Price = product.Price
+            };
         }
         [HttpGet("types")]
         public async Task<ActionResult<IReadOnlyList<ProductType>>> GetProductTypes()

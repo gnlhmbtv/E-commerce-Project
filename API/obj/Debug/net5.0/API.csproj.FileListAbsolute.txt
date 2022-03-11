@@ -57,3 +57,9 @@ C:\Users\user\Desktop\e-commerce_final\API\bin\Debug\net5.0\Core.dll
 C:\Users\user\Desktop\e-commerce_final\API\bin\Debug\net5.0\Infrastructure.dll
 C:\Users\user\Desktop\e-commerce_final\API\bin\Debug\net5.0\Infrastructure.pdb
 C:\Users\user\Desktop\e-commerce_final\API\bin\Debug\net5.0\Core.pdb
+C:\Users\user\Desktop\e-commerce_final\API\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\user\Desktop\e-commerce_final\API\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\user\Desktop\e-commerce_final\API\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\user\Desktop\e-commerce_final\API\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
+C:\Users\user\Desktop\e-commerce_final\API\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\Users\user\Desktop\e-commerce_final\API\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll

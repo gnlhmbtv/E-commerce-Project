@@ -33,10 +33,10 @@ namespace API
             services.AddControllers();
             services.AddDbContext<DataContext>(d =>
              d.UseSqlite(_config.GetConnectionString("DefaultConnection")));
-            // services.AddSwaggerGen(c =>
-            // {
-            //     c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
-            // });
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
+            });
             services.Configure<ApiBehaviorOptions>(options => {
                 options.InvalidModelStateResponseFactory = actitonContext => 
                 {
@@ -76,6 +76,10 @@ namespace API
             app.UseStaticFiles();
 
             app.UseAuthorization();
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c => {c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1");});
 
             app.UseEndpoints(endpoints =>
             {

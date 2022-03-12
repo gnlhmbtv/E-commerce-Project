@@ -1,56 +1,14 @@
-using Infrastructure.Data;
+using API.Errors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
+    [Route("errors/{code}")]
     public class ErrorController : BaseApiController
     {
-        private readonly DataContext _context;
-        public ErrorController(DataContext context)
+        public IActionResult Error(int code)
         {
-            _context = context;
-        }
-
-        [HttpGet("NotFound")]
-        public ActionResult GetNotFoundRequest()
-        {
-            var product = _context.Products.Find(22);
-
-            if (product == null)
-            {
-                return NotFound();
-            }
-
-            return Ok();
-        }
-
-
-        [HttpGet("ServerError")]
-        public ActionResult GetServerError()
-        {
-            var product = _context.Products.Find(22);
-
-            var returnProduct = product.ToString();
-
-            // if (product == null)
-            // {
-            //     return NotFound();
-            // }
-
-            return Ok();
-        }
-
-        [HttpGet("BadRequest")]
-        public ActionResult GetBadRequest()
-        {
-            return BadRequest();
-        }
-
-        [HttpGet("BadRequest/{id}")]
-        public ActionResult GetBadRequest(int id)
-        {
-            return Ok();
-
+            return new ObjectResult(new ApiResponse(code));   
         }
     }
 }

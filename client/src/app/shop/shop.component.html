@@ -147,21 +147,21 @@
           </section>
           <!-- size -->
           <section class="widget widget-sizes mb-5">
-            <h3 class="widget-title h4 mb-4">Shop by Sizes</h3>
-            <div class="custom-control custom-checkbox">
-              <input
-                type="checkbox"
-                class="custom-control-input"
-                id="size1"
-                checked
-              />
+            <h3 class="widget-title h4 mb-4">Brands</h3>
+            <ul class="list-group my-3">
+                <li class="list-group-item" *ngFor="let brand of brands">{{brand.name}}</li>
+            </ul>
+            <h3 class="widget-title h4 mb-4">Types</h3>
+            <ul class="list-group my-3">
+                <li class="list-group-item" *ngFor="let type of types">{{type.name}}</li>
+            </ul>
+            <!-- <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="size1"checked/>
               <label class="custom-control-label" for="size1">L Large</label>
             </div>
             <div class="custom-control custom-checkbox">
               <input type="checkbox" class="custom-control-input" id="size2" />
-              <label class="custom-control-label" for="size2"
-                >XL Extra Large</label
-              >
+              <label class="custom-control-label" for="size2" >XL Extra Large</label>
             </div>
             <div class="custom-control custom-checkbox">
               <input type="checkbox" class="custom-control-input" id="size3" />
@@ -176,7 +176,7 @@
               <label class="custom-control-label" for="size5"
                 >XS Extra Small</label
               >
-            </div>
+            </div> -->
           </section>
           <button type="button" class="btn btn-black btn-small">Filter</button>
         </form>

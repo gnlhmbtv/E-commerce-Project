@@ -34,13 +34,13 @@
                       name="orderby"
                       class="orderby form-control"
                       aria-label="Shop order"
+                      (change)="onSortSelected($any($event.target).value)"
                     >
-                      <option value="" selected="selected">Default sorting</option>
-                      <option value="">Sort by popularity</option>
-                      <option value="">Sort by average rating</option>
-                      <option value="">Sort by latest</option>
-                      <option value="">Sort by price: low to high</option>
-                      <option value="">Sort by price: high to low</option>
+                      <option *ngFor="let sort of sortOptions"
+                      [value]="sort.value"
+                      >
+                      {{sort.name}}
+                      </option>
                     </select>
                     <input type="hidden" name="paged" value="1" />
                   </form>
@@ -149,11 +149,23 @@
           <section class="widget widget-sizes mb-5">
             <h3 class="widget-title h4 mb-4">Brands</h3>
             <ul class="list-group my-3">
-                <li class="list-group-item" *ngFor="let brand of brands">{{brand.name}}</li>
+                <li class="list-group-item" *ngFor="let brand of brands"
+                [class.active]="brand.id === this.brandIdSelected"
+                [value]="brand.id"
+                (click)="onBrandSelected(brand.id)"
+                >
+                {{brand.name}}
+              </li>
             </ul>
             <h3 class="widget-title h4 mb-4">Types</h3>
             <ul class="list-group my-3">
-                <li class="list-group-item" *ngFor="let type of types">{{type.name}}</li>
+                <li class="list-group-item" *ngFor="let type of types"
+                [class.active]="type.id === this.typeIdSelected"
+                [value]="type.id"
+                (click)="onTypeSelected(type.id)"
+                >
+                {{type.name}}
+              </li>
             </ul>
             <!-- <div class="custom-control custom-checkbox">
               <input type="checkbox" class="custom-control-input" id="size1"checked/>

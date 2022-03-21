@@ -1,0 +1,8 @@
+.page-content > .container {
+    position: relative;
+
+    .loading-overlay {
+        position: absolute;
+        z-index: 999;
+    }
+}

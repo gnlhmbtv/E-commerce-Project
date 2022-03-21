@@ -1,0 +1,19 @@
+<div class="products mb-3 skeleton-body skel-shop-products" [class.loaded]="loaded">
+    <p class="no-results" *ngIf="(products.length == 0 && loaded) else productBlock">No products were found matching
+        your
+        selection.</p>
+    <ng-template #productBlock>
+        <div class="row" *ngIf="!loaded else elseBlock">
+            <div class="col-6 col-md-4 col-xl-3 mb-2" *ngFor="let item of [1,2,3,4,5,6,7,8]">
+                <div class="skel-pro"></div>
+            </div>
+        </div>
+        <ng-template #elseBlock>
+            <div class="row">
+                <div class="col-6 col-md-4 col-xl-3" *ngFor="let product of products">
+                    <molla-product-five [product]="product" style="width: 100%"></molla-product-five>
+                </div>
+            </div>
+        </ng-template>
+    </ng-template>
+</div>

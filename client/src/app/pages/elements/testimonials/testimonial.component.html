@@ -1,0 +1,124 @@
+<main class="main">
+    <molla-page-header title="Testimonials" subtitle="Elements"></molla-page-header>
+
+    <nav class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a routerLink="/">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a routerLink="/elements">Elements</a>
+                </li>
+                <li class="breadcrumb-item active">Testimonials</li>
+            </ol>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <div class="container">
+            <h2 class="title text-center mb-3">Quote Sign <span class="title-separator">/</span> Centered Align</h2>
+
+            <owl-carousel [carouselClasses]="testSliders[0].sliderClass" [options]="testSliders[0].sliderOption">
+                <blockquote *ngFor="let item of testSliders[0].items"
+                    [ngClass]="'testimonial text-center ' + testSliders[0].testStyle">
+                    <p>{{ item.comment }}</p>
+
+                    <cite>
+                        {{ item.name }}
+                        <span>{{ item.type }}</span>
+                    </cite>
+                </blockquote>
+            </owl-carousel>
+
+            <hr class="mt-5 mb-5">
+            <h2 class="title text-center mb-3">Quote Sign <span class="title-separator">/</span> Centered Align <span
+                    class="title-separator">/</span> 2 Columns</h2>
+
+            <owl-carousel [carouselClasses]="testSliders[1].sliderClass" [options]="testSliders[1].sliderOption">
+                <blockquote *ngFor="let item of testSliders[1].items"
+                    [ngClass]="'testimonial text-center ' + testSliders[1].testStyle">
+                    <p>{{ item.comment }}</p>
+
+                    <cite>
+                        {{ item.name }}
+                        <span>{{ item.type }}</span>
+                    </cite>
+                </blockquote>
+            </owl-carousel>
+
+            <hr class="mt-5 mb-5">
+            <h2 class="title text-center mb-3">Quote Sign <span class="title-separator">/</span> Centered Align <span
+                    class="title-separator">/</span> 3 Columns</h2>
+
+            <owl-carousel [carouselClasses]="testSliders[2].sliderClass" [options]="testSliders[2].sliderOption">
+                <blockquote *ngFor="let item of testSliders[2].items"
+                    [ngClass]="'testimonial text-center ' + testSliders[2].testStyle">
+                    <p>{{ item.comment }}</p>
+
+                    <cite>
+                        {{ item.name }}
+                        <span>{{ item.type }}</span>
+                    </cite>
+                </blockquote>
+            </owl-carousel>
+        </div>
+
+        <div class="mb-5"></div>
+
+        <div class="bg-image bg-overlay pt-5 pb-4" style="background-image: url(assets/images/backgrounds/bg-1.jpg)">
+            <div class="container">
+                <h2 class="title text-center text-white mb-3">Quote Sign <span class="title-separator">/</span> Centered
+                    Align <span class="title-separator">/</span> Dark Background</h2>
+
+                <owl-carousel [carouselClasses]="testSliders[3].sliderClass" [options]="testSliders[3].sliderOption">
+                    <blockquote *ngFor="let item of testSliders[3].items"
+                        [ngClass]="'testimonial text-center ' + testSliders[3].testStyle">
+                        <p>{{ item.comment }}</p>
+
+                        <cite>
+                            {{ item.name }}
+                            <span>{{ item.type }}</span>
+                        </cite>
+                    </blockquote>
+                </owl-carousel>
+            </div>
+        </div>
+
+        <div class="mb-5"></div>
+
+        <div class="container">
+            <h2 class="title text-center mb-3">Customer Photo <span class="title-separator">/</span> Centered Align</h2>
+
+            <owl-carousel [carouselClasses]="testSliders[4].sliderClass" [options]="testSliders[4].sliderOption">
+                <blockquote *ngFor="let item of testSliders[4].items" [ngClass]="'testimonial text-center '">
+                    <img [src]="item.photo" alt="User">
+
+                    <p>{{ item.comment }}</p>
+
+                    <cite>
+                        {{ item.name }}
+                        <span>{{ item.type }}</span>
+                    </cite>
+                </blockquote>
+            </owl-carousel>
+
+            <hr class="mt-5 mb-5">
+            <h2 class="title text-center mb-3">Customer Photo <span class="title-separator">/</span> Centered Align
+                <span class="title-separator">/</span> 2 Columns</h2>
+
+            <owl-carousel [carouselClasses]="testSliders[5].sliderClass" [options]="testSliders[5].sliderOption">
+                <blockquote *ngFor="let item of testSliders[5].items" [ngClass]="'testimonial text-center '">
+                    <img [src]="item.photo" alt="User">
+
+                    <p>{{ item.comment }}</p>
+
+                    <cite>
+                        {{ item.name }}
+                        <span>{{ item.type }}</span>
+                    </cite>
+                </blockquote>
+            </owl-carousel>
+        </div>
+    </div>
+</main>

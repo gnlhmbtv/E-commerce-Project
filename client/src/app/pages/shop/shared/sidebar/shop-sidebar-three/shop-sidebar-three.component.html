@@ -1,0 +1,120 @@
+<div class="sidebar-shop" [ngClass]="toggle ? 'sidebar-filter' : 'sidebar'">
+    <div [ngClass]="toggle ? 'sidebar-filter-wrapper' : ''">
+        <div class="widget">
+            <h3 class="widget-title mb-2">
+                <span>
+                    Category
+                </span>
+            </h3>
+
+            <div class="collapse show" id="widget-1">
+                <div class="widget-body">
+                    <div class="filter-items filter-items-count">
+                        <div class="filter-item" *ngFor="let item of shopData.categories">
+                            <a [routerLink]="" [queryParams]="{category: item.slug}"
+                                routerLinkActive="active">{{ item.name }}</a>
+                            <span class="item-count">{{ item.count }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="widget">
+            <h3 class="widget-title mb-2">
+                <span>
+                    Brands
+                </span>
+            </h3>
+
+            <div class="collapse show" id="widget-2">
+                <div class="widget-body">
+                    <div class="filter-items">
+                        <div class="filter-item" *ngFor="let item of shopData.brands; let index = index;">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" [id]="'brand-' + index"
+                                    [checked]="containsAttrInUrl('brand', item.slug)"
+                                    (change)="onAttrClick('brand', item.slug)">
+                                <label class="custom-control-label" [for]="'brand-' + index">{{ item.brand }}</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="widget">
+            <h3 class="widget-title mb-2">
+                <span>
+                    Price
+                </span>
+            </h3>
+
+            <div class="collapse show" id="widget-3">
+                <div class="widget-body">
+                    <div class="filter-items">
+                        <div class="filter-item" *ngFor="let item of shopData.prices; let index = index;">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" [id]="'price-' + index"
+                                    [checked]="containsPriceInUrl(item)" (change)="onPriceChange($event, item)">
+                                <label class="custom-control-label" [for]="'price-' + index">{{ item.name }}</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="widget">
+            <h3 class="widget-title mb-2">
+                <span>
+                    Customer Rating
+                </span>
+            </h3>
+
+            <div class="collapse show" id="widget-4">
+                <div class="widget-body">
+                    <div class="filter-items">
+                        <div class="filter-item" *ngFor="let item of [5,4,3,2,1]; let index = index;">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" [id]="'rating-' + index"
+                                    [checked]="containsAttrInUrl('rating', item.toString())"
+                                    (change)="onAttrClick('rating', item.toString())">
+                                <label class="custom-control-label" [for]="'rating-' + index">
+                                    <span class="ratings-container">
+                                        <span class="ratings">
+                                            <span class="ratings-val" [style.width]="item * 20 + '%'"></span>
+                                        </span>
+
+                                        <span class="ratings-text"></span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="widget">
+            <h3 class="widget-title mb-2">
+                <span>
+                    Colour
+                </span>
+            </h3>
+
+            <div class="collapse show" id="widget-5">
+                <div class="widget-body">
+                    <div class="filter-colors">
+                        <a [routerLink]="" [queryParams]="{color: getUrlForAttrs('color', item.color_name), page: 1}"
+                            queryParamsHandling="merge" [style.background-color]="item.color"
+                            [class.selected]="containsAttrInUrl('color', item.color_name)"
+                            *ngFor="let item of shopData.colors">
+                            <span class="sr-only">Color Name</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

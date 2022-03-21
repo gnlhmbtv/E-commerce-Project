@@ -1,0 +1,100 @@
+<div class="product-details product-details-centered">
+    <h1 class="product-title">{{ product.name }}</h1>
+
+    <div class="ratings-container">
+        <div class="ratings">
+            <div class="ratings-val" [style.width]="product.ratings * 20 + '%'"></div>
+            <span class="tooltip-text">{{ product.ratings.toFixed(2) }}</span>
+        </div>
+        <span class="ratings-text">( {{ product.review }} Reviews )</span>
+    </div>
+
+    <div class="product-price" *ngIf="!product.stock || product.stock == 0 else elseBlock">
+        <span class="out-price">${{ product.price.toFixed(2) }}</span>
+    </div>
+
+    <ng-template #elseBlock>
+        <div class="product-price" *ngIf="minPrice == maxPrice else elseBlock">${{ minPrice.toFixed(2) }}</div>
+        <ng-template #elseBlock>
+            <div class="product-price" *ngIf="product.variants.length == 0 else elseBlock">
+                <span class="new-price">${{ minPrice.toFixed(2) }}</span>
+                <span class="old-price">${{ maxPrice.toFixed(2) }}</span>
+            </div>
+            <ng-template #elseBlock>
+                <div class="product-price">${{minPrice.toFixed(2)}}&ndash;${{maxPrice.toFixed(2)}}</div>
+            </ng-template>
+        </ng-template>
+    </ng-template>
+
+    <div class="product-content">
+        <p>{{ product.short_desc }}</p>
+    </div>
+
+    <div *ngIf="product.variants.length > 1">
+        <div class="details-filter-row details-row-size">
+            <label>Color:</label>
+            <div class="product-nav product-nav-dots">
+                <a href="javascript:;" [class.active]="item.color == selectedVariant.color"
+                    [class.disabled]="item.disabled" [style.background-color]="item.color"
+                    *ngFor="let item of colorArray" (click)="selectColor($event, item)"></a>
+            </div>
+        </div>
+
+        <div class="details-filter-row details-row-size">
+            <label for="size">Size:</label>
+            <div class="select-custom">
+                <select name="size" id="size" class="form-control" [value]="selectedVariant.size"
+                    (change)="selectSize($event)">
+                    <option value="" [selected]="'' == selectedVariant.size">Select a size</option>
+                    <option [value]="item.size" *ngFor="let item of sizeArray"
+                        [selected]="item.size == selectedVariant.size">{{ item.size }}</option>
+                </select>
+            </div>
+
+            <a href="javascript:;" class="size-guide mr-4"><i class="icon-th-list"></i>size guide</a>
+            <a href="javascript:;" (click)="clearSelection()"
+                *ngIf="selectedVariant.color || selectedVariant.size != ''">clear</a>
+        </div>
+    </div>
+
+    <div class="variation-price" style="display: none;">
+        <div class="product-price">
+            ${{ selectedVariant.price ? selectedVariant.price.toFixed( 2 ) : 0 }}
+        </div>
+    </div>
+
+    <div class="product-details-action">
+        <div class="details-action-col">
+            <molla-quantity-input [max]="product.stock" (changeQty)="onChangeQty( $event )" [value]="qty"
+                adClass="mr-3 mr-sm-4">
+            </molla-quantity-input>
+            <a href="javascript:;" class="btn-product btn-cart"
+                [class.btn-disabled]="!cartService.canAddToCart( product, qty ) || ( product.variants.length > 0 && !( selectedVariant.color && selectedVariant.size != '' ) )"
+                (click)="addCart( $event )"><span>add to cart</span></a>
+        </div>
+
+        <div class="details-action-wrapper">
+            <a href="javascript:;" class="btn-product btn-wishlist" [class.added-to-wishlist]="isInWishlist()"
+                (click)="addToWishlist($event)">
+                <span>{{ isInWishlist() ? 'Go' : 'Add' }} to Wishlist</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="product-details-footer">
+        <div class="product-cat">
+            <span>Category:</span>
+            <span *ngFor="let cat of product.category; let i =index">
+                <a [routerLink]="['/shop/sidebar/list']"
+                    [queryParams]="{category: cat.slug}">{{ cat.name }}</a>{{ i < product.category.length - 1 ? ',' : '' }}</span>
+        </div>
+
+        <div class="social-icons social-icons-sm">
+            <span class="social-label">Share:</span>
+            <a href="javascript:;" class="social-icon" title="Facebook"><i class="icon-facebook-f"></i></a>
+            <a href="javascript:;" class="social-icon" title="Twitter"><i class="icon-twitter"></i></a>
+            <a href="javascript:;" class="social-icon" title="Instagram"><i class="icon-instagram"></i></a>
+            <a href="javascript:;" class="social-icon" title="Pinterest"><i class="icon-pinterest"></i></a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+.banner  img {
+    min-height: 26rem;
+    object-fit: cover;
+}
+
+:host {
+    ::ng-deep {
+        @media screen and (min-width: 992px) {
+            .owl-nav-align {
+                margin-left: 4rem;
+                margin-right: 4rem;
+                width: calc( 100% - 8rem );
+            }
+        }
+    }
+}

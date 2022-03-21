@@ -1,0 +1,54 @@
+<main class="main">
+    <molla-page-header title="F.A.Q" subtitle="Pages"></molla-page-header>
+
+    <nav class="breadcrumb-nav border-0 mb-0">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a routerLink="/">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="javascript:;">Pages</a>
+                </li>
+                <li class="breadcrumb-item active">FAQ</li>
+            </ol>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <div class="container">
+            <div *ngFor="let faqs of faqGroups;let i = index">
+                <h2 class="title text-center mb-3">{{ faqs.title }}</h2>
+
+                <molla-accordion [adClass]="faqs.items[0].adClass" [accordionID]="'accordion' + (1 + i)">
+                    <molla-card *ngFor="let card of faqs.items[0].cards; let isFirst = first"
+                        [adClass]="faqs.items[0].cardAclass" [title]="card.title" [parent]="'accordion' + (1 + i)"
+                        [show]="isFirst && ! i ? true : false">
+                        {{ card.body }}
+                    </molla-card>
+                </molla-accordion>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta cta-display bg-image pt-4 pb-4"
+        style="background-image: url(assets/images/backgrounds/cta/bg-7.jpg);">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-9 col-xl-7">
+                    <div class="row no-gutters flex-sm-row align-items-sm-center">
+                        <div class="col-12 col-sm">
+                            <h3 class="cta-title text-white">If You Have More Questions</h3>
+                            <p class="cta-desc text-white">Quisque volutpat mattis eros</p>
+                        </div>
+
+                        <div class="col-auto">
+                            <a routerLink="/pages/contact" class="btn btn-outline-white"><span>CONTACT US</span><i
+                                    class="icon-long-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

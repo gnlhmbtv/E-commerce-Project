@@ -1,0 +1,15 @@
+<div class="card" [ngClass]="adClass">
+    <div class="card-header">
+        <h2 class="card-title">
+            <a role="button" data-toggle="collapse" [href]="'#' + bodyID" aria-expanded="true"
+                aria-controls="collapse-1" [class.collapsed]="! show">
+                <i [ngClass]="icon" *ngIf="icon"></i>{{ title }}
+            </a>
+        </h2>
+    </div>
+    <div [id]="bodyID" class="collapse" [class.show]="show" [attr.data-parent]="'#' + parent">
+        <div class="card-body">
+            <ng-content></ng-content>
+        </div>
+    </div>
+</div>

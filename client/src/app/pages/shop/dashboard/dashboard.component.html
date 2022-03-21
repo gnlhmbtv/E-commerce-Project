@@ -1,0 +1,174 @@
+<main class="main">
+    <div class="page-header text-center" style="background-image: url('assets/images/page-header-bg.jpg')">
+        <div class="container">
+            <h1 class="page-title">My Account<span>Shop</span></h1>
+        </div>
+    </div>
+    <nav class="breadcrumb-nav mb-3">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a routerLink="/">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a routerLink="/shop/sidebar/3cols">Shop</a>
+                </li>
+                <li class="breadcrumb-item active">My Account</li>
+            </ol>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <div class="dashboard">
+            <div class="container">
+                <div class="row">
+                    <aside class="col-md-4 col-lg-3">
+                        <ul class="nav nav-dashboard flex-column mb-3 mb-md-0" role="tablist" tabClick>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="javascript:;" role="tab"
+                                    (click)="nav.select('tab-1')">Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="javascript:;" role="tab"
+                                    (click)="nav.select('tab-2')">Orders</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="javascript:;" role="tab"
+                                    (click)="nav.select('tab-3')">Downloads</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="javascript:;" role="tab"
+                                    (click)="nav.select('tab-4')">Adresses</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="javascript:;" role="tab" (click)="nav.select('tab-5')">Account
+                                    Details</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/">Sign Out</a>
+                            </li>
+                        </ul>
+                    </aside>
+
+                    <div class="col-md-8 col-lg-9">
+                        <div class="tab-content">
+                            <ul ngbNav #nav="ngbNav">
+                                <li [ngbNavItem]="'tab-1'">
+                                    <ng-template ngbNavContent>
+                                        <p>Hello <span class="font-weight-normal text-dark">User</span> (not <span
+                                                class="font-weight-normal text-dark">User</span>? <a
+                                                routerLink="/">Log out</a>)
+                                            <br>
+                                            From your account dashboard you can view your <a href="javascript:;"
+                                                (click)="nav.select('tab-2'); viewTab( $event, 0, 1 );"
+                                                class="tab-trigger-link link-underline">recent orders</a>, manage your
+                                            <a href="javascript:;"
+                                                (click)="nav.select('tab-2'); viewTab( $event, 0, 3 );"
+                                                class="tab-trigger-link">shipping and billing addresses</a>, and <a
+                                                href="javascript:;"
+                                                (click)="nav.select('tab-2'); viewTab( $event, 0, 4 );"
+                                                class="tab-trigger-link">edit your password and account details</a>.</p>
+                                    </ng-template>
+                                </li>
+
+                                <li [ngbNavItem]="'tab-2'">
+                                    <ng-template ngbNavContent>
+                                        <p>No order has been made yet.</p>
+                                        <a routerLink="/shop/sidebar/list" class="btn btn-outline-primary-2"><span>GO
+                                                SHOP</span><i class="icon-long-arrow-right"></i></a>
+                                    </ng-template>
+                                </li>
+
+                                <li [ngbNavItem]="'tab-3'">
+                                    <ng-template ngbNavContent>
+                                        <p>No downloads available yet.</p>
+                                        <a routerLink="/shop/sidebar/list" class="btn btn-outline-primary-2"><span>GO
+                                                SHOP</span><i class="icon-long-arrow-right"></i></a>
+                                    </ng-template>
+                                </li>
+
+                                <li [ngbNavItem]="'tab-4'">
+                                    <ng-template ngbNavContent>
+                                        <p>The following addresses will be used on the checkout page by default.</p>
+
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="card card-dashboard">
+                                                    <div class="card-body">
+                                                        <h3 class="card-title">Billing Address</h3>
+
+                                                        <p>User Name<br>
+                                                            User Company<br>
+                                                            John str<br>
+                                                            New York, NY 10001<br>
+                                                            1-234-987-6543<br>
+                                                            yourmail@mail.com<br>
+                                                            <a href="javascript:;">Edit <i class="icon-edit"></i></a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-6">
+                                                <div class="card card-dashboard">
+                                                    <div class="card-body">
+                                                        <h3 class="card-title">Shipping Address</h3>
+
+                                                        <p>You have not set up this type of address yet.<br>
+                                                            <a href="javascript:;">Edit <i class="icon-edit"></i></a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                </li>
+
+                                <li [ngbNavItem]="'tab-5'">
+                                    <ng-template ngbNavContent>
+                                        <form action="#">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <label>First Name *</label>
+                                                    <input type="text" class="form-control" required>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <label>Last Name *</label>
+                                                    <input type="text" class="form-control" required>
+                                                </div>
+                                            </div>
+
+                                            <label>Display Name *</label>
+                                            <input type="text" class="form-control" required>
+                                            <small class="form-text">This will be how your name will be displayed in the
+                                                account section and in reviews</small>
+
+                                            <label>Email address *</label>
+                                            <input type="email" class="form-control" required>
+
+                                            <label>Current password (leave blank to leave unchanged)</label>
+                                            <input type="password" class="form-control">
+
+                                            <label>New password (leave blank to leave unchanged)</label>
+                                            <input type="password" class="form-control">
+
+                                            <label>Confirm new password</label>
+                                            <input type="password" class="form-control mb-2">
+
+                                            <button type="submit" class="btn btn-outline-primary-2">
+                                                <span>SAVE CHANGES</span>
+                                                <i class="icon-long-arrow-right"></i>
+                                            </button>
+                                        </form>
+                                    </ng-template>
+                                </li>
+                            </ul>
+                            <div [ngbNavOutlet]="nav"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

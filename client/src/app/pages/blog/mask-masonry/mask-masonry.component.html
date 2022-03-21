@@ -1,0 +1,32 @@
+<main class="main">
+    <molla-page-header title="Blog Mask Masonry" subtitle="Blog"></molla-page-header>
+
+    <nav class="breadcrumb-nav mb-2">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a routerLink="/">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a routerLink="/blog/classic">Blog</a>
+                </li>
+                <li class="breadcrumb-item active">Mask Masonry</li>
+            </ol>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <div class="container">
+            <div *ngIf="!loaded else loadedBlock">
+                <div class="row skeleton-body">
+                    <div class="skel-grid-post col-md-6 col-lg-4" *ngFor="let item of [1,2,3,4,5,6,7,8,9]"></div>
+                </div>
+            </div>
+            <ng-template #loadedBlock>
+                <blog-entry-isotope [posts]="posts" [counts]="counts" [postType]="3" [showNav]="true"
+                    [gridOptions]="isotopeOptions" [itemsPerRow]="3" justifyClass="text-center">
+                </blog-entry-isotope>
+            </ng-template>
+        </div>
+    </div>
+</main>

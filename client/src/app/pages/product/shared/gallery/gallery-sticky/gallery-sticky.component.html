@@ -1,0 +1,14 @@
+<div class="product-gallery product-gallery-separated">
+    <span class="product-label label-new" *ngIf="product.new">New</span>
+    <span class="product-label label-sale" *ngIf="product.sale_price">Sale</span>
+    <span class="product-label label-top" *ngIf="product.top">Top</span>
+    <span class="product-label label-out" *ngIf="!product.stock || product.stock == 0">Out Of Stock</span>
+
+    <figure class="product-main-image" *ngFor="let item of product.pictures;">
+        <molla-image class="d-block position-relative" [src]="SERVER_URL + item.url"></molla-image>
+
+        <a href="javascript:;" class="btn-product-gallery" (click)="openLightBox()">
+            <i class="icon-arrows"></i>
+        </a>
+    </figure>
+</div>

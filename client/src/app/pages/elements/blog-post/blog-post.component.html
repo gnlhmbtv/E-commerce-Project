@@ -1,0 +1,116 @@
+<div class="main">
+    <molla-page-header [title]="'Blog Posts'" [subtitle]="'Elements'"></molla-page-header>
+
+    <nav class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a routerLink="/">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a routerLink="/elements">Elements</a>
+                </li>
+                <li class="breadcrumb-item active">Blog Posts</li>
+            </ol>
+        </div>
+    </nav>
+
+    <div class="page-content skeleton-body">
+        <div class="container">
+            <h2 class="title text-center mb-2">Classic</h2>
+
+            <div *ngIf="!loaded else elseBlock1">
+                <div class="skel-list-post mb-6"></div>
+                <div class="skel-list-post"></div>
+            </div>
+
+            <ng-template #elseBlock1>
+                <molla-post-two [post]="posts[0]"></molla-post-two>
+                <molla-post-two [post]="posts[1]"></molla-post-two>
+            </ng-template>
+
+            <hr class="mb-5">
+
+            <h2 class="title text-center mb-2">Grid 2 Columns</h2>
+
+            <div class="row max-col-2" *ngIf="!loaded else elseBlock2">
+                <div class="col-md-6 skel-grid-post mb-2"></div>
+                <div class="col-md-6 skel-grid-post"></div>
+            </div>
+
+            <ng-template #elseBlock2>
+                <div class="row max-col-2">
+                    <div class="col-md-6">
+                        <molla-post-one [post]="posts[5]" adClass="entry-grid text-center"></molla-post-one>
+                    </div>
+                    <div class="col-md-6">
+                        <molla-post-one [post]="posts[6]" adClass="entry-grid text-center"></molla-post-one>
+                    </div>
+                </div>
+            </ng-template>
+
+            <hr class="mb-5">
+
+            <h2 class="title text-center mb-2">Grid 3 Columns</h2>
+
+            <div class="row justify-content-center" *ngIf="!loaded else elseBlock3">
+                <div class="col-sm-6 col-md-4 skel-grid-post mb-2"></div>
+                <div class="col-sm-6 col-md-4 skel-grid-post mb-2"></div>
+                <div class="col-sm-6 col-md-4 skel-grid-post mb-2"></div>
+            </div>
+
+            <ng-template #elseBlock3>
+                <div class="row justify-content-center">
+                    <div class="col-sm-6 col-md-4" *ngFor="let post of posts | slice: 7: 10">
+                        <molla-post-one [post]="post" adClass="entry-grid text-center" [isAuthor]="false"></molla-post-one>
+                    </div>
+                </div>
+            </ng-template>
+
+            <hr class="mb-5">
+
+            <h2 class="title text-center mb-2">Grid 4 Columns</h2>
+
+            <div class="row justify-content-center" *ngIf="!loaded else elseBlock4">
+                <div class="col-sm-6 col-lg-3 skel-grid-post mb-2"></div>
+                <div class="col-sm-6 col-lg-3 skel-grid-post mb-2"></div>
+                <div class="col-sm-6 col-lg-3 skel-grid-post mb-2"></div>
+                <div class="col-sm-6 col-lg-3 skel-grid-post mb-2"></div>
+            </div>
+
+            <ng-template #elseBlock4>
+                <div class="row justify-content-center">
+                    <div class="col-sm-6 col-lg-3" *ngFor="let post of posts| slice: 7: 11">
+                        <molla-post-one [post]="post" [isAuthor]="false"></molla-post-one>
+                    </div>
+                </div>
+            </ng-template>
+
+            <hr class="mb-5">
+
+            <h2 class="title text-center mb-2">Grid 3 Columns <span class="title-separator">/</span> Mask</h2>
+
+            <div class="row justify-content-center" *ngIf="!loaded else elseBlock5">
+                <div class="col-sm-6 col-md-4 skel-mask-post mb-2"></div>
+                <div class="col-sm-6 col-md-4 skel-mask-post mb-2"></div>
+                <div class="col-sm-6 col-md-4 skel-mask-post mb-2"></div>
+            </div>
+
+            <ng-template #elseBlock5>
+                <div class="row justify-content-center">
+                    <div class="col-sm-6 col-md-4">
+                        <molla-post-three [post]="posts[11]"></molla-post-three>
+                    </div>
+
+                    <div class="col-sm-6 col-md-4">
+                        <molla-post-three [post]="posts[12]"></molla-post-three>
+                    </div>
+
+                    <div class="col-sm-6 col-md-4">
+                        <molla-post-three [post]="posts[13]"></molla-post-three>
+                    </div>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</div>

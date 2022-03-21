@@ -1,0 +1,153 @@
+<div class="container quickView-container quickView-two" style="padding-left: 0; padding-right: 0">
+    <button title="Close (Esc)" type="button" class="mfp-close" (click)="closeQuickView()">×</button>
+
+    <div class="quickView-content skeleton-body">
+        <div class="row skel-pro-single skel-quickview mb-0" [ngClass]="{loaded: loaded}">
+            <div class="col-lg-6 p-0 d-flex flex-lg-row flex-column">
+                <div class="skel-product-gallery"></div>
+                <div class="product-sm col-lg-2 row p-0 order-lg-first order-last px-2 p-lg-0 m-lg-0 position-relative"
+                    id="product-image-gallery" *ngIf="product">
+                    <a href="#"
+                        [ngClass]="'product-gallery-item h-auto p-lg-0 mb-0 mb-lg-1 ' + ( i === currentIndex ? ' active' : '' )"
+                        (click)="changeImage( $event, i )" *ngFor="let item of product.pictures; let i = index;">
+                        <molla-image [src]="SERVER_URL + product.sm_pictures[i].url" alt="Product side"
+                            class="product-image mb-0" [fixedPt]="paddingTop">
+                        </molla-image>
+                    </a>
+                </div>
+                <div class="product-lg mb-1 mb-lg-0 col-lg-10 pl-lg-3 pl-0 pr-0 pr-lg-3 order-lg-last order-first"
+                    *ngIf="product">
+                    <span class="product-label label-new" *ngIf="product.new">New</span>
+                    <span class="product-label label-sale" *ngIf="product.sale_price">Sale</span>
+                    <span class="product-label label-top" *ngIf="product.top">Top</span>
+                    <span class="product-label label-out" *ngIf="!product.stock || product.stock == 0">Out Of
+                        Stock</span>
+
+                    <owl-carousel carouselClasses="product-gallery-carousel owl-full owl-nav-dark" [options]="options"
+                        id="owl-quickview" #singleSlider>
+                        <molla-image class="d-block position-relative"
+                            *ngFor="let item of product.pictures; let i = index;" [src]="SERVER_URL + item.url">
+                        </molla-image>
+                    </owl-carousel>
+                </div>
+            </div>
+            <div class="col-lg-6 quickview-desc pl-0 pl-lg-4 pr-0 mt-3 mt-lg-0">
+                <div class="entry-summary">
+                    <div class="col-md-12">
+                        <div class="entry-summary1 mt-2 mt-md-0"></div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="entry-summary2"></div>
+                    </div>
+                </div>
+
+                <div class="product-details" *ngIf="product">
+                    <h1 class="product-title">{{ product.name }}</h1>
+
+                    <div class="ratings-container">
+                        <div class="ratings">
+                            <div class="ratings-val" [style.width]="product.ratings * 20 + '%'"></div>
+                            <span class="tooltip-text">{{ product.ratings.toFixed(2) }}</span>
+                        </div>
+                        <span class="ratings-text">( {{ product.review }} Reviews )</span>
+                    </div>
+
+                    <div class="product-price" *ngIf="!product.stock || product.stock == 0 else elseBlock">
+                        <span class="out-price">${{ product.price.toFixed(2) }}</span>
+                    </div>
+
+                    <ng-template #elseBlock>
+                        <div class="product-price" *ngIf="minPrice == maxPrice else elseBlock">
+                            ${{ minPrice.toFixed(2) }}</div>
+                        <ng-template #elseBlock>
+                            <div class="product-price" *ngIf="product.variants.length == 0 else elseBlock">
+                                <span class="new-price">${{ minPrice.toFixed(2) }}</span>
+                                <span class="old-price">${{ maxPrice.toFixed(2) }}</span>
+                            </div>
+                            <ng-template #elseBlock>
+                                <div class="product-price">${{minPrice.toFixed(2)}}&ndash;${{maxPrice.toFixed(2)}}</div>
+                            </ng-template>
+                        </ng-template>
+                    </ng-template>
+
+                    <div class="product-content">
+                        <p>{{ product.short_desc }}</p>
+                    </div>
+
+                    <div *ngIf="product.variants.length > 1">
+                        <div class="details-filter-row details-row-size">
+                            <label>Color:</label>
+                            <div class="product-nav product-nav-dots">
+                                <a href="javascript:;" [class.active]="item.color == selectedVariant.color"
+                                    [class.disabled]="item.disabled" [style.background-color]="item.color"
+                                    *ngFor="let item of colorArray" (click)="selectColor($event, item)"></a>
+                            </div>
+                        </div>
+
+                        <div class="details-filter-row details-row-size">
+                            <label for="size">Size:</label>
+                            <div class="select-custom">
+                                <select name="size" id="size" class="form-control" [value]="selectedVariant.size"
+                                    (change)="selectSize($event)">
+                                    <option value="" [selected]="'' == selectedVariant.size">Select a size</option>
+                                    <option [value]="item.size" *ngFor="let item of sizeArray"
+                                        [selected]="item.size == selectedVariant.size">{{ item.size }}</option>
+                                </select>
+                            </div>
+
+                            <a href="javascript:;" class="size-guide mr-4"><i class="icon-th-list"></i>size guide</a>
+                            <a href="javascript:;" (click)="clearSelection()"
+                                *ngIf="selectedVariant.color || selectedVariant.size != ''">clear</a>
+                        </div>
+                    </div>
+
+                    <div class="variation-price" style="display: none;">
+                        <div class="product-price">
+                            ${{ selectedVariant.price ? selectedVariant.price.toFixed( 2 ) : 0 }}
+                        </div>
+                    </div>
+
+                    <div class="details-filter-row details-row-size">
+                        <label for="qty">Qty:</label>
+                        <molla-quantity-input [max]="product.stock" (changeQty)="onChangeQty( $event )" [value]="qty">
+                        </molla-quantity-input>
+                    </div>
+
+                    <div class="product-details-action">
+                        <a href="javascript:;" class="btn-product btn-cart"
+                            [class.btn-disabled]="!cartService.canAddToCart( product, qty ) || ( product.variants.length > 0 && !( selectedVariant.color && selectedVariant.size != '' ) )"
+                            (click)="addCart( $event )"><span>add to cart</span></a>
+
+                        <div class="details-action-wrapper">
+                            <a href="javascript:;" class="btn-product btn-wishlist"
+                                [class.added-to-wishlist]="isInWishlist()" (click)="addToWishlist($event)">
+                                <span>{{ isInWishlist() ? 'Go' : 'Add' }} to Wishlist</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="product-details-footer">
+                        <div class="product-cat w-100 text-truncate">
+                            <span>Category:</span>
+                            <span *ngFor="let cat of product.category; let i =index">
+                                <a [routerLink]="['/shop/sidebar/list']" (click)="closeQuickView()"
+                                    [queryParams]="{category: cat.slug}">{{ cat.name }}</a>{{ i < product.category.length - 1 ? ',' : '' }}</span>
+                        </div>
+
+                        <div class="social-icons social-icons-sm">
+                            <span class="social-label">Share:</span>
+                            <a href="javascript:;" class="social-icon" title="Facebook"><i
+                                    class="icon-facebook-f"></i></a>
+                            <a href="javascript:;" class="social-icon" title="Twitter"><i class="icon-twitter"></i></a>
+                            <a href="javascript:;" class="social-icon" title="Instagram"><i
+                                    class="icon-instagram"></i></a>
+                            <a href="javascript:;" class="social-icon" title="Pinterest"><i
+                                    class="icon-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

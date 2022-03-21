@@ -1,0 +1,27 @@
+<div class="products mb-3">
+    <p class="no-results" *ngIf="products.length == 0 && loaded else resultBlock">No products matching your selection.
+    </p>
+
+    <ng-template #resultBlock>
+        <div *ngIf="type=='list' else gridBlock">
+            <div *ngIf="!loaded else listBlock">
+                <div class="skel-pro skel-pro-list" *ngFor="let item of fakeArray[type]"></div>
+            </div>
+            <ng-template #listBlock>
+                <molla-product-nine [product]="product" *ngFor="let product of products"></molla-product-nine>
+            </ng-template>
+        </div>
+        <ng-template #gridBlock>
+            <div class="row" *ngIf="!loaded else elseBlock">
+                <div [class]="'skel-pro ' + grid[type]" *ngFor="let item of fakeArray[type]"></div>
+            </div>
+            <ng-template #elseBlock>
+                <div class="row">
+                    <div [class]="grid[type]" *ngFor="let product of products">
+                        <molla-product-eleven [product]="product" class="w-100"></molla-product-eleven>
+                    </div>
+                </div>
+            </ng-template>
+        </ng-template>
+    </ng-template>
+</div>

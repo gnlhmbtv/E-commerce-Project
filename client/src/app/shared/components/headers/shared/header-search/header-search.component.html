@@ -1,0 +1,45 @@
+<div class="header-search header-search-extended header-search-visible d-none d-lg-block">
+    <a href="#" class="search-toggle" role="button">
+        <i class="icon-search"></i>
+    </a>
+    <form action="#" method="get" (click)="showSearchForm($event)" (submit)="submitSearchForm($event)">
+        <div class="header-search-wrapper search-wrapper-wide">
+            <button class="btn btn-primary" type="submit">
+                <span class="sr-only">Search</span>
+                <i class="icon-search"></i>
+            </button>
+            <label for="q" class="sr-only">Search</label>
+            <input type="text" class="form-control" name="searchTerm" id="searchTerm" placeholder="Search product ..."
+                required (input)="searchProducts($event)" />
+            <div class="live-search-list" *ngIf="searchTerm.length > 2">
+                <div class="autocomplete-suggestions" *ngIf="suggestions.length > 0" (click)="goProductPage()">
+                    <a [routerLink]="'/product/default/' + product.slug" class="autocomplete-suggestion"
+                        *ngFor="let product of suggestions">
+                        <figure class="mb-0 mr-3" style="width: 40px; height: 40px;">
+                            <molla-image [src]="SERVER_URL + product.sm_pictures[0].url" width="40" height="40"
+                                alt="Product" class="bg-transparent">
+                            </molla-image>
+                        </figure>
+
+                        <div class="search-name" [innerHTML]="matchEmphasize(product.name) | safeContent"></div>
+                        <span class="search-price">
+                            <div class="product-price mb-0"
+                                *ngIf="product.minPrice == product.maxPrice else priceBlock">
+                                ${{ product.minPrice.toFixed(2) }}</div>
+                            <ng-template #priceBlock>
+                                <div class="product-price mb-0" *ngIf="product.variants.length == 0 else limitBlock">
+                                    <span class="new-price">${{ product.minPrice.toFixed(2) }}</span>
+                                    <span class="old-price">${{ product.maxPrice.toFixed(2) }}</span>
+                                </div>
+                                <ng-template #limitBlock>
+                                    <div class="product-price mb-0">${{product.minPrice.toFixed(2)}} -
+                                        ${{product.maxPrice.toFixed(2)}}</div>
+                                </ng-template>
+                            </ng-template>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,9 @@
+agm-map {
+    height: 492px;
+}
+
+@media screen and(min-width: 576px) {
+    .text-center:not(.page-header) {
+        text-align: left !important;
+    }
+}

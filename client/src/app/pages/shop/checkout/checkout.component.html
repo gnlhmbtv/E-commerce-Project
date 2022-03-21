@@ -1,0 +1,313 @@
+<main class="main">
+    <molla-page-header title="Checkout" subtitle="Shop"></molla-page-header>
+    <nav class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a routerLink="/">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a routerLink="/shop/sidebar/3cols">Shop</a>
+                </li>
+                <li class="breadcrumb-item active">Checkout</li>
+            </ol>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <div class="checkout">
+            <div class="container">
+                <div class="checkout-discount">
+                    <form action="#" id="checkout-discount-form">
+                        <input type="text" class="form-control" required id="checkout-discount-input"
+                            (click)="addOpacity($event)">
+                        <label for="checkout-discount-input" class="text-truncate">Have a coupon? <span>Click here to
+                                enter your code</span></label>
+                    </form>
+                </div>
+                <form action="#">
+                    <div class="row">
+                        <div class="col-lg-9">
+                            <h2 class="checkout-title">Billing Details</h2>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label>First Name *</label>
+                                    <input type="text" class="form-control" name="firstName" required>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <label>Last Name *</label>
+                                    <input type="text" class="form-control" name="lastName" required>
+                                </div>
+                            </div>
+
+                            <label>Company Name (Optional)</label>
+                            <input type="text" class="form-control" name="company">
+
+                            <label>Country *</label>
+                            <input type="text" class="form-control" name="country" required>
+
+                            <label>Street address *</label>
+                            <input type="text" class="form-control" name="street1" placeholder="House number and Street name" required>
+                            <input type="text" class="form-control" name="street2" placeholder="Appartments, suite, unit etc ..."
+                                required>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label>Town / City *</label>
+                                    <input type="text" name="city" class="form-control" required>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <label>State / County *</label>
+                                    <input type="text" name="state" class="form-control" required>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label>Postcode / ZIP *</label>
+                                    <input type="text" name="postcode" class="form-control" required>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <label>Phone *</label>
+                                    <input type="tel" name="tel" class="form-control" required>
+                                </div>
+                            </div>
+
+                            <label>Email address *</label>
+                            <input type="email" name="email" class="form-control" required>
+
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="checkout-create-acc">
+                                <label class="custom-control-label" for="checkout-create-acc">Create an account?</label>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="custom-control custom-checkbox mt-0 address-box">
+                                    <input type="checkbox" class="custom-control-input" id="checkout-diff-address"
+                                        (change)="formToggle($event)">
+                                    <label class="custom-control-label" for="checkout-diff-address">Ship to a different
+                                        address?</label>
+                                </div>
+                                <div class="shipping-info" style="display: none;">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>First name <abbr class="required"
+                                                        title="required">*</abbr></label>
+                                                <input type="text" class="form-control" />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Last name <abbr class="required"
+                                                        title="required">*</abbr></label>
+                                                <input type="text" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Company name (optional)</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+
+                                    <div class="select-custom">
+                                        <label>Country / Region <span class="required">*</span></label>
+                                        <select name="orderby" class="form-control">
+                                            <option value="" defaultValue="selected">Vanuatu</option>
+                                            <option value="1">Brunei</option>
+                                            <option value="2">Bulgaria</option>
+                                            <option value="3">Burkina Faso</option>
+                                            <option value="4">Burundi</option>
+                                            <option value="5">Cameroon</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group mb-1 pb-2">
+                                        <label>Street address <abbr class="required" title="required">*</abbr></label>
+                                        <input type="text" class="form-control"
+                                            placeholder="House number and street name" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="text" class="form-control"
+                                            placeholder="Apartment, suite, unit, etc. (optional)" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Town / City <abbr class="required" title="required">*</abbr></label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+
+                                    <div class="select-custom">
+                                        <label>State / County <abbr class="required" title="required">*</abbr></label>
+                                        <select name="orderby" class="form-control">
+                                            <option value="" defaultValue="selected">NY</option>
+                                            <option value="1">Brunei</option>
+                                            <option value="2">Bulgaria</option>
+                                            <option value="3">Burkina Faso</option>
+                                            <option value="4">Burundi</option>
+                                            <option value="5">Cameroon</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Postcode / ZIP <abbr class="required" title="required">*</abbr></label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <label>Order notes (optional)</label>
+                            <textarea class="form-control" cols="30" rows="4"
+                                placeholder="Notes about your order, e.g. special notes for delivery"></textarea>
+                        </div>
+                        <aside class="col-lg-3">
+                            <div class="summary">
+                                <h3 class="summary-title">Your Order</h3>
+
+                                <table class="table table-summary">
+                                    <thead>
+                                        <tr>
+                                            <th>Product</th>
+                                            <th>Total</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr *ngFor="let product of cartItems">
+                                            <td><a
+                                                    [routerLink]="['/product/default/'+ product.slug]">{{ product.name }}</a>
+                                            </td>
+                                            <td>{{ product.sum.toFixed( 2 ) | currency  }}</td>
+                                        </tr>
+                                        <tr class="summary-subtotal">
+                                            <td>Subtotal:</td>
+                                            <td>${{ (cartService.priceTotal | async).toFixed(2) }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Shipping:</td>
+                                            <td>Free shipping</td>
+                                        </tr>
+                                        <tr class="summary-total">
+                                            <td>Total:</td>
+                                            <td>${{ (cartService.priceTotal | async).toFixed(2) }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <molla-accordion adClass="accordion-summary" id="accordion-payment">
+                                    <div class="card">
+                                        <div class="card-header" id="heading-1">
+                                            <h2 class="card-title">
+                                                <a class="toggle-button" role="button" data-toggle="collapse"
+                                                    href="#collapse-1" aria-expanded="true" aria-controls="collapse-1">
+                                                    Direct bank transfer
+                                                </a>
+                                            </h2>
+                                        </div>
+                                        <div id="collapse-1" class="collapse show" aria-labelledby="heading-1"
+                                            data-parent="#accordion-payment">
+                                            <div class="card-body">
+                                                Make your payment directly into our bank account. Please use your Order
+                                                ID as
+                                                the payment reference. Your order will not be shipped until the funds
+                                                have
+                                                cleared in our account.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="card-header" id="heading-2">
+                                            <h2 class="card-title">
+                                                <a class="toggle-button collapsed" role="button" data-toggle="collapse"
+                                                    href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+                                                    Check payments
+                                                </a>
+                                            </h2>
+                                        </div>
+                                        <div id="collapse-2" class="collapse" aria-labelledby="heading-2"
+                                            data-parent="#accordion-payment">
+                                            <div class="card-body">
+                                                Ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque
+                                                volutpat mattis eros. Nullam malesuada erat ut turpis.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="card-header" id="heading-3">
+                                            <h2 class="card-title">
+                                                <a class="toggle-button collapsed" role="button" data-toggle="collapse"
+                                                    href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+                                                    Cash on delivery
+                                                </a>
+                                            </h2>
+                                        </div>
+                                        <div id="collapse-3" class="collapse" aria-labelledby="heading-3"
+                                            data-parent="#accordion-payment">
+                                            <div class="card-body">Quisque volutpat mattis eros. Lorem ipsum dolor sit
+                                                amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis
+                                                eros.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="card-header" id="heading-4">
+                                            <h2 class="card-title">
+                                                <a class="toggle-button collapsed" role="button" data-toggle="collapse"
+                                                    href="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+                                                    PayPal
+                                                </a>
+                                            </h2>
+                                        </div>
+                                        <div id="collapse-4" class="collapse" aria-labelledby="heading-4"
+                                            data-parent="#accordion-payment">
+                                            <div class="card-body">
+                                                <small class="float-right paypal-link">What is PayPal?</small>
+                                                Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non,
+                                                semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis
+                                                fermentum.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="card-header" id="heading-5">
+                                            <h2 class="card-title">
+                                                <a class="toggle-button collapsed" role="button" data-toggle="collapse"
+                                                    href="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+                                                    Credit Card (Stripe)
+                                                </a>
+                                            </h2>
+                                        </div>
+                                        <div id="collapse-5" class="collapse" aria-labelledby="heading-5"
+                                            data-parent="#accordion-payment">
+                                            <div class="card-body">
+                                                <img src="assets/images/payments-summary.png" alt="payments cards">
+                                                Donec nec justo eget felis facilisis fermentum.Lorem
+                                                ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque
+                                                volutpat mattis eros. Lorem ipsum dolor sit ame.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </molla-accordion>
+
+                                <button type="submit" class="btn btn-outline-primary-2 btn-order btn-block">
+                                    <span class="btn-text">Place Order</span>
+                                    <span class="btn-hover-text">Proceed to Checkout</span>
+                                </button>
+                            </div>
+                        </aside>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>

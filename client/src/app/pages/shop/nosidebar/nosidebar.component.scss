@@ -1,0 +1,13 @@
+:host {
+    ::ng-deep {
+        .product-nav-thumbs a {
+            width: 3.5rem;
+            height: 3.5rem;
+        }
+
+        .product-media img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

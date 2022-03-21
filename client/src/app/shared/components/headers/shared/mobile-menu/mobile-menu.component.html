@@ -1,0 +1,294 @@
+<div class="mobile-menu-container">
+    <div class="mobile-menu-wrapper">
+        <span class="mobile-menu-close" (click)="hideMobileMenu()"><i class="icon-close"></i></span>
+
+        <form action="#" method="get" class="mobile-search" (submit)="submitSearchForm($event)">
+            <label for="mobile-search" class="sr-only">Search</label>
+            <input type="search" class="form-control" name="mobile-search" id="mobile-search" placeholder="Search in..."
+                required>
+            <button class="btn btn-primary" type="submit"><i class="icon-search"></i></button>
+        </form>
+
+        <nav class="mobile-nav">
+            <ul class="mobile-menu">
+                <li>
+                    <a routerLink="/">
+                        Home
+                        <span class="mmenu-btn" (click)="submenuToggle($event)"></span>
+                    </a>
+                    <ul>
+                        <li><a href="https://d-themes.com/angular/molla/demo1/" target="_blank" rel="noopener">01 -
+                                furniture store</a>
+                        </li>
+                        <li><a href="https://d-themes.com/angular/molla/demo2/" target="_blank" rel="noopener">02 -
+                                furniture store</a>
+                        </li>
+                        <li><a href="https://d-themes.com/angular/molla/demo3/" target="_blank" rel="noopener">03 -
+                                electronic store</a>
+                        </li>
+                        <li><a href="https://d-themes.com/angular/molla/demo4/" target="_blank" rel="noopener">04 -
+                                electronic store</a>
+                        </li>
+                        <li><a href="https://d-themes.com/angular/molla/demo5/" target="_blank" rel="noopener">05 - fashion
+                                store</a>
+                        </li>
+                        <li><a href="https://d-themes.com/angular/molla/demo6/" target="_blank" rel="noopener">06 - fashion
+                                store</a>
+                        </li>
+                        <li><a href="https://d-themes.com/angular/molla/demo7/" target="_blank" rel="noopener">07 - fashion
+                                store</a>
+                        </li>
+                        <li><a href="https://d-themes.com/angular/molla/demo8/" target="_blank" rel="noopener">08 - fashion
+                                store</a>
+                        </li>
+                        <li><a href="https://d-themes.com/angular/molla/demo9/" target="_blank" rel="noopener">09 - fashion
+                                store</a>
+                        </li>
+                        <li><a href="https://d-themes.com/angular/molla/demo10/" target="_blank" rel="noopener">10 - shoes
+                                store</a>
+                        </li>
+                        <li><a href="https://d-themes.com/angular/molla/demo11/" target="_blank" rel="noopener">11 -
+                                furniture simple
+                                store</a></li>
+                        <li><a href="https://d-themes.com/angular/molla/demo12/" target="_blank" rel="noopener">12 - fashion
+                                simple
+                                store</a></li>
+                        <li><a href="https://d-themes.com/angular/molla/demo13/" target="_blank" rel="noopener">13 -
+                                market</a></li>
+                        <li><a href="https://d-themes.com/angular/molla/demo14/" target="_blank" rel="noopener">14 - market
+                                fullwidth</a></li>
+                        <li><a href="https://d-themes.com/angular/molla/demo15/" target="_blank" rel="noopener">15 -
+                                lookbook 1</a></li>
+                        <li><a href="https://d-themes.com/angular/molla/demo16/" target="_blank" rel="noopener">16 -
+                                lookbook 2</a></li>
+                        <li><a href="https://d-themes.com/angular/molla/demo17/" target="_blank" rel="noopener">17 - fashion
+                                store</a>
+                        </li>
+                        <li><a href="https://d-themes.com/angular/molla/demo18/" target="_blank" rel="noopener">18 - fashion
+                                store (with
+                                sidebar)</a></li>
+                        <li><a href="https://d-themes.com/angular/molla/demo19/" target="_blank" rel="noopener">19 - games
+                                store</a>
+                        </li>
+                        <li><a href="https://d-themes.com/angular/molla/demo20/" target="_blank" rel="noopener">20 - book
+                                store</a></li>
+                        <li><a href="https://d-themes.com/angular/molla/demo21/" target="_blank" rel="noopener">21 - sport
+                                store</a>
+                        </li>
+                        <li><a href="https://d-themes.com/angular/molla/demo22/" target="_blank" rel="noopener">22 - tools
+                                store</a>
+                        </li>
+                        <li><a href="https://d-themes.com/angular/molla/demo23/" target="_blank" rel="noopener">23 - fashion
+                                left
+                                navigation store</a></li>
+                        <li><a href="https://d-themes.com/angular/molla/demo24/" target="_blank" rel="noopener">24 - extreme
+                                sport
+                                store</a></li>
+                        <li><a href="https://d-themes.com/angular/molla/demo25/" target="_blank" rel="noopener">25 - jewelry
+                                store</a>
+                        </li>
+                        <li><a href="https://d-themes.com/angular/molla/demo26/" target="_blank" rel="noopener">26 - market
+                                store</a>
+                        </li>
+                        <li><a href="https://d-themes.com/angular/molla/demo27/" target="_blank" rel="noopener">27 - fashion
+                                store</a>
+                        </li>
+                        <li><a href="https://d-themes.com/angular/molla/demo28/" target="_blank" rel="noopener">28 - food
+                                market
+                                store</a></li>
+                        <li><a href="https://d-themes.com/angular/molla/demo29/" target="_blank" rel="noopener">29 -
+                                t-shirts store</a>
+                        </li>
+                        <li><a href="https://d-themes.com/angular/molla/demo30/" target="_blank" rel="noopener">30 -
+                                headphones
+                                store</a></li>
+                        <li><a href="https://d-themes.com/angular/molla/demo31/" target="_blank" rel="noopener">31 - yoga
+                                store</a></li>
+                        <li><a href="https://d-themes.com/angular/molla/demo32/" target="_blank" rel="noopener">32 -
+                                sunglasses
+                                store</a></li>
+                        <li><a href="https://d-themes.com/angular/molla/demo33/" target="_blank" rel="noopener">33 -
+                                cosmetics
+                                store</a></li>
+                        <li><a href="https://d-themes.com/angular/molla/demo34/" target="_blank" rel="noopener">34 - car
+                                parts</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a routerLink="/shop/sidebar/list">
+                        Shop
+                        <span class="mmenu-btn" (click)="submenuToggle($event)"></span>
+                    </a>
+                    <ul>
+                        <li><a routerLink="/shop/sidebar/list">Shop List</a></li>
+                        <li><a routerLink="/shop/sidebar/2cols">Shop Grid 2 Columns</a></li>
+                        <li><a routerLink="/shop/sidebar/3cols">Shop Grid 3 Columns</a></li>
+                        <li><a routerLink="/shop/sidebar/4cols">Shop Grid 4 Columns</a></li>
+                        <li><a routerLink="/shop/nosidebar/boxed"><span>Shop Boxed No Sidebar<span
+                                        class="tip tip-hot">Hot</span></span></a></li>
+                        <li><a routerLink="/shop/nosidebar/fullwidth">Shop Fullwidth No Sidebar</a></li>
+                        <li><a routerLink="/shop/category/boxed">Product Category Boxed</a></li>
+                        <li><a routerLink="/shop/category/fullwidth"><span>Product Category Fullwidth<span
+                                        class="tip tip-new">New</span></span></a></li>
+                        <li><a routerLink="/shop/cart">Cart</a></li>
+                        <li><a routerLink="/shop/checkout">Checkout</a></li>
+                        <li><a routerLink="/shop/wishlist">Wishlist</a></li>
+                        <li><a routerLink="/shop/dashboard">Dashboard</a></li>
+                        <li><a href="javascript:;">Lookbook</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a routerLink="/product/default/dark-yellow-lace-cut-out-swing-dress"
+                        class="sf-with-ul">
+                        Product
+                        <span class="mmenu-btn" (click)="submenuToggle($event)"></span>
+                    </a>
+                    <ul>
+                        <li><a
+                                routerLink="/product/default/dark-yellow-lace-cut-out-swing-dress">Default</a>
+                        </li>
+                        <li><a
+                                routerLink="/product/centered/beige-ring-handle-circle-cross-body-bag">Centered</a>
+                        </li>
+                        <li><a routerLink="/product/extended/yellow-tie-strap-block-heel-sandals"><span>Extended
+                                    Info<span class="tip tip-new">New</span></span></a></li>
+                        <li><a routerLink="/product/gallery/beige-metal-hoop-tote-bag">Gallery</a></li>
+                        <li><a routerLink="/product/sticky/brown-faux-fur-longline-coat">Sticky Info</a>
+                        </li>
+                        <li><a routerLink="/product/sidebar/beige-v-neck-button-cardigan">Boxed With
+                                Sidebar</a></li>
+                        <li><a routerLink="/product/fullwidth/black-faux-leather-chain-trim-sandals">Full
+                                Width</a></li>
+                        <li><a routerLink="/product/masonry/black-denim-dungaree-dress">Masonry Sticky
+                                Info</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a routerLink="/pages/about">
+                        Pages
+                        <span class="mmenu-btn" (click)="submenuToggle($event)"></span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a routerLink="/pages/about">
+                                About
+                                <span class="mmenu-btn" (click)="submenuToggle($event)"></span>
+                            </a>
+
+                            <ul>
+                                <li><a routerLink="/pages/about">About 01</a></li>
+                                <li><a routerLink="/pages/about-2">About 02</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a routerLink="/pages/contact">
+                                Contact
+                                <span class="mmenu-btn" (click)="submenuToggle($event)"></span>
+                            </a>
+
+                            <ul>
+                                <li><a routerLink="/pages/contact">Contact 01</a></li>
+                                <li><a routerLink="/pages/contact-2">Contact 02</a></li>
+                            </ul>
+                        </li>
+                        <li><a routerLink="/pages/login">Login</a></li>
+                        <li><a routerLink="/pages/faq">FAQs</a></li>
+                        <li><a routerLink="/pages/404">Error 404</a></li>
+                        <li><a routerLink="/pages/coming-soon">Coming Soon</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a routerLink="/blog">
+                        Blog
+                        <span class="mmenu-btn" (click)="submenuToggle($event)"></span>
+                    </a>
+
+                    <ul>
+                        <li><a routerLink="/blog/classic">Classic</a></li>
+                        <li><a routerLink="/blog/listing">Listing</a></li>
+                        <li>
+                            <a routerLink="/blog/grid/grid-2">
+                                Grid
+                                <span class="mmenu-btn" (click)="submenuToggle($event)"></span>
+                            </a>
+                            <ul>
+                                <li><a routerLink="/blog/grid/grid-2">Grid 2 columns</a></li>
+                                <li><a routerLink="/blog/grid/grid-3">Grid 3 columns</a></li>
+                                <li><a routerLink="/blog/grid/grid-4">Grid 4 columns</a></li>
+                                <li><a routerLink="/blog/grid/grid-sidebar">Grid sidebar</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a routerLink="/blog/masonry/masonry-2">
+                                Masonry
+                                <span class="mmenu-btn" (click)="submenuToggle($event)"></span>
+                            </a>
+                            <ul>
+                                <li><a routerLink="/blog/masonry/masonry-2">Masonry 2 columns</a></li>
+                                <li><a routerLink="/blog/masonry/masonry-3">Masonry 3 columns</a></li>
+                                <li><a routerLink="/blog/masonry/masonry-4">Masonry 4 columns</a></li>
+                                <li><a routerLink="/blog/masonry/masonry-sidebar">Masonry sidebar</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a routerLink="/blog/mask-grid">
+                                Mask
+                                <span class="mmenu-btn" (click)="submenuToggle($event)"></span>
+                            </a>
+                            <ul>
+                                <li><a routerLink="/blog/mask/grid">Blog mask grid</a></li>
+                                <li><a routerLink="/blog/mask/masonry">Blog mask masonry</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a routerLink="/blog/single/default/cras-ornare-tristique-elit.">
+                                Single Post
+                                <span class="mmenu-btn" (click)="submenuToggle($event)"></span>
+                            </a>
+                            <ul>
+                                <li><a routerLink="/blog/single/default/cras-ornare-tristique-elit.">Default
+                                        with
+                                        sidebar</a></li>
+                                <li><a routerLink="/blog/single/fullwidth/fusce-pellentesque-suscipit.">Fullwidth
+                                        no
+                                        sidebar</a></li>
+                                <li><a routerLink="/blog/single/sidebar/utaliquam-sollicitzdvudin-leo">Fullwidth
+                                        with
+                                        sidebar</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a routerLink="/elements">
+                        Elements
+                        <span class="mmenu-btn" (click)="submenuToggle($event)"></span>
+                    </a>
+                    <ul>
+                        <li><a routerLink="/elements/products">Products</a></li>
+                        <li><a routerLink="/elements/typography">Typography</a></li>
+                        <li><a routerLink="/elements/titles">Titles</a></li>
+                        <li><a routerLink="/elements/banners">Banners</a></li>
+                        <li><a routerLink="/elements/product-category">Product Category</a></li>
+                        <li><a routerLink="/elements/video-banners">Video Banners</a></li>
+                        <li><a routerLink="/elements/buttons">Buttons</a></li>
+                        <li><a routerLink="/elements/accordions">Accordions</a></li>
+                        <li><a routerLink="/elements/tabs">Tabs</a></li>
+                        <li><a routerLink="/elements/testimonials">Testimonials</a></li>
+                        <li><a routerLink="/elements/blog-posts">Blog Posts</a></li>
+                        <li><a routerLink="/elements/portfolio">Portfolio</a></li>
+                        <li><a routerLink="/elements/cta">Call to Action</a></li>
+                        <li><a routerLink="/elements/icon-boxes">Icon Boxes</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="social-icons">
+            <a href="javascript:;" class="social-icon" title="Facebook"><i class="icon-facebook-f"></i></a>
+            <a href="javascript:;" class="social-icon" title="Twitter"><i class="icon-twitter"></i></a>
+            <a href="javascript:;" class="social-icon" title="Instagram"><i class="icon-instagram"></i></a>
+            <a href="javascript:;" class="social-icon" title="Youtube"><i class="icon-youtube"></i></a>
+        </div>
+    </div>
+</div>

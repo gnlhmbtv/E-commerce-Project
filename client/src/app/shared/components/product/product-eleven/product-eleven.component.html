@@ -1,0 +1,81 @@
+<div class="product product-7 text-center">
+    <figure class="product-media">
+        <span class="product-label label-new" *ngIf="product.new">New</span>
+        <span class="product-label label-sale" *ngIf="product.sale_price">Sale</span>
+        <span class="product-label label-top" *ngIf="product.top">Top</span>
+        <span class="product-label label-out" *ngIf="!product.stock || product.stock == 0">Out Of Stock</span>
+
+        <a [routerLink]="['/product/default/'+ product.slug]">
+            <molla-image [src]="SERVER_URL + product.sm_pictures[0].url" alt="Product" class="product-image">
+            </molla-image>
+            <molla-image [src]="SERVER_URL + product.sm_pictures[1].url" alt="Product" class="product-image-hover"
+                *ngIf="product.sm_pictures[1]"></molla-image>
+        </a>
+
+        <div class="product-action-vertical">
+            <a href="javascript:;" class="btn-product-icon btn-wishlist btn-expandable"
+                [class.added-to-wishlist]="isInWishlist()" (click)="addToWishlist($event)">
+                <span>{{ isInWishlist() ? 'go' : 'add' }} to Wishlist</span>
+            </a>
+            <a href="javascript:;" class="btn-product-icon btn-quickview" title="Quick view"
+                (click)="quickView($event)"><span>Quick view</span></a>
+            <a href="javascript:;" class="btn-product-icon btn-compare" title="Compare"
+                (click)="addToCompare($event)"><span>Compare</span></a>
+        </div>
+        <div class="product-action" *ngIf="product.stock && product.stock !== 0">
+            <a [routerLink]="['/product/default/'+ product.slug]" class="btn-product btn-cart btn-select"
+                *ngIf="product.variants.length > 0 else cartBlock">
+                <span>select options</span>
+            </a>
+            <ng-template #cartBlock>
+                <button class="btn-product btn-cart" (click)="addToCart($event)">
+                    <span>add to cart</span>
+                </button>
+            </ng-template>
+        </div>
+    </figure>
+
+    <div class="product-body">
+        <div class="product-cat">
+            <span *ngFor="let cat of product.category; let i =index">
+                <a [routerLink]="['/shop/sidebar/list']" [queryParams]="{category: cat.slug}">{{ cat.name }}</a>{{ i < product.category.length - 1 ? ',' : '' }}
+            </span>
+        </div>
+
+        <h3 class="product-title">
+            <a [routerLink]="['/product/default/'+ product.slug]">{{ product.name }}</a>
+        </h3>
+
+        <div class="product-price" *ngIf="!product.stock || product.stock == 0 else elseBlock">
+            <span class="out-price">${{ product.price.toFixed(2) }}</span>
+        </div>
+
+        <ng-template #elseBlock>
+            <div class="product-price" *ngIf="minPrice == maxPrice else elseBlock">${{ minPrice.toFixed(2) }}</div>
+            <ng-template #elseBlock>
+                <div class="product-price" *ngIf="product.variants.length == 0 else elseBlock">
+                    <span class="new-price">${{ minPrice.toFixed(2) }}</span>
+                    <span class="old-price">${{ maxPrice.toFixed(2) }}</span>
+                </div>
+                <ng-template #elseBlock>
+                    <div class="product-price">${{minPrice.toFixed(2)}}&ndash;${{maxPrice.toFixed(2)}}</div>
+                </ng-template>
+            </ng-template>
+        </ng-template>
+
+        <div class="ratings-container">
+            <div class="ratings">
+                <div class="ratings-val" [style.width]="product.ratings * 20 + '%'"></div>
+                <span class="tooltip-text">{{ product.ratings.toFixed(2) }}</span>
+            </div>
+            <span class="ratings-text">( {{ product.review }} Reviews )</span>
+        </div>
+
+        <div class="product-nav product-nav-dots" *ngIf="product.variants.length > 0">
+            <div class="row no-gutters">
+                <a href="javascript:;" [style.backgroundColor]="item.color" *ngFor="let item of product.variants">
+                    <span class="sr-only">Color name</span></a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,164 @@
+/* Modals */
+@keyframes modalFadeUpIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-40px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes modalFadeUpOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    100% {
+        opacity: 0;
+        transform: translateY(-40px)
+    }
+}
+
+@keyframes modalFadeIn {
+	0% {
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	100% {
+		opacity: 0.4;
+		visibility: visible;
+	}
+}
+
+@keyframes modalFadeOut {
+	0% {
+		opacity: .4;
+		visibility: visible;
+	}
+
+	100% {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+.modal-backdrop {
+	background-color: #333;
+
+	&.show {
+		opacity: .4;
+		animation-name: modalFadeOut;
+		animation-duration: .3s;
+	}
+}
+
+.modal-body {
+	padding: 0;
+
+	.close {
+		position: absolute;
+		right: 1.5rem;
+		top: 1.5rem;
+	}
+}
+
+.modal-content {
+	margin-left: 1rem;
+	margin-right: 1rem;
+	max-height: 100%;
+	overflow: auto;
+	border: none;
+	background-color: transparent;
+	// box-shadow: 5px 10px 16px rgba(51, 51, 51, .05), -5px 10px 16px rgba(51, 51, 51, .05);
+}
+
+.vb-modal .modal-content {
+    background: #fff;
+    box-shadow: none;
+}
+
+.close {
+	font-weight: normal;
+	font-size: 1.8rem;
+	color: $body-text;
+	opacity: 1;
+	transition: all .3s;
+
+	&:hover,
+	&:focus {
+		color: $primary-color;
+	}
+}
+
+.modal-dialog {
+	margin: 1rem auto;
+	max-width: 1188px;
+	animation-name: modalFadeUpOut;
+	animation-duration: .3s;
+}
+
+.modal-open {
+	.modal-dialog {
+		animation-name: modalFadeUpIn;
+	}
+
+	.modal-backdrop {
+		animation-name: modalFadeIn;
+		transition: none;
+	}
+}
+
+.modal-close {
+	position: absolute;
+	font: normal normal 2.6rem/1 'molla';
+	color: #666;
+    font-size: 1.8rem;
+    top: 1.5rem;
+    right: 2rem;
+    display: block;
+    width: 2rem;
+    height: 2rem;
+}
+
+.video-modal {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	height: 56.6rem; 
+	transform: matrix(1, 0, 0, 1, 0, 0);
+	
+	iframe {
+		width: 100%;
+		height: 100%;
+		background-color: #eee;
+	}
+
+	.close {
+		position: fixed;
+		top: 1rem;
+		right: 1rem;
+		width: 5rem;
+		height: 5rem;
+		z-index: 1;
+	}
+}
+
+@media screen and ( max-width: 992px ) {	
+	.modal-dialog {
+		max-width: none;
+	}
+}
+
+@include mq('620px', 'max') {
+	.login-modal .modal-dialog
+	{
+		width: calc(100% - 2rem);
+		margin: 0 auto;
+	}
+}

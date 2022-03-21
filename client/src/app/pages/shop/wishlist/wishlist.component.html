@@ -1,0 +1,111 @@
+<main class="main">
+    <molla-page-header title="Wishlist" subtitle="Shop"></molla-page-header>
+
+    <nav class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a routerLink="/">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a routerLink="/shop/wishlist">Shop</a>
+                </li>
+                <li class="breadcrumb-item active">Wishlist</li>
+            </ol>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <div class="container" *ngIf="wishItems.length == 0 else wishlistBlock">
+            <div class="text-center">
+                <i class="icon-heart-o wishlist-empty d-block" style="font-size: 15rem; line-height: 1"></i>
+                <span class="d-block mt-2">No products added to wishlist</span>
+                <a routerLink="/shop/sidebar/list" class="btn btn-primary mt-2">Go Shop</a>
+            </div>
+        </div>
+        <ng-template #wishlistBlock>
+            <div class="container">
+                <table class="table table-wishlist table-mobile">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Stock Status</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr *ngFor="let product of wishItems">
+                            <td class="product-col">
+                                <div class="product">
+                                    <figure class="product-media">
+                                        <a [routerLink]="['/product/default/'+ product.slug]">
+                                            <molla-image [src]="SERVER_URL + product.sm_pictures[0].url" alt="Product">
+                                            </molla-image>
+                                        </a>
+                                    </figure>
+
+                                    <h3 class="product-title">
+                                        <a [routerLink]="['/product/default/'+ product.slug]">{{ product.name }}</a>
+                                    </h3>
+                                </div>
+                            </td>
+                            <td class="price-col">
+                                <div class="product-price d-inline-block mb-0"
+                                    *ngIf="!product.stock || product.stock == 0 else elseBlock">
+                                    <span class="out-price">${{ product.price.toFixed(2) }}</span>
+                                </div>
+
+                                <ng-template #elseBlock>
+                                    <div class="product-price d-inline-block mb-0"
+                                        *ngIf="product.minPrice == product.maxPrice else elseBlock">
+                                        ${{ product.minPrice.toFixed(2) }}
+                                    </div>
+                                    <ng-template #elseBlock>
+                                        <div class="product-price d-inline-block mb-0"
+                                            *ngIf="product.variants.length == 0 else elseBlock">
+                                            <span class="new-price">${{ product.minPrice.toFixed(2) }}</span>
+                                            <span class="old-price">${{ product.maxPrice.toFixed(2) }}</span>
+                                        </div>
+                                        <ng-template #elseBlock>
+                                            <div class="product-price d-inline-block mb-0">
+                                                ${{product.minPrice.toFixed(2)}}&ndash;${{product.maxPrice.toFixed(2)}}
+                                            </div>
+                                        </ng-template>
+                                    </ng-template>
+                                </ng-template>
+                            </td>
+                            <td class="stock-col">
+                                <span class="in-stock" *ngIf="product.stock > 0">In stock</span>
+                                <span class="out-of-stock" *ngIf="product.stock < 1">Out of stock</span>
+                            </td>
+                            <td class="action-col">
+                                <button class="btn btn-block btn-outline-primary-2" *ngIf="product.stock > 0"
+                                    (click)="wishlistService.moveToCart( product )"><i class="icon-cart-plus"></i>Add to
+                                    Cart</button>
+                                <button class="btn btn-block btn-outline-primary-2 disabled"
+                                    *ngIf="product.stock < 1">Out
+                                    of Stock</button>
+                            </td>
+                            <td class="remove-col"><button class="btn-remove"
+                                    (click)="wishlistService.removeFromWishList( product )"><i
+                                        class="icon-close"></i></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="wishlist-share">
+                    <div class="social-icons social-icons-sm mb-2">
+                        <label class="social-label">Share on:</label>
+                        <a href="javascript:;" class="social-icon" title="Facebook"><i class="icon-facebook-f"></i></a>
+                        <a href="javascript:;" class="social-icon" title="Twitter"><i class="icon-twitter"></i></a>
+                        <a href="javascript:;" class="social-icon" title="Instagram"><i class="icon-instagram"></i></a>
+                        <a href="javascript:;" class="social-icon" title="Youtube"><i class="icon-youtube"></i></a>
+                        <a href="javascript:;" class="social-icon" title="Pinterest"><i class="icon-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</main>

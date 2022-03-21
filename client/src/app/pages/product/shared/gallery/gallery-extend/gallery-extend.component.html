@@ -1,0 +1,12 @@
+<div class="product-lg position-relative gallery" style="min-height: 376px;">
+    <span class="product-label label-new" *ngIf="product.new">New</span>
+    <span class="product-label label-sale" *ngIf="product.sale_price">Sale</span>
+    <span class="product-label label-top" *ngIf="product.top">Top</span>
+    <span class="product-label label-out" *ngIf="!product.stock || product.stock == 0">Out Of Stock</span>
+
+    <owl-carousel [carouselClasses]="'product-gallery-carousel owl-full owl-nav-dark'" [options]="options">
+        <molla-image class="d-block position-relative" [src]="SERVER_URL + product.pictures[i].url"
+            *ngFor="let item of product.pictures;let i = index;">
+        </molla-image>
+    </owl-carousel>
+</div>

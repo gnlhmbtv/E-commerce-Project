@@ -1,0 +1,15 @@
+.page-content {
+    position: relative;
+}
+@media screen and (min-width: 950px) {
+    .entry-media-fullwidth {
+        padding-top: 600px !important;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .sticky-content {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 80px;
+    }
+}

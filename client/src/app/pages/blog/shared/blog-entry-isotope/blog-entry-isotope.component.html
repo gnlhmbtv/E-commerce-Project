@@ -1,0 +1,26 @@
+<div *ngIf="displayPosts">
+	<nav class="blog-nav" *ngIf="showNav">
+		<ul class="menu-cat entry-filter justify-content-center" tabClick role="tablist">
+			<li *ngFor="let filter of filters; let i = index; let isFirst = first" [class.active]="isFirst" role="tab">
+				<a href="javascript:;" [attr.data-filter]="filter"
+					(click)="filterBlogs($event);">{{ navText[i] }}<span>{{ counts[i] }}</span></a>
+			</li>
+		</ul>
+	</nav>
+
+	<div class="content">
+		<molla-isotope-grid #blogIsotope [class]="'entry-container max-col-' + itemsPerRow" [options]="gridOptions">
+			<div class="col-1 grid-sizer"></div>
+			<div *ngFor="let post of displayPosts | slice: start: start + maxCount" class="entry-item"
+				[ngClass]="getPostCategory(post) + ' col-md-6 col-lg-' + (12 / itemsPerRow)" [ngSwitch]="postType">
+				<molla-post-one [post]="post" [adClass]="justifyClass" *ngSwitchCase="1" [isContent]="isContent">
+				</molla-post-one>
+				<molla-post-three [post]="post" [adClass]="justifyClass" *ngSwitchCase="3"></molla-post-three>
+			</div>
+		</molla-isotope-grid>
+	</div>
+
+	<molla-pagination *ngIf="displayPosts.length>paginationCount" [total]="paginationCount" [perPage]="maxCount"
+		[adClass]="showNav ? 'justify-content-center' : ''">
+	</molla-pagination>
+</div>

@@ -1,0 +1,39 @@
+<article [class]="'entry entry-mask ' + adClass">
+    <figure class="entry-media" *ngIf="post.image.length <= 1 else carouselBlock" [style.padding-top]="paddingTop">
+        <a [routerLink]="['/blog/single/default/' + post.slug]">
+            <molla-image [src]="SERVER_URL + post.image[0].url" alt="image desc" [fixedPt]="paddingTop"></molla-image>
+        </a>
+    </figure>
+
+    <ng-template #carouselBlock>
+        <figure class="entry-media" [style.padding-top]="paddingTop">
+            <owl-carousel carouselClasses="owl-simple owl-light owl-nav-inside"
+                [options]="sliderOption">
+                <a [routerLink]="['/blog/single/default/' + post.slug]" *ngFor="let item of post.image">
+                    <molla-image [src]="SERVER_URL + item.url" alt="image desc" [fixedPt]="paddingTop">
+                    </molla-image>
+                </a>
+            </owl-carousel>
+        </figure>
+    </ng-template>
+
+    <div class="entry-body">
+        <div class="entry-meta">
+            <a [routerLink]="['/blog/single/default/' + post.slug]">{{ post.date | date }}</a>
+            <span class="meta-separator">|</span>
+            <a [routerLink]="['/blog/single/default/' + post.slug]">{{ post.comments }} Comments</a>
+        </div>
+
+        <h2 class="entry-title">
+            <a [routerLink]="['/blog/single/default/' + post.slug]">{{ post.title }}</a>
+        </h2>
+
+        <div class="entry-cats">
+            in&nbsp;
+            <span *ngFor="let cat of post.blog_categories; let i = index">
+                <a [routerLink]="['/blog/classic']"
+                    [queryParams]="{category: cat.slug}">{{ cat.name }}</a>{{post.blog_categories.length - 1 > i ? ', ' : '' }}
+            </span>
+        </div>
+    </div>
+</article>

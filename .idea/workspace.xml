@@ -5,12 +5,157 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a448bfe-16bc-43de-9608-84cd2b6a6fc6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/classes/cart-item.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/classes/post.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/classes/product.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/accordion/accordion.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/accordion/accordion.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/accordion/accordion.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/accordion/card/card.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/accordion/card/card.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/accordion/card/card.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/blog-post/post-four/post-four.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/blog-post/post-four/post-four.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/blog-post/post-four/post-four.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/blog-post/post-one/post-one.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/blog-post/post-one/post-one.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/blog-post/post-one/post-one.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/blog-post/post-three/post-three.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/blog-post/post-three/post-three.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/blog-post/post-three/post-three.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/blog-post/post-two/post-two.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/blog-post/post-two/post-two.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/blog-post/post-two/post-two.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/breadcrumb/breadcrumb.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/breadcrumb/breadcrumb.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/breadcrumb/breadcrumb.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/count-down/count-down.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/count-down/count-down.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/count-down/count-down.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/count-to/count-to.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/count-to/count-to.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/count-to/count-to.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/footer/footer.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/footer/footer.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/footer/footer.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/headers/header/header.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/headers/header/header.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/headers/header/header.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/headers/shared/cart-menu/cart-menu.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/headers/shared/cart-menu/cart-menu.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/headers/shared/cart-menu/cart-menu.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/headers/shared/header-search/header-search.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/headers/shared/header-search/header-search.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/headers/shared/header-search/header-search.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/headers/shared/main-menu/main-menu.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/headers/shared/main-menu/main-menu.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/headers/shared/main-menu/main-menu.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/headers/shared/mobile-button/mobile-button.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/headers/shared/mobile-button/mobile-button.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/headers/shared/mobile-button/mobile-button.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/headers/shared/mobile-menu/mobile-menu.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/headers/shared/mobile-menu/mobile-menu.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/headers/shared/mobile-menu/mobile-menu.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/headers/shared/wishlist-menu/wishlist-menu.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/headers/shared/wishlist-menu/wishlist-menu.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/headers/shared/wishlist-menu/wishlist-menu.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/image/image.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/image/image.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/image/image.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/isotope-grid/isotope-grid.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/isotope-grid/isotope-grid.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/isotope-grid/isotope-grid.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/modals/login-modal/login-modal.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/modals/login-modal/login-modal.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/modals/login-modal/login-modal.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/modals/newsletter-modal/newsletter-modal.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/modals/newsletter-modal/newsletter-modal.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/modals/newsletter-modal/newsletter-modal.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/modals/quick-view-two/quick-view-two.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/modals/quick-view-two/quick-view-two.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/modals/quick-view-two/quick-view-two.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/modals/quick-view/quick-view.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/modals/quick-view/quick-view.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/modals/quick-view/quick-view.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/modals/video-modal/video-modal.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/modals/video-modal/video-modal.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/modals/video-modal/video-modal.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/page-header/page-header.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/page-header/page-header.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/page-header/page-header.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/pagination/pagination.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/pagination/pagination.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/pagination/pagination.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-eight/product-eight.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-eight/product-eight.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-eight/product-eight.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-eleven/product-eleven.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-eleven/product-eleven.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-eleven/product-eleven.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-five/product-five.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-five/product-five.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-five/product-five.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-four/product-four.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-four/product-four.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-four/product-four.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-nine/product-nine.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-nine/product-nine.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-nine/product-nine.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-one/product-one.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-one/product-one.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-one/product-one.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-seven/product-seven.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-seven/product-seven.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-seven/product-seven.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-six/product-six.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-six/product-six.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-six/product-six.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-ten/product-ten.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-ten/product-ten.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-ten/product-ten.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-thirteen/product-thirteen.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-thirteen/product-thirteen.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-thirteen/product-thirteen.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-three/product-three.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-three/product-three.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-three/product-three.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-twelve/product-twelve.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-twelve/product-twelve.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-twelve/product-twelve.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-two/product-two.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-two/product-two.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/product/product-two/product-two.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/quantity-input/quantity-input.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/quantity-input/quantity-input.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/components/quantity-input/quantity-input.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/directives/bg-parallax.directive.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/directives/content-anim.directive.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/directives/custom-tab-click.directive.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/directives/product-hover.directive.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/layout/layout.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/layout/layout.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/layout/layout.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/pipes/attr-filter.pipe.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/pipes/cat-filter.pipe.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/pipes/safe-content.pipe.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/services/api.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/services/cart.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/services/compare.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/services/modal.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/services/utils.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/shared/services/wishlist.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/Controllers/ProductsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Controllers/ProductsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/bin/Debug/net5.0/API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/bin/Debug/net5.0/API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/bin/Debug/net5.0/API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/API/bin/Debug/net5.0/API.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/shop/shop.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/shop/shop.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/shop/shop.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/shop/shop.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/shop/shop.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/shop/shop.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/core/nav-bar/nav-bar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/core/nav-bar/nav-bar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/core/nav-bar/nav-bar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/core/nav-bar/nav-bar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/environments/environment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +207,8 @@
       <updated>1647183410949</updated>
       <workItem from="1647183447329" duration="1399000" />
       <workItem from="1647240426050" duration="9549000" />
-      <workItem from="1647783766607" duration="3725000" />
+      <workItem from="1647783766607" duration="4659000" />
+      <workItem from="1647846300105" duration="8928000" />
     </task>
     <servers />
   </component>

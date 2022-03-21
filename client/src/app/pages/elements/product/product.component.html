@@ -1,0 +1,147 @@
+<main class="main no-span">
+    <molla-page-header title="Products" subtitle="Elements"></molla-page-header>
+
+    <nav class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a routerLink="/">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a routerLink="/elements">Elements</a>
+                </li>
+                <li class="breadcrumb-item active">Products</li>
+            </ol>
+        </div>
+    </nav>
+
+    <div class="page-content skeleton-body">
+        <div class="container">
+            <h2 class="title text-center mb-3">3 Columns Large</h2>
+            <div class="row" *ngIf="!loaded else elseBlock1">
+                <div class="col-6 col-md-4 col-lg-4 mb-2" *ngFor="let item of [1,2,3]">
+                    <div class="skel-pro"></div>
+                </div>
+            </div>
+            <ng-template #elseBlock1>
+                <div class="row">
+                    <div class="col-6 col-md-4 col-lg-4" *ngFor="let product of products| slice: 0 : 3">
+                        <molla-product-one [product]="product"></molla-product-one>
+                    </div>
+                </div>
+            </ng-template>
+
+            <hr class="mt-1 mb-5">
+
+            <h2 class="title text-center mb-3">4 Columns Carousel</h2>
+            <div *ngIf="!loaded else elseBlock2">
+                <owl-carousel carouselClasses="owl-simple carousel-equal-height carousel-with-shadow"
+                    [options]="sliderOption2">
+                    <div class="skel-pro" *ngFor="let item of [1,2,3,4]"></div>
+                </owl-carousel>
+            </div>
+
+            <ng-template #elseBlock2>
+                <owl-carousel carouselClasses="owl-simple carousel-equal-height carousel-with-shadow"
+                    [options]="sliderOption2">
+                    <molla-product-two [product]="product" *ngFor="let product of products| slice: 0: 4">
+                    </molla-product-two>
+                </owl-carousel>
+            </ng-template>
+
+            <hr class="mt-3 mb-5">
+            <h2 class="title text-center mb-3">4 Columns Carousel 2</h2>
+
+            <div *ngIf="!loaded else elseBlock3">
+                <owl-carousel carouselClasses="owl-simple carousel-equal-height carousel-with-shadow"
+                    [options]="sliderOption2">
+                    <div class="skel-pro" *ngFor="let item of [1,2,3,4]"></div>
+                </owl-carousel>
+            </div>
+
+            <ng-template #elseBlock3>
+                <owl-carousel carouselClasses="owl-simple carousel-equal-height carousel-with-shadow"
+                    [options]="sliderOption2">
+                    <molla-product-three [product]="product" *ngFor="let product of products| slice: 0: 4">
+                    </molla-product-three>
+                </owl-carousel>
+            </ng-template>
+
+            <hr class="mt-3 mb-5">
+
+            <h2 class="title text-center mb-3">4 Columns Simple</h2>
+
+            <div class="row" *ngIf="!loaded else elseBlock4">
+                <div class="col-6 col-md-4 col-lg-3 mb-2" *ngFor="let item of [1,2,3,4]">
+                    <div class="skel-pro"></div>
+                </div>
+            </div>
+
+            <ng-template #elseBlock4>
+                <div class="row">
+                    <div class="col-6 col-md-4 col-lg-3" *ngFor="let product of products| slice: 0: 4">
+                        <molla-product-four [product]="product"></molla-product-four>
+                    </div>
+                </div>
+            </ng-template>
+
+
+            <hr class="mt-2 mb-5">
+            <h2 class="title text-center mb-3">5 Columns Simple</h2>
+
+            <div *ngIf="!loaded else elseBlock5">
+                <owl-carousel carouselClasses="owl-simple carousel-equal-height carousel-with-shadow"
+                    [options]="sliderOption1">
+                    <div class="skel-pro" *ngFor="let item of [1,2,3,4,5]"></div>
+                </owl-carousel>
+            </div>
+
+            <ng-template #elseBlock5>
+                <owl-carousel carouselClasses="owl-simple carousel-equal-height carousel-with-shadow product-4-carousel"
+                    [options]="sliderOption1">
+                    <molla-product-five [product]="product" *ngFor="let product of products| slice: 0: 5">
+                    </molla-product-five>
+                </owl-carousel>
+            </ng-template>
+
+            <hr class="mt-0 mb-5" />
+        </div>
+
+        <div class="container-fluid">
+            <h2 class="title text-center mb-3">Fullwidth</h2>
+
+            <div class="row" *ngIf="!loaded else elseBlock6">
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-2" *ngFor="let item of [1,2,3,4,5,6]">
+                    <div class="skel-pro"></div>
+                </div>
+            </div>
+
+            <ng-template #elseBlock6>
+                <div class="row">
+                    <div class="col-6 col-md-4 col-lg-3 col-xl-2" *ngFor="let product of products| slice: 0: 6">
+                        <molla-product-six [product]="product"></molla-product-six>
+                    </div>
+                </div>
+            </ng-template>
+        </div>
+
+        <div class="container">
+            <hr class="mt-2 mb-5">
+            <h2 class="title text-center mb-3">4 Columns Without Space</h2>
+
+            <div class="row no-gutters" *ngIf="!loaded else elseBlock7">
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-2" *ngFor="let item of [1,2,3,4]">
+                    <div class="skel-pro"></div>
+                </div>
+            </div>
+
+            <ng-template #elseBlock7>
+                <div class="row no-gutters">
+                    <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let product of products| slice: 0: 4">
+                        <molla-product-seven [product]="product"></molla-product-seven>
+                    </div>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</main>

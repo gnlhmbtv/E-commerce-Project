@@ -1,0 +1,9 @@
+<div class="page-wrapper">
+    <molla-header [containerClass]="containerClass"></molla-header>
+
+    <div [@routeAnimations]="prepareRoute(outlet)">
+        <router-outlet #outlet="outlet"></router-outlet>
+    </div>
+
+    <molla-footer [containerClass]="containerClass" [isBottomSticky]="isBottomSticky"></molla-footer>
+</div>

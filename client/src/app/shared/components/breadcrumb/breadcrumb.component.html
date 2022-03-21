@@ -1,0 +1,40 @@
+<nav aria-label="breadcrumb" class="breadcrumb-nav border-0 mb-0">
+    <div [class]="'d-flex align-items-center ' + (fullWidth ? 'container-fluid' : 'container')">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a routerLink="/">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a routerLink="/product/default/dark-yellow-lace-cut-out-swing-dress">Product</a>
+            </li>
+            <li class="breadcrumb-item active">{{ current }}</li>
+        </ol>
+
+        <nav class="product-pager ml-auto" aria-label="Product">
+            <a [routerLink]="['../' + prev.slug]" class="product-pager-link product-pager-prev"
+                [class]="{'prev-only': !next}" *ngIf="prev">
+                <i class="icon-angle-left"></i>
+                <span>Prev</span>
+                <div class="product-detail">
+                    <figure class="overflow-hidden">
+                        <molla-image [src]="SERVER_URL + prev.sm_pictures[0].url" alt="Product" class="product-image">
+                        </molla-image>
+                    </figure>
+                    <h3 class="product-name">{{ prev.name }}</h3>
+                </div>
+            </a>
+
+            <a [routerLink]="['../' + next.slug]" class="product-pager-link product-pager-next" *ngIf="next">
+                <span>Next</span>
+                <i class="icon-angle-right"></i>
+                <div class="product-detail">
+                    <figure class="overflow-hidden">
+                        <molla-image [src]="SERVER_URL + next.sm_pictures[0].url" alt="Product" class="product-image">
+                        </molla-image>
+                    </figure>
+                    <h3 class="product-name">{{ next.name }}</h3>
+                </div>
+            </a>
+        </nav>
+    </div>
+</nav>

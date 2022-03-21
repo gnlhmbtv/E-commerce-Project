@@ -1,0 +1,45 @@
+<main class="main">
+    <molla-page-header title="Icon Boxes" subtitle="Elements"></molla-page-header>
+
+    <nav class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a routerLink="/">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a routerLink="/elements">Elements</a>
+                </li>
+                <li class="breadcrumb-item active">Icon Boxes</li>
+            </ol>
+        </div>
+    </nav>
+
+    <div class="page-content" data-parallax class="bg-parallax">
+        <div class="container">
+            <ng-container *ngFor="let iconBox of items; let i=index">
+                <h2 [ngClass]="'title text-center ' + iconBox.mbClass">
+                    {{ iconBox.title }}
+                    <span class="title-separator">/</span>
+                    {{ iconBox.subtitle }}
+                    <span class="title-separator">/</span>
+                    {{ iconBox.cols }}
+                </h2>
+                <div class="row justify-content-center">
+                    <div [ngClass]="'col-sm-6 ' + iconBox.wrClass" *ngFor="let item of iconBox.items">
+                        <div class="icon-box" [ngClass]="iconBox.adClass">
+                            <span class="icon-box-icon">
+                                <i [ngClass]="item.icClass"></i>
+                            </span>
+                            <div class="icon-box-content">
+                                <h3 class="icon-box-title">{{ item.title }}</h3>
+                                <p>{{ item.content }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="mb-6" *ngIf="i != items.length - 1">
+            </ng-container>
+        </div>
+    </div>
+</main>

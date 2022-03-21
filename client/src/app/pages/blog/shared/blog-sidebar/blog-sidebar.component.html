@@ -1,0 +1,128 @@
+<div [class]="'sidebar mt-0 ' + (toggle ? 'sidebar-filter px-3 right pt-3' : '')">
+    <div class="widget widget-search">
+        <h3 class="widget-title">Search</h3>
+
+        <form action="#">
+            <label for="ws" class="sr-only">Search in blog</label>
+            <input type="search" class="form-control" name="ws" id="ws" placeholder="Search in blog" required>
+            <button type="submit" class="btn"><i class="icon-search"></i><span class="sr-only">Search</span></button>
+        </form>
+    </div>
+
+    <div class="widget widget-cats">
+        <h3 class="widget-title">Categories</h3>
+
+        <ul *ngIf="single else listBlock">
+            <li *ngFor="let cat of categories"><a [routerLink]="['/blog/classic']" [queryParams]="{category: cat.slug}"
+                    routerLinkActive="active">{{ cat.name }}<span>{{ cat.count }}</span></a></li>
+        </ul>
+        <ng-template #listBlock>
+            <ul>
+                <li *ngFor="let cat of categories"><a [routerLink]="" [queryParams]="{category: cat.slug}"
+                        routerLinkActive="active"
+                        queryParamsHandling="merge">{{ cat.name }}<span>{{ cat.count }}</span></a>
+                </li>
+            </ul>
+        </ng-template>
+    </div>
+
+    <div class="widget">
+        <h3 class="widget-title">Popular Posts</h3>
+
+        <ul class="posts-list">
+            <li>
+                <figure>
+                    <a routerLink="/blog/single/default/sed-adipiscing-ornare.">
+                        <img [src]="SERVER_URL + '/uploads/post_1_b9361c0eac.jpg'" alt="post" />
+                    </a>
+                </figure>
+
+                <div>
+                    <span>Nov 22, 2018</span>
+                    <h4><a routerLink="/blog/single/default/sed-adipiscing-ornare.">Aliquam tincidunt mauris
+                            eurisus.</a></h4>
+                </div>
+            </li>
+            <li>
+                <figure>
+                    <a routerLink="/blog/single/default/fusce-pellentesque-suscipit.">
+                        <img [src]="SERVER_URL + '/uploads/post_4_be80872f91.jpg'" alt="post">
+                    </a>
+                </figure>
+
+                <div>
+                    <span>Nov 19, 2018</span>
+                    <h4><a routerLink="/blog/single/default/fusce-pellentesque-suscipit.">Cras ornare tristique
+                            elit.</a></h4>
+                </div>
+            </li>
+            <li>
+                <figure>
+                    <a routerLink="/blog/single/default/donec-nec-justo-eget-felis-facilisis-fermentum.">
+                        <img [src]="SERVER_URL + '/uploads/post_5_3c9d9563f6.jpg'" alt="post">
+                    </a>
+                </figure>
+
+                <div>
+                    <span>Nov 12, 2018</span>
+                    <h4><a routerLink="/blog/single/default/donec-nec-justo-eget-felis-facilisis-fermentum.">Vivamus
+                            vestibulum ntulla nec ante.</a></h4>
+                </div>
+            </li>
+            <li>
+                <figure>
+                    <a routerLink="/blog/single/default/vivamus-vestibulum-ngtulla-necante.">
+                        <img [src]="SERVER_URL + '/uploads/post_2_a2b4601de7.jpg'" alt="post">
+                    </a>
+                </figure>
+
+                <div>
+                    <span>Nov 25, 2018</span>
+                    <h4><a routerLink="/blog/single/default/vivamus-vestibulum-ngtulla-necante.">Donec quis
+                            dui at dolor tempor interdum.</a></h4>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="widget widget-banner-sidebar">
+        <div class="banner-sidebar-title">ad box 280 x 280</div>
+
+        <div class="banner-sidebar banner-overlay">
+            <a routerLink="/shop/sidebar/3cols" class="w-100">
+                <molla-image src="assets/images/blog/sidebar/banner.jpg" alt="banner"></molla-image>
+            </a>
+
+            <div class="banner-content text-left">
+                <p class="mb-1">online & in-store</p>
+                <h3 class="banner-subtitle text-uppercase">Spring Sale</h3>
+                <h2 class="banner-title">Up to 60% off<br />from $55</h2>
+                <a routerLink="/shop/sidebar/3cols"
+                    class="btn btn-outline btn-md btn-outline-white text-uppercase m-0">Shop Now</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="widget">
+        <h3 class="widget-title">Browse Tags</h3>
+
+        <div class="tagcloud">
+            <a href="javascript:;">fashion</a>
+            <a href="javascript:;">style</a>
+            <a href="javascript:;">women</a>
+            <a href="javascript:;">photography</a>
+            <a href="javascript:;">travel</a>
+            <a href="javascript:;">shopping</a>
+            <a href="javascript:;">hobbies</a>
+        </div>
+    </div>
+
+    <div class="widget widget-text">
+        <h3 class="widget-title">About Blog</h3>
+
+        <div class="widget-text-content">
+            <p>Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, pulvinar nunc sapien ornare nisl.
+            </p>
+        </div>
+    </div>
+</div>

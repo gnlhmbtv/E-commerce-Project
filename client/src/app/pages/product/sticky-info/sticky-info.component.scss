@@ -1,0 +1,8 @@
+@media screen and (min-width: 768px) {
+    .sidebar {
+        position: -webkit-sticky;
+        position: sticky;
+        padding-bottom: 1px;
+        top: 80px;
+    }
+}

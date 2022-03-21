@@ -1,0 +1,65 @@
+<article class="entry entry-list">
+    <div class="row align-items-center">
+        <div [class]="'col-md-' + imageSize">
+            <figure class="entry-media" *ngIf="post.image.length <= 1 else carouselBlock"
+                [class.entry-video]="post.type == 'video'" [style.padding-top]="paddingTop">
+                <a [routerLink]="['/blog/single/default/' + post.slug]" *ngIf="post.type !== 'video' else videoBlock">
+                    <molla-image [src]="SERVER_URL + post.image[0].url" alt="image desc" [fixedPt]="paddingTop">
+                    </molla-image>
+                </a>
+
+                <ng-template #videoBlock>
+                    <a [routerLink]="['/blog/single/default/' + post.slug]">
+                        <molla-image [src]="SERVER_URL + post.image[0].url" alt="image desc" [fixedPt]="paddingTop">
+                        </molla-image>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=vBPgmASQ1A0" (click)="showModal($event)"
+                        class="btn-video btn-iframe"><i class="icon-play"></i></a>
+                </ng-template>
+            </figure>
+
+            <ng-template #carouselBlock>
+                <figure class="entry-media" [style.padding-top]="paddingTop">
+                    <owl-carousel carouselClasses="owl-simple owl-light owl-nav-inside"
+                        [options]="sliderOption">
+                        <a [routerLink]="['/blog/single/default/' + post.slug]" *ngFor="let item of post.image">
+                            <molla-image [src]="SERVER_URL + item.url" alt="image desc" [fixedPt]="paddingTop">
+                            </molla-image>
+                        </a>
+                    </owl-carousel>
+                </figure>
+            </ng-template>
+        </div>
+        <div [class]="'col-md-' + (12 - imageSize)">
+            <div class="entry-body">
+                <div class="entry-meta">
+                    <span class="entry-author">
+                        by <a [routerLink]="['/blog/single/default/' + post.slug]">{{ post.author }}</a>
+                    </span>
+                    <span class="meta-separator">|</span>
+                    <a [routerLink]="['/blog/single/default/' + post.slug]">{{ post.date | date }}</a>
+                    <span class="meta-separator">|</span>
+                    <a [routerLink]="['/blog/single/default/' + post.slug]">{{ post.comments }} Comments</a>
+                </div>
+
+                <h2 class="entry-title">
+                    <a [routerLink]="['/blog/single/default/' + post.slug]">{{ post.title }}</a>
+                </h2>
+
+                <div class="entry-cats">
+                    in&nbsp;
+                    <span *ngFor="let cat of post.blog_categories; let i = index">
+                        <a [routerLink]="['/blog/classic']"
+                            [queryParams]="{category: cat.slug}">{{ cat.name }}</a>{{post.blog_categories.length - 1 > i ? ', ' : '' }}
+                    </span>
+                </div>
+
+                <div class="entry-content">
+                    <p>{{ post.content }}</p>
+
+                    <a [routerLink]="['/blog/single/default/' + post.slug]" class="read-more">Continue Reading</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>

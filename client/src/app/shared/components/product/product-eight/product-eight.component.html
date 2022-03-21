@@ -1,0 +1,35 @@
+<div class="product product-sm">
+    <figure class="product-media">
+        <a [routerLink]="['/product/default/'+ product.slug]">
+            <molla-image [src]="SERVER_URL + product.sm_pictures[0].url" alt="Product"
+                [width]="product.sm_pictures[0].width" [height]="product.sm_pictures[0].height" fixedPt="100%"
+                class="product-image">
+            </molla-image>
+            <molla-image [src]="SERVER_URL + product.sm_pictures[1].url" alt="Product" fixedPt="100%"
+                class="product-image-hover" *ngIf="product.sm_pictures[1]"></molla-image>
+        </a>
+    </figure>
+
+    <div class="product-body">
+        <h3 class="product-title">
+            <a [routerLink]="['/product/default/'+ product.slug]">{{ product.name }}</a>
+        </h3>
+
+        <div class="product-price" *ngIf="!product.stock || product.stock == 0 else elseBlock">
+            <span class="out-price">${{ product.price.toFixed(2) }}</span>
+        </div>
+
+        <ng-template #elseBlock>
+            <div class="product-price" *ngIf="minPrice == maxPrice else elseBlock">${{ minPrice.toFixed(2) }}</div>
+            <ng-template #elseBlock>
+                <div class="product-price" *ngIf="product.variants.length == 0 else elseBlock">
+                    <span class="new-price">${{ minPrice.toFixed(2) }}</span>
+                    <span class="old-price">${{ maxPrice.toFixed(2) }}</span>
+                </div>
+                <ng-template #elseBlock>
+                    <div class="product-price">${{minPrice.toFixed(2)}}&ndash;${{maxPrice.toFixed(2)}}</div>
+                </ng-template>
+            </ng-template>
+        </ng-template>
+    </div>
+</div>

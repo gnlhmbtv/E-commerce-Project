@@ -1,0 +1,20 @@
+<div class="widget widget-products pt-lg-0 pt-3 mb-4">
+    <h4 class="widget-title mb-1">Related Product</h4>
+
+    <div class="products" style="min-height: 270px;">
+        <div *ngIf="products.length == 0 else elseBlock">
+        </div>
+    
+        <ng-template #elseBlock>
+            <owl-carousel [carouselClasses]="'owl-simple'">
+                <div>
+                    <molla-product-eight [product]="product" *ngFor="let product of products | slice : 0 : 4 ">
+                    </molla-product-eight>
+                </div>
+            </owl-carousel>
+        </ng-template>
+    </div>
+
+    <a routerLink="/shop/sidebar/4cols" class="btn btn-outline-dark-3 text-truncate"><span>View More Products</span><i
+            class="icon-long-arrow-right"></i></a>
+</div>

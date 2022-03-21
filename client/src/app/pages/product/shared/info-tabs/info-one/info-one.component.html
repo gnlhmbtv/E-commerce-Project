@@ -1,0 +1,189 @@
+<div class="product-details-tab">
+    <ul ngbNav #nav="ngbNav" class="justify-content-center nav nav-pills">
+        <li ngbNavItem>
+            <a ngbNavLink>
+                Description
+            </a>
+            <ng-template ngbNavContent>
+                <div class="product-desc-content">
+                    <h3>Product Information</h3>
+                    <p class="pb-1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque
+                        volutpat mattis
+                        eros. Nullam malesuada erat ut turpis. Suspendisse urna viverra non, semper suscipit, posuere a,
+                        pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci.
+                        Aenean dignissim pellentesque felis. Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec
+                        consectetuer ligula vulputate sem tristique cursus. </p>
+                    <ul>
+                        <li>Nunc nec porttitor turpis. In eu risus enim. In vitae mollis elit. </li>
+                        <li>Vivamus finibus vel mauris ut vehicula.</li>
+                        <li>Nullam a magna porttitor, dictum risus nec, faucibus sapien.</li>
+                    </ul>
+
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis
+                        eros. Nullam malesuada erat ut turpis. Suspendisse urna viverra non, semper suscipit, posuere a,
+                        pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci.
+                        Aenean dignissim pellentesque felis. Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec
+                        consectetuer ligula vulputate sem tristique cursus. </p>
+                </div>
+            </ng-template>
+        </li>
+        <li ngbNavItem>
+            <a ngbNavLink>
+                Additional information
+            </a>
+            <ng-template ngbNavContent>
+                <div class="product-desc-content">
+                    <h3>Information</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis
+                        eros. Nullam malesuada erat ut turpis. Suspendisse urna viverra non, semper suscipit, posuere a,
+                        pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci.
+                    </p>
+
+                    <h3 class="pt-2">Fabric & care</h3>
+                    <ul>
+                        <li>Faux suede fabric</li>
+                        <li>Gold tone metal hoop handles.</li>
+                        <li>RI branding</li>
+                        <li>Snake print trim interior </li>
+                        <li>Adjustable cross body strap</li>
+                        <li> Height: 31cm; Width: 32cm; Depth: 12cm; Handle Drop: 61cm</li>
+                    </ul>
+
+                    <h3>Size</h3>
+                    <p>one size</p>
+                </div>
+            </ng-template>
+        </li>
+        <li ngbNavItem>
+            <a ngbNavLink>
+                Shipping & Returns
+            </a>
+            <ng-template ngbNavContent>
+                <div class="product-desc-content">
+                    <h3>Delivery & returns</h3>
+                    <p>We deliver to over 100 countries around the world. For full details of the delivery options we
+                        offer, please view our <a href="javascript:;">Delivery information</a><br>
+                        We hope you’ll love every purchase, but if you ever need to return an item you can do so within
+                        a month of receipt. For full details of how to make a return, please view our <a
+                            href="javascript:;">Returns information</a></p>
+                </div>
+            </ng-template>
+        </li>
+        <li ngbNavItem>
+            <a ngbNavLink>
+                Reviews (2)
+            </a>
+            <ng-template ngbNavContent>
+                <div class="reviews">
+                    <h3>Reviews ({{ product.review }})</h3>
+                    <div class="review">
+                        <div class="row no-gutters">
+                            <div class="col-auto">
+                                <h4><a href="javascript:;">Samanta J.</a></h4>
+                                <div class="ratings-container">
+                                    <div class="ratings">
+                                        <div class="ratings-val" [style.width]="product.ratings * 20 + '%'"></div>
+                                        <span class="tooltip-text">{{ product.ratings.toFixed(2) }}</span>
+                                    </div>
+                                </div>
+                                <span class="review-date">6 days ago</span>
+                            </div>
+                            <div class="col">
+                                <h4>Good, perfect size</h4>
+
+                                <div class="review-content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus cum dolores
+                                        assumenda asperiores facilis porro reprehenderit animi culpa atque blanditiis
+                                        commodi perspiciatis doloremque, possimus, explicabo, autem fugit beatae quae
+                                        voluptas!</p>
+                                </div>
+
+                                <div class="review-action">
+                                    <a href="javascript:;"><i class="icon-thumbs-up"></i>Helpful (2)</a>
+                                    <a href="javascript:;"><i class="icon-thumbs-down"></i>Unhelpful (0)</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="review">
+                        <div class="row no-gutters">
+                            <div class="col-auto">
+                                <h4><a href="javascript:;">John Doe</a></h4>
+                                <div class="ratings-container">
+                                    <div class="ratings">
+                                        <div class="ratings-val" [style.width]="product.ratings * 20 + '%'"></div>
+                                        <span class="tooltip-text">{{ product.ratings.toFixed(2) }}</span>
+                                    </div>
+                                </div>
+                                <span class="review-date">5 days ago</span>
+                            </div>
+                            <div class="col">
+                                <h4>Very good</h4>
+
+                                <div class="review-content">
+                                    <p>Sed, molestias, tempore? Ex dolor esse iure hic veniam laborum blanditiis
+                                        laudantium iste amet. Cum non voluptate eos enim, ab cumque nam, modi, quas iure
+                                        illum repellendus, blanditiis perspiciatis beatae!</p>
+                                </div>
+
+                                <div class="review-action">
+                                    <a href="javascript:;"><i class="icon-thumbs-up"></i>Helpful (0)</a>
+                                    <a href="javascript:;"><i class="icon-thumbs-down"></i>Unhelpful (0)</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reply">
+                    <div class="title-wrapper text-left">
+                        <h3 class="title title-simple text-left text-normal">Add a Review
+                        </h3>
+                        <p>Your email address will not be published. Required fields are
+                            marked *</p>
+                    </div>
+                    <div class="rating-form">
+                        <label for="rating" class="text-dark">Your rating * </label>
+                        <span class="rating-stars selected">
+                            <a [class]="'star-' + num " href="javascript:;" (click)="setRating($event)"
+                                *ngFor="let num of [1,2,3,4,5]">{{ num }}</a>
+                        </span>
+
+                        <select name="rating" id="rating" required="" style="display: 'none'">
+                            <option value="">Rate…</option>
+                            <option value="5">Perfect</option>
+                            <option value="4">Good</option>
+                            <option value="3">Average</option>
+                            <option value="2">Not that bad</option>
+                            <option value="1">Very poor</option>
+                        </select>
+                    </div>
+                    <form action="#">
+                        <textarea id="reply-message" cols="30" rows="6" class="form-control mb-2"
+                            placeholder="Comment *" required></textarea>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" id="reply-name" name="reply-name"
+                                    placeholder="Name *" required />
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" id="reply-email" name="reply-email"
+                                    placeholder="Email *" required />
+                            </div>
+                        </div>
+                        <div class="form-checkbox d-flex align-items-start mb-2">
+                            <input type="checkbox" class="custom-checkbox" id="signin-remember"
+                                name="signin-remember" />
+                            <label class="form-control-label ml-3" for="signin-remember">
+                                Save my name, email, and website in this browser for the
+                                next time I comment.
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </ng-template>
+        </li>
+    </ul>
+    <div [ngbNavOutlet]="nav"></div>
+</div>

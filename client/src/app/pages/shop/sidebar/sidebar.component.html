@@ -1,0 +1,124 @@
+<div class="main shop">
+    <molla-page-header [title]="pageTitle" subtitle="Shop"></molla-page-header>
+    <nav aria-label="breadcrumb" class="breadcrumb-nav mb-2">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a routerLink="/">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a routerLink="/shop/sidebar/list">Shop</a>
+                </li>
+                <li class="breadcrumb-item active">{{ pageTitle }}</li>
+                <li class="breadcrumb-item" *ngIf="searchTerm != ''">
+                    <span>Search - {{ searchTerm }}</span>
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 skeleton-body sekl-shop-products" [class.loaded]="loaded">
+                    <div class="toolbox">
+                        <div class="toolbox-left">
+                            <div class="toolbox-info">
+                                Showing
+                                <span>{{ products.length }} of {{ totalCount }}</span> Products
+                            </div>
+                        </div>
+
+                        <div class="toolbox-right">
+                            <div class="toolbox-sort">
+                                <label for="sortby">Sort by:</label>
+                                <div class="select-custom">
+                                    <select name="sortby" id="sortby" class="form-control"
+                                        (change)="changeOrderBy($event)" [value]="orderBy">
+                                        <option value="default">Default</option>
+                                        <option value="featured">Most Popular</option>
+                                        <option value="rating">Most Rated</option>
+                                        <option value="new">Date</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="toolbox-layout">
+                                <a routerLink="/shop/sidebar/list" queryParamsHandling="merge" class="btn-layout"
+                                   routerLinkActive="active">
+                                    <svg width="16" height="10">
+                                        <rect x="0" y="0" width="4" height="4" />
+                                        <rect x="6" y="0" width="10" height="4" />
+                                        <rect x="0" y="6" width="4" height="4" />
+                                        <rect x="6" y="6" width="10" height="4" />
+                                    </svg>
+                                </a>
+
+                                <a routerLink="/shop/sidebar/2cols" queryParamsHandling="merge" class="btn-layout"
+                                   routerLinkActive="active">
+                                    <svg width="10" height="10">
+                                        <rect x="0" y="0" width="4" height="4" />
+                                        <rect x="6" y="0" width="4" height="4" />
+                                        <rect x="0" y="6" width="4" height="4" />
+                                        <rect x="6" y="6" width="4" height="4" />
+                                    </svg>
+                                </a>
+
+                                <a routerLink="/shop/sidebar/3cols" queryParamsHandling="merge" class="btn-layout"
+                                   routerLinkActive="active">
+                                    <svg width="16" height="10">
+                                        <rect x="0" y="0" width="4" height="4" />
+                                        <rect x="6" y="0" width="4" height="4" />
+                                        <rect x="12" y="0" width="4" height="4" />
+                                        <rect x="0" y="6" width="4" height="4" />
+                                        <rect x="6" y="6" width="4" height="4" />
+                                        <rect x="12" y="6" width="4" height="4" />
+                                    </svg>
+                                </a>
+
+                                <a routerLink="/shop/sidebar/4cols" queryParamsHandling="merge" class="btn-layout"
+                                   routerLinkActive="active">
+                                    <svg width="22" height="10">
+                                        <rect x="0" y="0" width="4" height="4" />
+                                        <rect x="6" y="0" width="4" height="4" />
+                                        <rect x="12" y="0" width="4" height="4" />
+                                        <rect x="18" y="0" width="4" height="4" />
+                                        <rect x="0" y="6" width="4" height="4" />
+                                        <rect x="6" y="6" width="4" height="4" />
+                                        <rect x="12" y="6" width="4" height="4" />
+                                        <rect x="18" y="6" width="4" height="4" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <molla-shop-list-one [type]="type" [products]="products" [loaded]="loaded">
+                    </molla-shop-list-one>
+
+                    <molla-pagination [perPage]="perPage" [total]="totalCount" *ngIf="totalCount > perPage">
+                    </molla-pagination>
+                </div>
+
+                <aside class="col-lg-3 skel-shop-sidebar order-lg-first skeleton-body" [class.loaded]="firstLoad">
+                    <div *ngIf="!firstLoad else sidebarLoaded">
+                        <div class="skel-widget"></div>
+                        <div class="skel-widget"></div>
+                        <div class="skel-widget"></div>
+                        <div class="skel-widget"></div>
+                    </div>
+                    <ng-template #sidebarLoaded>
+                        <molla-shop-sidebar-one [toggle]="toggle">
+                        </molla-shop-sidebar-one>
+
+                        <button class="sidebar-fixed-toggler" (click)="toggleSidebar()" *ngIf="toggle">
+                            <i class="icon-cog"></i>
+                        </button>
+
+                        <div class="sidebar-filter-overlay" (click)="hideSidebar()"></div>
+                    </ng-template>
+                </aside>
+            </div>
+        </div>
+    </div>
+</div>

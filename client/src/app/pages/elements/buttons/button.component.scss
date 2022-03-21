@@ -1,0 +1,18 @@
+.btn {
+    min-width: 15rem;
+}
+
+.btn-wrap > span {
+    white-space: nowrap;
+}
+
+@media screen and ( max-width: 320px ) {
+    .btn-wrap > span {
+        font-size: 12px;
+        
+    }
+
+    .btn {
+        min-width: 14rem;
+    }
+}

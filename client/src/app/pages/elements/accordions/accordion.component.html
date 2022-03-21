@@ -1,0 +1,40 @@
+<div class="main">
+    <molla-page-header [title]="'Accordions'" [subtitle]="'Elements'"></molla-page-header>
+
+    <nav class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a routerLink="/">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a routerLink="/elements">Elements</a>
+                </li>
+                <li class="breadcrumb-item active">Accordions</li>
+            </ol>
+        </div>
+    </nav>
+    <div class="page-content">
+        <div class="container">
+            <div *ngFor="let accordionGroup of accordionGroups; let i = index">
+                <h2 class="title mb-3">{{ accordionGroup.title }}</h2>
+
+                <div class="row">
+                    <div class="col-md-6" *ngFor="let accordion of accordionGroup.items; let j = index">
+                        <molla-accordion [adClass]="accordion.adClass" [accordionID]="'accordion' + ( 1 + j + i * 2 )">
+                            <molla-card *ngFor="let card of accordion.cards; let isFirst = first"
+                                [adClass]="accordion.cardAclass" [title]="card.title"
+                                [parent]="'accordion' + ( 1 + j + i * 2 )" [icon]="accordion.showIcon? card.icon : null"
+                                [show]="isFirst ? true : false">
+
+                                {{ card.body }}
+                            </molla-card>
+                        </molla-accordion>
+                    </div>
+                </div>
+
+                <hr class="mb-4" *ngIf="i < accordionGroups.length - 1">
+            </div>
+        </div>
+    </div>
+</div>

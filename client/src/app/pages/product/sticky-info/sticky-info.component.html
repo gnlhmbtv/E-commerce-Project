@@ -1,0 +1,39 @@
+<main class="main">
+    <molla-breadcrumb current="StickyInfo" [prev]="prev" [next]="next">
+    </molla-breadcrumb>
+
+    <div class="page-content">
+        <div class="container skeleton-body">
+            <div class="product-details-top">
+                <div class="row skel-pro-single sticky" [class.loaded]="loaded">
+                    <div class="col-md-6">
+                        <div class="skel-product-gallery"></div>
+                        <product-gallery-sticky [product]="product" *ngIf="loaded"></product-gallery-sticky>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="sidebar sticky-content">
+                            <div class="entry-summary row">
+                                <div class="col-md-12">
+                                    <div class="entry-summary1 mt-2 mt-md-0"></div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="entry-summary2"></div>
+                                </div>
+                            </div>
+
+                            <product-detail-one [product]="product" *ngIf="loaded"></product-detail-one>
+
+                            <div class="skel-pro-tabs" *ngIf="!loaded else infoBlock"></div>
+                            <ng-template #infoBlock>
+                                <product-info-three [product]="product"></product-info-three>
+                            </ng-template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <related-products-one [products]="related" [loaded]="loaded"></related-products-one>
+        </div>
+    </div>
+</main>

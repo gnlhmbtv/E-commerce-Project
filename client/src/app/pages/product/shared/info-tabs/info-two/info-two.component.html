@@ -1,0 +1,241 @@
+<div class="product-details-tab product-details-extended">
+    <ul ngbNav #nav="ngbNav" class="justify-content-center nav nav-pills">
+        <li ngbNavItem>
+            <a ngbNavLink>
+                Description
+            </a>
+            <ng-template ngbNavContent>
+                <div class="product-desc-content">
+                    <div class="product-desc-row bg-image"
+                        style="background-image: url(assets/images/products/single/extended/bg-1.jpg); background-color: #faf9fe;">
+                        <div class="container">
+                            <div class="row justify-content-end">
+                                <div class="col-sm-6 col-lg-4">
+                                    <h2>Product Information</h2>
+                                    <ul>
+                                        <li>Faux suede fabric upper</li>
+                                        <li>Tie strap buckle detail</li>
+                                        <li>Block heel</li>
+                                        <li>Open toe</li>
+                                        <li>Heel Height: 7cm / 2.5 inches</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-desc-row bg-image text-white"
+                        style="background-image: url(assets/images/products/single/extended/bg-2.jpg); background-color: #323232;">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6 mb-2 mb-md-0">
+                                    <h2>Design</h2>
+                                    <p>The perfect choice for the summer months. These wedges are perfect for holidays
+                                        and home, with the thick cross-over strap design and heel strap with an
+                                        adjustable buckle fastening. Featuring chunky soles with an espadrille and
+                                        cork-style wedge. </p>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <h2>Fabric & care</h2>
+                                    <p>As part of our Forever Comfort collection, these wedges have ultimate cushioning
+                                        with soft padding and flexi soles. Perfect for strolls into the old town on
+                                        holiday or a casual wander into the village.</p>
+                                </div>
+                            </div>
+
+                            <div class="mb-5"></div>
+
+                            <img src="assets/images/products/single/extended/sign.png" alt="Sign"
+                                class="ml-auto mr-auto" />
+                        </div>
+                    </div>
+
+                    <div class="product-desc-row bg-image"
+                        style="background-image: url(assets/images/products/single/extended/bg-3.jpg); background-color: #f6f4f5;">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <blockquote>
+                                        <p>“ Everything is important - <br />that success is in the details. ”</p>
+
+                                        <cite>– Steve Jobs</cite>
+                                    </blockquote>
+                                    <p>Nullam mollis. Ut justo. Suspendisse potenti. Sed egestas, ante et vulputate
+                                        volutpat, eros pede semper est, vitae luctus metus libero eu augue. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </li>
+        <li ngbNavItem>
+            <a ngbNavLink>
+                Additional information
+            </a>
+            <ng-template ngbNavContent>
+                <div class="product-desc-content pt-2">
+                    <div class="container">
+                        <h3>Information</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis
+                            eros. Nullam malesuada erat ut turpis. Suspendisse urna viverra non, semper suscipit,
+                            posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris
+                            sit amet orci. </p>
+
+                        <h3 class="pt-2">Fabric & care</h3>
+                        <ul>
+                            <li>Faux suede fabric</li>
+                            <li>Gold tone metal hoop handles.</li>
+                            <li>RI branding</li>
+                            <li>Snake print trim interior </li>
+                            <li>Adjustable cross body strap</li>
+                            <li> Height: 31cm; Width: 32cm; Depth: 12cm; Handle Drop: 61cm</li>
+                        </ul>
+                        <h3>Size</h3>
+                        <p>one size</p>
+                    </div>
+                </div>
+            </ng-template>
+        </li>
+        <li ngbNavItem>
+            <a ngbNavLink>
+                Shipping & Returns
+            </a>
+            <ng-template ngbNavContent>
+                <div class="product-desc-content pt-2">
+                    <div class="container">
+                        <h3>Delivery & returns</h3>
+                        <p>We deliver to over 100 countries around the world. For full details of the delivery options
+                            we offer, please view our <a href="#">Delivery information</a><br />
+                            We hope you’ll love every purchase, but if you ever need to return an item you can do so
+                            within a month of receipt. For full details of how to make a return, please view our <a
+                                href="#">Returns information</a>
+                        </p>
+                    </div>
+                </div>
+            </ng-template>
+        </li>
+        <li ngbNavItem>
+            <a ngbNavLink>
+                Reviews (2)
+            </a>
+            <ng-template ngbNavContent>
+                <div class="container pt-2">
+                    <div class="reviews">
+                        <h3>Reviews ({{ product.review }})</h3>
+                        <div class="review">
+                            <div class="row no-gutters">
+                                <div class="col-auto">
+                                    <h4><a href="javascript:;">Samanta J.</a></h4>
+                                    <div class="ratings-container">
+                                        <div class="ratings">
+                                            <div class="ratings-val" [style.width]="product.ratings * 20 + '%'"></div>
+                                            <span class="tooltip-text">{{ product.ratings.toFixed(2) }}</span>
+                                        </div>
+                                    </div>
+                                    <span class="review-date">6 days ago</span>
+                                </div>
+                                <div class="col">
+                                    <h4>Good, perfect size</h4>
+
+                                    <div class="review-content">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus cum dolores
+                                            assumenda asperiores facilis porro reprehenderit animi culpa atque
+                                            blanditiis
+                                            commodi perspiciatis doloremque, possimus, explicabo, autem fugit beatae
+                                            quae
+                                            voluptas!</p>
+                                    </div>
+
+                                    <div class="review-action">
+                                        <a href="javascript:;"><i class="icon-thumbs-up"></i>Helpful (2)</a>
+                                        <a href="javascript:;"><i class="icon-thumbs-down"></i>Unhelpful (0)</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="review">
+                            <div class="row no-gutters">
+                                <div class="col-auto">
+                                    <h4><a href="javascript:;">John Doe</a></h4>
+                                    <div class="ratings-container">
+                                        <div class="ratings">
+                                            <div class="ratings-val" [style.width]="product.ratings * 20 + '%'"></div>
+                                            <span class="tooltip-text">{{ product.ratings.toFixed(2) }}</span>
+                                        </div>
+                                    </div>
+                                    <span class="review-date">5 days ago</span>
+                                </div>
+                                <div class="col">
+                                    <h4>Very good</h4>
+
+                                    <div class="review-content">
+                                        <p>Sed, molestias, tempore? Ex dolor esse iure hic veniam laborum blanditiis
+                                            laudantium iste amet. Cum non voluptate eos enim, ab cumque nam, modi, quas
+                                            iure
+                                            illum repellendus, blanditiis perspiciatis beatae!</p>
+                                    </div>
+
+                                    <div class="review-action">
+                                        <a href="javascript:;"><i class="icon-thumbs-up"></i>Helpful (0)</a>
+                                        <a href="javascript:;"><i class="icon-thumbs-down"></i>Unhelpful (0)</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reply">
+                        <div class="title-wrapper text-left">
+                            <h3 class="title title-simple text-left text-normal">Add a Review
+                            </h3>
+                            <p>Your email address will not be published. Required fields are
+                                marked *</p>
+                        </div>
+                        <div class="rating-form">
+                            <label for="rating" class="text-dark">Your rating * </label>
+                            <span class="rating-stars selected">
+                                <a [class]="'star-' + num " href="javascript:;" (click)="setRating($event)"
+                                    *ngFor="let num of [1,2,3,4,5]">{{ num }}</a>
+                            </span>
+
+                            <select name="rating" id="rating" required="" style="display: 'none'">
+                                <option value="">Rate…</option>
+                                <option value="5">Perfect</option>
+                                <option value="4">Good</option>
+                                <option value="3">Average</option>
+                                <option value="2">Not that bad</option>
+                                <option value="1">Very poor</option>
+                            </select>
+                        </div>
+                        <form action="#">
+                            <textarea id="reply-message" cols="30" rows="6" class="form-control mb-2"
+                                placeholder="Comment *" required></textarea>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" id="reply-name" name="reply-name"
+                                        placeholder="Name *" required />
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" id="reply-email" name="reply-email"
+                                        placeholder="Email *" required />
+                                </div>
+                            </div>
+                            <div class="form-checkbox d-flex align-items-start mb-2">
+                                <input type="checkbox" class="custom-checkbox" id="signin-remember"
+                                    name="signin-remember" />
+                                <label class="form-control-label ml-3" for="signin-remember">
+                                    Save my name, email, and website in this browser for the
+                                    next time I comment.
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </ng-template>
+        </li>
+    </ul>
+    <div [ngbNavOutlet]="nav"></div>
+</div>

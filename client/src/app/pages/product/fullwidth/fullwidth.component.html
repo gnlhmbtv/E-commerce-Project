@@ -1,0 +1,47 @@
+<main class="main">
+    <molla-breadcrumb current="FullWidth" [prev]="prev" [next]="next" [fullWidth]="true">
+    </molla-breadcrumb>
+
+    <div class="page-content pb-3">
+        <div class="container-fluid horizontal skeleton-body">
+            <div class="row">
+                <div class="col-xxl-10 col-lg-9">
+                    <div class="product-details-top mb-0">
+                        <div class="row skel-pro-single fullwidth" [class.loaded]="loaded">
+                            <div class="col-md-6 col-lg-7">
+                                <div class="skel-product-gallery"></div>
+                                <product-gallery-default [product]="product" *ngIf="loaded" adClass="">
+                                </product-gallery-default>
+                            </div>
+
+                            <div class="col-md-6 col-lg-5">
+                                <div class="entry-summary row">
+                                    <div class="col-md-12">
+                                        <div class="entry-summary1 mt-2 mt-md-0"></div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="entry-summary2"></div>
+                                    </div>
+                                </div>
+                                <product-detail-one [product]="product" *ngIf="loaded"></product-detail-one>
+
+                                <div class="skel-pro-tabs" *ngIf="!loaded else infoBlock"></div>
+                                <ng-template #infoBlock>
+                                    <product-info-three [product]="product"></product-info-three>
+                                </ng-template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xxl-2 col-lg-3 skeleton-body">
+                    <div class="sidebar sticky-content skel-pro-single" [class.loaded]="loaded">
+                        <div class="skel-widget"></div>
+                        <div class="skel-widget"></div>
+                        <product-toggle-sidebar [products]="related" *ngIf="loaded"></product-toggle-sidebar>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

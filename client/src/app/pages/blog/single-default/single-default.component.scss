@@ -1,0 +1,8 @@
+.page-content .col-lg-9 {
+    position: relative;
+
+    .loading-overlay {
+        position: absolute;
+        z-index: 999;
+    }
+}

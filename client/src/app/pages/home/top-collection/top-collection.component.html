@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="heading heading-center">
+        <h2 class="title" contentAnim aniName="blurIn">Trending</h2>
+    </div>
+
+    <ul ngbNav #nav="ngbNav" class="nav nav-pills nav-border-anim justify-content-center tab-content-carousel pb-3" [destroyOnHide]="false" >
+         <li [ngbNavItem]="titles[cat[0]]" *ngFor="let cat of categories">
+            <a ngbNavLink>{{ titles[cat[0]] }}</a>
+            <ng-template ngbNavContent>
+                <div *ngIf="!loaded else loadedBlock">
+                    <owl-carousel carouselClasses="owl-simple carousel-with-shadow" [options]="sliderOption">
+                        <div class="skel-pro"
+                            *ngFor="let i of [1,2,3,4,5]">
+                        </div>
+                    </owl-carousel>
+                </div>
+                <ng-template #loadedBlock>
+                    <owl-carousel carouselClasses="owl-simple carousel-with-shadow carousel-equal-height" [options]="sliderOption">
+                        <molla-product-twelve  [product]="product"
+                            *ngFor="let product of (products | catFilter : cat) | slice:0:5">
+                        </molla-product-twelve>
+                    </owl-carousel>
+                </ng-template>
+            </ng-template>
+        </li>
+    </ul>
+    <div [ngbNavOutlet]="nav"></div>
+</div>

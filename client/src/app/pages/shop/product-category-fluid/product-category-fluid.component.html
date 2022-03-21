@@ -1,0 +1,176 @@
+<main class="main">
+    <molla-page-header title="Product Category Fullwidth" subtitle="Shop" containerClass="container-fluid">
+    </molla-page-header>
+
+    <nav class="breadcrumb-nav breadcrumb-with-filter">
+        <div class="container-fluid">
+            <button class="sidebar-toggler" (click)="toggleSidebar()">
+                <i class="icon-bars"></i>Filters
+            </button>
+
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a routerLink="/">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a routerLink="/shop/sidebar/list">Shop</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a routerLink="/shop/sidebar/list">Product Category</a>
+                </li>
+                <li class="breadcrumb-item active">Fullwidth</li>
+            </ol>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <div class="categories-page">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-6">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <div class="banner banner-cat banner-badge">
+                                    <a routerLink="/shop/sidebar/list" [queryParams]="{category: 'jackets'}">
+                                        <molla-image src="assets/images/category/fullwidth-page/banner-1.jpg" width="580"
+                                            height="280" alt="Banner">
+                                        </molla-image>
+                                    </a>
+
+                                    <a class="banner-link" routerLink="/shop/sidebar/list"
+                                        [queryParams]="{category: 'jackets'}">
+                                        <h3 class="banner-title">Jackets</h3>
+                                        <h4 class="banner-subtitle">2 Products</h4>
+                                        <span class="banner-link-text">Shop Now</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="banner banner-cat banner-badge">
+                                    <a routerLink="/shop/sidebar/list" [queryParams]="{category: 'jeans'}">
+                                        <molla-image src="assets/images/category/fullwidth-page/banner-2.jpg" width="280"
+                                            height="280" alt="Banner">
+                                        </molla-image>
+                                    </a>
+
+                                    <a class="banner-link" routerLink="/shop/sidebar/list"
+                                        [queryParams]="{category: 'jeans'}">
+                                        <h3 class="banner-title">Jeans</h3>
+                                        <h4 class="banner-subtitle">4 Product</h4>
+                                        <span class="banner-link-text">Shop Now</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="banner banner-cat banner-badge">
+                                    <a routerLink="/shop/sidebar/list" [queryParams]="{category: 'sportwear'}">
+                                        <molla-image src="assets/images/category/fullwidth-page/banner-3.jpg" width="280"
+                                            height="580" alt="Banner">
+                                        </molla-image>
+                                    </a>
+
+                                    <a class="banner-link" routerLink="/shop/sidebar/list"
+                                        [queryParams]="{category: 'sportwear'}">
+                                        <h3 class="banner-title">Sportwear</h3>
+                                        <h4 class="banner-subtitle">2 Product</h4>
+                                        <span class="banner-link-text">Shop Now</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-8">
+                                <div class="banner banner-cat banner-badge">
+                                    <a routerLink="/shop/sidebar/list" [queryParams]="{category: 'bags'}">
+                                        <molla-image src="assets/images/category/fullwidth-page/banner-4.jpg" width="580"
+                                            height="580" alt="Banner">
+                                        </molla-image>
+                                    </a>
+
+                                    <a class="banner-link" routerLink="/shop/sidebar/list"
+                                        [queryParams]="{category: 'bags'}">
+                                        <h3 class="banner-title">Bags</h3>
+                                        <h4 class="banner-subtitle">13 Products</h4>
+                                        <span class="banner-link-text">Shop Now</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-6">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <div class="banner banner-cat banner-badge">
+                                    <a routerLink="/shop/sidebar/list" [queryParams]="{category: 'dresses'}">
+                                        <molla-image src="assets/images/category/fullwidth-page/banner-5.jpg" width="580"
+                                            height="580" alt="Banner">
+                                        </molla-image>
+                                    </a>
+
+                                    <a class="banner-link" routerLink="/shop/sidebar/list"
+                                        [queryParams]="{category: 'dresses'}">
+                                        <h3 class="banner-title">Dresses</h3>
+                                        <h4 class="banner-subtitle">8 Products</h4>
+                                        <span class="banner-link-text">Shop Now</span>
+                                    </a>
+                                </div>
+
+                                <div class="banner banner-cat banner-badge">
+                                    <a routerLink="/shop/sidebar/list" [queryParams]="{category: 'shoes'}">
+                                        <molla-image src="assets/images/category/fullwidth-page/banner-6.jpg" width="580"
+                                            height="280" alt="Banner">
+                                        </molla-image>
+                                    </a>
+
+                                    <a class="banner-link" routerLink="/shop/sidebar/list"
+                                        [queryParams]="{category: 'shoes'}">
+                                        <h3 class="banner-title">Shoes</h3>
+                                        <h4 class="banner-subtitle">9 Products</h4>
+                                        <span class="banner-link-text">Shop Now</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="banner banner-cat banner-badge">
+                                    <a routerLink="/shop/sidebar/list" [queryParams]="{category: 't-shirts'}">
+                                        <molla-image src="assets/images/category/fullwidth-page/banner-7.jpg" width="280"
+                                            height="280" alt="Banner">
+                                        </molla-image>
+                                    </a>
+
+                                    <a class="banner-link" routerLink="/shop/sidebar/list"
+                                        [queryParams]="{category: 't-shirts'}">
+                                        <h3 class="banner-title">T-shirts</h3>
+                                        <h4 class="banner-subtitle">3 Products</h4>
+                                        <span class="banner-link-text">Shop Now</span>
+                                    </a>
+                                </div>
+
+                                <div class="banner banner-cat banner-badge">
+                                    <a routerLink="/shop/sidebar/list" [queryParams]="{category: 'jumpers'}">
+                                        <molla-image src="assets/images/category/fullwidth-page/banner-8.jpg" width="280"
+                                            height="580" alt="Banner">
+                                        </molla-image>
+                                    </a>
+
+                                    <a class="banner-link" routerLink="/shop/sidebar/list"
+                                        [queryParams]="{category: 'jumpers'}">
+                                        <h3 class="banner-title">Jumpers</h3>
+                                        <h4 class="banner-subtitle">6 Product</h4>
+                                        <span class="banner-link-text">Shop Now</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar-filter-overlay" (click)="hideSidebar()"></div>
+        <molla-shop-sidebar-two></molla-shop-sidebar-two>
+    </div>
+</main>

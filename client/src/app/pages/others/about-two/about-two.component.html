@@ -1,0 +1,128 @@
+<div class="main">
+    <molla-page-header title="About Us 2" subtitle="Pages"></molla-page-header>
+    <nav class="breadcrumb-nav border-0 mb-0">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a routerLink="/">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="javascript:;">Pages</a>
+                </li>
+                <li class="breadcrumb-item active">About Us 2</li>
+            </ol>
+        </div>
+    </nav>
+
+    <div class="page-content pb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="about-text text-center mt-3">
+                        <h2 class="title text-center mb-2">Who We Are</h2>
+                        <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit
+                            nunc tortor eu nibh. Suspendisse potenti. Sed egestas, ante et vulputate volutpat, uctus
+                            metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id,
+                            est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. </p>
+                        <img src="assets/images/about/about-2/signature.png" alt="signature" class="mx-auto mb-5">
+
+                        <molla-image src="assets/images/about/about-2/img-1.jpg" width="933" height="390" alt="signature"
+                            class="mx-auto w-100 mb-6"></molla-image>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="icon-box col-lg-4 col-sm-6" [ngClass]="item.adClass" *ngFor="let item of iconBoxes">
+                    <span class="icon-box-icon">
+                        <i [ngClass]="item.icon"></i>
+                    </span>
+                    <div class="icon-box-content">
+                        <h3 class="icon-box-title">{{ item.title }}</h3>
+                        <p [innerHTML]="item.content | safeContent"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-2"></div>
+
+        <div class="bg-image pt-7 pb-5 pt-md-12 pb-md-9"
+            style="background-image: url(assets/images/backgrounds/bg-4.jpg)">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 col-md-3" *ngFor="let counter of counters;">
+                        <div class="count-container text-center">
+                            <div class="count-wrapper text-white">
+                                <molla-count-to [from]="0" [to]="counter.limit" [speed]="3000" [interval]="50">0
+                                </molla-count-to>
+                                {{ counter.unit }}
+                            </div>
+                            <h3 class="count-title text-white">{{ counter.text }}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-light-2 pt-6 pb-7 mb-6">
+            <div class="container">
+                <h2 class="title text-center mb-4">Meet Our Team</h2>
+
+                <div class="row">
+                    <div class="col-sm-6 col-lg-3" *ngFor="let member of members">
+                        <div class="member member-2 text-center">
+                            <figure class="member-media">
+                                <molla-image [src]="member.img" width="277" height="300" alt="member photo"></molla-image>
+
+                                <figcaption class="member-overlay">
+                                    <div class="social-icons social-icons-simple">
+                                        <a href="javascript:;" class="social-icon" title="Facebook"><i
+                                                class="icon-facebook-f"></i></a>
+                                        <a href="javascript:;" class="social-icon" title="Twitter"><i
+                                                class="icon-twitter"></i></a>
+                                        <a href="javascript:;" class="social-icon" title="Instagram"><i
+                                                class="icon-instagram"></i></a>
+                                    </div>
+                                </figcaption>
+                            </figure>
+
+                            <div class="member-content">
+                                <h3 class="member-title">{{member.name}}<span>{{member.title}}</span></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-3">
+                    <a routerLink="/blog/classic" class="btn btn-sm btn-minwidth-lg btn-outline-primary-2">
+                        <span>LETS START WORK</span>
+                        <i class="icon-long-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="brands-text text-center mx-auto mb-6">
+                        <h2 class="title">The world's premium design brands in one destination.</h2>
+                        <p>Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus
+                            id, mattis vel, nis</p>
+                    </div>
+
+                    <div class="brands-display">
+                        <div class="row justify-content-center">
+                            <div class="col-6 col-sm-4 col-md-3" *ngFor="let brand of brands | slice: 0 : 8">
+                                <a href="javascript:;" class="brand">
+                                    <img [src]="brand.image" alt="Brand Name">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

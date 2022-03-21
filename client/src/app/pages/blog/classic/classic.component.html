@@ -1,0 +1,56 @@
+<main class="main">
+    <molla-page-header title="Blog Classic" subtitle="Blog"></molla-page-header>
+
+    <nav class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a routerLink="/">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a routerLink="/blog/classic">Blog</a>
+                </li>
+                <li class="breadcrumb-item active">Classic</li>
+            </ol>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 skeleton-body">
+                    <div *ngIf="!loaded else loadedBlock">
+                        <div class="skel-single-post" *ngFor="let item of [1,2,3]"></div>
+                    </div>
+                    <ng-template #loadedBlock>
+                        <p class="blogs-info" *ngIf="posts.length == 0 else postBlock">No posts were found matching your
+                            selection.</p>
+                        <ng-template #postBlock>
+                            <molla-post-one [post]="post" *ngFor="let post of posts; trackBy : trackByFn">
+                            </molla-post-one>
+                        </ng-template>
+                    </ng-template>
+                    <molla-pagination [perPage]="5" [total]="totalCount" *ngIf="totalCount>5"></molla-pagination>
+                </div>
+
+                <aside class="col-lg-3 skel-shop-sidebar skeleton-body">
+                    <div *ngIf="!firstLoad else sidebarLoaded">
+                        <div class="skel-widget"></div>
+                        <div class="skel-widget"></div>
+                        <div class="skel-widget"></div>
+                        <div class="skel-widget"></div>
+                    </div>
+                    <ng-template #sidebarLoaded>
+                        <blog-sidebar [categories]="blogCategories" [toggle]="toggle"></blog-sidebar>
+
+                        <button class="sidebar-fixed-toggler right" (click)="toggleSidebar()" *ngIf="toggle">
+                            <i class="icon-cog"></i>
+                        </button>
+
+                        <div class="sidebar-filter-overlay" (click)="hideSidebar()"></div>
+                    </ng-template>
+                </aside>
+            </div>
+        </div>
+    </div>
+</main>

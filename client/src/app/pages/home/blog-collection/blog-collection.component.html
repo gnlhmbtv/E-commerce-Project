@@ -1,0 +1,15 @@
+<div class="blog-posts">
+    <div class="container">
+        <h2 class="title text-center font-weight-bolder" contentAnim aniName="blurIn">From Our Blog</h2>
+        <owl-carousel carouselClasses="owl-simple carousel-with-shadow" [options]="sliderOption"
+            *ngIf="!loaded else loadedBlock">
+            <div class="skel-pro" *ngFor="let i of [1,2,3,4,5]"></div>
+        </owl-carousel>
+        <ng-template #loadedBlock>
+            <owl-carousel carouselClasses="owl-simple carousel-with-shadow" [options]="sliderOption">
+                <molla-post-four [post]="post" *ngFor="let post of posts">
+                </molla-post-four>
+            </owl-carousel>
+        </ng-template>
+    </div>
+</div>

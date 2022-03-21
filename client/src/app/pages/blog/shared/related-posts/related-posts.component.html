@@ -1,0 +1,9 @@
+<div class="related-posts">
+    <h3 class="title">Related Posts</h3>
+    <p class="blogs-info" *ngIf="posts.length == 0 else relatedBlock">No related posts were found.</p>
+    <ng-template #relatedBlock>
+        <owl-carousel carouselClasses="owl-simple" [options]="sliderOption">
+            <molla-post-one *ngFor="let post of posts" [post]="post" [isContent]="false"></molla-post-one>
+        </owl-carousel>
+    </ng-template>
+</div>

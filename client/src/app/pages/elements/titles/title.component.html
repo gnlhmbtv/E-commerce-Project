@@ -1,0 +1,150 @@
+<div class="main">
+    <molla-page-header [title]="'Titles'" [subtitle]="'Elements'"></molla-page-header>
+
+    <nav class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a routerLink="/">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a routerLink="/elements">Elements</a>
+                </li>
+                <li class="breadcrumb-item active">Titles</li>
+            </ol>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <div class="container">
+            <h2 class="title">Simple title</h2>
+            <p>{{tabContent}}</p>
+
+            <hr class="mt-4 mb-4">
+
+            <div class="heading">
+                <h2 class="title">Simple title <span class="title-separator">/</span> Subtitle</h2>
+                <p class="title-desc">Donec consectetuer ligula vulputate sem tristique cursus. </p>
+            </div>
+            <p>{{tabContent}}</p>
+
+            <hr class="mt-4 mb-4">
+
+            <div class="heading heading-flex">
+                <div class="heading-left">
+                    <h2 class="title">Simple title <span class="title-separator">/</span> Product Filter</h2>
+                </div>
+
+                <div class="heading-right">
+                    <ul tabClick class="nav nav-pills" role="tablist">
+                        <li class="nav-item" *ngFor="let tabname of itemNames; let index = index">
+                            <a class="nav-link" [ngClass]="index === 0 ? 'active': ''" role="tab">{{tabname}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <p>{{tabContent}}</p>
+
+            <hr class="mt-4 mb-4">
+
+            <div class="heading heading-flex align-items-start">
+                <div class="heading-left" [style.max-width]="'100%'">
+                    <h2 class="title">Simple title <span class="title-separator">/</span> Subtitle <span
+                            class="title-separator">/</span> Product Filter</h2>
+                    <p class="title-desc">Donec consectetuer ligula vulputate sem tristique cursus. </p>
+                </div>
+
+                <div class="heading-right" [style.max-width]="'100%'">
+                    <ul tabClick class="nav nav-pills" role="tablist">
+                        <li class="nav-item" *ngFor="let tabname of itemNames; let index = index">
+                            <a class="nav-link" [ngClass]="index === 0 ? 'active': ''" role="tab">{{tabname}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <p>{{tabContent}}</p>
+
+            <hr class="mt-4 mb-4">
+
+            <div class="heading heading-flex">
+                <div class="heading-left">
+                    <h2 class="title">Simple title <span class="title-separator">/</span> Link</h2>
+                </div>
+
+                <div class="heading-right">
+                    <a href="javascript:;" class="title-link">Click here to view <i
+                            class="icon-long-arrow-right"></i></a>
+                </div>
+            </div>
+            <p>{{tabContent}}</p>
+
+            <hr class="mt-4 mb-4">
+
+            <div class="heading heading-flex">
+                <div class="heading-left">
+                    <h2 class="title">Simple title <span class="title-separator">/</span> Substitle <span
+                            class="title-separator">/</span> Link</h2>
+                    <p class="title-desc">Donec consectetuer ligula vulputate sem tristique cursus. </p>
+                </div>
+
+                <div class="heading-right">
+                    <a href="javascript:;" class="title-link link-underline">Click here to view <i
+                            class="icon-long-arrow-right"></i></a>
+                </div>
+            </div>
+            <p>{{tabContent}}</p>
+
+            <hr class="mt-4 mb-4">
+
+            <div class="text-center">
+                <h2 class="title">Centered title</h2>
+                <p>{{tabContent}}</p>
+            </div>
+
+            <hr class="mt-4 mb-4">
+
+            <div class="heading heading-center">
+                <div class="heading-left">
+                    <h2 class="title">Centered title <span class="title-separator">/</span> Product Filter</h2>
+                </div>
+
+                <div class="heading-right">
+                    <ul tabClick class="nav nav-pills justify-content-center" role="tablist">
+                        <li class="nav-item" *ngFor="let tabname of itemNames; let index = index">
+                            <a class="nav-link" [ngClass]="index === 0 ? 'active': ''" role="tab">{{tabname}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-center">{{tabContent}}</p>
+
+            <hr class="mt-4 mb-4">
+
+            <h2 class="title-sm">Small Title</h2>
+            <p>{{tabContent}}</p>
+
+            <hr class="mt-4 mb-4">
+
+            <div class="heading">
+                <p class="title-desc mb-1">Quisque a lectus.</p>
+                <h2 class="title-sm">Small title <span class="title-separator">/</span> Subtitle</h2>
+            </div>
+            <p>{{tabContent}}</p>
+
+            <hr class="mt-4 mb-4">
+
+            <div class="text-center">
+                <h2 class="title-sm">Centered Small Title</h2>
+                <p>{{tabContent}}</p>
+            </div>
+
+            <hr class="mt-4 mb-4">
+
+            <div class="heading text-center">
+                <p class="title-desc mb-1">Quisque a lectus.</p>
+                <h2 class="title-sm">Centered Small title <span class="title-separator">/</span> Subtitle</h2>
+            </div>
+            <p class="text-center">{{tabContent}}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+<div class="main">
+    <molla-page-header [title]="pageTitle" subtitle="Shop"></molla-page-header>
+    <nav class="breadcrumb-nav mb-2">
+        <div [class]="containerClass">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a routerLink="/">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a routerLink="/shop/sidebar/list">Shop</a>
+                </li>
+                <li class="breadcrumb-item active">{{ pageTitle }}</li>
+                <li class="breadcrumb-item" *ngIf="searchTerm != ''">
+                    <span>Search - {{ searchTerm }}</span>
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <div [class]="containerClass">
+            <div class="toolbox">
+                <div class="toolbox-left d-none d-lg-flex">
+                    <a href="javascript:;" class="sidebar-toggler mr-0 mr-md-5" (click)="toggleSidebar()">
+                        <i class="icon-bars"></i>Filters
+                    </a>
+                </div>
+
+                <div class="toolbox-center">
+                    <div class="toolbox-info">
+                        Showing
+                        <span>{{ products.length }} of {{ totalCount }}</span> Products
+                    </div>
+                </div>
+
+                <div class="toolbox-right">
+                    <div class="toolbox-sort">
+                        <label for="sortby">Sort by:</label>
+                        <div class="select-custom">
+                            <select name="sortby" id="sortby" class="form-control" (change)="changeOrderBy($event)"
+                                [value]="orderBy">
+                                <option value="default">Default</option>
+                                <option value="featured">Most Popular</option>
+                                <option value="rating">Most Rated</option>
+                                <option value="new">Date</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <molla-shop-list-three [products]="products" [loaded]="loaded" [cols]="cols">
+            </molla-shop-list-three>
+
+            <div class="load-more-container text-center" [class.d-none]="totalCount <= products.length && !moreLoading">
+                <a href="javascript:;" class="btn btn-outline-darker btn-load-more" (click)="loadMore($event)">
+                    More Products
+                    <i class="icon-refresh" [class.load-more-rotating]="moreLoading"></i>
+                </a>
+            </div>
+
+            <molla-shop-sidebar-one [toggle]="true">
+            </molla-shop-sidebar-one>
+
+            <button class="sidebar-fixed-toggler d-lg-none" (click)="toggleSidebar()">
+                <i class="icon-cog"></i>
+            </button>
+
+            <div class="sidebar-filter-overlay" (click)="hideSidebar()"></div>
+        </div>
+    </div>
+</div>

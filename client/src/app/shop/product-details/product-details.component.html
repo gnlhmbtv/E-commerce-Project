@@ -10,7 +10,7 @@
                                 <div class="details-image ratio_asos">
                                     <div>
                                         <div class="product-image-tag">
-                                            <img src="assets/images/fashion/1.jpg" id="zoom_01"
+                                            <img src="{{product.photoUrl}}" id="zoom_01"
                                                 data-zoom-image="assets/images/fashion/1.jpg"
                                                 class="img-fluid w-100 image_zoom_cls-0 blur-up lazyload" alt="">
 
@@ -107,7 +107,7 @@
                                     <span class="label-text">in fashion</span>
                                 </div>
 
-                                <h3 class="price-detail">$32.96 <del>$459.00</del><span>55% off</span></h3>
+                                <h3 class="price-detail">{{product.price | currency}}<del>$459.00</del><span>55% off</span></h3>
 
                                 <div class="color-image">
                                     <div class="image-select">

@@ -3,8 +3,8 @@
 <div class="product-box">
     <div class="img-wrapper">
         <div class="front">
-            <a href="product-left-sidebar.html">
-                <img style="width: 300px;" src="{{product.photoUrl}}"
+            <a routerLink="/shop/{{product.id}}">
+                <img  style="width: 300px;" src="{{product.photoUrl}}"
                     class="bg-img lazyload" alt="{{product.name}}">
             </a>
         </div>
@@ -17,7 +17,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)" data-bs-toggle="modal"
+                    <a routerLink="/shop/{{product.id}}" data-bs-toggle="modal"
                         data-bs-target="#quick-view">
                         <i data-feather="eye"></i>
                     </a>

@@ -40,7 +40,7 @@
                   <svg class="svg-icon">
                     <use class="fill-color" xlink:href="assets/svg/icons.svg#logo"></use>
                   </svg>
-                  <img src="assets/images/logo.png" class="img-fluid blur-up lazyload" alt="logo">
+                  <img src="assets/images/logo.png" routerLink="/" class="img-fluid blur-up lazyload" alt="logo">
                 </a>
               </div>
               <div class="category-menu">
@@ -275,7 +275,7 @@
                       </div>
                     </li>
                     <li class="mega-menu dropdown home-menu">
-                      <a href="javascript:void(0)" class="nav-link menu-title">home</a>
+                      <a [routerLink]="['/']" routerLinkActive="router-link-active"  class="nav-link menu-title">home</a>
                       <div class="mega-menu-container menu-content">
                         <div class="container-fluid">
                           <div class="row">
@@ -399,7 +399,7 @@
                       </div>
                     </li>
                     <li class="dropdown">
-                      <a href="javascript:void(0)" class="nav-link menu-title">shop</a>
+                      <a routerLink="/shop" class="nav-link menu-title">shop</a>
                       <ul class="nav-submenu menu-content">
                         <li>
                           <a href="shop-canvas-filter.html">Shop Canvas Filter</a>

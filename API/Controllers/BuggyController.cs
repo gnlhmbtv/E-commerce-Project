@@ -33,10 +33,10 @@ namespace API.Controllers
 
             var returnProduct = product.ToString();
 
-            // if (product == null)
-            // {
-            //     return NotFound();
-            // }
+            if (product == null)
+            {
+                return NotFound();
+            }
 
             return Ok();
         }

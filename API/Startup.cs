@@ -33,6 +33,11 @@ namespace API
             services.AddControllers();
             services.AddDbContext<DataContext>(d =>
              d.UseSqlite(_config.GetConnectionString("DefaultConnection")));
+            services.AddSingleton<ConnectionMultiplexer>(c => {
+                var configuration = ConfigurationOptions.Parse(_config.GetConnectionString("Redis"),
+                true);
+                return ConnectionMultiplexer.Connect(configuration);
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });

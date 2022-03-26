@@ -1,1 +1,144 @@
-<p>basket works!</p>
+ <!-- Cart Section Start -->
+ <section class="cart-section section-b-space">
+    <div *ngIf="(basket$ | async) as basket" class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="count-down">
+                    <h5>Your cart will be expired in <span class="count-timer theme-color" id="timer"></span>
+                        minutes !</h5>
+                    <button type="button" onclick="location.href = 'checkout.html';"
+                        class="btn btn-solid-default btn-sm fw-bold">Check Out</button>
+                </div>
+            </div>
+
+            <div class="col-sm-12 table-responsive mt-4">
+                <table class="table cart-table">
+                    <thead>
+                        <tr class="table-head">
+                            <th scope="col">image</th>
+                            <th scope="col">product name</th>
+                            <th scope="col">price</th>
+                            <th scope="col">quantity</th>
+                            <th scope="col">action</th>
+                            <th scope="col">total</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let item of basket.items">
+                        <tr>
+                            <td>
+                                <a href="product-left-sidebar.html">
+                                    <img src="{{item.photoUrl}}" class=" blur-up lazyload"
+                                        alt="">
+                                </a>
+                            </td>
+                            <td>
+                                <a href="product-left-sidebar.html">{{item.productName}}</a>
+                                <div class="mobile-cart-content row">
+                                    <div class="col">
+                                        <div class="qty-box">
+                                            <div class="input-group">
+                                                <input type="text" name="quantity" class="form-control input-number"
+                                                    value="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <h2>{{item.price | currency}}</h2>
+                                    </div>
+                                    <div class="col">
+                                        <h2 class="td-color">
+                                            <a href="javascript:void(0)">
+                                                <i class="fas fa-times"></i>
+                                            </a>
+                                        </h2>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <h2>{{item.price | currency}}</h2>
+                            </td>
+                            <td>
+                                <div class="qty-box">
+                                    <div class="input-group">
+                                        <input type="number" name="quantity" class="form-control input-number"
+                                            value="1">
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <a href="javascript:void(0)">
+                                    <i class="fas fa-times"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <h2 class="td-color">{{item.price * item.quantity | currency}}</h2>
+                            </td>
+                        </tr>
+                    </tbody>
+                   
+                </table>
+            </div>
+
+            <div class="col-12 mt-md-5 mt-4">
+                <div class="row">
+                    <div class="col-sm-7 col-5 order-1">
+                        <div class="left-side-button text-end d-flex d-block justify-content-end">
+                            <a href="javascript:void(0)"
+                                class="text-decoration-underline theme-color d-block text-capitalize">clear
+                                all items</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-5 col-7">
+                        <div class="left-side-button float-start">
+                            <a href="index.html" class="btn btn-solid-default btn fw-bold mb-0 ms-0">
+                                <i class="fas fa-arrow-left"></i> Continue Shopping</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cart-checkout-section">
+                <div class="row g-4">
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="promo-section">
+                            <form class="row g-3">
+                                <div class="col-7">
+                                    <input type="text" class="form-control" id="number" placeholder="Coupon Code">
+                                </div>
+                                <div class="col-5">
+                                    <button class="btn btn-solid-default rounded btn">Apply Coupon</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-6 ">
+                        <div class="checkout-button">
+                            <a href="checkout.html" class="btn btn-solid-default btn fw-bold">
+                                Check Out <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="cart-box">
+                            <div class="cart-box-details">
+                                <div class="total-details">
+                                    <div class="top-details">
+                                        <h3>Cart Totals</h3>
+                                        <h6>Total MRP <span>$250.00</span></h6>
+                                        <h6>Coupon Discount <span>-$25.00</span></h6>
+                                        <h6>Convenience Fee <span><del>$25.00</del></span></h6>
+                                    </div>
+                                    <div class="bottom-details">
+                                        <a routerLink="/checkout">Process Checkout</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Cart Section End -->

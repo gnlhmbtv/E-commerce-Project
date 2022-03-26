@@ -66,7 +66,7 @@
                 <p class="font-light">{{product.description}}</p>
             </div>
             <h3 class="theme-color">{{product.price | currency}}</h3>
-            <button onclick="location.href = 'cart.html';" class="btn listing-content">Add
+            <button (click)="addItemToBasket()"ass="btn listing-content">Add
                 To Cart</button>
         </div>
     </div>

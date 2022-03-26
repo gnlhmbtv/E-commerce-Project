@@ -846,10 +846,10 @@
                   </button>
                   <div class="onhover-div">
                     <div class="cart-menu">
-                      <div class="cart-title">
+                      <div  class="cart-title">
                         <h6>
                           <i data-feather="shopping-bag"></i>
-                          <span class="label label-theme rounded-pill">5</span>
+                          <span *ngIf="(basket$ | async) as basket" class="label label-theme rounded-pill">{{basket.items.length}}</span>
                         </h6>
                         <span class="d-md-none d-block">
                                                         <i class="fas fa-arrow-right back-cart"></i>

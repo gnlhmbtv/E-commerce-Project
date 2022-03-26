@@ -772,7 +772,18 @@
                         </li>
                       </ul>
                     </li>
-                    <a routerLink="/test-error">Errors</a>
+
+
+                    <li>
+                      <a routerLink="/test-error" class="nav-link menu-title">Errors</a>
+                      
+                    </li>
+
+
+                    <a routerLink="/basket" class="position-relative">
+                      <i class="fa fa-shopping-cart fa-2x mr-5 text-dark"></i>
+                      <div class="cart-no">5</div>
+                    </a>
 
                     <li class="mobile-poster d-flex d-xl-none">
                       <img src="assets/images/pwa.png" class="img-fluid" alt="">
@@ -798,7 +809,7 @@
                 </li>
                 <li class="onhover-dropdown">
                   <div class="cart-media">
-                    <i data-feather="user"></i>
+                    <i class="fa-solid fa-user" ></i>
                   </div>
                   <div class="onhover-div profile-dropdown">
                     <ul>
@@ -819,7 +830,7 @@
                     </a>
                   </div>
                   <div class="onhover-div">
-                    <a href="wishlist.html">
+                    <a [routerLink]="['/basket']" >
                       <div class="wislist-empty">
                         <i class="fab fa-gratipay"></i>
                         <h6 class="mb-1">Your wislist empty !!</h6>

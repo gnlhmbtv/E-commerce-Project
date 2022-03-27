@@ -13,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using StackExchange.Redis;
+using Infrastructure.Identity;
 
 namespace API
 {
@@ -35,6 +36,9 @@ namespace API
             services.AddControllers();
             services.AddDbContext<DataContext>(d =>
              d.UseSqlite(_config.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<AppIdentityDbContext>(x => {
+                 x.UseSqlite(_config.GetConnectionString("IdentityConnection"));
+             });
             services.AddSingleton<IConnectionMultiplexer ,ConnectionMultiplexer>(c => {
                 var configuration = ConfigurationOptions.Parse(_config.GetConnectionString("Redis"), true);
                 return ConnectionMultiplexer.Connect(configuration);

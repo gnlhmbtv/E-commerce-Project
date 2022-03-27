@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {PaginationModule} from 'ngx-bootstrap';
 import { OrderTotalsComponent } from './components/order-totals/order-totals.component';
 
 @NgModule({
@@ -8,9 +7,8 @@ import { OrderTotalsComponent } from './components/order-totals/order-totals.com
     OrderTotalsComponent
   ],
   imports: [
-    CommonModule,
-    PaginationModule.forRoot()
+    CommonModule
   ],
-  exports: [PaginationModule, OrderTotalsComponent]
+  exports: [OrderTotalsComponent]
 })
 export class SharedModule { }

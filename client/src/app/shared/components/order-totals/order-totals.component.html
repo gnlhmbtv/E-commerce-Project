@@ -1,0 +1,26 @@
+
+    <div class="cart-box">
+        <div class="cart-box-details">
+            <div class="total-details">
+                <div class="top-details">
+                    <ul class="list-unstyled mb-4" *ngIf="(basketTotal$ | async)">
+                        <li class="d-flex justify-content-between py-3 border-bottom">
+                            <strong class="text-muted">Order subtotal</strong>
+                            <strong>{{(basketTotal$ | async).subtotal | currency}}</strong>
+                        </li>
+                        <li class="d-flex justify-content-between py-3 border-bottom">
+                            <strong class="text-muted">Shipping and handling</strong>
+                            <strong>{{(basketTotal$ | async).shipping | currency}}</strong>
+                        </li>
+                        <li class="d-flex justify-content-between py-3 border-bottom">
+                            <strong class="text-muted">Total</strong>
+                            <strong>{{(basketTotal$ | async).total | currency}}</strong>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bottom-details">
+                    <a routerLink="/checkout">Process Checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>

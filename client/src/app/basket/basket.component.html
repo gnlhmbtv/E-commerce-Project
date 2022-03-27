@@ -60,8 +60,13 @@
                             <td>
                                 <div class="qty-box">
                                     <div class="input-group">
-                                        <input type="number" name="quantity" class="form-control input-number"
-                                            value="1">
+                                        <i  class="fa fa-minus-circle text-warning mr-2"
+                                                    style="cursor: pointer; font-size: 1.5em;"></i>
+                                                <span class="font-weight-bold" style="font-size: 1.5em;">
+                                                    {{item.quantity}}
+                                                </span>
+                                                <i  class="fa fa-plus-circle text-warning mx-2"
+                                                    style="cursor: pointer; font-size: 1.5em;"></i>
                                     </div>
                                 </div>
                             </td>
@@ -114,27 +119,13 @@
 
                     <div class="col-lg-4 col-sm-6 ">
                         <div class="checkout-button">
-                            <a href="checkout.html" class="btn btn-solid-default btn fw-bold">
+                            <a routerLink="/checkout" class="btn btn-solid-default btn fw-bold">
                                 Check Out <i class="fas fa-arrow-right ms-1"></i></a>
                         </div>
                     </div>
 
                     <div class="col-lg-4">
-                        <div class="cart-box">
-                            <div class="cart-box-details">
-                                <div class="total-details">
-                                    <div class="top-details">
-                                        <h3>Cart Totals</h3>
-                                        <h6>Total MRP <span>$250.00</span></h6>
-                                        <h6>Coupon Discount <span>-$25.00</span></h6>
-                                        <h6>Convenience Fee <span><del>$25.00</del></span></h6>
-                                    </div>
-                                    <div class="bottom-details">
-                                        <a routerLink="/checkout">Process Checkout</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <app-order-totals></app-order-totals>
                     </div>
                 </div>
             </div>

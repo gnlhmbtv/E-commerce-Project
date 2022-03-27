@@ -6,7 +6,7 @@ import { IBasket } from 'src/app/shared/models/basket';
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.css']
+  styleUrls: ['./nav-bar.component.css', '../../../assets/css/vendors/feather-icon.css']
 })
 export class NavBarComponent implements OnInit {
 

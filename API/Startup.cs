@@ -14,6 +14,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using StackExchange.Redis;
 using Infrastructure.Identity;
+using API.Extensions;
 
 namespace API
 {
@@ -43,6 +44,8 @@ namespace API
                 var configuration = ConfigurationOptions.Parse(_config.GetConnectionString("Redis"), true);
                 return ConnectionMultiplexer.Connect(configuration);
             });
+
+            services.AddIdentityServices();
 
             services.AddSwaggerGen(c =>
             {

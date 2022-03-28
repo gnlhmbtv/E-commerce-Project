@@ -15,6 +15,7 @@ using Microsoft.OpenApi.Models;
 using StackExchange.Redis;
 using Infrastructure.Identity;
 using API.Extensions;
+using Infrastructure.Services;
 
 namespace API
 {
@@ -33,6 +34,7 @@ namespace API
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped<IBasketRepository, BasketRepository>();
+            services.AddScoped<ITokenService, TokenService>();
             services.AddAutoMapper(typeof(Mapper));
             services.AddControllers();
             services.AddDbContext<DataContext>(d =>

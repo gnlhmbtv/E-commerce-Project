@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a448bfe-16bc-43de-9608-84cd2b6a6fc6" name="Changes" comment="" />
+    <list default="true" id="8a448bfe-16bc-43de-9608-84cd2b6a6fc6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Identity/AppIdentityDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Identity/AppIdentityDbContext.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,6 +70,7 @@
       <workItem from="1648023646347" duration="612000" />
       <workItem from="1648025092960" duration="1685000" />
       <workItem from="1648322164369" duration="203000" />
+      <workItem from="1648444818583" duration="494000" />
     </task>
     <servers />
   </component>

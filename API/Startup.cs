@@ -45,7 +45,7 @@ namespace API
                 return ConnectionMultiplexer.Connect(configuration);
             });
 
-            services.AddIdentityServices();
+            services.AddIdentityServices(_config);
 
             services.AddSwaggerGen(c =>
             {
@@ -95,6 +95,8 @@ namespace API
             app.UseStaticFiles();
 
             app.UseCors("CorsPolicy");
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

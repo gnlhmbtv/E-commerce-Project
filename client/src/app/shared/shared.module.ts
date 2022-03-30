@@ -11,6 +11,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     ReactiveFormsModule
   ],
-  exports: [OrderTotalsComponent, ReactiveFormsModule]
+  exports: [OrderTotalsComponent]
 })
 export class SharedModule { }

@@ -1,62 +1,64 @@
 <!-- Log In Section Start -->
 <div class="login-section">
     <div class="materialContainer">
-        <div class="box">
-            <div class="login-title">
-                <h2>Login</h2>
-            </div>
-            <div class="input">
-                <label for="name">Email address</label>
-                <input type="text" name="name" id="name" required>
-                <span class="spin"></span>
-                <div class="valid-feedback">
-                    Please fill the name
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="box">
+                <div class="login-title">
+                    <h2>Login</h2>
                 </div>
-            </div>
-
-            <div class="input">
-                <label for="pass">Password</label>
-                <input type="password" name="pass" id="pass">
-                <span class="spin"></span>
-            </div>
-
-            <a href="forgot.html" class="pass-forgot">Forgot your password?</a>
-
-            <div class="button login">
-                <button onclick="location.href = 'index.html';" type="submit">
-                    <span>Log In</span>
-                    <i class="fa fa-check"></i>
-                </button>
-            </div>
-
-            <p class="sign-category">
-                <span>Or sign in with</span>
-            </p>
-
-            <div class="row gx-md-3 gy-3">
-                <div class="col-md-6">
-                    <a href="www.facebook.html">
-                        <div class="social-media fb-media">
-                            <img src="assets/images/inner-page/facebook.png" class="img-fluid blur-up lazyload"
-                                alt="">
-                            <h6>Facebook</h6>
-                        </div>
-                    </a>
+                <div class="input">
+                    <label for="name">Email address</label>
+                    <input formControlName="email" type="email" name="name" id="name" required>
+                    <span class="spin"></span>
+                    <div class="valid-feedback">
+                        Please fill the name
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <a href="www.gmail.html">
-                        <div class="social-media google-media">
-                            <img src="assets/images/inner-page/google.png" class="img-fluid blur-up lazyload"
-                                alt="">
-                            <h6>Google</h6>
-                        </div>
-                    </a>
+    
+                <div class="input">
+                    <label for="pass">Password</label>
+                    <input formControlName="password" type="password" name="pass" id="pass">
+                    <span class="spin"></span>
                 </div>
+    
+                <a href="forgot.html" class="pass-forgot">Forgot your password?</a>
+    
+                <div class="button login">
+                    <button type="submit">
+                        <span>Log In</span>
+                        <i class="fa fa-check"></i>
+                    </button>
+                </div>
+    
+                <p class="sign-category">
+                    <span>Or sign in with</span>
+                </p>
+    
+                <div class="row gx-md-3 gy-3">
+                    <div class="col-md-6">
+                        <a href="www.facebook.html">
+                            <div class="social-media fb-media">
+                                <img src="assets/images/inner-page/facebook.png" class="img-fluid blur-up lazyload"
+                                    alt="">
+                                <h6>Facebook</h6>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="www.gmail.html">
+                            <div class="social-media google-media">
+                                <img src="assets/images/inner-page/google.png" class="img-fluid blur-up lazyload"
+                                    alt="">
+                                <h6>Google</h6>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+    
+                <p>Not a member? <a href="sign-up.html" class="theme-color">Sign up now</a></p>
+    
             </div>
-
-            <p>Not a member? <a href="sign-up.html" class="theme-color">Sign up now</a></p>
-
-        </div>
+        </form>
     </div>
 </div>
 <!-- Log In Section End -->

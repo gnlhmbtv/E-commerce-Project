@@ -139,38 +139,20 @@
                 </div>
               </div>
               <div class="grid-options d-sm-inline-block d-none">
-                <ul class="d-flex">
-                  <li class="two-grid">
-                    <a href="javascript:void(0)">
-                      <img src="assets/svg/grid-2.svg" class="img-fluid  lazyload"
-                           alt="">
-                    </a>
-                  </li>
-                  <li class="three-grid d-md-inline-block d-none">
-                    <a href="javascript:void(0)">
-                      <img src="assets/svg/grid-3.svg" class="img-fluid  lazyload"
-                           alt="">
-                    </a>
-                  </li>
-                  <li class="grid-btn d-lg-inline-block d-none">
-                    <a href="javascript:void(0)">
-                      <img src="assets/svg/grid.svg" class="img-fluid  lazyload"
-                           alt="">
-                    </a>
-                  </li>
-                  <li class="five-grid active d-xl-inline-block d-none">
-                    <a href="javascript:void(0)">
-                      <img src="assets/svg/grid-5.svg" class="img-fluid  lazyload"
-                           alt="">
-                    </a>
-                  </li>
-                  <li class="list-btn">
-                    <a href="javascript:void(0)">
-                      <img src="assets/svg/list.svg" class="img-fluid  lazyload"
-                           alt="">
-                    </a>
-                  </li>
-                </ul>
+                <h5 *ngIf="totalCount && totalCount > 0">
+                  
+                  Showing 
+                  <strong>
+                    {{(this.shopParams.pageNumber - 1) * this.shopParams.pageSize + 1}} - 
+                    {{this.shopParams.pageNumber * this.shopParams.pageSize
+                      > this.totalCount 
+                      ? this.totalCount
+                      : this.shopParams.pageNumber * this.shopParams.pageSize
+                    }}
+                  </strong> of <strong>{{this.totalCount}}</strong> results</h5>
+                  <h5 *ngIf="totalCount === 0">
+                    There are <strong>0</strong> results for this filter
+                  </h5>
               </div>
             </div>
           </div>
@@ -186,7 +168,7 @@
         </div>
          <!-- Prodcut setion -->
        
-         <nav class="page-section">
+         <nav class="page-section" *ngIf="totalCount > 0">
           <ul class="pagination">
             <pagination 
             [boundaryLinks]="true" 

@@ -12,7 +12,8 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [ShopComponent, ProductItemComponent, ProductDetailsComponent],
   imports: [
     CommonModule,
-    ShopRoutingModule
+    ShopRoutingModule,
+    SharedModule
   ]
 })
 export class ShopModule { }

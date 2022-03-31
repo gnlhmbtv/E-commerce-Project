@@ -3,11 +3,10 @@
     "",
     "\\API",
     "\\API\\Controllers",
-    "\\client",
     "\\Core",
     "\\Core\\Entities",
     "\\Core\\Specifications"
   ],
-  "SelectedNode": "\\client\\angular.json",
+  "SelectedNode": "\\Core\\Entities\\Product.cs",
   "PreviewInSolutionExplorer": false
 }

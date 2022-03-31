@@ -784,6 +784,22 @@
                 </ng-container>
                 <ng-container *ngIf="currentUser$ | async" >
                   <a href="">Welcome {{(currentUser$ | async).displayName}}</a>
+                  <div class="onhover-div profile-dropdown">
+                    <ul>
+                      <li>
+                        <a routerLink="/basket" class="d-block">
+                           <i class="fa fa-shopping-cart mr-3"></i>View Basket</a>
+                      </li>
+                      <li>
+                        <a routerLink="/orders" class="d-block">
+                           <i class="fa fa-history mr-3"></i>View Orders</a>
+                      </li>
+                      <li>
+                        <a (click)="logout()" class="d-block">
+                           <i class="fa fa-sign-out mr-3"></i>Logout</a>
+                      </li>
+                    </ul>
+                  </div>
                 </ng-container>
                 </li>
                 <li class="onhover-dropdown wislist-dropdown">

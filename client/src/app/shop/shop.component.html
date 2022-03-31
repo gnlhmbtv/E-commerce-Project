@@ -165,16 +165,11 @@
        
          <nav class="page-section" *ngIf="totalCount > 0">
           <ul class="pagination">
-            <pagination 
-            [boundaryLinks]="true" 
-            [totalItems]="this.totalCount"
+            <app-paging
+              [pageSize]="shopParams.pageSize"
+              [totalCount]="totalCount"
             (pageChanged)="onPageChanged($event)"
-            [itemsPerPage]="this.shopParams.pageSize"
-            previousText="&lsaquo;" 
-            nextText="&rsaquo;" 
-            firstText="&laquo;" 
-            lastText="&raquo;">
-            </pagination>
+            ></app-paging>
           </ul>
       </nav>
       

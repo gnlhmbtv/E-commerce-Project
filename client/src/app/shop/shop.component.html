@@ -139,21 +139,16 @@
                 </div>
               </div>
               <div class="grid-options d-sm-inline-block d-none">
-                <h5 *ngIf="totalCount && totalCount > 0">
-                  
-                  Showing 
-                  <strong>
-                    {{(this.shopParams.pageNumber - 1) * this.shopParams.pageSize + 1}} - 
-                    {{this.shopParams.pageNumber * this.shopParams.pageSize
-                      > this.totalCount 
-                      ? this.totalCount
-                      : this.shopParams.pageNumber * this.shopParams.pageSize
-                    }}
-                  </strong> of <strong>{{this.totalCount}}</strong> results</h5>
-                  <h5 *ngIf="totalCount === 0">
-                    There are <strong>0</strong> results for this filter
-                  </h5>
+                <app-paging-header
+                  [totalCount]="totalCount"
+                  [pageSize]="this.shopParams.pageSize"
+                  [pageNumber]="this.shopParams.pageNumber"
+                ></app-paging-header>
               </div>
+
+              
+
+
             </div>
           </div>
         </div>

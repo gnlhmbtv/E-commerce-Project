@@ -10,21 +10,33 @@
                     <label for="name">Email address</label>
                     <input formControlName="email" type="email" name="name" id="name" required>
                     <span class="spin"></span>
-                    <div class="valid-feedback">
-                        Please fill the name
-                    </div>
+                    <span class="text-danger" 
+                    *ngIf="loginForm.get('email').invalid
+                    && loginForm.get('email').touched
+                    && loginForm.get('email').errors['required']"
+                    >Email address is required</span>
+                    <span class="text-danger" 
+                    *ngIf="loginForm.get('email').invalid
+                    && loginForm.get('email').touched
+                    && loginForm.get('email').errors['pattern']"
+                    >Email address is not valid</span>
                 </div>
     
                 <div class="input">
                     <label for="pass">Password</label>
                     <input formControlName="password" type="password" name="pass" id="pass">
                     <span class="spin"></span>
+                    <span class="text-danger" 
+                    *ngIf="loginForm.get('password').invalid
+                    && loginForm.get('password').touched
+                    && loginForm.get('password').errors['required']"
+                    >Password is required</span>
                 </div>
     
                 <a href="forgot.html" class="pass-forgot">Forgot your password?</a>
     
                 <div class="button login">
-                    <button type="submit">
+                    <button [disabled]="loginForm.invalid" type="submit">
                         <span>Log In</span>
                         <i class="fa fa-check"></i>
                     </button>

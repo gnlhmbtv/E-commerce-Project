@@ -5,18 +5,20 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {PagerComponent, PaginationModule} from 'ngx-bootstrap/pagination';
 import { PagingHeaderComponent } from './components/paging-header/paging-header.component';
 import { PagingComponent } from './components/paging/paging.component';
+import { TextInputComponent } from './components/text-input/text-input.component';
 
 @NgModule({
   declarations: [
     OrderTotalsComponent,
     PagingHeaderComponent,
-    PagingComponent
+    PagingComponent,
+    TextInputComponent
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     PaginationModule.forRoot()
   ],
-  exports: [OrderTotalsComponent, ReactiveFormsModule, PaginationModule, PagingHeaderComponent, PagingComponent]
+  exports: [OrderTotalsComponent, ReactiveFormsModule, PaginationModule, TextInputComponent, PagingHeaderComponent, PagingComponent]
 })
 export class SharedModule { }

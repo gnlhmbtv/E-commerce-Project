@@ -36,6 +36,7 @@ namespace API
             services.AddScoped<IBasketRepository, BasketRepository>();
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IOrderService, OrderService>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddAutoMapper(typeof(Mapper));
             services.AddControllers();
             services.AddDbContext<DataContext>(d =>

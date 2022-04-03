@@ -9,7 +9,7 @@ import { CheckoutService } from '../checkout.service';
   styleUrls: ['./checkout-delivery.component.css']
 })
 export class CheckoutDeliveryComponent implements OnInit {
-  @Input() checkOutForm: FormGroup;
+  @Input() checkoutForm: FormGroup;
   deliveryMethods: IDeliveryMethod[];
 
   constructor(private checkoutService: CheckoutService) { }
@@ -19,7 +19,6 @@ export class CheckoutDeliveryComponent implements OnInit {
       this.deliveryMethods = dm;
     },error => {
       console.log(error);
-      
     });
   }
 

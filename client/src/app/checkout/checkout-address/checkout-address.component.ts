@@ -16,13 +16,13 @@ export class CheckoutAddressComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // saveUserAddress() {
-  //   this.accountService.updateUserAddress(this.checkoutForm.get('addressForm').value).subscribe(() => {
-  //     this.toastr.success('Address saved');
-  //   }, error => {
-  //     this.toastr.error(error.message);
-  //     console.log(error);
-  //   })
-  // }
+  saveUserAddress() {
+    this.accountService.updateUserAddress(this.checkoutForm.get('addressForm').value).subscribe(() => {
+      this.toastr.success('Address saved');
+    }, error => {
+      this.toastr.error(error.message);
+      console.log(error);
+    })
+  }
 
 }

@@ -1,0 +1,72 @@
+<div class="col-sm-12 table-responsive mt-4">
+    <table class="table cart-table">
+        <thead>
+            <tr class="table-head">
+                <th scope="col">image</th>
+                <th scope="col">product name</th>
+                <th scope="col">price</th>
+                <th scope="col">quantity</th>
+                <th scope="col">action</th>
+                <th scope="col">total</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let item of (basket$ | async).items">
+            <tr>
+                <td>
+                    <a href="product-left-sidebar.html">
+                        <img src="{{item.photoUrl}}" class=" blur-up lazyload"
+                            alt="">
+                    </a>
+                </td>
+                <td>
+                    <a href="product-left-sidebar.html">{{item.productName}}</a>
+                    <div class="mobile-cart-content row">
+                        <div class="col">
+                            <div class="qty-box">
+                                <div class="input-group">
+                                    <input type="text" name="quantity" class="form-control input-number"
+                                        value="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <h2>{{item.price | currency}}</h2>
+                        </div>
+                        <div class="col">
+                            <h2 class="td-color">
+                                <a href="javascript:void(0)">
+                                    <i class="fas fa-times"></i>
+                                </a>
+                            </h2>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <h2>{{item.price | currency}}</h2>
+                </td>
+                <td>
+                    <div class="qty-box">
+                        <div class="input-group">
+                            <i (click)="decrementItemQuantity(item)" class="fa fa-minus-circle text-warning mr-2"
+                                        style="cursor: pointer; font-size: 1.5em;"></i>
+                                    <span class="font-weight-bold" style="font-size: 1.5em;">
+                                        {{item.quantity}}
+                                    </span>
+                                    <i (click)="incrementItemQuantity(item)"  class="fa fa-plus-circle text-warning mx-2"
+                                        style="cursor: pointer; font-size: 1.5em;"></i>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <a >
+                        <i (click)="removeBasketItem(item)" class="fas fa-times"></i>
+                    </a>
+                </td>
+                <td>
+                    <h2 class="td-color">{{item.price * item.quantity | currency}}</h2>
+                </td>
+            </tr>
+        </tbody>
+       
+    </table>
+</div>

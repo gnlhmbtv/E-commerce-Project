@@ -3,8 +3,19 @@
     <div class="container">
         <div class="row g-4">
             <div class="col-lg-8">
-                <app-checkout-address></app-checkout-address>
-                <app-checkout-delivery></app-checkout-delivery>>
+                <app-stepper [linearModeSelected]="false" #appStepper>
+                    <cdk-step [label]="'Address'" [completed]="(checkoutForm.get('addressForm')).valid">
+                        <app-checkout-address [checkoutForm]="checkoutForm"></app-checkout-address>
+                    </cdk-step>
+                    <cdk-step [label]="'Delivery'" [completed]="(checkoutForm.get('deliveryForm')).valid">
+                       <app-checkout-delivery [checkoutForm]="checkoutForm"></app-checkout-delivery>
+                    </cdk-step>
+                    <cdk-step [label]="'Review'">
+                        <app-checkout-review></app-checkout-review>
+                    </cdk-step>
+                    <cdk-step [label]="'Payment'">
+                    </cdk-step>
+                </app-stepper>
 
             </div>
            

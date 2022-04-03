@@ -31,44 +31,13 @@
 
         <hr class="my-lg-5 my-4">
 
-        <!-- <h3 class="mb-3">Payment</h3>
-
-        <div class="d-block my-3">
-            <div class="form-check custome-radio-box">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="credit">
-                <label class="form-check-label" for="credit">Credit card</label>
-            </div>
-
-            <div class="form-check custome-radio-box">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="debit">
-                <label class="form-check-label" for="debit">Debit card</label>
-            </div>
-
-            <div class="form-check custome-radio-box">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="paypal">
-                <label class="form-check-label" for="paypal">PayPal</label>
-            </div>
-        </div>
-        <div class="row g-4">
-            <div class="col-md-6">
-                <label for="cc-name" class="form-label">Name on card</label>
-                <input type="text" class="form-control" id="cc-name">
-                <div id="emailHelp" class="form-text">Full name as displayed on card</div>
-            </div>
-            <div class="col-md-6">
-                <label for="cc-number" class="form-label">Credit card number</label>
-                <input type="text" class="form-control" id="cc-number" required="">
-                <div class="invalid-feedback">Credit card number is required</div>
-            </div>
-            <div class="col-md-3">
-                <label for="expiration" class="form-label">Expiration</label>
-                <input type="text" class="form-control" id="expiration">
-            </div>
-            <div class="col-md-3">
-                <label for="cc-cvv" class="form-label">CVV</label>
-                <input type="text" class="form-control" id="cc-cvv">
-            </div>
-        </div> -->
-        <button class="btn btn-solid-default mt-4" type="submit">Continue
-            to checkout</button>
+        <button class="btn btn-solid-default mt-4" routerLink="/basket">
+            <i class="fa fa-angle-left"></i>
+            Back to Basket
+        </button>
+        <button class="btn btn-solid-default mt-4  ml-4" cdkStepperNext>
+            Go to Delivery
+              <i class="fa fa-angle-right"></i>
+        </button>
+      
     </form>

@@ -1,0 +1,77 @@
+ <!-- Oder Details Section Start -->
+ <section class="section-b-space cart-section order-details-table">
+    <div class="container">
+        <div class="title title1 title-effect mb-1 title-left">
+            <h2 class="mb-3">Order Details</h2>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="col-sm-12 table-responsive">
+                    <table class="table cart-table table-borderless">
+                        <tbody>
+                            <tr *ngFor="let order of orders" [routerLink]="['/orders/{{order.id}}']" routerLinkActive="router-link-active"  class="table-order">
+                               
+                                <td>
+                                    <p>Order</p>
+                                    <h5>#{{order.id}}</h5>
+                                </td>
+                                <td>
+                                    <p>Date</p>
+                                    <h5>{{order.orderDate | date: 'medium'}}</h5>
+                                </td>
+                                <td>
+                                    <p>Total</p>
+                                    <h5>{{order.total | currency}}</h5>
+                                </td>
+                                <td>
+                                    <p>Status</p>
+                                    <h5>{{order.status}}</h5>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <tfoot>
+                    <tr class="table-order">
+                        <td colspan="3">
+                            <h5 class="font-light">Subtotal :</h5>
+                        </td>
+                        <td>
+                            <h4>$55.00</h4>
+                        </td>
+                    </tr>
+
+                    <tr class="table-order">
+                        <td colspan="3">
+                            <h5 class="font-light">Shipping :</h5>
+                        </td>
+                        <td>
+                            <h4>$12.00</h4>
+                        </td>
+                    </tr>
+
+                    <tr class="table-order">
+                        <td colspan="3">
+                            <h5 class="font-light">Tax(GST) :</h5>
+                        </td>
+                        <td>
+                            <h4>$10.00</h4>
+                        </td>
+                    </tr>
+
+                    <tr class="table-order">
+                        <td colspan="3">
+                            <h4 class="theme-color fw-bold">Total Price :</h4>
+                        </td>
+                        <td>
+                            <h4 class="theme-color fw-bold">$6935.00</h4>
+                        </td>
+                    </tr>
+                </tfoot>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Order Details Section End -->

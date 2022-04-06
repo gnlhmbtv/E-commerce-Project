@@ -13,12 +13,14 @@ import { LoadingInterceptor } from './core/interceptors/loading.interceptors';
 import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
 import { OrderDetailedComponent } from './orders/order-detailed/order-detailed.component';
 import { OrdersComponent } from './orders/orders.component';
+import { RolesModalComponent } from './modals/roles-modal/roles-modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OrderDetailedComponent,
-    OrdersComponent
+    OrdersComponent,
+    RolesModalComponent
   ],
   imports: [
     BrowserModule,

@@ -19,6 +19,7 @@ namespace API.Controllers
         private readonly SignInManager<AppUser> _signInManager;
         private readonly ITokenService _tokenService;
         private readonly IMapper _mapper;
+
         public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager,
         ITokenService tokenService, IMapper mapper)
         {
@@ -67,7 +68,7 @@ namespace API.Controllers
 
         var result = await _userManager.UpdateAsync(user);
 
-        if(result.Succeeded) return Ok(_mapper.Map<Address, AddressDto>(user.Address));
+        if (result.Succeeded) return Ok(_mapper.Map<Address, AddressDto>(user.Address));
 
         return BadRequest("Problem updating with user");
     }
@@ -93,9 +94,9 @@ namespace API.Controllers
     [HttpPost("register")]
     public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
     {
-        if(CheckEmailExistsAsync(registerDto.Email).Result.Value)
+        if (CheckEmailExistsAsync(registerDto.Email).Result.Value)
         {
-            return new BadRequestObjectResult(new ApiValidationError{Errors = new []{"Email address is in used"}});
+            return new BadRequestObjectResult(new ApiValidationError { Errors = new[] { "Email address is in used" } });
         }
 
         var user = new AppUser
@@ -106,8 +107,10 @@ namespace API.Controllers
         };
 
         var result = await _userManager.CreateAsync(user, registerDto.Password);
+        var roleResult = await _userManager.AddToRoleAsync(user, "Member");
 
         if (!result.Succeeded) return BadRequest(new ApiResponse(400));
+        if (!roleResult.Succeeded) return BadRequest(new ApiResponse(400));
 
         return new UserDto
         {
@@ -116,6 +119,8 @@ namespace API.Controllers
             Email = user.Email
         };
     }
+
+    
 
 }
 }

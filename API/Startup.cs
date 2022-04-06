@@ -16,6 +16,8 @@ using StackExchange.Redis;
 using Infrastructure.Identity;
 using API.Extensions;
 using Infrastructure.Services;
+using Core.Entities.Identity;
+using Microsoft.AspNetCore.Identity;
 
 namespace API
 {
@@ -31,6 +33,18 @@ namespace API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+             services.AddIdentity<AppUser, IdentityRole>(opt => {
+                opt.Lockout.MaxFailedAccessAttempts = 5; 
+            }).AddEntityFrameworkStores<AppIdentityDbContext>().AddDefaultTokenProviders();
+            //  services.AddIdentityCore<AppUser>(opt =>
+            // {
+            //     opt.Lockout.MaxFailedAccessAttempts = 5; 
+            // })
+            //     .AddRoles<AppRole>()
+            //     .AddRoleManager<RoleManager<AppRole>>()
+            //     .AddSignInManager<SignInManager<AppUser>>()
+            //     .AddRoleValidator<RoleValidator<AppRole>>()
+            //     .AddEntityFrameworkStores<DataContext>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped<IBasketRepository, BasketRepository>();
@@ -50,6 +64,7 @@ namespace API
             });
 
             services.AddIdentityServices(_config);
+
 
             services.AddSwaggerGen(c =>
             {

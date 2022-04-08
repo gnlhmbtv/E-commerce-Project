@@ -32,10 +32,10 @@ namespace API
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
-             services.AddIdentity<AppUser, IdentityRole>(opt => {
-                opt.Lockout.MaxFailedAccessAttempts = 5; 
-            }).AddEntityFrameworkStores<AppIdentityDbContext>().AddDefaultTokenProviders();
+         {
+        //      services.AddIdentity<AppUser, IdentityRole>(opt => {
+        //         opt.Lockout.MaxFailedAccessAttempts = 5; 
+        //     }).AddEntityFrameworkStores<AppIdentityDbContext>().AddDefaultTokenProviders();
             //  services.AddIdentityCore<AppUser>(opt =>
             // {
             //     opt.Lockout.MaxFailedAccessAttempts = 5; 

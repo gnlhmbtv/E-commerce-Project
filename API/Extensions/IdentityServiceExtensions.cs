@@ -33,6 +33,15 @@ namespace API.Extensions
                         ValidateAudience = false 
                     };
                 });
+            services.AddIdentityCore<AppUser>(opt =>
+            {
+                opt.Lockout.MaxFailedAccessAttempts = 5; 
+            })
+                .AddRoles<AppRole>()
+                .AddRoleManager<RoleManager<AppRole>>()
+                .AddSignInManager<SignInManager<AppUser>>()
+                .AddRoleValidator<RoleValidator<AppRole>>()
+                .AddEntityFrameworkStores<AppIdentityDbContext>();
 
             return services;
         }

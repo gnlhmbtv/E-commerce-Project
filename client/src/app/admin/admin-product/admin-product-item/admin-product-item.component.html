@@ -1,0 +1,25 @@
+<td>{{product.name}}</td>
+<td>{{product.price}}</td>
+<td>{{product.productBrand}}</td>
+<td>{{product.productType}}</td>
+<td>
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="btn-group">
+      <button type="button" class="btn btn-sm btn-outline-success" [routerLink]="['/admin/product/',product.id]">View</button>
+      <button type="button" class="btn btn-sm btn-outline-warning" [routerLink]="['/admin/product/update/',product.id]">Edit</button>
+      <button type="button" class="btn btn-sm btn-outline-danger" (click)="openModal(template)">Delete</button>
+      <ng-template #template>
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">Are you sure delete?</h4>
+          <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h2>{{product.name}}</h2>
+          <button class="btn btn-danger mt-3" (click)="deleteProduct(product);modalRef.hide()">Delete</button>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</td>

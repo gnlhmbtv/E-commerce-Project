@@ -1,0 +1,67 @@
+<div class="container mt-5">
+    <div class="row">
+      <div class="col">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  
+          <div class="form-group">
+            <label>Photo</label>
+            <input type="file" #file (change)="fileInput($event)" class="form-control" placeholder="photo">
+          </div>
+  
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" formControlName="name" class="form-control" placeholder="Name">
+            <div class="validation alert alert-danger" *ngIf="_name.invalid && _name.touched">
+              <div *ngIf="_name.errors?.required">
+                Name required
+              </div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label>Price</label>
+            <input type="text" formControlName="price" class="form-control" placeholder="Price">
+            <div class="validation alert alert-danger" *ngIf="_price.invalid && _price.touched">
+              <div *ngIf="_price.errors?.required">
+                Price required
+              </div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label>ProductType</label>
+            <input type="text" formControlName="productTypeId" class="form-control" placeholder="ProductType">
+            <div class="validation alert alert-danger" *ngIf="_productTypeId.invalid && _productTypeId.touched">
+              <div *ngIf="_productTypeId.errors?.required">
+                ProductType required
+              </div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label>ProductBrand</label>
+            <input type="text" formControlName="productBrandId" class="form-control" placeholder="ProductBrand">
+            <div class="validation alert alert-danger" *ngIf="_productBrandId.invalid && _productBrandId.touched">
+              <div *ngIf="_productBrandId.errors?.required">
+                ProductBrand required
+              </div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label>Description</label>
+            <input type="text" formControlName="description" class="form-control" placeholder="Description">
+            <div class="validation alert alert-danger" *ngIf="_description.invalid && _description.touched">
+              <div *ngIf="_description.errors?.required">
+                Description required
+              </div>
+            </div>
+          </div>
+  
+          <button type="submit" [disabled]="form.invalid" class="btn btn-primary btn-submit">Create</button>
+  
+        </form>
+      </div>
+    </div>
+  </div>
+  

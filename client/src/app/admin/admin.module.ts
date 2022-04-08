@@ -5,6 +5,7 @@ import { LeftSidebarComponent } from './shared/left-sidebar/left-sidebar.compone
 import { AdminNavbarComponent } from './shared/admin-navbar/admin-navbar.component';
 import { UserManagmentComponent } from './user-managment/user-managment.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { AdminRoutingModule } from './admin-routing.module';
 
 
 
@@ -17,7 +18,8 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
     AdminPanelComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AdminRoutingModule
   ]
 })
 export class AdminModule { }

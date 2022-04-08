@@ -56,4 +56,16 @@ export class ShopService {
   getTypes(){
     return this.http.get<IType[]>(this.baseUrl + 'products/types');
   }
+
+  createProduct(product:FormData){
+    return this.http.post(this.baseUrl + 'products',product);
+  }
+
+  editProduct(id:number,product:FormData){
+    return this.http.put(this.baseUrl + 'products/' + id,product);
+  }
+
+  deleteProduct(id:number){
+    return this.http.delete(this.baseUrl + 'products/' + id);
+  }
 }

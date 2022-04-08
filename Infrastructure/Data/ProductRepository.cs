@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 using Core.Entities;
 using Core.Interfaces;
@@ -12,6 +13,54 @@ namespace Infrastructure.Data
         public ProductRepository(DataContext context)
         {
             _context = context;
+        }
+
+        public async Task<Product> CreateProductAsync(Product product)
+        {
+            await _context.Products.AddAsync(product);
+            await _context.SaveChangesAsync();
+            return product;
+        }
+
+        public async Task<Product> UpdateProductAsync( Product product,string webRoot)
+        {
+            var dbProduct =await _context.Products.FirstOrDefaultAsync(x => x.Id == product.Id);
+            if (dbProduct == null)
+            {
+                return dbProduct;
+            }
+            
+            string folderName = Path.Combine("images", "shop");
+            // if (product.PhotoUrl!=null)
+            // {   
+            //     ImageExtension.DeleteImage(webRoot,folderName,dbProduct.PhotoUrl);
+            //     string fileName = await product.PhotoUrl.SaveImg(webRoot, folderName);
+            //     dbProduct.PhotoUrl = fileName;
+            // }
+            dbProduct.Name = product.Name;
+            dbProduct.Price = product.Price;
+            dbProduct.Description = product.Description;
+            dbProduct.ProductBrandId = product.ProductBrandId;
+            dbProduct.ProductTypeId = product.ProductTypeId;
+            await _context.SaveChangesAsync();
+            return dbProduct;
+        }
+
+         public async Task<Product> DeleteProductAsync(int id,string webRoot)
+        {
+            var dbProduct = await _context.Products.FirstOrDefaultAsync(x => x.Id == id);
+            if (dbProduct == null)
+            {
+                return dbProduct;
+            }
+            
+            string folderName = Path.Combine("images", "shop");
+            
+            _context.Products.Remove(dbProduct);
+            // ImageExtension.DeleteImage(webRoot,folderName,dbProduct.PhotoUrl);
+            await _context.SaveChangesAsync();
+            
+            return dbProduct;
         }
 
         public async Task<IReadOnlyList<ProductBrand>> GetProductBrandAsync()

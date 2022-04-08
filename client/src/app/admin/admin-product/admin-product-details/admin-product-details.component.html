@@ -1,0 +1,40 @@
+<section class="shop area py-100">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="img-box">
+            <img class="img-fluid" src="assets/images/shop/01_shop.jpg" alt="01 Shop">
+          </div>
+        </div>
+        <div class="col-lg-6 d-flex align-items-center">
+          <div class="text-box-details">
+            <h3 class="title-product">{{product.name}}</h3>
+            <div class="item-review">
+              <span><i class="fas fa-star active"></i></span>
+              <span><i class="fas fa-star active"></i></span>
+              <span><i class="fas fa-star active"></i></span>
+              <span><i class="fas fa-star active"></i></span>
+              <span><i class="fas fa-star"></i></span>
+              <span class="reviews">4 Review(s)</span>
+              <span class="spance-span">/</span>
+              <span><a href="#">Add Review</a></span>
+            </div>
+            <div class="item-price">
+              {{product.price|currency}}
+            </div>
+            <p>{{product.description}}</p>
+            <ul class="list-details">
+              <li><span>Category:</span>{{product.productType}}</li>
+              <li><span>Brand:</span>{{product.productBrand}}</li>
+              <li>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

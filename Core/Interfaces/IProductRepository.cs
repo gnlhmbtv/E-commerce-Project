@@ -10,6 +10,9 @@ namespace Core.Interfaces
         Task<IReadOnlyList<Product>> GetProductsAsync();
         Task<IReadOnlyList<ProductBrand>> GetProductBrandAsync();
         Task<IReadOnlyList<ProductType>> GetProductTypeAsync();
+        Task<Product> CreateProductAsync(Product product);
+        Task<Product> UpdateProductAsync(Product product,string webRoot);
+        Task<Product> DeleteProductAsync(int id,string webRoot);
 
     }
 }

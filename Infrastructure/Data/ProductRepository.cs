@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using API.Extensions;
 using Core.Entities;
 using Core.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -22,7 +23,7 @@ namespace Infrastructure.Data
             return product;
         }
 
-        public async Task<Product> UpdateProductAsync( Product product,string webRoot)
+        public async Task<Product> UpdateProductAsync(Product product,string webRoot)
         {
             var dbProduct =await _context.Products.FirstOrDefaultAsync(x => x.Id == product.Id);
             if (dbProduct == null)
@@ -30,13 +31,13 @@ namespace Infrastructure.Data
                 return dbProduct;
             }
             
-            string folderName = Path.Combine("images", "shop");
-            // if (product.PhotoUrl!=null)
-            // {   
-            //     ImageExtension.DeleteImage(webRoot,folderName,dbProduct.PhotoUrl);
-            //     string fileName = await product.PhotoUrl.SaveImg(webRoot, folderName);
-            //     dbProduct.PhotoUrl = fileName;
-            // }
+            string folderName = Path.Combine("images", "products");
+            if (product.PhotoUrl!=null)
+            {   
+                ImageExtension.DeleteImage(webRoot,folderName,dbProduct.PhotoUrl);
+                 string fileName = await product.Photo.SaveImg(webRoot, folderName);
+                dbProduct.PhotoUrl = fileName;
+            }
             dbProduct.Name = product.Name;
             dbProduct.Price = product.Price;
             dbProduct.Description = product.Description;
@@ -57,7 +58,7 @@ namespace Infrastructure.Data
             string folderName = Path.Combine("images", "shop");
             
             _context.Products.Remove(dbProduct);
-            // ImageExtension.DeleteImage(webRoot,folderName,dbProduct.PhotoUrl);
+            ImageExtension.DeleteImage(webRoot,folderName,dbProduct.PhotoUrl);
             await _context.SaveChangesAsync();
             
             return dbProduct;

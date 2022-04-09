@@ -4,7 +4,6 @@ import { AdminLayoutComponent } from './shared/admin-layout.component';
 import { LeftSidebarComponent } from './shared/left-sidebar/left-sidebar.component';
 import { AdminNavbarComponent } from './shared/admin-navbar/admin-navbar.component';
 import { UserManagmentComponent } from './user-managment/user-managment.component';
-import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { AdminRoutingModule } from './admin-routing.module';
 
 
@@ -14,8 +13,7 @@ import { AdminRoutingModule } from './admin-routing.module';
     AdminLayoutComponent,
     LeftSidebarComponent,
     AdminNavbarComponent,
-    UserManagmentComponent,
-    AdminPanelComponent
+    UserManagmentComponent
   ],
   imports: [
     CommonModule,

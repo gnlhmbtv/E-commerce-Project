@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundError } from 'rxjs';
-import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { AdminGuard } from './core/guards/admin.guard';
 import { AuthGuard } from './core/guards/auth.guard';
 import { NotFoundComponent } from './core/not-found/not-found.component';
@@ -18,6 +17,11 @@ const routes: Routes = [
     path: 'shop',
     loadChildren: () =>
       import('./shop/shop.module').then((mod) => mod.ShopModule),
+  },
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./admin/admin.module').then((mod) => mod.AdminModule),
   },
   {
     path: 'basket',
@@ -41,8 +45,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./account/account.module').then((mod) => mod.AccountModule),
   },
-  { path: '**', redirectTo: '', pathMatch: 'full' },
-  {path: 'admin', component: AdminPanelComponent, canActivate: [AdminGuard]},
+  { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
 @NgModule({

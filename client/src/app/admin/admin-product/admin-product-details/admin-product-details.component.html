@@ -7,7 +7,7 @@
           </div>
         </div>
         <div class="col-lg-6 d-flex align-items-center">
-          <div class="text-box-details">
+          <div *ngIf="product" class="text-box-details">
             <h3 class="title-product">{{product.name}}</h3>
             <div class="item-review">
               <span><i class="fas fa-star active"></i></span>

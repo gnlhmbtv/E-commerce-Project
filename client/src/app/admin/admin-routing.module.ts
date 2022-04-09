@@ -1,16 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { AdminLayoutComponent } from './shared/admin-layout.component';
 
 const route: Routes = [
-  {path: '', component: AdminLayoutComponent}
+  {path: '', component: AdminLayoutComponent},
+  {path:'product',loadChildren:()=>import('../admin/admin-product/admin-product.module').then(m=>m.AdminProductModule)},
+
 ]
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    RouterModule.forChild(route)
+  ],
+  exports:[RouterModule]
 })
 export class AdminRoutingModule { }

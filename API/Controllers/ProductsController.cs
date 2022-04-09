@@ -81,7 +81,7 @@ namespace API.Controllers
         {
             var mapperProduct = _mapper.Map<Product>(productCreateDto);
             
-            string folderName = Path.Combine("images", "shop");
+            string folderName = Path.Combine("images", "products");
             string fileName = await productCreateDto.Photo.SaveImg(_env.WebRootPath, folderName);
             mapperProduct.PhotoUrl = fileName;
             

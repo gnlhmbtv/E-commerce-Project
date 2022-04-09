@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AdminProductDetailsComponent } from './admin-product-details/admin-product-details.component';
 import { AdminProductUpdateComponent } from './admin-product-update/admin-product-update.component';
 import { AdminProductItemComponent } from './admin-product-item/admin-product-item.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 
@@ -21,7 +22,8 @@ import { AdminProductItemComponent } from './admin-product-item/admin-product-it
   imports: [
     CommonModule,
     AdminProductRoutingModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    ModalModule.forRoot()
   ]
 })
 export class AdminProductModule { }

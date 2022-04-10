@@ -8,6 +8,9 @@ namespace API.Helpers
 {
     public class Mapper : Profile
     {
+        // private static string BaseUrlProduct = "http://localhost:5000/images/shop/";
+        private static string BaseUrlAbout = "http://localhost:5000/images/about/";
+
         public Mapper()
         {
             CreateMap<Product, ProductReturnDto>()
@@ -28,6 +31,24 @@ namespace API.Helpers
                 .ForMember(d => d.PhotoUrl, o => o.MapFrom<OrderItemUrlResolver>()); 
             CreateMap<ProductCreateDto, Product>();
             CreateMap<ProductUpdateDto, Product>();
+             CreateMap<About, AboutReturnDto>()
+                .ForMember(x => x.PhotoUrl
+                    , o =>
+                        o.MapFrom(x => BaseUrlAbout+x.PhotoUrl));
+            // CreateMap<Product,ProductReturnDto>()
+            //     .ForMember(x => x.ProductType
+            //         , o =>
+            //             o.MapFrom(x => x.ProductType.Name))
+            //     .ForMember(x => x.ProductBrand
+            //         , o =>
+            //             o.MapFrom(x => x.ProductBrand.Name))
+            //     .ForMember(x => x.PhotoUrl
+            //         , o =>
+            //             o.MapFrom(x => BaseUrlProduct + x.PhotoUrl));
+            //  CreateMap<About, AboutReturnDto>()
+            //     .ForMember(x => x.PhotoUrl
+            //         , o =>
+            //             o.MapFrom(x => BaseUrlAbout+x.PhotoUrl));
         }
     }
 }

@@ -18,7 +18,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./shop/shop.module').then((mod) => mod.ShopModule),
   },
-  {
+  {   
     path: 'admin',
     loadChildren: () =>
       import('./admin/admin.module').then((mod) => mod.AdminModule),
@@ -27,6 +27,11 @@ const routes: Routes = [
     path: 'basket',
     loadChildren: () =>
       import('./basket/basket.module').then((mod) => mod.BasketModule),
+  },
+  {
+    path: 'about',
+    loadChildren: () =>
+      import('./about/about.module').then((mod) => mod.AboutModule),
   },
   {
     path: 'checkout',

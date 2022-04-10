@@ -1,5 +1,9 @@
 {
   "devDependencies": {
     "http-server": "^14.1.0"
+  },
+  "dependencies": {
+    "@angular-devkit/build-angular": "^13.3.2",
+    "jquery": "^3.6.0"
   }
 }

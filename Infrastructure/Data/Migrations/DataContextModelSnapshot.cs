@@ -34,6 +34,15 @@ namespace Infrastructure.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Abouts");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, culpa! Asperiores labore amet nemo ullam odit atque adipisci, hic, aliquid animi fugiat praesentium quidem.  Perspiciatis, expedita!",
+                            PhotoUrl = "assets/images/inner-page/review-image/8.jpg",
+                            Title = "largest Online fashion destination"
+                        });
                 });
 
             modelBuilder.Entity("Core.Entities.OrderAggregate.DeliveryMethod", b =>

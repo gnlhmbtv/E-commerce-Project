@@ -18,7 +18,7 @@ import { RouterModule } from '@angular/router';
     PagingComponent,
     TextInputComponent,
     StepperComponent,
-    BasketSummaryComponent,
+    BasketSummaryComponent
   ],
   imports: [
     CommonModule,
@@ -36,7 +36,7 @@ import { RouterModule } from '@angular/router';
     PagingComponent,
     CdkStepperModule,
     StepperComponent,
-    BasketSummaryComponent
+    BasketSummaryComponent,
   ],
 })
 export class SharedModule {}

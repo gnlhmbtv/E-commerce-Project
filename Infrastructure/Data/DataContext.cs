@@ -29,11 +29,11 @@ namespace Infrastructure.Data
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
-            if(Database.ProviderName == "Microsoft.EntityFrameworkCore.Sqlite")
+            if (Database.ProviderName == "Microsoft.EntityFrameworkCore.Sqlite")
             {
                 foreach (var entityType in modelBuilder.Model.GetEntityTypes())
                 {
-                    var properties = entityType.ClrType.GetProperties().Where(p => p.PropertyType 
+                    var properties = entityType.ClrType.GetProperties().Where(p => p.PropertyType
                     == typeof(decimal));
                     var dateTimeProperties = entityType.ClrType.GetProperties()
                         .Where(p => p.PropertyType == typeof(DateTimeOffset));
@@ -49,6 +49,15 @@ namespace Infrastructure.Data
                             .HasConversion(new DateTimeOffsetToBinaryConverter());
                     }
                 }
+                modelBuilder.Entity<About>().HasData(
+                new About
+                {
+                    Id = 1,
+                    Title = "largest Online fashion destination",
+                    PhotoUrl = "assets/images/inner-page/review-image/8.jpg",
+                    Description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, culpa! Asperiores labore amet nemo ullam odit atque adipisci, hic, aliquid animi fugiat praesentium quidem.  Perspiciatis, expedita!"
+                }
+            );
             }
         }
 

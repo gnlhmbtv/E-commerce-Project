@@ -3,14 +3,16 @@ using System;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Infrastructure.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20220411100955_ContactAdded")]
+    partial class ContactAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -43,32 +45,6 @@ namespace Infrastructure.Data.Migrations
                             PhotoUrl = "assets/images/inner-page/review-image/8.jpg",
                             Title = "largest Online fashion destination"
                         });
-                });
-
-            modelBuilder.Entity("Core.Entities.Contact", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Message")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Phone")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Subject")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Contacts");
                 });
 
             modelBuilder.Entity("Core.Entities.OrderAggregate.DeliveryMethod", b =>

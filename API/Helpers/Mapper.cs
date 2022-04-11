@@ -31,10 +31,9 @@ namespace API.Helpers
                 .ForMember(d => d.PhotoUrl, o => o.MapFrom<OrderItemUrlResolver>()); 
             CreateMap<ProductCreateDto, Product>();
             CreateMap<ProductUpdateDto, Product>();
-             CreateMap<About, AboutReturnDto>()
-                .ForMember(x => x.PhotoUrl
-                    , o =>
-                        o.MapFrom(x => BaseUrlAbout+x.PhotoUrl));
+            CreateMap<About, AboutReturnDto>()
+                .ForMember(x => x.PhotoUrl, o => o.MapFrom(x => BaseUrlAbout+x.PhotoUrl));
+            CreateMap<ContactCreateDto, Contact>();
             // CreateMap<Product,ProductReturnDto>()
             //     .ForMember(x => x.ProductType
             //         , o =>

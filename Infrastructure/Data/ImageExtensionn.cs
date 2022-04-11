@@ -3,11 +3,12 @@ using System.IO;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 
-namespace API.Extensions
+namespace Infrastructure.Data
 {
-    public static class ImageExtension
+    public static class ImageExtensionn
     {
-        public static void DeleteImage(string root, string folder, string fileName)
+           
+        public static void DeleteImagee(string root, string folder, string fileName)
         {
             string filePath = Path.Combine(root, folder, fileName);
             if (System.IO.File.Exists(filePath))
@@ -17,17 +18,17 @@ namespace API.Extensions
         }
         
         
-        public static bool IsImage(this IFormFile file)
+        public static bool IsImagee(this IFormFile file)
         {
             return file.ContentType.Contains("image/");
         }
 
-        public static bool MaxLength(this IFormFile file, int kb)
+        public static bool MaxLengthh(this IFormFile file, int kb)
         {
             return file.Length / 1024 > kb;
         }
 
-        public async static Task<string> SaveImg(this IFormFile file, string root, string folder)
+        public async static Task<string> SaveImgg(this IFormFile file, string root, string folder)
         {
             string fileName = Guid.NewGuid().ToString() + file.FileName;
             string resultPath = Path.Combine(root, folder, fileName);

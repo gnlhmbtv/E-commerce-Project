@@ -45,8 +45,8 @@ namespace API.Controllers
             string folderName = Path.Combine("images", "about");
             if (aboutUpdateDto.Photo!=null)
             {
-                ImageExtension.DeleteImage(_env.WebRootPath,folderName,dbAbout.PhotoUrl);
-                string fileName = await aboutUpdateDto.Photo.SaveImg(_env.WebRootPath, folderName);
+                ImageExtensionn.DeleteImagee(_env.WebRootPath,folderName,dbAbout.PhotoUrl);
+                string fileName = await aboutUpdateDto.Photo.SaveImgg(_env.WebRootPath, folderName);
                 dbAbout.PhotoUrl = fileName;
             }
             await _context.SaveChangesAsync();

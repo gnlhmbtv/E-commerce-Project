@@ -23,6 +23,9 @@ namespace Infrastructure.Data
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<DeliveryMethod> DeliveryMethods { get; set; }
         public DbSet<About> Abouts { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
+
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
-using API.Extensions;
 using Core.Entities;
 using Core.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -34,8 +33,8 @@ namespace Infrastructure.Data
             string folderName = Path.Combine("images", "products");
             if (product.PhotoUrl!=null)
             {   
-                ImageExtension.DeleteImage(webRoot,folderName,dbProduct.PhotoUrl);
-                 string fileName = await product.Photo.SaveImg(webRoot, folderName);
+                ImageExtensionn.DeleteImagee(webRoot,folderName,dbProduct.PhotoUrl);
+                string fileName = await product.Photo.SaveImgg(webRoot, folderName);
                 dbProduct.PhotoUrl = fileName;
             }
             dbProduct.Name = product.Name;
@@ -56,10 +55,12 @@ namespace Infrastructure.Data
             }
             
             string folderName = Path.Combine("images", "shop");
+
+            ImageExtensionn.DeleteImagee(webRoot,folderName,dbProduct.PhotoUrl);
+            await _context.SaveChangesAsync();
             
             _context.Products.Remove(dbProduct);
-            ImageExtension.DeleteImage(webRoot,folderName,dbProduct.PhotoUrl);
-            await _context.SaveChangesAsync();
+            
             
             return dbProduct;
         }

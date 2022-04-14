@@ -14,13 +14,19 @@ import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
 import { OrderDetailedComponent } from './orders/order-detailed/order-detailed.component';
 import { OrdersComponent } from './orders/orders.component';
 import { RolesModalComponent } from './modals/roles-modal/roles-modal.component';
+import { ContactComponent } from './contact/contact.component';
+import { MainContactComponent } from './contact/main-contact/main-contact.component';
+import { MainContactMapComponent } from './contact/main-contact-map/main-contact-map.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OrderDetailedComponent,
     OrdersComponent,
-    RolesModalComponent
+    RolesModalComponent,
+    ContactComponent,
+    MainContactComponent,
+    MainContactMapComponent
   ],
   imports: [
     BrowserModule,

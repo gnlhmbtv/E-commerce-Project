@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundError } from 'rxjs';
+import { ContactComponent } from './contact/contact.component';
 import { AdminGuard } from './core/guards/admin.guard';
 import { AuthGuard } from './core/guards/auth.guard';
 import { NotFoundComponent } from './core/not-found/not-found.component';
@@ -45,6 +46,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./orders/orders-routing.module').then((mod) => mod.OrdersRoutingModule),
   },
+  {path:'contact',component:ContactComponent},
   {
     path: 'account',
     loadChildren: () =>

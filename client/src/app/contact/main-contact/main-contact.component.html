@@ -1,5 +1,5 @@
- <!-- Breadcrumb section start -->
- <section class="breadcrumb-section section-b-space">
+<!-- Breadcrumb section start -->
+<section class="breadcrumb-section section-b-space">
     <ul class="circles">
         <li></li>
         <li></li>
@@ -32,70 +32,66 @@
 </section>
 <!-- Breadcrumb section end -->
 
-
-
- <!-- Contact Section Start -->
- <section class="contact-section">
+<!-- Contact Section Start -->
+<section class="contact-section">
     <div class="container">
         <div class="row g-4">
             <div class="col-lg-7">
                 <div class="materialContainer">
-                    <div class="material-details">
-                        <div class="title title1 title-effect mb-1 title-left">
-                            <h2>Contact Us</h2>
-                            <p class="ms-0 w-100">Your email address will not be published. Required fields are
-                                marked *</p>
+                    <form  [formGroup]="contactform" (ngSubmit)="onSubmit()">
+                        <div class="row">
+              
+                          <div class="col-md-6 form-item">
+                            <input formControlName="name" type="text" name="name" placeholder="Name">
+                            <div class="validation alert alert-danger" *ngIf="_name.invalid && _name.touched">
+                              <div *ngIf="_name.errors?.required">
+                                Name required
+                              </div>
+                            </div>
+                          </div>
+              
+                          <div class="col-md-6 form-item">
+                            <input formControlName="email" type="email" name="email" placeholder="Email">
+                            <div class="validation alert alert-danger" *ngIf="_email.invalid && _email.touched">
+                              <div *ngIf="_email.errors?.required">
+                                Email required
+                              </div>
+                            </div>
+                          </div>
+              
+                          <div class="col-md-6 form-item">
+                            <input formControlName="phone" type="tel" name="tel" placeholder="Phone">
+                            <div class="validation alert alert-danger" *ngIf="_phone.invalid && _phone.touched">
+                              <div *ngIf="_phone.errors?.required">
+                                Phone required
+                              </div>
+                            </div>
+                          </div>
+              
+                          <div class="col-md-6 form-item">
+                            <input formControlName="subject" type="tel" name="tel" placeholder="Subject">
+                            <div class="validation alert alert-danger" *ngIf="_subject.invalid && _subject.touched">
+                              <div *ngIf="_subject.errors?.required">
+                                Subject required
+                              </div>
+                            </div>
+                          </div>
+              
+                          <div class="col-md-12 form-item">
+                            <textarea formControlName="message" placeholder="Leave Your Message Here....."></textarea>
+                            <div class="validation alert alert-danger" *ngIf="_message.invalid && _message.touched">
+                              <div *ngIf="_message.errors?.required">
+                                Message required
+                              </div>
+                            </div>
+                          </div>
+              
+                          <div class="col-md-12 form-item">
+                            <button type="submit" [disabled]="contactform.invalid" class="btn-1">Send Message</button>
+                          </div>
+              
                         </div>
-                    </div>
-                    <form  (ngSubmit)="onSubmit()">
-                        <div class="row g-4 mt-md-1 mt-2">
-                            <div class="col-md-6">
-                                <input formControlName="name" type="text" name="name" placeholder="Name">
-                                    <div class="validation alert alert-danger" *ngIf="_name.invalid && _name.touched">
-                                        <div *ngIf="_name.errors?.required">
-                                        Name required
-                                        </div>
-                                    </div>
-                            </div>
-                            <div class="col-md-6">
-                                <input formControlName="email" type="email" name="email" placeholder="Email">
-                                    <div class="validation alert alert-danger" *ngIf="_email.invalid && _email.touched">
-                                        <div *ngIf="_email.errors?.required">
-                                        Email required
-                                        </div>
-                                    </div>
-                            </div>
-                            <div class="col-md-6">
-                                <input formControlName="phone" type="tel" name="tel" placeholder="Phone">
-                                <div class="validation alert alert-danger" *ngIf="_phone.invalid && _phone.touched">
-                                  <div *ngIf="_phone.errors?.required">
-                                    Phone required
-                                  </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <input formControlName="subject" type="tel" name="tel" placeholder="Subject">
-                                    <div class="validation alert alert-danger" *ngIf="_subject.invalid && _subject.touched">
-                                        <div *ngIf="_subject.errors?.required">
-                                        Subject required
-                                        </div>
-                                    </div>
-                            </div>
-    
-                            <div class="col-12">
-                                <textarea formControlName="message" placeholder="Leave Your Message Here....."></textarea>
-                                <div class="validation alert alert-danger" *ngIf="_message.invalid && _message.touched">
-                                  <div *ngIf="_message.errors?.required">
-                                    Message required
-                                  </div>
-                                </div>
-                            </div>
-    
-                            <div class="col-auto">
-                                <button [disabled]="form.invalid" class="btn btn-solid-default" type="submit">Submit</button>
-                            </div>
-                        </div>
-                    </form>
+                      </form>
                 </div>
             </div>
 
@@ -142,21 +138,3 @@
     </div>
 </section>
 <!-- Contact Section End -->
-
-
-
-  <!-- Map Section start -->
-  <section class="contact-section">
-    <div class="container-fluid">
-        <div class="row gy-4">
-            <div class="col-12 p-0">
-                <div class="location-map">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7227.225249699896!2d55.17263937326456!3d25.081115462415855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1632538854272!5m2!1sen!2sin"
-                        loading="lazy"></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Map Section End -->

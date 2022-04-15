@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {Router} from '@angular/router';
-import {ToastrService} from 'ngx-toastr';
-import { ContactService } from '../contact.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { ContactService } from './contact.service';
 
 @Component({
-  selector: 'app-main-contact',
-  templateUrl: './main-contact.component.html',
-  styleUrls: ['./main-contact.component.css']
+  selector: 'app-contact-page',
+  templateUrl: './contact-page.component.html',
+  styleUrls: ['./contact-page.component.css']
 })
-export class MainContactComponent implements OnInit {
+export class ContactPageComponent implements OnInit {
 
   get _name(){
     return this.contactform.get('name');
@@ -68,4 +68,5 @@ export class MainContactComponent implements OnInit {
       },error=>this.toastr.error(error));
     }
   }
+
 }

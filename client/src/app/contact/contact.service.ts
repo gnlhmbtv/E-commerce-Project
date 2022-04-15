@@ -9,7 +9,7 @@ import { Contact } from '../shared/models/contact';
 })
 export class ContactService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   getAllContacts():Observable<Contact[]>{
     return this.http.get<Contact[]>(environment.apiUrl+'contact')

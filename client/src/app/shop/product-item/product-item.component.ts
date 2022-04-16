@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AccountService } from 'src/app/account/account.service';
 import { BasketService } from 'src/app/basket/basket.service';
+import { WishlistService } from 'src/app/shared/components/wishlist/wishlist.service';
 import { IProduct } from 'src/app/shared/models/product';
 import { IUser } from 'src/app/shared/models/user';
 
@@ -14,7 +15,7 @@ export class ProductItemComponent implements OnInit {
   @Input() product: IProduct;
   currentUser$: Observable<IUser>;
 
-  constructor(private basketService: BasketService, private accountService: AccountService) { }
+  constructor(private basketService: BasketService, private wishlistService: WishlistService, private accountService: AccountService) { }
 
   ngOnInit() {
     this.currentUser$ = this.accountService.currentUser$;
@@ -23,6 +24,10 @@ export class ProductItemComponent implements OnInit {
 
   addItemToBasket(){
     this.basketService.addItemToBasket(this.product);
+  }
+
+  addItemToWishlist(){
+    this.wishlistService.addItemToWishlist(this.product);
   }
 
 }

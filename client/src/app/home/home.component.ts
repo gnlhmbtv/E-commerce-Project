@@ -15,12 +15,11 @@ import { ShopService } from '../shop/shop.service';
 export class HomeComponent implements OnInit {
 
   @ViewChild('search', {static: false}) searchTerm: ElementRef;
-  products: IProduct[];
   brands: IBrand[];
   types: IType[];
   shopParams = new ShopParams();
   totalCount: number;
-  product: IProduct;
+  products: IProduct[];
   quantity = 1;
   sortOptions = [
     {name: 'Alphabetical', value: 'name'},
@@ -51,14 +50,6 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  id = 22;
-  loadProduct(){
-    this.shopService.getProduct(+this.activateRoute.snapshot.paramMap.get('id')).subscribe(product => {
-      this.product = product;
-    }, error => {
-      console.log(error);
-    });
-  }
 
   getBrands(){
     this.shopService.getBrands().subscribe(response => {

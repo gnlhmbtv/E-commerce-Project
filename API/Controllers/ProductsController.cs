@@ -22,26 +22,35 @@ namespace API.Controllers
     {
         private readonly IGenericRepository<ProductBrand> _productBrandRepository;
         private readonly IGenericRepository<ProductType> _productTypeRepository;
+        private readonly IGenericRepository<ProductSize> _productSizeRepository;
+        private readonly IGenericRepository<ProductColor> _productColorRepository;
         private readonly IGenericRepository<Product> _productsRepository;
         private readonly IProductRepository _productRepository;
     
         private readonly IMapper _mapper;
         private readonly IWebHostEnvironment _env;
+        private readonly DataContext _context;
 
 
         public ProductsController(IGenericRepository<Product> productsRepository,
         IGenericRepository<ProductBrand> productBrandRepository,
         IGenericRepository<ProductType> productTypeRepository,
+        IGenericRepository<ProductSize> productSizeRepository,
+        IGenericRepository<ProductColor> productColorRepository,
         IMapper mapper,
         IProductRepository productRepository,
-        IWebHostEnvironment env)
+        IWebHostEnvironment env,
+        DataContext context)
         {
              _productRepository=productRepository;
             _productTypeRepository = productTypeRepository;
             _productBrandRepository = productBrandRepository;
+            _productSizeRepository = productSizeRepository;
+            _productColorRepository = productColorRepository;
             _productsRepository = productsRepository;
             _mapper = mapper;
             _env = env;
+            _context = context;
 
         }
 
@@ -103,8 +112,14 @@ namespace API.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
         {
-            Product product = await _productRepository.DeleteProductAsync(id,_env.WebRootPath);
-            if (product == null) return NotFound();
+            // Product product = await _productRepository.DeleteProductAsync(id,_env.WebRootPath);
+            // if (product == null) return NotFound();
+            // return Ok();
+
+             var dbProduct = _context.Products.FirstOrDefault(p => p.Id == id);
+            if (dbProduct == null) return NotFound();
+            _context.Products.Remove(dbProduct);
+            await _context.SaveChangesAsync();
             return Ok();
         }
 
@@ -117,6 +132,16 @@ namespace API.Controllers
         public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetProductBrands()
         {
             return Ok(await _productBrandRepository.ListAllAsync());
+        }
+        [HttpGet("sizes")]
+        public async Task<ActionResult<IReadOnlyList<ProductSize>>> GetProductSizes()
+        {
+            return Ok(await _productSizeRepository.ListAllAsync());
+        }
+        [HttpGet("colors")]
+        public async Task<ActionResult<IReadOnlyList<ProductColor>>> GetProductColors()
+        {
+            return Ok(await _productColorRepository.ListAllAsync());
         }
     }
 }

@@ -48,7 +48,7 @@ namespace Infrastructure.Data
             return dbProduct;
         }
 
-         public async Task<Product> DeleteProductAsync(int id,string webRoot)
+        public async Task<Product> DeleteProductAsync(int id,string webRoot)
         {
             var dbProduct = await _context.Products.FirstOrDefaultAsync(x => x.Id == id);
             if (dbProduct == null)
@@ -57,12 +57,10 @@ namespace Infrastructure.Data
             }
             
             string folderName = Path.Combine("images", "shop");
-
-            ImageExtensionn.DeleteImagee(webRoot,folderName,dbProduct.PhotoUrl);
-            await _context.SaveChangesAsync();
             
             _context.Products.Remove(dbProduct);
-            
+            ImageExtensionn.DeleteImagee(webRoot,folderName,dbProduct.PhotoUrl);
+            await _context.SaveChangesAsync();
             
             return dbProduct;
         }
@@ -79,7 +77,7 @@ namespace Infrastructure.Data
 
         public async Task<IReadOnlyList<Product>> GetProductsAsync()
         {
-            return await _context.Products.Include(p => p.ProductSize).Include(p => p.ProductColor).Include(p => p.ProductType).Include(p => p.ProductBrand).ToListAsync();
+            return await _context.Products.Include(p => p.ProductType).Include(p => p.ProductBrand).ToListAsync();
         }
 
         public async Task<IReadOnlyList<ProductType>> GetProductTypeAsync()

@@ -39,6 +39,11 @@ const routes: Routes = [
       import('./basket/basket.module').then((mod) => mod.BasketModule),
   },
   {
+    path: 'wishlist',
+    loadChildren: () =>
+      import('./shared/components/wishlist/wishlist.module').then((mod) => mod.WishlistModule),
+  },
+  {
     path: 'about',
     loadChildren: () =>
       import('./about/about.module').then((mod) => mod.AboutModule),

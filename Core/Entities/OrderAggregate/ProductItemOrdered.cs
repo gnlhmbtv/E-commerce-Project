@@ -14,7 +14,7 @@ namespace Core.Entities.OrderAggregate
             PhotoUrl = photoUrl;
                
         }
-                public int ProductItemId { get; set; }
+        public int ProductItemId { get; set; }
         public string ProductName { get; set; }
         public string PhotoUrl { get; set; }
     }

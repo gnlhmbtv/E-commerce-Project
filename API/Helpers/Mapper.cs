@@ -20,7 +20,11 @@ namespace API.Helpers
             
             CreateMap<CustomerBasketDto, CustomerBasket>();
             
+            CreateMap<CustomerWishlistDto, CustomerWishlist>();
+            
             CreateMap<BasketItemDto, BasketItem>();
+
+            CreateMap<WishlistItemDto, WishlistItem>();
             
             CreateMap<AddressDto, Core.Entities.OrderAggregate.Address>();
 

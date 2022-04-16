@@ -96,141 +96,19 @@
                             <h3>Popular Posts</h3>
                         </div>
 
-                        <div class="popular-image">
+                        <div *ngFor="let blog of blogs" class="popular-image">
                             <div class="popular-number">
-                                <h4 class="theme-color">01</h4>
+                                <h4 style="margin-top: 20px;" class="theme-color"><i class=" fa fa-thin fa-blog"></i></h4>
                             </div>
                             <div class="popular-contain">
-                                <h3>Lorem Ipsum is simply dummy text of the printing.</h3>
-                                <p class="font-light mb-1"><span>King Monster</span> in <span>News</span></p>
+                                <h3>{{blog.title}}</h3>
                                 <div class="review-box">
-                                    <span class="font-light clock-time"><i data-feather="clock"></i>15m ago</span>
-                                    <span class="font-light eye-icon"><i data-feather="eye"></i>8641</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="popular-image">
-                            <div class="popular-number">
-                                <h4 class="theme-color">02</h4>
-                            </div>
-                            <div class="popular-contain">
-                                <h3>Lorem Ipsum is simply dummy text of the printing.</h3>
-                                <p class="font-light mb-1"><span>King Monster</span> in <span>News</span></p>
-                                <div class="review-box">
-                                    <span class="font-light clock-time"><i data-feather="clock"></i>15m ago</span>
-                                    <span class="font-light eye-icon"><i data-feather="eye"></i>8641</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="popular-image">
-                            <div class="popular-number">
-                                <h4 class="theme-color">03</h4>
-                            </div>
-                            <div class="popular-contain">
-                                <h3>Lorem Ipsum is simply dummy text of the printing.</h3>
-                                <p class="font-light mb-1"><span>King Monster</span> in <span>News</span></p>
-                                <div class="review-box">
-                                    <span class="font-light clock-time"><i data-feather="clock"></i>15m ago</span>
-                                    <span class="font-light eye-icon"><i data-feather="eye"></i>8641</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="popular-image">
-                            <div class="popular-number">
-                                <h4 class="theme-color">04</h4>
-                            </div>
-                            <div class="popular-contain">
-                                <h3>Lorem Ipsum is simply dummy text of the printing.</h3>
-                                <p class="font-light mb-1"><span>King Monster</span> in <span>News</span></p>
-                                <div class="review-box">
-                                    <span class="font-light clock-time"><i data-feather="clock"></i>15m ago</span>
-                                    <span class="font-light eye-icon"><i data-feather="eye"></i>8641</span>
+                                    <span class="font-light clock-time"><i style="margin-top: 5px;" class="fa fa-clock"></i>{{blog.publishTime | date:'medium'}} </span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- Popular Post End -->
-
-                    <!-- Category section Start -->
-                    <div class="category-section popular-post mt-4">
-                        <div class="popular-title">
-                            <h3>Category</h3>
-                        </div>
-                        <ul>
-                            <li class="category-box">
-                                <a href="blog-left-sidebar.html">
-                                    <div class="category-product">
-                                        <div class="cate-shape">
-                                            <i class="fas fa-globe text-color"></i>
-                                        </div>
-
-                                        <div class="cate-contain">
-                                            <h5 class="text-color">Global</h5>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="category-box">
-                                <a href="blog-left-sidebar.html">
-                                    <div class="category-product">
-                                        <div class="cate-shape">
-                                            <i class="fas fa-building text-color"></i>
-                                        </div>
-
-                                        <div class="cate-contain">
-                                            <h5 class="text-color">Business</h5>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-
-                            <li class="category-box">
-                                <a href="blog-left-sidebar.html">
-                                    <div class="category-product">
-                                        <div class="cate-shape">
-                                            <i class="fas fa-play text-color"></i>
-                                        </div>
-
-                                        <div class="cate-contain">
-                                            <h5 class="text-color">Entertainmant</h5>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-
-                            <li class="category-box">
-                                <a href="blog-left-sidebar.html">
-                                    <div class="category-product">
-                                        <div class="cate-shape">
-                                            <i class="fas fa-tshirt text-color"></i>
-                                        </div>
-
-                                        <div class="cate-contain">
-                                            <h5 class="text-color">Sports</h5>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-
-                            <li class="category-box">
-                                <a href="blog-left-sidebar.html">
-                                    <div class="category-product">
-                                        <div class="cate-shape">
-                                            <i class="fas fa-dumbbell text-color"></i>
-                                        </div>
-
-                                        <div class="cate-contain">
-                                            <h5 class="text-color">Health</h5>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- Category section End -->
                 </div>
             </div>
         </div>

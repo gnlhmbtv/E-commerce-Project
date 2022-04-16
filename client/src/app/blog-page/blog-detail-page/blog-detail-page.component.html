@@ -1,0 +1,167 @@
+    <!-- Breadcrumb section start -->
+    <section class="breadcrumb-section section-b-space">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h3>Blog Details</h3>
+                    <nav>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item active" aria-current="page">Blog Details</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb section end -->
+
+
+
+
+
+
+
+
+ <!-- Details Blog Section Start -->
+ <section class="masonary-blog-section">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-9 col-md-8 order-md-1 ratio_square">
+                <div class="row g-4">
+                    <div class="col-12">
+                        <div class="blog-details">
+                            <div class="blog-image-box">
+                                <img src="{{blog.photoUrl}}" alt="" class="card-img-top">
+                                <div class="blog-title">
+                                    <div>
+                                        <div class="social-media media-center">
+                                            <a href="https://www.facebook.com/" target="new">
+                                                <div class="social-icon-box social-color">
+                                                    <i class="fab fa-facebook-f"></i>
+                                                </div>
+                                            </a>
+                                            <a href="https://twitter.com/" target="new">
+                                                <div class="social-icon-box social-color">
+                                                    <i class="fab fa-twitter"></i>
+                                                </div>
+                                            </a>
+                                            <a href="https://in.pinterest.com/" target="new">
+                                                <div class="social-icon-box social-color">
+                                                    <i class="fab fa-pinterest-p"></i>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="blog-detail-contain">
+                                <span class="font-light">{{blog.publishTime | date}}  -   {{blog.topic}}</span>
+                                <!-- <span class="font-light">{{blog.topic}}</span> -->
+                                <h2 class="card-title">{{blog.title}}</h2>
+                                <p class="font-light firt-latter">{{blog.description}}</p>
+
+                            </div>
+                        </div>
+
+                        <!-- <div class="blog-profile box-center mb-lg-5 mb-4">
+                            <div class="image-profile">
+                                <img src="assets/images/inner-page/review-image/2.jpg"
+                                    class="img-fluid blur-up lazyload" alt="">
+                            </div>
+                            <br>
+                            <div class="image-name text-weight">
+                                <h3>John wike</h3>
+                                <h6>15 Aug 2021</h6>
+                            </div>
+                        </div> -->
+
+                        <div class="row g-2">
+                            <div class="col-12">
+                                <div class="minus-spacing mb-2">
+                                    <h3>Leave Comments</h3>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <label for="fname" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="fname" placeholder="Enter First Name"
+                                    required>
+                            </div>
+                            <div class="col-lg-4">
+                                <label for="lname" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="lname" placeholder="Enter Last Name"
+                                    required>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="email"
+                                    placeholder="example@example.com" required>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="textarea" class="form-label">Comments</label>
+                                <textarea rows="3" class="form-control" id="textarea"
+                                    placeholder="Leave a comment here" required></textarea>
+                            </div>
+
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-solid-default btn-spacing mt-2">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4">
+                <div class="left-side">
+                    <!-- Search Bar Start -->
+                    <div class="search-section">
+                        <div class="input-group search-bar">
+                            <input type="search" class="form-control search-input" placeholder="Search">
+                            <button class="input-group-text search-button" id="basic-addon3">
+                                <i class="fas fa-search text-color"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Search Bar End -->
+
+                    <!-- Popular Post Start -->
+                    <div class="popular-post mt-4">
+                        <div class="popular-title">
+                            <h3>Popular Posts</h3>
+                        </div>
+
+                        <div *ngFor="let blog of blogs" class="popular-image">
+                            <div class="popular-number">
+                                <h4 style="margin-top: 20px;" class="theme-color"><i class=" fa fa-thin fa-blog"></i></h4>
+                            </div>
+                            <div class="popular-contain">
+                                <h3>{{blog.title}}</h3>
+                                <div class="review-box">
+                                    <span class="font-light clock-time"><i class="fa fa-clock"></i>&nbsp;{{blog.publishTime | date:'medium'}} </span>
+                                </div>
+                            </div>
+                        </div>
+
+                 
+                    </div>
+                    <!-- Popular Post End -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Details Blog Section End -->

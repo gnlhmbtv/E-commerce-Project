@@ -1,0 +1,40 @@
+<!-- Breadcrumb section start -->
+<section class="breadcrumb-section section-b-space">
+    <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3>Wishlist</h3>
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active" aria-current="page">Wishlist</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb section end -->
+    <!-- Cart Section Start -->
+    <section class="wish-list-section section-b-space">
+        <div *ngIf="(wishlist$ | async) as wishlist" class="container">
+            <div class="row">
+                <div class="col-sm-12 table-responsive">
+                    <app-wishlist-summary (remove)="removeWishlistItem($event)">
+                    </app-wishlist-summary>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Cart Section End -->

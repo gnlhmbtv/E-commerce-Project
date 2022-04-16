@@ -274,7 +274,7 @@
                         </span>
                       </div>
                     </li>
-                    <li class="mega-menu home-menu">
+                    <li class="dropdownn mega-menu home-menu">
                       <a [routerLink]="['/']" class="nav-link menu-title"
                         >home</a
                       >
@@ -283,18 +283,18 @@
                       <a routerLink="/shop" class="nav-link menu-title">shop</a>
                     </li>
                     <li class="dropdownn">
-                      <a routerLink="/blog" class="nav-link menu-title"
-                        >blog</a>
+                      <a routerLink="/blog" class="nav-link menu-title">blog</a>
                     </li>
                     <li class="dropdownn">
                       <a routerLink="/about" class="nav-link menu-title"
-                        >about us</a>
+                        >about us</a
+                      >
                     </li>
                     <li class="dropdownn">
                       <a routerLink="/contact" class="nav-link menu-title"
-                        >contact</a>
+                        >contact</a
+                      >
                     </li>
-                    
 
                     <!-- <li>
                       <a routerLink="/test-error" class="nav-link menu-title"
@@ -339,48 +339,56 @@
                   </div>
                 </li>
                 <li class="onhover-dropdown">
-                  <ng-container *ngIf="(currentUser$ | async) === null" >
-                    <div  class="cart-media">
+                  <ng-container *ngIf="(currentUser$ | async) === null">
+                    <div class="cart-media">
                       <i class="fa fa-solid fa-user"></i>
                     </div>
-                  <div class="onhover-div profile-dropdown">
-                    <ul>
-                      <li>
-                        <a routerLink="/account/login" class="d-block">Login</a>
-                      </li>
-                      <li>
-                        <a routerLink="/account/register" class="d-block"
-                          >Register</a
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                </ng-container>
-                <ng-container *ngIf="currentUser$ | async" >
-                  <a href="">Welcome {{(currentUser$ | async).displayName}}</a>
-                  <div class="onhover-div profile-dropdown">
-                    <ul>
-                      <li>
-                        <a routerLink="/basket" class="d-block">
-                           <i class="fa fa-shopping-cart mr-3"></i>  View Basket</a>
-                      </li>
-                      <li>
-                        <a routerLink="/orders" class="d-block">
-                           <i class="fa fa-history mr-3"></i>  View Orders</a>
-                      </li>
-                      <li>
-                        <a (click)="logout()" class="d-block">
-                           <i class="fa fa-sign-out mr-3"></i>  Logout</a>
-                      </li>
-                    </ul>
-                  </div>
-                </ng-container>
+                    <div class="onhover-div profile-dropdown">
+                      <ul>
+                        <li>
+                          <a routerLink="/account/login" class="d-block"
+                            >Login</a
+                          >
+                        </li>
+                        <li>
+                          <a routerLink="/account/register" class="d-block"
+                            >Register</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </ng-container>
+                  <ng-container *ngIf="currentUser$ | async">
+                    <a href=""
+                      >Welcome {{ (currentUser$ | async).displayName }}</a
+                    >
+                    <div class="onhover-div profile-dropdown">
+                      <ul>
+                        <li>
+                          <a routerLink="/basket" class="d-block">
+                            <i class="fa fa-shopping-cart mr-3"></i> View
+                            Basket</a
+                          >
+                        </li>
+                        <li>
+                          <a routerLink="/orders" class="d-block">
+                            <i class="fa fa-history mr-3"></i> View Orders</a
+                          >
+                        </li>
+                        <li>
+                          <a (click)="logout()" class="d-block">
+                            <i class="fa fa-sign-out mr-3"></i> Logout</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </ng-container>
                 </li>
                 <li class="onhover-dropdown wislist-dropdown">
                   <div class="cart-media">
                     <a href="wishlist.html">
                       <i data-feather="heart"></i>
-                      <span class="label label-theme rounded-pill">{{ (basket$ | async).items.length }}</span>
+                      <!-- <span class="label label-theme rounded-pill">{{ (basket$ | async).items.length }}</span> -->
                     </a>
                   </div>
                   <div class="onhover-div">
@@ -395,15 +403,20 @@
                     </a>
                   </div>
                 </li>
-                <li *ngIf="currentUser$ | async"  class="onhover-dropdown cart-dropdown">
+                <li
+                  *ngIf="currentUser$ | async"
+                  class="onhover-dropdown cart-dropdown"
+                >
                   <button
-                    routerLink="/basket" 
+                    routerLink="/basket"
                     type="button"
                     class="btn btn-solid-default btn-spacing"
                   >
-                  <i class="fa fa-shopping-cart mr-3"></i>
-                    <span >{{(basketTotal$ | async).subtotal | currency}}</span>
-                    <span *ngIf="!(basket$ | async) as basket" >0 $</span>
+                    <i class="fa fa-shopping-cart mr-3"></i>
+                    <span>{{
+                      (basketTotal$ | async).subtotal | currency
+                    }}</span>
+                    <span *ngIf="!(basket$ | async) as basket">0 $</span>
                   </button>
                   <div class="onhover-div">
                     <div class="cart-menu">
@@ -434,18 +447,19 @@
                               <div class="qty-with-price">
                                 <span>{{ item.price | currency }}</span>
                                 <span>
-                                   {{item.quantity}}
-                                  
+                                  {{ item.quantity }}
                                 </span>
                               </div>
                             </div>
-                              <a>
-                                <i style="margin-bottom: 100px;"
+                            <a>
+                              <i
+                                style="margin-bottom: 100px"
                                 *ngIf="isBasket"
-                                (click)="removeBasketItem(item)" 
-                                class="fas fa-times">
-                                </i>
-                              </a>
+                                (click)="removeBasketItem(item)"
+                                class="fas fa-times"
+                              >
+                              </i>
+                            </a>
                           </div>
                         </li>
                         <!-- <li>
@@ -481,7 +495,8 @@
                     </div>
                     <div class="cart-btn">
                       <h6 class="cart-total">
-                        <span class="font-light">Total:</span> {{(basketTotal$ | async).subtotal | currency}}
+                        <span class="font-light">Total:</span>
+                        {{ (basketTotal$ | async).subtotal | currency }}
                       </h6>
                       <button
                         routerLink="/basket"

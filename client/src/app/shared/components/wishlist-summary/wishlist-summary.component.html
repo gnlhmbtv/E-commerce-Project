@@ -1,0 +1,65 @@
+<ng-container *ngIf="wishlist$ | async">
+    <div class="col-sm-12 table-responsive mt-4">
+      <table class="table cart-table">
+        <thead>
+          <tr class="table-head">
+            <th scope="col" [class.bg-light]="isWishlist">image</th>
+            <th scope="col" [class.bg-light]="isWishlist">product name</th>
+            <th scope="col" [class.bg-light]="isWishlist">price</th>
+            <th *ngIf="isWishlist" scope="col">remove</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let item of (wishlist$ | async).items">
+          <tr>
+            <td>
+              <a href="product-left-sidebar.html">
+                <img src="{{ item.photoUrl }}" class="blur-up lazyload" alt="" />
+              </a>
+            </td>
+            <td>
+              <a href="product-left-sidebar.html">{{ item.productName }}</a>
+              <div class="mobile-cart-content row">
+                <div class="col">
+                  <div class="qty-box">
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        name="quantity"
+                        class="form-control input-number"
+                        value="1"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <h2>{{ item.price | currency }}</h2>
+                </div>
+                <div class="col">
+                  <h2 class="td-color">
+                    <a href="javascript:void(0)">
+                      <i class="fas fa-times"></i>
+                    </a>
+                  </h2>
+                </div>
+              </div>
+            </td>
+            <td>
+              <h2>{{ item.price | currency }}</h2>
+            </td>
+            <td>
+                <a>
+                  <i 
+                  *ngIf="isWishlist"
+                  (click)="removeWishlistItem(item)" 
+                  class="fas fa-times">
+                  </i>
+                </a>
+              </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </ng-container>
+  
+  
+  

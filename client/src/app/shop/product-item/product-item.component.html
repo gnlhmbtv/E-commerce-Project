@@ -15,9 +15,19 @@
                         <i class="fa fa-shopping-cart mr-3"></i>
                     </a>
                 </li>
+                <li *ngIf="(currentUser$ | async) === null">
+                    <a class="addtocart-btn" routerLink="/account/login">
+                        <i class="fa fa-thin fa-heart"></i>
+                    </a>
+                </li>
                 <li *ngIf="currentUser$ | async">
                     <a (click)="addItemToBasket()" class="addtocart-btn">
                         <i class="fa fa-shopping-cart mr-3"></i>
+                    </a>
+                </li>
+                <li *ngIf="currentUser$ | async">
+                    <a (click)="addItemToWishlist()" class="addtocart-btn">
+                        <i class="fa fa-thin fa-heart"></i>
                     </a>
                 </li>
                 <li>

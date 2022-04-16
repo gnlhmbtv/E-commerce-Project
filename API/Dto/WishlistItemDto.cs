@@ -2,9 +2,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace API.Dto
 {
-    public class BasketItemDto
+    public class WishlistItemDto
     {
-        [Required]
+         [Required]
         public int Id { get; set; }
         [Required]
         public string ProductName { get; set; }
@@ -20,9 +20,7 @@ namespace API.Dto
         public string Brand { get; set; }
         [Required]
         public string Type { get; set; }
-        [Required]
         public string Size { get; set; }
-        [Required]
         public string Color { get; set; }
     }
 }

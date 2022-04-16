@@ -11,6 +11,8 @@ import { StepperComponent } from './components/stepper/stepper.component';
 import { BasketSummaryComponent } from './components/basket-summary/basket-summary.component';
 import { RouterModule } from '@angular/router';
 import { MainBlogComponent } from './components/main-blog/main-blog.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { WishlistSummaryComponent } from './components/wishlist-summary/wishlist-summary.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { MainBlogComponent } from './components/main-blog/main-blog.component';
     TextInputComponent,
     StepperComponent,
     BasketSummaryComponent,
-    MainBlogComponent
+    MainBlogComponent,
+    WishlistSummaryComponent
   ],
   imports: [
     CommonModule,

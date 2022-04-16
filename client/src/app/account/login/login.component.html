@@ -8,26 +8,26 @@
                 </div>
                     <app-text-input formControlName="email" [label]="'Email address'"></app-text-input>
 
-                
+
                     <app-text-input formControlName="password" [label]="'Password'" [type]="'password'"></app-text-input>
-               
-    
+
+
                 <a routerLink="/forgot-password" class="pass-forgot">Forgot your password?</a>
-    
+
                 <div class="button login">
                     <button [disabled]="loginForm.invalid" type="submit">
                         <span>Log In</span>
                         <i class="fa fa-check"></i>
                     </button>
                 </div>
-    
+
                 <p class="sign-category">
                     <span>Or sign in with</span>
                 </p>
-    
+
                 <div class="row gx-md-3 gy-3">
                     <div class="col-md-6">
-                        <a href="www.facebook.html">
+                        <a (click)="facebookLogin()">
                             <div class="social-media fb-media">
                                 <img src="assets/images/inner-page/facebook.png" class="img-fluid blur-up lazyload"
                                     alt="">
@@ -45,9 +45,9 @@
                         </a>
                     </div>
                 </div>
-    
+
                 <p>Not a member? <a routerLink="/account/register" class="theme-color">Sign up now</a></p>
-    
+
             </div>
         </form>
     </div>

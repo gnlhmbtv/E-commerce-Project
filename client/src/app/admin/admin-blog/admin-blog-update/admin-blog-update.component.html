@@ -1,1 +1,56 @@
-<p>admin-blog-update works!</p>
+<div class="container mt-5">
+    <div class="row mt-3">
+      <div class="col-sm-4 mt-3">
+        <h1>Update Blog</h1>
+      </div>
+      <div class="col-sm-8 mt-3">
+        <div *ngIf="form.dirty" class="alert alert-info">
+          <strong>Information </strong>You have made changes.Any unsaved changes will be lost
+        </div>
+      </div>
+      <div class="col">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  
+          <div class="form-group">
+            <label>Photo</label>
+            <input type="file" #file (change)="fileInput($event)" class="form-control" placeholder="photo">
+          </div>
+  
+          <div class="form-group">
+            <label>Title</label>
+            <input type="text" [(ngModel)]="blog.title" formControlName="title" class="form-control" placeholder="title">
+            <div class="validation alert alert-danger" *ngIf="_title.invalid && _title.touched">
+              <div *ngIf="_title.errors?.required">
+                Title required
+              </div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label>Topic</label>
+            <input type="text" [(ngModel)]="blog.topic" formControlName="topic" class="form-control" placeholder="topic">
+            <div class="validation alert alert-danger" *ngIf="_topic.invalid && _topic.touched">
+              <div *ngIf="_topic.errors?.required">
+                Topic required
+              </div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label>Description</label>
+            <textarea type="text" [(ngModel)]="blog.description" formControlName="description"
+                      class="form-control" placeholder="description" rows="5"></textarea>
+            <div class="validation alert alert-danger" *ngIf="_description.invalid && _description.touched">
+              <div *ngIf="_description.errors?.required">
+                Description required
+              </div>
+            </div>
+          </div>
+  
+  
+          <button type="submit" [disabled]="form.invalid" class="btn btn-primary btn-submit">Update</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  

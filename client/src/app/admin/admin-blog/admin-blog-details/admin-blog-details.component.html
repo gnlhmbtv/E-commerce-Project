@@ -1,1 +1,92 @@
-<p>admin-blog-details works!</p>
+<section class="blog area py-100">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="blog-item">
+                <div class="img-box">
+                  <a href="#" class="open-post">
+                    <img class="img-fluid" src="{{blog.photoUrl}}" alt="01 Blog">
+                  </a>
+                  <ul>
+                    <li><a href="#">{{blog.topic}}</a></li>
+                  </ul>
+                </div>
+                <div class="text-box">
+                  <span class="blog-date">{{blog.publishTime|date}}</span>
+                  <h5>{{blog.title}}</h5>
+                  <p>{{blog.description}}</p>
+                  <div class="share-post">
+                    <span>Share Post :</span>
+                    <ul>
+                      <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                      <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                      <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+                      <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="item-comments">
+                <div class="title">
+                  <h4>Comments</h4>
+                </div>
+                <div class="inner-comments" >
+                  <div class="comments-box" *ngFor="let comment of commments">
+                    <div class="img-box">
+                      <img class="img-fluid" src="assets/images/testimonials/01_testimonials.jpg" alt="01 Testimonials">
+                    </div>
+                    <div class="text-box">
+                      <h5>{{comment.user}}</h5>
+                      <div class="time">{{comment.publishTime|date:'medium'}}</div>
+                      <p>{{comment.context}}</p>
+                      <button class="btn btn-outline-primary btn-sm mr-2">Reply</button>
+                      <button *ngIf="id==comment.userId" class="btn btn-outline-danger btn-sm" (click)="deleteComment(comment.id)">Delete</button>
+                    </div>
+                  </div>
+                  <!--                <div class="comments-box reply">-->
+                  <!--                  <div class="img-box">-->
+                  <!--                    <img class="img-fluid" src="assets/images/testimonials/02_testimonials.jpg" alt="02 Testimonials">-->
+                  <!--                  </div>-->
+                  <!--                  <div class="text-box">-->
+                  <!--                    <h5>Benjamin Flanco</h5>-->
+                  <!--                    <div class="time">25 Nov 19 10:33 am</div>-->
+                  <!--                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim Magna, sed diam nonumy eirmod tempor.</p>-->
+                  <!--                    <a href="#">Reply</a>-->
+                  <!--                  </div>-->
+                  <!--                </div>-->
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="add-comments">
+                <div class="title">
+                  <h4>Add Comment</h4>
+                </div>
+                <div class="inner-add-comments">
+                  <div class="row">
+                    <form  [formGroup]="form" (ngSubmit)="onSubmit()" class="col-md-12">
+                      <div class="col-md-12 inner-add-comments-box">
+                        <textarea id="inputTextArea" formControlName="context" placeholder="Leave Your Message Here" ></textarea>
+                      </div>
+  
+                      <div class="col-md-12 inner-add-comments-box">
+                        <button type="submit" [disabled]="form.invalid" class="btn-1">Post Comment</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  

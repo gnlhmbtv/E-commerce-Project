@@ -1,0 +1,20 @@
+input.ng-invalid.ng-touched{
+    border: 3px solid red;
+  }
+  
+  input.ng-valid{
+    border: 3px solid green;
+  }
+  
+  textarea.ng-invalid.ng-touched{
+    border: 3px solid red;
+  }
+  
+  textarea.ng-valid{
+    border: 3px solid green;
+  }
+  
+  .btn-submit:disabled{
+    cursor: not-allowed;
+  }
+  

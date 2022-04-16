@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Desktop\\e-commerce_final\\api\\API.csproj": {}
+    "c:\\Users\\user\\Desktop\\e-commerce_final\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Desktop\\e-commerce_final\\api\\API.csproj": {
+    "c:\\Users\\user\\Desktop\\e-commerce_final\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Desktop\\e-commerce_final\\api\\API.csproj",
+        "projectUniqueName": "c:\\Users\\user\\Desktop\\e-commerce_final\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\user\\Desktop\\e-commerce_final\\api\\API.csproj",
+        "projectPath": "c:\\Users\\user\\Desktop\\e-commerce_final\\API\\API.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Desktop\\e-commerce_final\\api\\obj\\",
+        "outputPath": "c:\\Users\\user\\Desktop\\e-commerce_final\\API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -25,15 +25,14 @@
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\user\\Desktop\\e-commerce_final\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\user\\Desktop\\e-commerce_final\\Infrastructure\\Infrastructure.csproj"
+              "c:\\Users\\user\\Desktop\\e-commerce_final\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "c:\\Users\\user\\Desktop\\e-commerce_final\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -67,6 +66,10 @@
             "NETCore.MailKit": {
               "target": "Package",
               "version": "[2.0.3, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
             }
           },
           "imports": [
@@ -91,14 +94,14 @@
         }
       }
     },
-    "C:\\Users\\user\\Desktop\\e-commerce_final\\Core\\Core.csproj": {
+    "c:\\Users\\user\\Desktop\\e-commerce_final\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Desktop\\e-commerce_final\\Core\\Core.csproj",
+        "projectUniqueName": "c:\\Users\\user\\Desktop\\e-commerce_final\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\user\\Desktop\\e-commerce_final\\Core\\Core.csproj",
+        "projectPath": "c:\\Users\\user\\Desktop\\e-commerce_final\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Desktop\\e-commerce_final\\Core\\obj\\",
+        "outputPath": "c:\\Users\\user\\Desktop\\e-commerce_final\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -167,14 +170,14 @@
         }
       }
     },
-    "C:\\Users\\user\\Desktop\\e-commerce_final\\Infrastructure\\Infrastructure.csproj": {
+    "c:\\Users\\user\\Desktop\\e-commerce_final\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Desktop\\e-commerce_final\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "c:\\Users\\user\\Desktop\\e-commerce_final\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\user\\Desktop\\e-commerce_final\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "c:\\Users\\user\\Desktop\\e-commerce_final\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Desktop\\e-commerce_final\\Infrastructure\\obj\\",
+        "outputPath": "c:\\Users\\user\\Desktop\\e-commerce_final\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -195,8 +198,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\user\\Desktop\\e-commerce_final\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\user\\Desktop\\e-commerce_final\\Core\\Core.csproj"
+              "c:\\Users\\user\\Desktop\\e-commerce_final\\Core\\Core.csproj": {
+                "projectPath": "c:\\Users\\user\\Desktop\\e-commerce_final\\Core\\Core.csproj"
               }
             }
           }

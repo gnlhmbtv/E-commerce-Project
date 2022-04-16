@@ -21,11 +21,7 @@ import { AdminBlogUpdateComponent } from './admin-blog/admin-blog-update/admin-b
     AdminNavbarComponent,
     UserManagmentComponent,
     AdminContactComponent,
-    AdminContactItemComponent,
-    AdminBlogCreateComponent,
-    AdminBlogDetailsComponent,
-    AdminBlogItemComponent,
-    AdminBlogUpdateComponent
+    AdminContactItemComponent
   ],
   imports: [
     CommonModule,

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, TemplateRef } from '@angular/core';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { Blog } from 'src/app/shared/models/blog';
 
 @Component({
   selector: 'app-admin-blog-item',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminBlogItemComponent implements OnInit {
 
-  constructor() { }
+  modalRef: BsModalRef;
+  @Input() blog:Blog;
+  @Output() onDelete=new EventEmitter<Blog>();
+
+  constructor(private modalService: BsModalService) { }
 
   ngOnInit(): void {
   }
 
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+  }
+
+  deleteBlog(blog:Blog){
+    this.onDelete.emit(blog);
+  }
 }

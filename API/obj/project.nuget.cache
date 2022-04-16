@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vr/ZL44SDGAYcAv3rRkBfSCdw22hf3ITC+fnAr1q/fyVeDkfL1IsJ9o1mO68X92q0LIaxcDTwDk0pF2OApjL9Q==",
+  "dgSpecHash": "C3ubN5B01gS5hNiTnYbN+hoNISiDSX6Z60C0J35FxS2h/YTKPLYL4nHk0A06Ywl0azjMOiz8G8aqlMijUSckNQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Desktop\\e-commerce_final\\api\\API.csproj",
+  "projectFilePath": "c:\\Users\\user\\Desktop\\e-commerce_final\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
@@ -65,6 +65,7 @@
     "C:\\Users\\user\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\mimekit\\3.2.0\\mimekit.3.2.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\netcore.mailkit\\2.0.3\\netcore.mailkit.2.0.3.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\pipelines.sockets.unofficial\\2.0.22\\pipelines.sockets.unofficial.2.0.22.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\portable.bouncycastle\\1.9.0\\portable.bouncycastle.1.9.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.2\\sqlitepclraw.bundle_e_sqlite3.2.0.2.nupkg.sha512",

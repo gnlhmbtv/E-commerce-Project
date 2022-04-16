@@ -74,6 +74,17 @@ export class AccountService {
     this.router.navigateByUrl('/');
   }
 
+  fbLogin(accessToken: string) {
+    return this.http.post(this.baseUrl + `account/fbLogin?accessToken=${accessToken}`, {}).pipe(
+      map((response: any) => {
+        const user = response;
+        if (user) {
+          this.currentUserSource.next(user);
+        }
+      })
+    )
+  }
+
   checkEmailExists(email: string){
     return this.http.get(this.baseUrl + 'account/emailexists?email=' + email);
   }

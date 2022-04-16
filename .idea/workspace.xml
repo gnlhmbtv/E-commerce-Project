@@ -6,7 +6,50 @@
   <component name="ChangeListManager">
     <list default="true" id="8a448bfe-16bc-43de-9608-84cd2b6a6fc6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Identity/AppIdentityDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Identity/AppIdentityDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/API/API.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Controllers/AccountController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/API/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/API.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/API.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/about/about.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/about/about.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/about/about.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/about/about.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/account/account.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/account/account.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/account/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/account/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/account/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/account/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-create/admin-blog-create.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-create/admin-blog-create.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-create/admin-blog-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-create/admin-blog-create.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-create/admin-blog-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-create/admin-blog-create.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-details/admin-blog-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-details/admin-blog-details.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-details/admin-blog-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-details/admin-blog-details.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-item/admin-blog-item.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-item/admin-blog-item.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-item/admin-blog-item.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-item/admin-blog-item.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-item/admin-blog-item.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-item/admin-blog-item.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-update/admin-blog-update.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-update/admin-blog-update.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-update/admin-blog-update.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-update/admin-blog-update.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-update/admin-blog-update.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-update/admin-blog-update.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-contact/admin-contact-item/admin-contact-item.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-contact/admin-contact-item/admin-contact-item.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-contact/admin-contact-item/admin-contact-item.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-contact/admin-contact-item/admin-contact-item.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-contact/admin-contact.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-contact/admin-contact.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/admin/shared/left-sidebar/left-sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/shared/left-sidebar/left-sidebar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +114,8 @@
       <workItem from="1648025092960" duration="1685000" />
       <workItem from="1648322164369" duration="203000" />
       <workItem from="1648444818583" duration="494000" />
+      <workItem from="1650209417196" duration="102000" />
+      <workItem from="1650212383980" duration="95000" />
     </task>
     <servers />
   </component>

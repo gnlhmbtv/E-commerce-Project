@@ -13,14 +13,14 @@ export class AboutComponent implements OnInit {
   constructor(private aboutService:AboutService) { }
 
   ngOnInit() {
-    // this.getAbout();
+    this.getAbout();
   }
-  // getAbout(){
-  //   this.aboutService.getAbout()
-  //     .subscribe(about=>{
-  //       this.about=about;
-  //     }, error => {
-  //       console.log(error);
-  //     });
-  // }
+  getAbout(){
+    this.aboutService.getAbout()
+      .subscribe(about=>{
+        this.about=about;
+      }, error => {
+        console.log(error);
+      });
+  }
 }

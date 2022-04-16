@@ -11,6 +11,9 @@ import { AccountService } from '../account.service';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   returnUrl: string;
+  fbAccessToken: string | null = null;
+  fbLoading = false;
+
 
   constructor(
     private accountService: AccountService,
@@ -42,5 +45,33 @@ export class LoginComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  getFacebookLoginStatus = async () => {
+    window.FB.getLoginStatus((response: { status: string; authResponse: { accessToken: string; }; }) => {
+      if (response.status === 'connected') {
+        this.fbAccessToken = response.authResponse.accessToken;
+      }
+    })
+  }
+
+  facebookLogin = () => {
+    this.fbLoading = true;
+    const apiLogin = (accesToken: string) => {
+      this.accountService.fbLogin(accesToken).subscribe(user => {
+        this.fbLoading = false;
+        this.router.navigateByUrl('');
+      }, error => {
+        console.log(error);
+        this.fbLoading = false;
+      })
+    }
+    if (this.fbAccessToken) {
+      apiLogin(this.fbAccessToken);
+    } else {
+      window.FB.login((response: { authResponse: { accessToken: string; }; }) => {
+        apiLogin(response.authResponse.accessToken);
+      }, {scope: 'public_profile,email'})
+    }
   }
 }

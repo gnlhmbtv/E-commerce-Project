@@ -8,7 +8,7 @@ const route: Routes = [
   {path: '', component: AdminLayoutComponent},
   {path:'product',loadChildren:()=>import('../admin/admin-product/admin-product.module').then(m=>m.AdminProductModule)},
   {path:'contact',component:AdminContactComponent},
-
+  {path:'blog',loadChildren:()=>import('../admin/admin-blog/admin-blog.module').then(m=>m.AdminBlogModule)},
 
 ]
 

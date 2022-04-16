@@ -1,6 +1,10 @@
+
+
+
+
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Claims;
+using System.Net.Http;
 using System.Threading.Tasks;
 using API.Dto;
 using API.Errors;
@@ -13,6 +17,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 
 namespace API.Controllers
 {
@@ -23,10 +30,14 @@ namespace API.Controllers
         private readonly ITokenService _tokenService;
         private readonly IMapper _mapper;
         private readonly IEmailSender _emailSender;
+        private readonly IConfiguration _config;
+        private readonly HttpClient _httpClient;
+
 
         public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager,
-        ITokenService tokenService, IMapper mapper, IEmailSender emailSender)
+        ITokenService tokenService, IMapper mapper, IEmailSender emailSender, IConfiguration config)
         {
+            _config = config;
             _emailSender = emailSender;
             _mapper = mapper;
             _tokenService = tokenService;
@@ -165,11 +176,62 @@ namespace API.Controllers
             {
                 var errors = resetPasswordResult.Errors.Select(e => e.Description);
 
-                return BadRequest(new {Errors = errors});
+                return BadRequest(new { Errors = errors });
             }
 
             return Ok();
         }
+
+        [HttpPost("fbLogin")]
+        public async Task<ActionResult<UserDto>> FacebookLogin(string accessToken)
+        {
+            var fbVerifyKeys = _config["Facebook:AppId"] + "|" + _config["Facebook:AppSecret"];
+
+            var verifyToken = await _httpClient
+                .GetAsync($"debug_token?input_token={accessToken}&access_token={fbVerifyKeys}");
+
+            if (!verifyToken.IsSuccessStatusCode) return Unauthorized();
+
+            var fbUrl = $"me?access_token={accessToken}&fields=name,email,picture.width(100).height(100)";
+
+            var response = await _httpClient.GetAsync(fbUrl);
+
+            if (!response.IsSuccessStatusCode) return Unauthorized();
+
+            var fbInfo = JsonConvert.DeserializeObject<dynamic>(await response.Content.ReadAsStringAsync());
+
+            var username = (string)fbInfo.id;
+
+            var user = await _userManager.Users
+                .FirstOrDefaultAsync(u => u.UserName == username);
+
+            if (user != null) return await CreateUserObject(user);
+
+            user = new AppUser
+            {
+                Email = (string)fbInfo.email,
+                UserName = (string)fbInfo.id,
+            };
+
+            user.EmailConfirmed = true;
+
+            var result = await _userManager.CreateAsync(user); // Invalid Username
+
+            if (!result.Succeeded) return BadRequest("Problem creating user account");
+
+            return await CreateUserObject(user);
+        }
+
+         private async Task<UserDto> CreateUserObject(AppUser user)
+        {
+            return new UserDto
+            {
+                DisplayName = user.DisplayName,
+                Token = _tokenService.CreateToken(user),
+                Email = user.Email
+            };
+        }
+
 
     }
 }

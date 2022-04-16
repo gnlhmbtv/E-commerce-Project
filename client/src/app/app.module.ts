@@ -19,18 +19,19 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { ForgotPasswordModule } from './forgot-password/forgot-password.module';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ResetPasswordModule } from './reset-password/reset-password.module';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     OrderDetailedComponent,
-    OrdersComponent,
-    RolesModalComponent,
-    
+    OrdersComponent
+    // RolesModalComponent
   ],
   imports: [
     BrowserModule,
+    ModalModule.forRoot(),
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,

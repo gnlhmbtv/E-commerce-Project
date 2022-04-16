@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { JwtHelperService } from '@auth0/angular-jwt';
 import { BehaviorSubject, map, of, ReplaySubject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { IAddress } from '../shared/models/address';
@@ -12,9 +13,12 @@ export class AccountService {
   baseUrl = environment.apiUrl;
   private currentUserSource = new ReplaySubject<IUser>(1);
   currentUser$ = this.currentUserSource.asObservable();
+  jwtHelper=new JwtHelperService();
+
 
   constructor(private http: HttpClient, private router: Router) { }
 
+  decodedToken:any;
 
 
   loadCurrentUser(token: string){
@@ -31,6 +35,7 @@ export class AccountService {
         if (user) {
           localStorage.setItem('token', user.token);
           this.currentUserSource.next(user);
+          this.decodedToken=this.jwtHelper.decodeToken(user.token);
         }
       })
     );

@@ -34,45 +34,45 @@ namespace API.Controllers
         }
 
 
-        // [HttpGet("{id}")]
-        // public async Task<IActionResult> GetBlog(int id)
-        // {
-        //     var blog = await _blogRepository.GetBlogByIdAsync(id);
-        //     if (blog == null) return NotFound();
-        //     var mapperBlog = _mapper.Map<BlogReturnDto>(blog);
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetBlog(int id)
+        {
+            var blog = await _blogRepository.GetBlogByIdAsync(id);
+            if (blog == null) return NotFound();
+            var mapperBlog = _mapper.Map<BlogReturnDto>(blog);
             
-        //     return Ok(mapperBlog);
-        // }
+            return Ok(mapperBlog);
+        }
 
-        // [HttpPost]
-        // public async Task<ActionResult> Create([FromForm] BlogCreateDto blogCreateDto)
-        // {
-        //     var mapperBlog = _mapper.Map<Blog>(blogCreateDto);
+        [HttpPost]
+        public async Task<ActionResult> Create([FromForm] BlogCreateDto blogCreateDto)
+        {
+            var mapperBlog = _mapper.Map<Blog>(blogCreateDto);
             
-        //     string folderName = Path.Combine("images", "blog");
-        //     string fileName = await blogCreateDto.Photo.SaveImg(_env.WebRootPath, folderName);
-        //     mapperBlog.PhotoUrl = fileName;
-        //     await _blogRepository.CreateBlogAsync(mapperBlog);
-        //     return Ok(mapperBlog);
-        // }
+            string folderName = Path.Combine("images", "blog");
+            string fileName = await blogCreateDto.Photo.SaveImg(_env.WebRootPath, folderName);
+            mapperBlog.PhotoUrl = fileName;
+            await _blogRepository.CreateBlogAsync(mapperBlog);
+            return Ok(mapperBlog);
+        }
 
-        // [HttpPut("{id}")]
-        // public async Task<ActionResult<Blog>> UpdateBlog(int id, [FromForm] BlogUpdateDto blogUpdateDto)
-        // {
-        //     if (id != blogUpdateDto.Id) return BadRequest();
-        //     var mapperBlog = _mapper.Map<Blog>(blogUpdateDto);
-        //     var blog= await _blogRepository.UpdateBlogAsync(mapperBlog,_env.WebRootPath);
-        //     if (blog == null) return BadRequest();
+        [HttpPut("{id}")]
+        public async Task<ActionResult<Blog>> UpdateBlog(int id, [FromForm] BlogUpdateDto blogUpdateDto)
+        {
+            if (id != blogUpdateDto.Id) return BadRequest();
+            var mapperBlog = _mapper.Map<Blog>(blogUpdateDto);
+            var blog= await _blogRepository.UpdateBlogAsync(mapperBlog,_env.WebRootPath);
+            if (blog == null) return BadRequest();
            
-        //     return Ok(blog);
-        // }
+            return Ok(blog);
+        }
 
-        // [HttpDelete("{id}")]
-        // public async Task<ActionResult> Delete(int id)
-        // {
-        //     Blog blog = await _blogRepository.DeleteBlogAsync(id,_env.WebRootPath);
-        //     if (blog == null) return NotFound();
-        //     return Ok();
-        // }
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(int id)
+        {
+            Blog blog = await _blogRepository.DeleteBlogAsync(id,_env.WebRootPath);
+            if (blog == null) return NotFound();
+            return Ok();
+        }
     }
 }

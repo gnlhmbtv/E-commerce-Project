@@ -26,4 +26,5 @@ export class AdminContactItemComponent implements OnInit {
     this.onDelete.emit(contact);
   }
 
+
 }

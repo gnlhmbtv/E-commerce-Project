@@ -39,6 +39,28 @@ namespace Infrastructure.Data
                     await context.SaveChangesAsync();
                 }
 
+                 if(!context.ProductSizes.Any())
+                {
+                    var sizesData = File.ReadAllText("../Infrastructure/Data/SeedData/sizes.json");
+                    var sizes = JsonSerializer.Deserialize<List<ProductSize>>(sizesData);
+                    foreach (var item in sizes)
+                    {
+                        context.ProductSizes.Add(item);
+                    }
+                    await context.SaveChangesAsync();
+                }
+
+                 if(!context.ProductColors.Any())
+                {
+                    var colorsData = File.ReadAllText("../Infrastructure/Data/SeedData/colors.json");
+                    var colors = JsonSerializer.Deserialize<List<ProductColor>>(colorsData);
+                    foreach (var item in colors)
+                    {
+                        context.ProductColors.Add(item);
+                    }
+                    await context.SaveChangesAsync();
+                }
+
 
                  if(!context.Products.Any())
                 {

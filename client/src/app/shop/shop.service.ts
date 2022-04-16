@@ -5,6 +5,8 @@ import { environment } from 'src/environments/environment';
 import { IBrand } from '../shared/models/brand';
 import { IPagination } from '../shared/models/pagination';
 import { IProduct } from '../shared/models/product';
+import { IColor } from '../shared/models/productColor';
+import { ISize } from '../shared/models/productSize';
 import { IType } from '../shared/models/productType';
 import { ShopParams } from '../shared/models/shopParams';
 
@@ -26,6 +28,14 @@ export class ShopService {
 
     if(shopParams.typeId !== 0){
       params = params.append('typeId', shopParams.typeId.toString());
+    }
+
+    if(shopParams.sizeId !== 0){
+      params = params.append('sizeId', shopParams.sizeId.toString());
+    }
+
+    if(shopParams.typeId !== 0){
+      params = params.append('typeId', shopParams.colorId.toString());
     }
 
     if (shopParams.search) {
@@ -56,6 +66,14 @@ export class ShopService {
 
   getTypes(){
     return this.http.get<IType[]>(this.baseUrl + 'products/types');
+  }
+
+  getSizes(){
+    return this.http.get<ISize[]>(this.baseUrl + 'products/sizes');
+  }
+
+  getColors(){
+    return this.http.get<IColor[]>(this.baseUrl + 'products/colors');
   }
 
   createProduct(product:FormData){

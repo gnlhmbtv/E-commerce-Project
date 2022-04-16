@@ -47,6 +47,26 @@
               </div>
             </div>
           </div>
+
+          <div class="form-group">
+            <label>ProductSize</label>
+            <input type="text" formControlName="productSizeId" class="form-control" placeholder="ProductSize">
+            <div class="validation alert alert-danger" *ngIf="_productSizeId.invalid && _productSizeId.touched">
+              <div *ngIf="_productSizeId.errors?.required">
+                ProductSize required
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>ProductColor</label>
+            <input type="text" formControlName="productColorId" class="form-control" placeholder="ProductColor">
+            <div class="validation alert alert-danger" *ngIf="_productColorId.invalid && _productColorId.touched">
+              <div *ngIf="_productColorId.errors?.required">
+                ProductColor required
+              </div>
+            </div>
+          </div>
   
           <div class="form-group">
             <label>Description</label>

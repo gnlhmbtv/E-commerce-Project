@@ -1,6 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { IBrand } from '../shared/models/brand';
 import { IProduct } from '../shared/models/product';
+import { IColor } from '../shared/models/productColor';
+import { ISize } from '../shared/models/productSize';
 import { IType } from '../shared/models/productType';
 import { ShopParams } from '../shared/models/shopParams';
 import { ShopService } from './shop.service';
@@ -15,6 +17,8 @@ export class ShopComponent implements OnInit {
   products: IProduct[];
   brands: IBrand[];
   types: IType[];
+  sizes: ISize[];
+  colors: IColor[];
   shopParams = new ShopParams();
   totalCount: number;
   sortOptions = [
@@ -29,6 +33,8 @@ export class ShopComponent implements OnInit {
     this.getProducts();
     this.getBrands();
     this.getTypes();
+    this.getSizes();
+    this.getColors();
   }
 
   getProducts(){
@@ -62,6 +68,22 @@ export class ShopComponent implements OnInit {
     });
   }
 
+  getSizes(){
+    this.shopService.getSizes().subscribe(response => {
+      this.sizes = [{id: 0, name: 'All'}, ...response];
+    }, error => {
+      console.log(error);
+    });
+  }
+
+  getColors(){
+    this.shopService.getColors().subscribe(response => {
+      this.colors = [{id: 0, name: 'All'}, ...response];
+    }, error => {
+      console.log(error);
+    });
+  }
+
   onBrandSelected(brandId: number) {
     this.shopParams.brandId = brandId;
     this.shopParams.pageNumber = 1;
@@ -71,6 +93,20 @@ export class ShopComponent implements OnInit {
 
   onTypeSelected(typeId: number){
     this.shopParams.typeId = typeId;
+    this.shopParams.pageNumber = 1;
+    this.getProducts();
+  }
+
+
+  onSizeSelected(sizeId: number){
+    this.shopParams.sizeId = sizeId;
+    this.shopParams.pageNumber = 1;
+    this.getProducts();
+  }
+
+
+  onColorSelected(colorId: number){
+    this.shopParams.colorId = colorId;
     this.shopParams.pageNumber = 1;
     this.getProducts();
   }

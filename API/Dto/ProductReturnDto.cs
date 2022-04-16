@@ -9,5 +9,7 @@ namespace API.Dto
         public string PhotoUrl { get; set; }
         public string ProductType { get; set; }
         public string ProductBrand { get; set; }
+        public string ProductSize { get; set; }
+        public string ProductColor { get; set; }
     }
 }

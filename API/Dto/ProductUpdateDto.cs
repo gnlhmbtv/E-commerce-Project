@@ -17,6 +17,8 @@ namespace API.Dto
 
         public int ProductBrandId { get; set; }
         public int ProductTypeId { get; set; }
+        public int ProductSizeId { get; set; }
+        public int ProductColorId { get; set; }
         [NotMapped]
         public IFormFile Photo { get; set; }
     }

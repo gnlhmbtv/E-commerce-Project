@@ -12,8 +12,10 @@ namespace API.Dto
         public decimal Price { get; set; }
         [Required]
         public string Description { get; set; }
-        public string ProductBrandName { get; set; }
-        public string ProductTypeName { get; set; }
+        public int ProductBrandId { get; set; }
+        public int ProductTypeId { get; set; }
+        public int ProductColorId { get; set; }
+        public int ProductSizeId { get; set; }
         [NotMapped]
         public IFormFile Photo { get; set; }
     }

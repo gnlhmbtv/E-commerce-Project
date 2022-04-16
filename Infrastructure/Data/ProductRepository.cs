@@ -42,7 +42,8 @@ namespace Infrastructure.Data
             dbProduct.Description = product.Description;
             dbProduct.ProductBrandId = product.ProductBrandId;
             dbProduct.ProductTypeId = product.ProductTypeId;
-            // dbProduct.ProductSize = product.ProductSize;
+            dbProduct.ProductSizeId = product.ProductSizeId;
+            dbProduct.ProductColorId = product.ProductColorId;
             await _context.SaveChangesAsync();
             return dbProduct;
         }
@@ -71,29 +72,27 @@ namespace Infrastructure.Data
             return await _context.ProductBrands.ToListAsync();
         }
 
-        // public async Task<IReadOnlyList<Size>> GetProductSizeAsync()
-        // {
-        //     return await _context.Sizes.ToListAsync();
-        // }
-
-        // public async Task<IReadOnlyList<Color>> GetProductColorAsync()
-        // {
-        //     return await _context.Colors.ToListAsync();
-        // }
-
         public async Task<Product> GetProductByIdAsync(int id)
         {
-            return await _context.Products.Include(p => p.ProductType).Include(p => p.ProductBrand).FirstOrDefaultAsync(p => p.Id == id);
+            return await _context.Products.Include(p => p.ProductSize).Include(p => p.ProductColor).Include(p => p.ProductType).Include(p => p.ProductBrand).FirstOrDefaultAsync(p => p.Id == id);
         }
 
         public async Task<IReadOnlyList<Product>> GetProductsAsync()
         {
-            return await _context.Products.Include(p => p.ProductType).Include(p => p.ProductBrand).ToListAsync();
+            return await _context.Products.Include(p => p.ProductSize).Include(p => p.ProductColor).Include(p => p.ProductType).Include(p => p.ProductBrand).ToListAsync();
         }
 
         public async Task<IReadOnlyList<ProductType>> GetProductTypeAsync()
         {
             return await _context.ProductTypes.ToListAsync();
+        }
+        public async Task<IReadOnlyList<ProductSize>> GetProductSizeAsync()
+        {
+            return await _context.ProductSizes.ToListAsync();
+        }
+        public async Task<IReadOnlyList<ProductColor>> GetProductColorAsync()
+        {
+            return await _context.ProductColors.ToListAsync();
         }
     }
 }

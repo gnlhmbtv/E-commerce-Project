@@ -13,6 +13,8 @@
         photoUrl: string;
         brand: string;
         type: string;
+        size: string;
+        color: string;
     }
 
     export class Basket implements IBasket{

@@ -28,6 +28,13 @@ export class AdminProductUpdateComponent implements OnInit {
     return this.form.get('productBrandId');
   }
 
+  get _productSizeId(){
+    return this.form.get('productSizeId');
+  }
+  get _productColorId(){
+    return this.form.get('productColorId');
+  }
+
   get _description(){
     return this.form.get('description');
   }
@@ -61,6 +68,8 @@ export class AdminProductUpdateComponent implements OnInit {
       price: ['',[Validators.required]],
       productTypeId: ['',[Validators.required]],
       productBrandId: ['',[Validators.required]],
+      productSizeId: ['',[Validators.required]],
+      productColorId: ['',[Validators.required]],
       description: ['',[Validators.required]]
     });
   }
@@ -80,6 +89,8 @@ export class AdminProductUpdateComponent implements OnInit {
       this.formData.append('Price', this._price.value);
       this.formData.append('ProductTypeId', this._productTypeId.value);
       this.formData.append('ProductBrandId', this._productBrandId.value);
+      this.formData.append('ProductSizeId', this._productSizeId.value);
+      this.formData.append('ProductColorId', this._productColorId.value);
       this.formData.append('Description', this._description.value);
       this.shopService.editProduct(this.product.id,this.formData).subscribe(x=> {
         console.log(x);

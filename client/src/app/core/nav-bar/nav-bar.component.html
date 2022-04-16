@@ -335,7 +335,7 @@
               <ul>
                 <li>
                   <div class="search-box">
-                    <i data-feather="search"></i>
+                    <!-- <i class="fa fa-solid fa-search"></i> -->
                   </div>
                 </li>
                 <li class="onhover-dropdown">
@@ -395,20 +395,22 @@
                     </a>
                   </div>
                 </li>
-                <li class="onhover-dropdown cart-dropdown">
+                <li *ngIf="currentUser$ | async"  class="onhover-dropdown cart-dropdown">
                   <button
-                    routerLink="/basket"
+                    routerLink="/basket" 
                     type="button"
                     class="btn btn-solid-default btn-spacing"
                   >
-                  <i class="fa fa-solid fa-cart-shopping"></i>
-                    <span>$5686.25</span>
+                  <i class="fa fa-shopping-cart mr-3"></i>
+                    <span >{{(basketTotal$ | async).subtotal | currency}}</span>
+                    <span *ngIf="!(basket$ | async) as basket" >0 $</span>
                   </button>
                   <div class="onhover-div">
                     <div class="cart-menu">
                       <div class="cart-title">
                         <h6>
                           <i data-feather="shopping-bag"></i>
+                          <span>Items: &nbsp;&nbsp;&nbsp;</span>
                           <span
                             *ngIf="basket$ | async"
                             class="label label-theme rounded-pill"
@@ -420,36 +422,33 @@
                         </span>
                       </div>
                       <ul class="custom-scroll">
-                        <li>
+                        <li *ngFor="let item of (basket$ | async).items">
                           <div class="media">
                             <img
-                              src="assets/images/fashion/product/front/1.jpg"
+                              src="{{ item.photoUrl }}"
                               class="img-fluid blur-up lazyload"
                               alt=""
                             />
                             <div class="media-body">
-                              <h6>Slim Fit Plastic Coat</h6>
+                              <h6>{{ item.productName }}</h6>
                               <div class="qty-with-price">
-                                <span>$78.00</span>
+                                <span>{{ item.price | currency }}</span>
                                 <span>
-                                  <input
-                                    type="number"
-                                    class="form-control"
-                                    value="1"
-                                  />
+                                   {{item.quantity}}
+                                  
                                 </span>
                               </div>
                             </div>
-                            <button
-                              type="button"
-                              class="btn-close d-block d-md-none"
-                              aria-label="Close"
-                            >
-                              <i class="fas fa-times"></i>
-                            </button>
+                              <a>
+                                <i style="margin-bottom: 100px;"
+                                *ngIf="isBasket"
+                                (click)="removeBasketItem(item)" 
+                                class="fas fa-times">
+                                </i>
+                              </a>
                           </div>
                         </li>
-                        <li>
+                        <!-- <li>
                           <div class="media">
                             <img
                               src="assets/images/fashion/product/front/7.jpg"
@@ -477,12 +476,12 @@
                               <i class="fas fa-times"></i>
                             </button>
                           </div>
-                        </li>
+                        </li> -->
                       </ul>
                     </div>
                     <div class="cart-btn">
                       <h6 class="cart-total">
-                        <span class="font-light">Total:</span> $ 542.00
+                        <span class="font-light">Total:</span> {{(basketTotal$ | async).subtotal | currency}}
                       </h6>
                       <button
                         routerLink="/basket"
@@ -499,7 +498,8 @@
             <div class="search-full">
               <div class="input-group">
                 <span class="input-group-text">
-                  <i data-feather="search" class="font-light"></i>
+                  <!-- <i data-feather="search" class="font-light"></i> -->
+                  <button class="font-light">Search</button>
                 </span>
                 <input
                   type="text"

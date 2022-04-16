@@ -9,27 +9,42 @@
       <change afterPath="$PROJECT_DIR$/Core/Entities/ProductColor.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Core/Entities/ProductSize.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Core/Entities/Size.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/Dto/ProductCreateDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Dto/ProductCreateDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/bin/Debug/net5.0/API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/bin/Debug/net5.0/API.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/bin/Debug/net5.0/API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/API/bin/Debug/net5.0/API.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/bin/Debug/net5.0/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/API/bin/Debug/net5.0/appsettings.Development.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/bin/Debug/net5.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/API/bin/Debug/net5.0/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/bin/Debug/net5.0/ref/API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/bin/Debug/net5.0/ref/API.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/obj/API.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/API.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.genruntimeconfig.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net5.0/project.razor.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/API/obj/Debug/net5.0/ref/API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net5.0/ref/API.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/project.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/Entities/Comment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Entities/Comment.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/Entities/Product.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Entities/Product.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/Data/DataContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Data/DataContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Data/Migrations/20220310051107_InitialCreate.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Data/Migrations/20220310051107_InitialCreate.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Data/Migrations/20220402112509_OrderEntityAdded.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Data/Migrations/20220402112509_OrderEntityAdded.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Data/Migrations/20220409205348_AboutAdded.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Data/Migrations/20220409205348_AboutAdded.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Data/Migrations/20220410140732_AboutSeeding.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Data/Migrations/20220410140732_AboutSeeding.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Data/Migrations/20220411100955_ContactAdded.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Data/Migrations/20220411100955_ContactAdded.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Data/Migrations/20220411102417_ContactAddedToDataContext.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Data/Migrations/20220411102417_ContactAddedToDataContext.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Data/Migrations/20220415083209_RoleAddedDataContext.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Data/Migrations/20220415083209_RoleAddedDataContext.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Data/Migrations/20220416073416_BlogAddedDataContext.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Data/Migrations/20220416073416_BlogAddedDataContext.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Data/Migrations/20220416074846_CommentAndReplyComment.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Data/Migrations/20220416074846_CommentAndReplyComment.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Data/Migrations/20220416100122_BlogSeedContext.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Data/Migrations/20220416100122_BlogSeedContext.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/Data/Migrations/DataContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Data/Migrations/DataContextModelSnapshot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/Data/ProductRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Data/ProductRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/Identity/Migrations/20220408054830_UserAdded.Designer.cs" beforeDir="false" />
@@ -108,6 +123,7 @@
       <workItem from="1650182022247" duration="3586000" />
       <workItem from="1650638341333" duration="115000" />
       <workItem from="1650150871332" duration="407000" />
+      <workItem from="1650151574027" duration="871000" />
     </task>
     <servers />
   </component>

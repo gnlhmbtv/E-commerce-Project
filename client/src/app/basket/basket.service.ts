@@ -149,7 +149,9 @@ export class BasketService {
       photoUrl:item.photoUrl,
       quantity,
       brand: item.productBrand,
-      type: item.productType
+      type: item.productType,
+      size: item.productSize,
+      color: item.productColor,
     };
   }
 }

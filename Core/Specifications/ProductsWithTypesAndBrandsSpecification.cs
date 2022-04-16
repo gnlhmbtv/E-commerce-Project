@@ -10,11 +10,16 @@ namespace Core.Specifications
             :base(x => 
                 (string.IsNullOrEmpty(productParams.Search) || x.Name.ToLower().Contains(productParams.Search)) &&
                 (!productParams.BrandId.HasValue || x.ProductBrandId == productParams.BrandId) && 
-                (!productParams.TypeId.HasValue || x.ProductTypeId == productParams.TypeId)
+                (!productParams.TypeId.HasValue || x.ProductTypeId == productParams.TypeId) &&
+                (!productParams.SizeId.HasValue || x.ProductColorId == productParams.SizeId) &&
+                (!productParams.ColorId.HasValue || x.ProductColorId == productParams.ColorId) 
+               
             )
         {
             AddInclude(x => x.ProductType);
             AddInclude(x => x.ProductBrand);
+            AddInclude(x => x.ProductSize);
+            AddInclude(x => x.ProductColor);
             AddOrderBy(x => x.Name);
             Paging(productParams.PageSize * (productParams.PageIndex - 1), productParams.PageSize);
 
@@ -39,6 +44,8 @@ namespace Core.Specifications
         {
             AddInclude(x => x.ProductType);
             AddInclude(x => x.ProductBrand);
+            AddInclude(x => x.ProductSize);
+            AddInclude(x => x.ProductColor);
         }
     }
 }

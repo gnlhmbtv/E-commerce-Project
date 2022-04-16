@@ -18,7 +18,7 @@ namespace Core.Specifications
         public System.Linq.Expressions.Expression<System.Func<T, bool>> Criteria {get;}
 
         public System.Collections.Generic.List<System.Linq.Expressions.Expression<System.Func<T, object>>>
-         Includes {get;} = new List<Expression<Func<T, object>>>();
+        Includes {get;} = new List<Expression<Func<T, object>>>();
 
         public Expression<Func<T, object>> OrderBy {get; private set;}
 

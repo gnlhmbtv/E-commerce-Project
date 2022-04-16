@@ -1,10 +1,13 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { BehaviorSubject, map, of, ReplaySubject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { IAddress } from '../shared/models/address';
+import { CustomEncoder } from '../shared/models/custom-encoder';
+import { ForgotPassword } from '../shared/models/forgot-password';
+import { ResetPassword } from '../shared/models/reset-password';
 import { IUser } from '../shared/models/user';
 @Injectable({
   providedIn: 'root'
@@ -82,4 +85,13 @@ export class AccountService {
   updateUserAddress(address: IAddress) {
     return this.http.put<IAddress>(this.baseUrl + 'account/address', address);
   }
+
+   forgotPassword = (route: string, body: ForgotPassword) => {
+    return this.http.post(this.baseUrl + 'account/ForgotPassword', body);
+  }
+
+   resetPassword = (route: string, body: ResetPassword) => {
+    return this.http.post(this.baseUrl + 'account/ResetPassword', body);
+  }
+
 }

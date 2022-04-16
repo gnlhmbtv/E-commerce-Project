@@ -52,6 +52,10 @@
               "target": "Package",
               "version": "[11.0.0, )"
             },
+            "MailKit": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[5.0.3, )"
@@ -59,6 +63,10 @@
             "Microsoft.EntityFrameworkCore.Design": {
               "target": "Package",
               "version": "[3.1.1, )"
+            },
+            "NETCore.MailKit": {
+              "target": "Package",
+              "version": "[2.0.3, )"
             }
           },
           "imports": [
@@ -123,6 +131,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
             "Microsoft.AspNetCore.Http": {
               "target": "Package",
               "version": "[2.2.2, )"
@@ -130,6 +142,10 @@
             "Microsoft.Extensions.Identity.Stores": {
               "target": "Package",
               "version": "[5.0.4, )"
+            },
+            "NETCore.MailKit": {
+              "target": "Package",
+              "version": "[2.0.3, )"
             }
           },
           "imports": [
@@ -195,6 +211,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
             "Microsoft.AspNetCore.Identity": {
               "target": "Package",
               "version": "[2.2.0, )"
@@ -220,6 +240,10 @@
             "Microsoft.IdentityModel.Tokens": {
               "target": "Package",
               "version": "[6.16.0, )"
+            },
+            "NETCore.MailKit": {
+              "target": "Package",
+              "version": "[2.0.3, )"
             },
             "StackExchange.Redis": {
               "target": "Package",

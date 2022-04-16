@@ -9,7 +9,9 @@ import { AuthGuard } from './core/guards/auth.guard';
 import { NotFoundComponent } from './core/not-found/not-found.component';
 import { ServerErrorComponent } from './core/server-error/server-error.component';
 import { TestErrorComponent } from './core/test-error/test-error.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { HomeComponent } from './home/home.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,17 +20,14 @@ const routes: Routes = [
   { path: 'not-found', component: NotFoundComponent },
   { path: 'contact', component: ContactPageComponent },
   {path:'blog',component:BlogPageComponent},
-  // {path:'blog/detail/:id',component:BlogDetailPageComponent},
-  // {
-  //   path: 'shop',
-  //   loadChildren: () =>
-  //     import('./shop/shop.module').then((mod) => mod.ShopModule),
-  // },
-  // {
-  //   path: 'blog',
-  //   loadChildren: () =>
-  //     import('./blog-page/blog-page.module').then((mod) => mod.BlogPageModule),
-  // },
+  {path:'forgot-password',component:ForgotPasswordComponent},
+  {path: 'resetpassword', component: ResetPasswordComponent },
+  {path:'blog/detail/:id',component:BlogDetailPageComponent},
+  {
+    path: 'shop',
+    loadChildren: () =>
+      import('./shop/shop.module').then((mod) => mod.ShopModule),
+  },
   {   
     path: 'admin',
     loadChildren: () =>

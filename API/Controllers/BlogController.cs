@@ -56,16 +56,16 @@ namespace API.Controllers
             return Ok(mapperBlog);
         }
 
-        [HttpPut("{id}")]
-        public async Task<ActionResult<Blog>> UpdateBlog(int id, [FromForm] BlogUpdateDto blogUpdateDto)
-        {
-            if (id != blogUpdateDto.Id) return BadRequest();
-            var mapperBlog = _mapper.Map<Blog>(blogUpdateDto);
-            var blog= await _blogRepository.UpdateBlogAsync(mapperBlog,_env.WebRootPath);
-            if (blog == null) return BadRequest();
+        // [HttpPut("{id}")]
+        // public async Task<ActionResult<Blog>> UpdateBlog(int id, [FromForm] BlogUpdateDto blogUpdateDto)
+        // {
+        //     if (id != blogUpdateDto.Id) return BadRequest();
+        //     var mapperBlog = _mapper.Map<Blog>(blogUpdateDto);
+        //     var blog= await _blogRepository.UpdateBlogAsync(mapperBlog,_env.WebRootPath);
+        //     if (blog == null) return BadRequest();
            
-            return Ok(blog);
-        }
+        //     return Ok(blog);
+        // }
 
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)

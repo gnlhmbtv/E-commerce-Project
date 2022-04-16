@@ -33,24 +33,24 @@ namespace API.Controllers
             return Ok(mapperAbout);
         }
         
-        [HttpPut("{id}")]
-        public async Task<ActionResult<About>> Update(int id, [FromForm] AboutUpdateDto aboutUpdateDto)
-        {
-            if (id != aboutUpdateDto.Id) return BadRequest();
-            About dbAbout = _context.Abouts.FirstOrDefault(p => p.Id == id);
-            if (dbAbout == null) return NotFound();
-            dbAbout.Title = aboutUpdateDto.Title;
-            dbAbout.Description = aboutUpdateDto.Description;
+        // [HttpPut("{id}")]
+        // public async Task<ActionResult<About>> Update(int id, [FromForm] AboutUpdateDto aboutUpdateDto)
+        // {
+        //     if (id != aboutUpdateDto.Id) return BadRequest();
+        //     About dbAbout = _context.Abouts.FirstOrDefault(p => p.Id == id);
+        //     if (dbAbout == null) return NotFound();
+        //     dbAbout.Title = aboutUpdateDto.Title;
+        //     dbAbout.Description = aboutUpdateDto.Description;
             
-            string folderName = Path.Combine("images", "about");
-            if (aboutUpdateDto.Photo!=null)
-            {
-                ImageExtensionn.DeleteImagee(_env.WebRootPath,folderName,dbAbout.PhotoUrl);
-                string fileName = await aboutUpdateDto.Photo.SaveImgg(_env.WebRootPath, folderName);
-                dbAbout.PhotoUrl = fileName;
-            }
-            await _context.SaveChangesAsync();
-             return Ok();
-        }
+        //     string folderName = Path.Combine("images", "about");
+        //     if (aboutUpdateDto.Photo!=null)
+        //     {
+        //         ImageExtensionn.DeleteImagee(_env.WebRootPath,folderName,dbAbout.PhotoUrl);
+        //         string fileName = await aboutUpdateDto.Photo.SaveImgg(_env.WebRootPath, folderName);
+        //         dbAbout.PhotoUrl = fileName;
+        //     }
+        //     await _context.SaveChangesAsync();
+        //      return Ok();
+        // }
     }
 }

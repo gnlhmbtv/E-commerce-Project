@@ -15,6 +15,10 @@ import { OrdersComponent } from './orders/orders.component';
 import { RolesModalComponent } from './modals/roles-modal/roles-modal.component';
 import { ContactModule } from './contact/contact.module';
 import { BlogPageModule } from './blog-page/blog-page.module';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ForgotPasswordModule } from './forgot-password/forgot-password.module';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { ResetPasswordModule } from './reset-password/reset-password.module';
 
 
 @NgModule({
@@ -22,7 +26,8 @@ import { BlogPageModule } from './blog-page/blog-page.module';
     AppComponent,
     OrderDetailedComponent,
     OrdersComponent,
-    RolesModalComponent
+    RolesModalComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -33,7 +38,9 @@ import { BlogPageModule } from './blog-page/blog-page.module';
     HomeModule,
     NgxSpinnerModule,
     ContactModule,
-    BlogPageModule
+    BlogPageModule,
+    ForgotPasswordModule,
+    ResetPasswordModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi:true},

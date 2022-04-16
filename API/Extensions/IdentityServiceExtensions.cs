@@ -1,3 +1,4 @@
+using System;
 using System.Text;
 using Core.Entities.Identity;
 using Infrastructure.Identity;
@@ -41,7 +42,10 @@ namespace API.Extensions
                 .AddRoleManager<RoleManager<AppRole>>()
                 .AddSignInManager<SignInManager<AppUser>>()
                 .AddRoleValidator<RoleValidator<AppRole>>()
-                .AddEntityFrameworkStores<AppIdentityDbContext>();
+                .AddEntityFrameworkStores<AppIdentityDbContext>()
+                .AddDefaultTokenProviders();
+                services.Configure<DataProtectionTokenProviderOptions>(opt =>
+                opt.TokenLifespan = TimeSpan.FromHours(2));
 
             return services;
         }

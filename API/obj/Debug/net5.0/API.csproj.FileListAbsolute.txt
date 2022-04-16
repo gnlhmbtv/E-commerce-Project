@@ -82,3 +82,7 @@ C:\Users\user\Desktop\e-commerce_final\api\bin\Debug\net5.0\Microsoft.AspNetCore
 C:\Users\user\Desktop\e-commerce_final\api\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\user\Desktop\e-commerce_final\api\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
 C:\Users\user\Desktop\e-commerce_final\api\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\user\Desktop\e-commerce_final\api\bin\Debug\net5.0\MailKit.dll
+C:\Users\user\Desktop\e-commerce_final\api\bin\Debug\net5.0\MimeKit.dll
+C:\Users\user\Desktop\e-commerce_final\api\bin\Debug\net5.0\NETCore.MailKit.dll
+C:\Users\user\Desktop\e-commerce_final\api\bin\Debug\net5.0\BouncyCastle.Crypto.dll

@@ -18,6 +18,8 @@ using API.Extensions;
 using Infrastructure.Services;
 using Core.Entities.Identity;
 using Microsoft.AspNetCore.Identity;
+using Core.Entities;
+using Core;
 
 namespace API
 {
@@ -64,6 +66,12 @@ namespace API
                 return ConnectionMultiplexer.Connect(configuration);
             });
 
+            var emailConfig = _config
+                .GetSection("EmailConfiguration")
+                .Get<EmailConfiguration>();
+            services.AddSingleton(emailConfig);
+            services.AddScoped<IEmailSender, EmailSender>();
+
             services.AddIdentityServices(_config);
 
 
@@ -108,6 +116,7 @@ namespace API
                     policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200");
                 });
             });
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

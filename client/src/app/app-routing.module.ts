@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundError } from 'rxjs';
+import { BlogDetailPageComponent } from './blog-page/blog-detail-page/blog-detail-page.component';
+import { BlogPageComponent } from './blog-page/blog-page.component';
 import { ContactPageComponent } from './contact/contact-page.component';
 import { AdminGuard } from './core/guards/admin.guard';
 import { AuthGuard } from './core/guards/auth.guard';
@@ -15,10 +17,17 @@ const routes: Routes = [
   { path: 'server-error', component: ServerErrorComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: 'contact', component: ContactPageComponent },
+  // {path:'blog',component:BlogPageComponent},
+  {path:'blog/detail/:id',component:BlogDetailPageComponent},
   {
     path: 'shop',
     loadChildren: () =>
       import('./shop/shop.module').then((mod) => mod.ShopModule),
+  },
+  {
+    path: 'blog',
+    loadChildren: () =>
+      import('./blog-page/blog-page.module').then((mod) => mod.BlogPageModule),
   },
   {   
     path: 'admin',

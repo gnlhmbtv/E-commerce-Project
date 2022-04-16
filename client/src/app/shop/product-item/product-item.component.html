@@ -11,25 +11,14 @@
         <div class="cart-wrap">
             <ul>
                 <li>
-                    <a href="javascript:void(0)" class="addtocart-btn"
-                        data-bs-toggle="modal" data-bs-target="#addtocart">
-                        <i data-feather="shopping-bag"></i>
+                    <a (click)="addItemToBasket()" class="addtocart-btn">
+                        <i class="fa fa-shopping-cart mr-3"></i>
                     </a>
                 </li>
                 <li>
                     <a routerLink="/shop/{{product.id}}" data-bs-toggle="modal"
                         data-bs-target="#quick-view">
-                        <i data-feather="eye"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="compare.html">
-                        <i data-feather="refresh-cw"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="wishlist.html" class="wishlist">
-                        <i data-feather="heart"></i>
+                        <i class="fa fa-solid fa-eye"></i>
                     </a>
                 </li>
             </ul>
@@ -39,23 +28,7 @@
     <div class="product-details">
         <div class="rating-details">
             <span class="font-light grid-content">{{product.name}}</span>
-            <ul class="rating mt-0">
-                <li>
-                    <i class="fas fa-star theme-color"></i>
-                </li>
-                <li>
-                    <i class="fas fa-star theme-color"></i>
-                </li>
-                <li>
-                    <i class="fas fa-star theme-color"></i>
-                </li>
-                <li>
-                    <i class="fas fa-star"></i>
-                </li>
-                <li>
-                    <i class="fas fa-star"></i>
-                </li>
-            </ul>
+            
         </div>
         <div class="main-price">
             <a href="product-left-sidebar.html" class="font-default">
@@ -66,8 +39,7 @@
                 <p class="font-light">{{product.description}}</p>
             </div>
             <h3 class="theme-color">{{product.price | currency}}</h3>
-            <button (click)="addItemToBasket()"ass="btn listing-content">Add
-                To Cart</button>
+            
         </div>
     </div>
 </div>

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
@@ -14,12 +13,10 @@ import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
 import { OrderDetailedComponent } from './orders/order-detailed/order-detailed.component';
 import { OrdersComponent } from './orders/orders.component';
 import { RolesModalComponent } from './modals/roles-modal/roles-modal.component';
-import { MainContactComponent } from './contact/main-contact/main-contact.component';
-import { ContactPageComponent } from './contact/contact-page.component';
 import { ContactModule } from './contact/contact.module';
-import { BlogPageComponent } from './blog-page/blog-page.component';
-import { BlogDetailPageComponent } from './blog-page/blog-detail-page/blog-detail-page.component';
 import { BlogPageModule } from './blog-page/blog-page.module';
+import { SwiperModule } from 'swiper/angular';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +34,8 @@ import { BlogPageModule } from './blog-page/blog-page.module';
     HomeModule,
     NgxSpinnerModule,
     ContactModule,
-    BlogPageModule
+    BlogPageModule,
+    SwiperModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi:true},

@@ -14,10 +14,7 @@
                                                 data-zoom-image="assets/images/fashion/1.jpg"
                                                 class="img-fluid w-100 image_zoom_cls-0 blur-up lazyload" alt="">
 
-                                            <div class="label-tag">
-                                                <h6><i class="fas fa-star"></i> 4.8 <span
-                                                        class="font-light">120</span></h6>
-                                            </div>
+                                           
                                         </div>
                                     </div>
                                 </div>
@@ -26,40 +23,24 @@
 
                         <div class="col-md-6">
                             <div *ngIf="product" class="cloth-details-size">
-                                <div class="product-count">
-                                    <ul>
-                                        <li>
-                                            <img src="assets/images/gif/fire.gif" class="img-fluid blur-up lazyload"
-                                                alt="image">
-                                            <span class="p-counter">37</span>
-                                            <span class="lang">orders in last 24 hours</span>
-                                        </li>
-                                        <li>
-                                            <img src="assets/images/gif/person.gif" class="img-fluid user_img"
-                                                alt="image">
-                                            <span class="p-counter">44</span>
-                                            <span class="lang">active view this</span>
-                                        </li>
-                                    </ul>
-                                </div>
 
                                 <div *ngIf="product" class="details-image-concept">
                                     <h2>{{product.name}}</h2>
                                 </div>
 
                                 <div class="label-section">
-                                    <span class="badge badge-grey-color">#1 Best seller</span>
+                                    <span class="badge badge-grey-color">New</span>
                                     <span class="label-text">in fashion</span>
                                 </div>
 
-                                <h3 *ngIf="product" class="price-detail">{{product.price | currency}}<del>$459.00</del><span>55% off</span></h3>
+                                <h3 *ngIf="product" class="price-detail">{{product.price | currency}}</h3>
 
 
                                 <div class="product-buttons">
-                                    <a href="wishlist.html" class="btn btn-solid">
+                                    <!-- <a href="wishlist.html" class="btn btn-solid">
                                         <i class="fa fa-bookmark fz-16 me-2"></i>
                                         <span>Wishlist</span>
-                                    </a>
+                                    </a> -->
                                     <a (click)="addItemToBasket()" click id="cartEffect"
                                         class="btn btn-solid hover-solid btn-animation">
                                         <i class="fa fa-shopping-cart"></i>
@@ -67,13 +48,7 @@
                                     </a>
                                 </div>
 
-                                <ul class="product-count shipping-order">
-                                    <li>
-                                        <img src="assets/images/gif/truck.png" class="img-fluid blur-up lazyload"
-                                            alt="image">
-                                        <span class="lang">Free shipping for orders above $500 USD</span>
-                                    </li>
-                                </ul>
+                                
 
                                 <div class="mt-2 mt-md-3 border-product">
                                     <h6 class="product-title hurry-title d-block">Hurry Up! Left <span>10</span>
@@ -81,23 +56,6 @@
                                         stock</h6>
                                     <div class="progress">
                                         <div class="progress-bar" role="progressbar" style="width: 78%"></div>
-                                    </div>
-                                    <div class="font-light timer-5">
-                                        <h5>Order in the next to get</h5>
-                                        <ul class="timer1">
-                                            <li class="counter">
-                                                <h5 id="days">&#9251;</h5> Days :
-                                            </li>
-                                            <li class="counter">
-                                                <h5 id="hours">&#9251;</h5> Hour :
-                                            </li>
-                                            <li class="counter">
-                                                <h5 id="minutes">&#9251;</h5> Min :
-                                            </li>
-                                            <li class="counter">
-                                                <h5 id="seconds">&#9251;</h5> Sec
-                                            </li>
-                                        </ul>
                                     </div>
                                 </div>
 

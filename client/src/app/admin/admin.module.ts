@@ -7,6 +7,10 @@ import { UserManagmentComponent } from './user-managment/user-managment.componen
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminContactComponent } from './admin-contact/admin-contact.component';
 import { AdminContactItemComponent } from './admin-contact/admin-contact-item/admin-contact-item.component';
+import { AdminBlogCreateComponent } from './admin-blog/admin-blog-create/admin-blog-create.component';
+import { AdminBlogDetailsComponent } from './admin-blog/admin-blog-details/admin-blog-details.component';
+import { AdminBlogItemComponent } from './admin-blog/admin-blog-item/admin-blog-item.component';
+import { AdminBlogUpdateComponent } from './admin-blog/admin-blog-update/admin-blog-update.component';
 
 
 
@@ -17,7 +21,11 @@ import { AdminContactItemComponent } from './admin-contact/admin-contact-item/ad
     AdminNavbarComponent,
     UserManagmentComponent,
     AdminContactComponent,
-    AdminContactItemComponent
+    AdminContactItemComponent,
+    AdminBlogCreateComponent,
+    AdminBlogDetailsComponent,
+    AdminBlogItemComponent,
+    AdminBlogUpdateComponent
   ],
   imports: [
     CommonModule,

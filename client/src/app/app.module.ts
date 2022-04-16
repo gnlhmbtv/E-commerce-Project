@@ -17,6 +17,8 @@ import { RolesModalComponent } from './modals/roles-modal/roles-modal.component'
 import { MainContactComponent } from './contact/main-contact/main-contact.component';
 import { ContactPageComponent } from './contact/contact-page.component';
 import { ContactModule } from './contact/contact.module';
+import { BlogPageComponent } from './blog-page/blog-page.component';
+import { BlogDetailPageComponent } from './blog-detail-page/blog-detail-page.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { ContactModule } from './contact/contact.module';
     OrderDetailedComponent,
     OrdersComponent,
     RolesModalComponent,
+    BlogPageComponent,
+    BlogDetailPageComponent,
   ],
   imports: [
     BrowserModule,

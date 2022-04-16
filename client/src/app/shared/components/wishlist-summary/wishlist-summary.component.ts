@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IWishlist, IWishlistItem } from '../../models/wishlist';
-import { WishlistService } from '../wishlist/wishlist.service';
+import { WishlistService } from '../../../wishlist/wishlist.service';
 
 @Component({
   selector: 'app-wishlist-summary',

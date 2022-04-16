@@ -1,9 +1,10 @@
- <!-- Cart Section Start -->
+<app-nav-bar></app-nav-bar>
+<!-- Cart Section Start -->
  <section class="section-b-space">
     <div class="container">
         <div class="row g-4">
             <div class="col-lg-8">
-                <app-stepper [linearModeSelected]="false" #appStepper>
+                <app-stepper [linearModeSelected]="true" #appStepper>
                     <cdk-step [label]="'Address'" [completed]="(checkoutForm.get('addressForm')).valid">
                         <app-checkout-address [checkoutForm]="checkoutForm"></app-checkout-address>
                     </cdk-step>
@@ -11,7 +12,7 @@
                        <app-checkout-delivery [checkoutForm]="checkoutForm"></app-checkout-delivery>
                     </cdk-step>
                     <cdk-step [label]="'Review'">
-                        <app-checkout-review></app-checkout-review>
+                        <app-checkout-review [appStepper]="appStepper"></app-checkout-review>
                     </cdk-step>
                     <cdk-step [label]="'Payment'">
                         <app-checkout-payment [checkoutForm]="checkoutForm"></app-checkout-payment>
@@ -38,3 +39,4 @@
     </div>
 </section>
 <!-- Cart Section End -->
+<app-footer></app-footer>

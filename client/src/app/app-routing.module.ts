@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundError } from 'rxjs';
+import { EmailConfirmationComponent } from './account/email-confirmation/email-confirmation.component';
 import { BlogDetailPageComponent } from './blog-page/blog-detail-page/blog-detail-page.component';
 import { BlogPageComponent } from './blog-page/blog-page.component';
 import { ContactPageComponent } from './contact/contact-page.component';
@@ -23,6 +24,8 @@ const routes: Routes = [
   { path:'forgot-password',component:ForgotPasswordComponent},
   { path: 'resetpassword', component: ResetPasswordComponent },
   { path:'blog/detail/:id',component:BlogDetailPageComponent},
+  {path: 'email-confirmation', component: EmailConfirmationComponent},
+
   {
     path: 'shop',
     loadChildren: () =>
@@ -41,7 +44,7 @@ const routes: Routes = [
   {
     path: 'wishlist',
     loadChildren: () =>
-      import('./shared/components/wishlist/wishlist.module').then((mod) => mod.WishlistModule),
+      import('./wishlist/wishlist.module').then((mod) => mod.WishlistModule),
   },
   {
     path: 'about',

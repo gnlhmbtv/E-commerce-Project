@@ -99,12 +99,12 @@ namespace API.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult<Product>> Update(int id, [FromForm] ProductUpdateDto productUpdateDto)
+        public async Task<ActionResult<Product>> Update(int? id, [FromForm] ProductUpdateDto productUpdateDto)
         {
-            if (id != productUpdateDto.Id) return BadRequest();
+            if (id != productUpdateDto.Id) return BadRequest("Id is not =");
             var mapperproduct = _mapper.Map<Product>(productUpdateDto);
             Product product=await _productRepository.UpdateProductAsync(mapperproduct,_env.WebRootPath);
-            if (product == null) return BadRequest();
+            if (product == null) return BadRequest("Product is not null");
            
             return Ok(product);
         }

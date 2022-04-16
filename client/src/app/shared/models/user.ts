@@ -2,5 +2,6 @@ export interface IUser{
     email: string,
     displayName: string,
     token: string,
-    roles: string[]
+    roles: string[],
+    clientURI: string;
   }

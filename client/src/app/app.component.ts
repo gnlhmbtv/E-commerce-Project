@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AccountService } from './account/account.service';
 import { BasketService } from './basket/basket.service';
 import * as $ from 'jquery';
+import { WishlistService } from './wishlist/wishlist.service';
 declare const myFun: any;
 
 @Component({
@@ -13,7 +14,7 @@ declare const myFun: any;
 export class AppComponent {
   title = 'client';
 
-  constructor(private basketService: BasketService, private accountService: AccountService) { }
+  constructor(private basketService: BasketService, private wishlistService: WishlistService, private accountService: AccountService) { }
 
 
   ngOnInit(): void {
@@ -32,6 +33,17 @@ export class AppComponent {
         console.log(error);
       });
     
+  }
+
+  loadWishlist() {
+    const wishlistId = localStorage.getItem('wishlist_id');
+    if (wishlistId) {
+      this.wishlistService.getWishlist(wishlistId).subscribe(() => {
+        console.log('initialised wishlist');
+      }, error => {
+        console.log(error);
+      })
+    }
   }
 
   

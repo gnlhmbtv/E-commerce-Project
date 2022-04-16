@@ -51,8 +51,10 @@ namespace API
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped<IBasketRepository, BasketRepository>();
             services.AddScoped<IWishlistRepository, WishlistRepository>();
+            services.AddScoped<IBrandRepository, BrandRepository>();
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IOrderService, OrderService>();
+            services.AddScoped<IPaymentService, PaymentService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IBlogRepository, BlogRepository>();
             services.AddAutoMapper(typeof(Mapper));
@@ -67,7 +69,7 @@ namespace API
                 return ConnectionMultiplexer.Connect(configuration);
             });
 
-            var emailConfig = _config
+             var emailConfig = _config
                 .GetSection("EmailConfiguration")
                 .Get<EmailConfiguration>();
             services.AddSingleton(emailConfig);

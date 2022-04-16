@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, map } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { IProduct } from '../../models/product';
-import { IWishlist, IWishlistItem, Wishlist } from '../../models/wishlist';
+import { IProduct } from '../shared/models/product';
+import { IWishlist, IWishlistItem, Wishlist } from '../shared/models/wishlist';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,6 @@ export class WishlistService {
   baseUrl = environment.apiUrl;
   private wishlistSource = new BehaviorSubject<IWishlist>(null);
   wishlist$ = this.wishlistSource.asObservable();
-  shipping = 0;
   
   constructor(private http: HttpClient) { }
 
@@ -22,13 +21,25 @@ export class WishlistService {
       .pipe(
         map((wishlist: IWishlist) => {
           this.wishlistSource.next(wishlist);
+          console.log(wishlist);
         })
       );
+  }
+
+ 
+  setWishlist(wishlist: IWishlist){
+    return this.http.post(this.baseUrl + 'wishlist', wishlist).subscribe((response: IWishlist) => {
+      this.wishlistSource.next(response);      
+    }, error => {
+      console.log(error);
+    });
   }
 
   getCurrentWishlistValue(){
     return this.wishlistSource.value;
   }
+  
+
 
   addItemToWishlist(item: IProduct, quantity = 1){
     const itemToAdd: IWishlistItem = this.mapProductItemToWishlistItem(item, quantity);
@@ -40,15 +51,7 @@ export class WishlistService {
     this.setWishlist(wishlist);
   }
 
-  setWishlist(basket: IWishlist){
-    return this.http.post(this.baseUrl + 'wishlist', Wishlist).subscribe((response: IWishlist) => {
-      this.wishlistSource.next(response);
-      
-    }, error => {
-      console.log(error);
-    });
-  }
-
+ 
   deleteLocalWishlist(id: string) {
     this.wishlistSource.next(null);
     localStorage.removeItem('wishlist_id');
@@ -70,6 +73,8 @@ export class WishlistService {
   private createWishlist(): IWishlist {
     const wishlist = new Wishlist();
     localStorage.setItem('wishlist_id', wishlist.id);
+    console.log(wishlist);
+    
     return wishlist;
   }
 
@@ -90,7 +95,8 @@ export class WishlistService {
     } else{
       items[index].quantity += quantity;
     }
-
+    console.log(items);
+    
     return items;
   }
 

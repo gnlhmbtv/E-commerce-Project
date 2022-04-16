@@ -31,7 +31,7 @@ namespace Infrastructure.Data
             }
             
             string folderName = Path.Combine("images", "products");
-            if (product.PhotoUrl!=null)
+            if (product.Photo!=null)
             {   
                 ImageExtensionn.DeleteImagee(webRoot,folderName,dbProduct.PhotoUrl);
                 string fileName = await product.Photo.SaveImgg(webRoot, folderName);

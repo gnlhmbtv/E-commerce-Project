@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IWishlist, IWishlistItem } from '../../models/wishlist';
+import { IWishlist, IWishlistItem } from '../shared/models/wishlist';
 import { WishlistService } from './wishlist.service';
 
 @Component({

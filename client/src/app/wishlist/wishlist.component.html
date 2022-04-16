@@ -1,3 +1,4 @@
+<app-nav-bar></app-nav-bar>
 <!-- Breadcrumb section start -->
 <section class="breadcrumb-section section-b-space">
     <ul class="circles">
@@ -25,16 +26,17 @@
         </div>
     </div>
 </section>
-<!-- Breadcrumb section end -->
-    <!-- Cart Section Start -->
+
     <section class="wish-list-section section-b-space">
-        <div *ngIf="(wishlist$ | async) as wishlist" class="container">
+        <div *ngIf="(wishlist$ | async)" as wishlist class="container">
             <div class="row">
                 <div class="col-sm-12 table-responsive">
-                    <app-wishlist-summary (remove)="removeWishlistItem($event)">
+                    <app-wishlist-summary 
+                    (remove)="removeWishlistItem($event)">
                     </app-wishlist-summary>
                 </div>
             </div>
         </div>
     </section>
     <!-- Cart Section End -->
+    <app-footer></app-footer>

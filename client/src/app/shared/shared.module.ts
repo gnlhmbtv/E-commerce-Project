@@ -11,8 +11,11 @@ import { StepperComponent } from './components/stepper/stepper.component';
 import { BasketSummaryComponent } from './components/basket-summary/basket-summary.component';
 import { RouterModule } from '@angular/router';
 import { MainBlogComponent } from './components/main-blog/main-blog.component';
-import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { WishlistComponent } from '../wishlist/wishlist.component';
 import { WishlistSummaryComponent } from './components/wishlist-summary/wishlist-summary.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ServiceComponent } from './components/service/service.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { WishlistSummaryComponent } from './components/wishlist-summary/wishlist
     StepperComponent,
     BasketSummaryComponent,
     MainBlogComponent,
-    WishlistSummaryComponent
+    WishlistSummaryComponent,
+    NavBarComponent,
+    FooterComponent,
+    ServiceComponent
   ],
   imports: [
     CommonModule,
@@ -42,7 +48,10 @@ import { WishlistSummaryComponent } from './components/wishlist-summary/wishlist
     CdkStepperModule,
     StepperComponent,
     BasketSummaryComponent,
-    MainBlogComponent
+    MainBlogComponent,
+    WishlistSummaryComponent,
+    NavBarComponent,
+    FooterComponent
   ],
 })
 export class SharedModule {}

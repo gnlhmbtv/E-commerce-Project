@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AccountRoutingModule } from './account-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { EmailConfirmationComponent } from './email-confirmation/email-confirmation.component';
 
 
 
@@ -11,6 +12,7 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [
     LoginComponent,
     RegisterComponent
+    // EmailConfirmationComponent
   ],
   imports: [
     CommonModule,

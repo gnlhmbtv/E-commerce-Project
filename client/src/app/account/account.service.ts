@@ -24,6 +24,11 @@ export class AccountService {
   decodedToken:any;
 
 
+  getUsers(){
+    return this.http.get<IUser[]>(this.baseUrl + 'account/getusers');
+  }
+
+
   loadCurrentUser(token: string){
 
     if(token === null){
@@ -65,6 +70,14 @@ export class AccountService {
         }
       })
     );
+  }
+
+  confirmEmail = (route: string, token: string, email: string) => {
+    let params = new HttpParams({encoder: new CustomEncoder()})
+    params = params.append('token', token);
+    params = params.append('email', email);
+
+    return this.http.get(this.baseUrl + 'account/EmailConfirmation', {params: params});
   }
 
 

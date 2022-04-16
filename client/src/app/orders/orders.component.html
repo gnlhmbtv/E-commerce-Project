@@ -1,8 +1,9 @@
  <!-- Oder Details Section Start -->
+ <!-- <app-nav-bar></app-nav-bar> -->
  <section class="section-b-space cart-section order-details-table">
     <div class="container">
         <div class="title title1 title-effect mb-1 title-left">
-            <h2 class="mb-3">Order Details</h2>
+            <h2 class="mb-3">&nbsp;&nbsp;&nbsp;&nbsp; Order Details</h2>
         </div>
         <div class="row g-4">
             <div class="col-md-6">
@@ -21,7 +22,7 @@
                                 </td>
                                 <td>
                                     <p>Total</p>
-                                    <h5>{{order.total | currency}}</h5>
+                                    <h5>{{order.subtotal | currency}}</h5>
                                 </td>
                                 <td>
                                     <p>Status</p>
@@ -32,46 +33,9 @@
                     </table>
                 </div>
             </div>
-            <div class="col-md-6">
-                <tfoot>
-                    <tr class="table-order">
-                        <td colspan="3">
-                            <h5 class="font-light">Subtotal :</h5>
-                        </td>
-                        <td>
-                            <h4>$55.00</h4>
-                        </td>
-                    </tr>
-
-                    <tr class="table-order">
-                        <td colspan="3">
-                            <h5 class="font-light">Shipping :</h5>
-                        </td>
-                        <td>
-                            <h4>$12.00</h4>
-                        </td>
-                    </tr>
-
-                    <tr class="table-order">
-                        <td colspan="3">
-                            <h5 class="font-light">Tax(GST) :</h5>
-                        </td>
-                        <td>
-                            <h4>$10.00</h4>
-                        </td>
-                    </tr>
-
-                    <tr class="table-order">
-                        <td colspan="3">
-                            <h4 class="theme-color fw-bold">Total Price :</h4>
-                        </td>
-                        <td>
-                            <h4 class="theme-color fw-bold">$6935.00</h4>
-                        </td>
-                    </tr>
-                </tfoot>
-            </div>
+         
         </div>
     </div>
 </section>
 <!-- Order Details Section End -->
+<app-footer></app-footer>

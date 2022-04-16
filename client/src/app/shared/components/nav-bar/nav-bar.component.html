@@ -1,4 +1,3 @@
-<!-- header start -->
 <header class="header-style-2" id="home">
   <div class="main-header navbar-searchbar">
     <div class="container-fluid-lg">
@@ -386,10 +385,11 @@
                 </li>
                 <li class="onhover-dropdown wislist-dropdown">
                   <div class="cart-media">
-                    <a href="wishlist.html">
-                      <i data-feather="heart"></i>
-                      <!-- <span class="label label-theme rounded-pill">{{ (basket$ | async).items.length }}</span> -->
-                    </a>
+                    <a routerLink="/wishlist">
+                      <i style="zoom: 130%;" class="fa fa-solid fa-heart"></i>
+                      <span *ngIf="wishlist$ | async"
+                      class="label label-theme rounded-pill">{{ (wishlist$ | async).items.length }}</span>
+                                       </a>
                   </div>
                   <div class="onhover-div">
                     <a [routerLink]="['/basket']">
@@ -435,7 +435,7 @@
                         </span>
                       </div>
                       <ul class="custom-scroll">
-                        <li *ngFor="let item of (basket$ | async).items">
+                        <li *ngFor="let item of (basket$ | async).items | slice:-3">
                           <div class="media">
                             <img
                               src="{{ item.photoUrl }}"
@@ -462,35 +462,7 @@
                             </a>
                           </div>
                         </li>
-                        <!-- <li>
-                          <div class="media">
-                            <img
-                              src="assets/images/fashion/product/front/7.jpg"
-                              class="img-fluid blur-up lazyload"
-                              alt=""
-                            />
-                            <div class="media-body">
-                              <h6>Womens Stylish Jacket</h6>
-                              <div class="qty-with-price">
-                                <span>$24.00</span>
-                                <span>
-                                  <input
-                                    type="number"
-                                    class="form-control"
-                                    value="1"
-                                  />
-                                </span>
-                              </div>
-                            </div>
-                            <button
-                              type="button"
-                              class="btn-close d-block d-md-none"
-                              aria-label="Close"
-                            >
-                              <i class="fas fa-times"></i>
-                            </button>
-                          </div>
-                        </li> -->
+                
                       </ul>
                     </div>
                     <div class="cart-btn">
@@ -600,4 +572,3 @@
     </div>
   </div>
 </header>
-<!-- header end -->

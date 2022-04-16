@@ -87,3 +87,4 @@ C:\Users\user\Desktop\e-commerce_final\API\obj\Debug\net5.0\API.dll
 C:\Users\user\Desktop\e-commerce_final\API\obj\Debug\net5.0\ref\API.dll
 C:\Users\user\Desktop\e-commerce_final\API\obj\Debug\net5.0\API.pdb
 C:\Users\user\Desktop\e-commerce_final\API\obj\Debug\net5.0\API.genruntimeconfig.cache
+C:\Users\user\Desktop\e-commerce_final\api\bin\Debug\net5.0\Stripe.net.dll

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AsyncValidatorFn, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { map, of, switchMap, timer } from 'rxjs';
 import { AccountService } from '../account.service';
 
@@ -13,10 +14,11 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   errors: string[];
 
-  constructor(private fb: FormBuilder, private accountService: AccountService, private router: Router) { }
+  constructor(private fb: FormBuilder, private toastr: ToastrService, private accountService: AccountService, private router: Router) { }
 
   ngOnInit() {
     this.createRegisterForm();
+    
   }
 
   createRegisterForm(){
@@ -24,13 +26,15 @@ export class RegisterComponent implements OnInit {
       displayName: [null, [Validators.required]],
       email: [null, [Validators.required, Validators.pattern('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$')],
     [this.validateEmailNotTaken()]],
-      password: [null, [Validators.required]]
+      password: [null, [Validators.required]],
+      clientURI: 'https://localhost:4200/email-confirmation'
     });
   }
 
   onSubmit(){
     this.accountService.register(this.registerForm.value).subscribe(response => {
-      this.router.navigateByUrl('./shop');
+      this.router.navigateByUrl('/account/login');
+      this.toastr.info("Check your email");
     }, error => {
       console.log(error);
       this.errors = error.errors;

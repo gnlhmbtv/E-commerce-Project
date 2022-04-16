@@ -1,62 +1,65 @@
 <div>
-    
-<div class="product-box">
+  <div class="product-box">
     <div class="img-wrapper">
-        <div style="width: 300px; height: 300px;" class="front">
-            <a routerLink="/shop/{{product.id}}">
-                <img style="width: 300px;" src="{{product.photoUrl}}"
-                    class="bg-img lazyload" alt="{{product.name}}">
+      <div style="width: 300px; height: 300px" class="front">
+        <a routerLink="/shop/{{ product.id }}">
+          <img
+            style="width: 300px"
+            src="{{ product.photoUrl }}"
+            class="bg-img lazyload"
+            alt="{{ product.name }}"
+          />
+        </a>
+      </div>
+      <div class="cart-wrap">
+        <ul>
+          <li *ngIf="(currentUser$ | async) === null">
+            <a class="addtocart-btn" routerLink="/account/login">
+              <i class="fa fa-shopping-cart"></i>
             </a>
-        </div>
-        <div class="cart-wrap">
-            <ul>
-                <li *ngIf="(currentUser$ | async) === null">
-                    <a class="addtocart-btn" routerLink="/account/login">
-                        <i class="fa fa-shopping-cart mr-3"></i>
-                    </a>
-                </li>
-                <li *ngIf="(currentUser$ | async) === null">
-                    <a class="addtocart-btn" routerLink="/account/login">
-                        <i class="fa fa-thin fa-heart"></i>
-                    </a>
-                </li>
-                <li *ngIf="currentUser$ | async">
-                    <a (click)="addItemToBasket()" class="addtocart-btn">
-                        <i class="fa fa-shopping-cart mr-3"></i>
-                    </a>
-                </li>
-                <li *ngIf="currentUser$ | async">
-                    <a (click)="addItemToWishlist()" class="addtocart-btn">
-                        <i class="fa fa-thin fa-heart"></i>
-                    </a>
-                </li>
-                <li>
-                    <a routerLink="/shop/{{product.id}}" data-bs-toggle="modal"
-                        data-bs-target="#quick-view">
-                        <i class="fa fa-solid fa-eye"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    
-    <div class="product-details">
-        <div class="rating-details">
-            <span class="font-light grid-content">{{product.name}}</span>
-            
-        </div>
-        <div class="main-price">
-            <a href="product-left-sidebar.html" class="font-default">
-                <h5 class="ms-0">{{product.description}}</h5>
+          </li>
+          <li *ngIf="(currentUser$ | async) === null">
+            <a class="addtocart-btn" routerLink="/account/login">
+              <i class="fa fa-thin fa-heart"></i>
             </a>
-            <div class="listing-content">
-                <span class="font-light">Regular Fit</span>
-                <p class="font-light">{{product.description}}</p>
-            </div>
-            <h3 class="theme-color">{{product.price | currency}}</h3>
-            
-        </div>
+          </li>
+          <li *ngIf="currentUser$ | async">
+            <a (click)="addItemToBasket()" class="addtocart-btn">
+              <i class="fa fa-shopping-cart"></i>
+            </a>
+          </li>
+          <li *ngIf="currentUser$ | async">
+            <a (click)="addItemToWishlist()" class="addtocart-btn">
+              <i class="fa fa-thin fa-heart"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              routerLink="/shop/{{ product.id }}"
+              data-bs-toggle="modal"
+              data-bs-target="#quick-view"
+            >
+              <i class="fa fa-solid fa-eye"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-</div>
 
+    <div class="product-details">
+      <div class="rating-details">
+        <span class="font-light grid-content">{{ product.name }}</span>
+      </div>
+      <div class="main-price">
+        <a href="product-left-sidebar.html" class="font-default">
+          <h5 class="ms-0">{{ product.description }}</h5>
+        </a>
+        <div class="listing-content">
+          <span class="font-light">Regular Fit</span>
+          <p class="font-light">{{ product.description }}</p>
+        </div>
+        <h3 class="theme-color">{{ product.price | currency }}</h3>
+      </div>
+    </div>
+  </div>
 </div>

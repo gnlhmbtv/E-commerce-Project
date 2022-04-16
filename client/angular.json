@@ -28,6 +28,7 @@
             ],
             "styles": [
                "./src/assets/css/vendors/animate.css",
+             
               "./src/assets/css/vendors/font-awesome.css",
               "./src/assets/css/vendors/feather-icon.css",
               "./src/assets/css/vendors/slick/slick.css",

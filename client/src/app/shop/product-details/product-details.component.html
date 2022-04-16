@@ -1,4 +1,5 @@
-  <!-- Shop Section start -->
+<app-nav-bar></app-nav-bar>
+<!-- Shop Section start -->
   <section>
     <div class="container">
         <div class="row gx-4 gy-5">
@@ -48,16 +49,61 @@
                                     </a>
                                 </div>
 
+                                <div class="color-image">
+                                    <div class="image-select">
+                                        <h5>Color :</h5>
+                                                <a>
+                                                    {{product.productColor}}
+                                                </a>
+                                    </div>
+                                </div>
+
+                                <div id="selectSize" class="addeffect-section product-description border-product">
+                                    <h6 class="product-title size-text"> size
+                                    
+                                    </h6>
+
+
+                                    <div class="size-box">
+                                        <ul>
+                                            <li>
+                                                <a>{{product.productSize}}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <h6 class="product-title product-title-2 d-block">quantity</h6>
+
+                                    <div class="qty-box">
+                                        <div class="input-group">
+                                            <span class="input-group-prepend">
+                                                <button (click)="decrementQuantity()" type="button" class="btn quantity-left-minus"
+                                                    data-type="minus" data-field="">
+                                                    <i class="fas fa-minus"></i>
+                                                </button>
+                                            </span>
+                                            <input type="text" name="quantity" class="form-control input-number"
+                                                value="1">
+                                            <span class="input-group-prepend">
+                                                <button (click)="incrementQuantity()" type="button" class="btn quantity-right-plus"
+                                                    data-type="plus" data-field="">
+                                                    <i class="fas fa-plus"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 
 
-                                <div class="mt-2 mt-md-3 border-product">
+                                <!-- <div class="mt-2 mt-md-3 border-product">
                                     <h6 class="product-title hurry-title d-block">Hurry Up! Left <span>10</span>
                                         in
                                         stock</h6>
                                     <div class="progress">
                                         <div class="progress-bar" role="progressbar" style="width: 78%"></div>
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <div class="border-product">
                                     <h6 class="product-title d-block">share it</h6>
@@ -109,12 +155,6 @@
 
                             <button class="nav-link" id="nav-size-tab" data-bs-toggle="tab"
                                 data-bs-target="#nav-guide" type="button">Sizing Guide</button>
-
-                            <button class="nav-link" id="nav-question-tab" data-bs-toggle="tab"
-                                data-bs-target="#question" type="button">Q & A</button>
-
-                            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab"
-                                data-bs-target="#review" type="button">Review</button>
                         </div>
                     </nav>
 
@@ -122,48 +162,23 @@
                         <div class="tab-pane fade show active" id="desc">
                             <div class="shipping-chart">
                                 <div class="part">
-                                    <h4 class="inner-title mb-2">Give you a complete account of the system</h4>
-                                    <p class="font-light">Nor again is there anyone who loves or pursues or
-                                        desires
-                                        to
-                                        obtain pain of itself, because it is pain, but because occasionally
-                                        circumstances occur in which toil and pain can procure him some great
-                                        pleasure.
-                                        To take a trivial example, which of us ever undertakes laborious
-                                        physical
-                                        exercise, except to obtain some advantage from it? But who has any right
-                                        to
-                                        find
-                                        fault with a man who chooses to enjoy a pleasure that has no annoying
-                                        consequences, or one who avoids a pain that produces no resultant
-                                        pleasure.
+                                    <h4 class="inner-title mb-2">Our Products</h4>
+                                    <p class="font-light">Lorem ipsum dolor sit amet, consectetur adipisicing 
+                                        elit. Ab, autem nemo? Tempora vitae assumenda laudantium unde magni, 
+                                        soluta repudiandae quam, neque voluptate deleniti consequatur laboriosam
+                                         veritatis? Tempore dolor molestias voluptatum! Minima possimus, pariatur 
+                                         sed, quasi provident dolorum unde molestias, assumenda consequuntur odit
+                                          magni blanditiis obcaecati? Ea corporis odit dolorem fuga, fugiat soluta
+                                           consequuntur magni.
                                     </p>
                                 </div>
 
                                 <div class="row g-3 align-items-center">
                                     <div class="col-lg-8">
-                                        <p class="font-light">Lorem ipsum dolor sit amet, consectetur
-                                            adipisicing
-                                            elit.
-                                            Ab, autem nemo? Tempora vitae assumenda laudantium unde magni,
-                                            soluta
-                                            repudiandae quam, neque voluptate deleniti consequatur laboriosam
-                                            veritatis?
-                                            Tempore dolor molestias voluptatum! Minima possimus, pariatur sed,
-                                            quasi
-                                            provident dolorum unde molestias, assumenda consequuntur odit magni
-                                            blanditiis obcaecati? Ea corporis odit dolorem fuga, fugiat soluta
-                                            consequuntur magni.</p>
 
                                         <div class="part mt-3">
                                             <h5 class="inner-title mb-2">fabric:</h5>
-                                            <p class="font-light">Art silk is manufactured by synthetic fibres
-                                                like
-                                                rayon. It's light in weight and is soft on the skin for comfort
-                                                in
-                                                summers.Art silk is manufactured by synthetic fibres like rayon.
-                                                It's
-                                                light in weight and is soft on the skin for comfort in summers.
+                                            <p class="font-light">{{product.description}}
                                             </p>
                                             <p class="font-light">Lorem Ipsum is simply dummy text of the
                                                 printing
@@ -225,48 +240,28 @@
                                 <div class="table-responsive">
                                     <table class="table table-part">
                                         <tr>
-                                            <th>Product Dimensions</th>
-                                            <td>15 x 15 x 3 cm; 250 Grams</td>
+                                            <th>Product Name:</th>
+                                            <td>{{product.name}}</td>
                                         </tr>
                                         <tr>
-                                            <th>Date First Available</th>
-                                            <td>5 April 2021</td>
+                                            <th>Product Brand:</th>
+                                            <td>{{product.productBrand}}</td>
                                         </tr>
                                         <tr>
-                                            <th>Manufacturer‏</th>
-                                            <td>Aditya Birla Fashion and Retail Limited</td>
+                                            <th>Product Type:</th>
+                                            <td>{{product.productType}}</td>
                                         </tr>
                                         <tr>
-                                            <th>ASIN</th>
-                                            <td>B06Y28LCDN</td>
+                                            <th>Product Color:</th>
+                                            <td>{{product.productColor}}</td>
                                         </tr>
                                         <tr>
-                                            <th>Item model number</th>
-                                            <td>AMKP317G04244</td>
+                                            <th>Product Size:</th>
+                                            <td>{{product.productSize}}</td>
                                         </tr>
                                         <tr>
-                                            <th>Department</th>
-                                            <td>Men</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Item Weight</th>
-                                            <td>250 G</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Item Dimensions LxWxH</th>
-                                            <td>15 x 15 x 3 Centimeters</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Net Quantity</th>
-                                            <td>1 U</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Included Components‏</th>
-                                            <td>1-T-shirt</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Generic Name</th>
-                                            <td>T-shirt</td>
+                                            <th>Product Price:</th>
+                                            <td>{{product.price | currency}}</td>
                                         </tr>
                                     </table>
                                 </div>
@@ -351,7 +346,7 @@
                             </div>
                         </div>
 
-                        <div class="tab-pane fade" id="question">
+                        <!-- <div class="tab-pane fade" id="question">
                             <div class="question-answer">
                                 <ul>
                                     <li>
@@ -687,7 +682,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -695,3 +690,4 @@
     </div>
 </section>
 <!-- Shop Section end -->
+<app-footer></app-footer>

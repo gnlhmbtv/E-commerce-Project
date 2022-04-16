@@ -22,6 +22,8 @@ namespace API.Controllers
         {
             var wishlist = await _wishlistRepository.GetWishlistAsync(id);
 
+            if(wishlist == null) return NotFound("Wishlist not found"); 
+
             return Ok(wishlist ?? new CustomerWishlist(id));
         }
 

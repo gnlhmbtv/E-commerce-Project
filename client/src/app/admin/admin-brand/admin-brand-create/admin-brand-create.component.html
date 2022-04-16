@@ -1,0 +1,20 @@
+<div class="container mt-5">
+    <div class="row">
+      <div class="col">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" formControlName="name" class="form-control" placeholder="name">
+            <div class="validation alert alert-danger" *ngIf="_name.invalid && _name.touched">
+              <div *ngIf="_name.errors?.required">
+                Name required
+              </div>
+            </div>
+          </div>
+          <button type="submit" [disabled]="form.invalid" class="btn btn-primary btn-submit">Create</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  

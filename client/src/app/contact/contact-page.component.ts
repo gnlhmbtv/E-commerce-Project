@@ -11,27 +11,28 @@ import { ContactService } from './contact.service';
 })
 export class ContactPageComponent implements OnInit {
 
+ 
   get _name(){
-    return this.contactform.get('name');
+    return this.form.get('name');
   }
 
   get _email(){
-    return this.contactform.get('email');
+    return this.form.get('email');
   }
 
   get _phone(){
-    return this.contactform.get('phone');
+    return this.form.get('phone');
   }
 
   get _subject(){
-    return this.contactform.get('subject');
+    return this.form.get('subject');
   }
 
   get _message(){
-    return this.contactform.get('message');
+    return this.form.get('message');
   }
 
-  contactform: FormGroup;
+  form: FormGroup;
   formData: FormData = new FormData();
 
   constructor(private contactService:ContactService,
@@ -44,7 +45,7 @@ export class ContactPageComponent implements OnInit {
   }
 
   formCreate(){
-    this.contactform = this.fb.group({
+    this.form = this.fb.group({
       name: ['',[Validators.required]],
       email: ['',[Validators.required]],
       phone: ['',[Validators.required]],
@@ -54,7 +55,7 @@ export class ContactPageComponent implements OnInit {
   }
 
   onSubmit() {
-    if(this.contactform.valid){
+    if(this.form.valid){
       this.formData.append('Name', this._name.value);
       this.formData.append('Email', this._email.value);
       this.formData.append('Phone', this._phone.value);
@@ -63,10 +64,9 @@ export class ContactPageComponent implements OnInit {
 
       this.contactService.createContact(this.formData).subscribe(x=> {
         console.log(x);
-        this.contactform.reset();
+        this.form.reset();
         this.toastr.success('Message is send');
       },error=>this.toastr.error(error));
     }
   }
-
 }

@@ -20,13 +20,14 @@ import { ForgotPasswordModule } from './forgot-password/forgot-password.module';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ResetPasswordModule } from './reset-password/reset-password.module';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { OrdersModule } from './orders/orders.module';
+import { EmailConfirmationComponent } from './account/email-confirmation/email-confirmation.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    OrderDetailedComponent,
-    OrdersComponent
+    EmailConfirmationComponent
     // RolesModalComponent
   ],
   imports: [
@@ -41,7 +42,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     ContactModule,
     BlogPageModule,
     ForgotPasswordModule,
-    ResetPasswordModule
+    ResetPasswordModule,
+    OrdersModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi:true},

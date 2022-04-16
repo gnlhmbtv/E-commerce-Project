@@ -11,6 +11,10 @@ import { AdminBlogCreateComponent } from './admin-blog/admin-blog-create/admin-b
 import { AdminBlogDetailsComponent } from './admin-blog/admin-blog-details/admin-blog-details.component';
 import { AdminBlogItemComponent } from './admin-blog/admin-blog-item/admin-blog-item.component';
 import { AdminBlogUpdateComponent } from './admin-blog/admin-blog-update/admin-blog-update.component';
+import { AdminBrandComponent } from './admin-brand/admin-brand.component';
+import { AdminBrandItemComponent } from './admin-brand/admin-brand-item/admin-brand-item.component';
+import { AdminBrandCreateComponent } from './admin-brand/admin-brand-create/admin-brand-create.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -21,11 +25,15 @@ import { AdminBlogUpdateComponent } from './admin-blog/admin-blog-update/admin-b
     AdminNavbarComponent,
     UserManagmentComponent,
     AdminContactComponent,
-    AdminContactItemComponent
+    AdminContactItemComponent,
+    AdminBrandComponent,
+    AdminBrandItemComponent,
+    AdminBrandCreateComponent
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class AdminModule { }

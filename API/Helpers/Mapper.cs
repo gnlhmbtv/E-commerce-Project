@@ -9,9 +9,9 @@ namespace API.Helpers
 {
     public class Mapper : Profile
     {
-        private static string BaseUrlProduct = "http://localhost:5001/images/shop/";
+        // private static string BaseUrlProduct = "http://localhost:5001/images/shop/";
         private static string BaseUrlAbout = "http://localhost:5001/images/about/";
-        private static string BaseUrlBlog = "http://localhost:5001/images/blog/";
+        // private static string BaseUrlBlog = "http://localhost:5001/images/blog/";
 
 
         public Mapper()
@@ -37,6 +37,10 @@ namespace API.Helpers
             CreateMap<BlogCreateDto,Blog>();
             
             CreateMap<BlogUpdateDto, Blog>();
+
+            CreateMap<BrandReturnDto, ProductBrand>();
+
+            CreateMap<BrandCreateDto,ProductBrand>();
 
             CreateMap<About, AboutReturnDto>()
                 .ForMember(x => x.PhotoUrl, o => o.MapFrom(x => BaseUrlAbout+x.PhotoUrl));

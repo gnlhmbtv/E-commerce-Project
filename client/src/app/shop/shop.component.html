@@ -1,4 +1,5 @@
- <!-- Breadcrumb section start -->
+<app-nav-bar></app-nav-bar>
+<!-- Breadcrumb section start -->
  <section class="breadcrumb-section section-b-space">
   <ul class="circles">
       <li></li>
@@ -78,7 +79,7 @@
                   <div class="dropdown select-featured">
                     <select
                       name="orderby"
-                      class="orderby form-control"
+                      class="orderby form-control select_form_item"
                       aria-label="Shop order"
                       (change)="onSortSelected($any($event.target).value)" >
                       <option value="Select">Sort</option>
@@ -325,4 +326,6 @@
       </div>
   </div>
 </div>
+
 <!-- Offcanvas Section End -->
+<app-footer></app-footer>

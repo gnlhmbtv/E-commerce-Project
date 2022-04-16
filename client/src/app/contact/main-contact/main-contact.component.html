@@ -1,114 +1,106 @@
 <!-- Breadcrumb section start -->
 <section class="breadcrumb-section section-b-space">
-    <ul class="circles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h3>Contact Us</h3>
-                <nav>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="index.html">
-                                <i class="fas fa-home"></i>
-                            </a>
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">Contact us</li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-    </div>
+  <ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+  </ul>
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <h3>Contact Us</h3>
+              <nav>
+              </nav>
+          </div>
+      </div>
+  </div>
 </section>
 <!-- Breadcrumb section end -->
 
 <!-- Contact Section Start -->
 <section class="contact-section">
-    <div class="container">
-        <div class="row g-4">
-            <div class="col-lg-7">
-                <div class="materialContainer">
-                    <div class="material-details">
-                        <div class="title title1 title-effect mb-1 title-left">
-                            <h2>Contact Us</h2>
-                            <p class="ms-0 w-100">Your email address will not be published. Required fields are
-                                marked *</p>
-                        </div>
-                    </div>
-                    <div class="row g-4 mt-md-1 mt-2">
-                    <form  [formGroup]="contactform" (ngSubmit)="onSubmit()">
-                        <div class="row">
-              
-                            <div class="col-md-6">
-                                <label for="first" class="form-label">First Name</label>
-                                <input class="form-control" id="first" formControlName="name" type="text" name="name" placeholder="Name">
-                            <div class="validation alert alert-danger" *ngIf="_name.invalid && _name.touched">
-                              <div *ngIf="_name.errors?.required">
-                                Name required
-                              </div>
-                            </div>
-                            </div>
-
-
-                            <div class="col-md-6">
-                                <label for="email" class="form-label">Email</label>
-                                <input formControlName="email" type="email" class="form-control" id="email" name="email" placeholder="Email">
-                            <div class="validation alert alert-danger" *ngIf="_email.invalid && _email.touched">
-                              <div *ngIf="_email.errors?.required">
-                                Email required
-                              </div>
-                            </div>
-                            </div>
-              
-                          <div class="col-md-6 ">
-                            <label for="first" class="form-label">Phone</label>
-                            <input class="form-control" id="first" formControlName="phone" type="tel" name="tel" placeholder="Phone">
-                            <div class="validation alert alert-danger" *ngIf="_phone.invalid && _phone.touched">
-                              <div *ngIf="_phone.errors?.required">
-                                Phone required
-                              </div>
-                            </div>
-                          </div>
-              
+  <div class="container">
+      <div class="row g-4">
+          <div class="col-lg-7">
+              <div class="materialContainer">
+                  <div class="material-details">
+                      <div class="title title1 title-effect mb-1 title-left">
+                          <h2>Contact Us</h2>
+                          <p class="ms-0 w-100">Your email address will not be published. Required fields are
+                              marked *</p>
+                      </div>
+                  </div>
+                  <div class="row g-4 mt-md-1 mt-2">
+                  <form  [formGroup]="contactform" (ngSubmit)="onSubmit()">
+                      <div class="row">
+            
                           <div class="col-md-6">
-                            <label for="first" class="form-label">Subject</label>
-                            <input class="form-control" id="first" formControlName="subject" type="tel" name="tel" placeholder="Subject">
-                            <div class="validation alert alert-danger" *ngIf="_subject.invalid && _subject.touched">
-                              <div *ngIf="_subject.errors?.required">
-                                Subject required
-                              </div>
+                              <label for="first" class="form-label">First Name</label>
+                              <input class="form-control" id="first" formControlName="name" type="text" name="name" placeholder="Name">
+                          <div class="validation alert alert-danger" *ngIf="_name.invalid && _name.touched">
+                            <div *ngIf="_name.errors?.required">
+                              Name required
                             </div>
                           </div>
-              
-                          <div class="col-12 ">
-                            <label for="comment" class="form-label">Message</label>
-                            <textarea formControlName="message" placeholder="Leave Your Message Here....." class="form-control" id="comment" rows="5" required></textarea>
-                            <div class="validation alert alert-danger" *ngIf="_message.invalid && _message.touched">
-                              <div *ngIf="_message.errors?.required">
-                                Message required
-                              </div>
+                          </div>
+
+
+                          <div class="col-md-6">
+                              <label for="email" class="form-label">Email</label>
+                              <input formControlName="email" type="email" class="form-control" id="email" name="email" placeholder="Email">
+                          <div class="validation alert alert-danger" *ngIf="_email.invalid && _email.touched">
+                            <div *ngIf="_email.errors?.required">
+                              Email required
                             </div>
                           </div>
-              
-                          <div class="col-auto">
-                            <button type="submit" [disabled]="contactform.invalid" class="btn btn-solid-default">Send Message</button>
+                          </div>
+            
+                        <div class="col-md-6 ">
+                          <label for="first" class="form-label">Phone</label>
+                          <input class="form-control" id="first" formControlName="phone" type="tel" name="tel" placeholder="Phone">
+                          <div class="validation alert alert-danger" *ngIf="_phone.invalid && _phone.touched">
+                            <div *ngIf="_phone.errors?.required">
+                              Phone required
+                            </div>
+                          </div>
                         </div>
-              
+            
+                        <div class="col-md-6">
+                          <label for="first" class="form-label">Subject</label>
+                          <input class="form-control" id="first" formControlName="subject" type="tel" name="tel" placeholder="Subject">
+                          <div class="validation alert alert-danger" *ngIf="_subject.invalid && _subject.touched">
+                            <div *ngIf="_subject.errors?.required">
+                              Subject required
+                            </div>
+                          </div>
                         </div>
-                      </form>
-                    </div>
-                </div>
-            </div>
+            
+                        <div class="col-12 ">
+                          <label for="comment" class="form-label">Message</label>
+                          <textarea formControlName="message" placeholder="Leave Your Message Here....." class="form-control" id="comment" rows="5" required></textarea>
+                          <div class="validation alert alert-danger" *ngIf="_message.invalid && _message.touched">
+                            <div *ngIf="_message.errors?.required">
+                              Message required
+                            </div>
+                          </div>
+                        </div>
+            
+                        <div class="col-auto">
+                          <button type="submit" [disabled]="contactform.invalid" class="btn btn-solid-default">Send Message</button>
+                      </div>
+            
+                      </div>
+                    </form>
+                  </div>
+              </div>
+          </div>
 
             <div class="col-lg-5">
                 <div class="contact-details">
@@ -121,7 +113,7 @@
                             </div>
                             <div class="contact-title">
                                 <h4>Address :</h4>
-                                <p>1418 Riverwood Drive, Suite 3245 Cottonwood, CA 96052, United States</p>
+                                <p>Dilara Aliyeva street 45, Baku, Azerbaijan</p>
                             </div>
                         </div>
 
@@ -131,8 +123,8 @@
                             </div>
                             <div class="contact-title">
                                 <h4>Phone Number :</h4>
-                                <p>+ 185659635</p>
-                                <p>+ 658651167</p>
+                                <p>+ 994551234567</p>
+                                <p>+ 994557654321</p>
                             </div>
                         </div>
 
@@ -142,8 +134,8 @@
                             </div>
                             <div class="contact-title">
                                 <h4>Email Address :</h4>
-                                <p>voxo123@gmail.com</p>
-                                <p>voxo987@gmail.com</p>
+                                <p>guneljh@gmail.com</p>
+                                <p>test@gmail.com</p>
                             </div>
                         </div>
                     </div>

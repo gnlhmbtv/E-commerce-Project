@@ -1,7 +1,3 @@
-
-
-
-
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -44,9 +40,18 @@ namespace API.Controllers
             _signInManager = signInManager;
             _userManager = userManager;
             _httpClient = new HttpClient
+            
             {
                 BaseAddress = new System.Uri("https://graph.facebook.com")
             };
+        }
+
+        // [Authorize]
+        [HttpGet("getusers")]
+        public async Task<ActionResult> GetUsers()
+        {
+            var users = await _userManager.Users.ToListAsync();
+            return Ok(users);
         }
 
 
@@ -99,6 +104,11 @@ namespace API.Controllers
             var user = await _userManager.FindByEmailAsync(loginDto.Email);
             if (user == null) return Unauthorized(new ApiResponse(401));
 
+  
+            if (!await _userManager.IsEmailConfirmedAsync(user))
+                return Unauthorized("Email is not confirmed");
+          
+
             var result = await _signInManager.CheckPasswordSignInAsync(user, loginDto.Password, false);
 
             if (!result.Succeeded) return Unauthorized(new ApiResponse(401));
@@ -129,7 +139,16 @@ namespace API.Controllers
             var result = await _userManager.CreateAsync(user, registerDto.Password);
 
             if (!result.Succeeded) return BadRequest(new ApiResponse(400));
-
+            
+            var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+            var param = new Dictionary<string, string>
+            {
+                {"token", token },
+                {"email", user.Email }
+            };
+            var callback = QueryHelpers.AddQueryString(registerDto.ClientURI, param);
+            var message = new EmailMessage(new string[] { user.Email }, "Email Confirmation token", callback, null);
+            await _emailSender.SendEmailAsync(message);
             return new UserDto
             {
                 DisplayName = user.DisplayName,
@@ -237,6 +256,20 @@ namespace API.Controllers
             };
         }
 
+
+        [HttpGet("EmailConfirmation")]
+        public async Task<IActionResult> EmailConfirmation([FromQuery] string email, [FromQuery] string token)
+        {
+            var user = await _userManager.FindByEmailAsync(email);
+
+            if (user == null) return BadRequest("Invalid Email Confirmation Request");
+
+            var confirmResult = await _userManager.ConfirmEmailAsync(user, token);
+
+            if (!confirmResult.Succeeded) return BadRequest("Invalid Email Confirmation Request");
+
+            return Ok();
+        }
 
     }
 }

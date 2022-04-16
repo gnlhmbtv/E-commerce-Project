@@ -22,7 +22,7 @@
                     </ul>
         
                     <div class="button login">
-                        <button>
+                        <button [disabled]="!registerForm.valid" type="submit">
                             <span>Sign Up</span>
                             <i class="fa fa-check"></i>
                         </button>

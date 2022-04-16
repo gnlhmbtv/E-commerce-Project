@@ -1,0 +1,33 @@
+<div class="container-fluid">
+
+    <h1 class="h3 mb-3 text-gray-800">Brands List</h1>
+    <button class="btn btn-primary mb-3" [routerLink]="['/admin/blog/create']">Create Brand</button>
+  
+    <div class="card shadow">
+      <div class="card-header py-3">
+        <table class="table table-bordered" width="100%" cellspacing="0">
+          <thead>
+          <tr>
+            <th>Name</th>
+          </tr>
+          </thead>
+        </table>
+  
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <tbody>
+            <tr *ngFor="let brand of brands">
+              <app-admin-brand-item [brand]="brand" (onDelete)="onDelete($event)"></app-admin-brand-item>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  
+
+

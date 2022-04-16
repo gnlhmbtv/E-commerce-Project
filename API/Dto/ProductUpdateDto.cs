@@ -7,18 +7,18 @@ namespace API.Dto
 {
     public class ProductUpdateDto:BaseEntity
     {
-        [Required]
+        // [Required]
         public string Name { get; set; }
-        [Required]
+        // [Required]
         public decimal Price { get; set; }
         
-        [Required]
+        // [Required]
         public string Description { get; set; }
 
-        public int ProductBrandId { get; set; }
-        public int ProductTypeId { get; set; }
-        public int ProductSizeId { get; set; }
-        public int ProductColorId { get; set; }
+        public int? ProductBrandId { get; set; }
+        public int? ProductTypeId { get; set; }
+        public int? ProductSizeId { get; set; }
+        public int? ProductColorId { get; set; }
         [NotMapped]
         public IFormFile Photo { get; set; }
     }

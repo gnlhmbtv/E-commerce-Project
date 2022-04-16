@@ -27,7 +27,7 @@
               </div>
             </div>
           </div>
-  
+<!--   
           <div class="form-group">
             <label>ProductType</label>
             <input type="text" formControlName="productTypeId" class="form-control" placeholder="ProductType">
@@ -36,8 +36,8 @@
                 ProductType required
               </div>
             </div>
-          </div>
-  
+          </div> -->
+<!--   
           <div class="form-group">
             <label>ProductBrand</label>
             <input type="text" formControlName="productBrandId" class="form-control" placeholder="ProductBrand">
@@ -46,9 +46,45 @@
                 ProductBrand required
               </div>
             </div>
-          </div>
+          </div> -->
 
+          
           <div class="form-group">
+            <label>Product Brand:</label>
+            <select class="round" (change)="onBrandSelected($event)">
+              <option *ngFor="let b of brands" value="{{b.id}}">{{b.name}}</option>
+            </select>
+          </div>
+            <span>you selected: {{_productBrandId}}</span>
+           
+           
+            <div class="form-group">
+              <label>Product Type:</label>
+              <select class="round" (change)="onTypeSelected($event)">
+                <option *ngFor="let t of types" value="{{t.id}}">{{t.name}}</option>
+              </select>
+            </div>
+              <span>you selected: {{_productTypeId}}</span>
+           
+           
+            <div class="form-group">
+              <label>Product Color:</label>
+              <select class="round" (change)="onColorSelected($event)">
+                <option *ngFor="let c of colors" value="{{c.id}}">{{c.name}}</option>
+              </select>
+            </div>
+              <span>you selected: {{_productColorId}}</span>
+           
+           
+            <div class="form-group">
+              <label>Product Size:</label>
+              <select class="round" (change)="onSizeSelected($event)">
+                <option *ngFor="let s of sizes" value="{{s.id}}">{{s.name}}</option>
+              </select>
+            </div>
+              <span>you selected: {{_productSizeId}}</span>
+
+          <!-- <div class="form-group">
             <label>ProductSize</label>
             <input type="text" formControlName="productSizeId" class="form-control" placeholder="ProductSize">
             <div class="validation alert alert-danger" *ngIf="_productSizeId.invalid && _productSizeId.touched">
@@ -56,9 +92,9 @@
                 ProductSize required
               </div>
             </div>
-          </div>
+          </div> -->
 
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label>ProductColor</label>
             <input type="text" formControlName="productColorId" class="form-control" placeholder="ProductColor">
             <div class="validation alert alert-danger" *ngIf="_productColorId.invalid && _productColorId.touched">
@@ -66,7 +102,7 @@
                 ProductColor required
               </div>
             </div>
-          </div>
+          </div> -->
   
           <div class="form-group">
             <label>Description</label>

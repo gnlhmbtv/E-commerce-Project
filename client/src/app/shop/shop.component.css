@@ -7,3 +7,6 @@
 @import "../../assets/css/vendors/slick/slick-theme.css";
 @import "../../assets/css/demo2.css";
 
+.select_form_item{
+    height: unset !important;
+}

@@ -1,12 +1,12 @@
+ <app-nav-bar></app-nav-bar>
  <!-- Cart Section Start -->
  <section class="cart-section section-b-space">
     <div *ngIf="(basket$ | async) as basket" class="container">
         <div class="row">
             <div class="col-12">
                 <div class="count-down">
-                    <h5>Your cart will be expired in <span class="count-timer theme-color" id="timer"></span>
-                        minutes !</h5>
-                    <button type="button" onclick="location.href = 'checkout.html';"
+                  
+                    <button type="button" routerLink="/checkout"
                         class="btn btn-solid-default btn-sm fw-bold">Check Out</button>
                 </div>
             </div>
@@ -95,3 +95,4 @@
     </div>
 </section>
 <!-- Cart Section End -->
+<app-footer></app-footer>

@@ -42,6 +42,7 @@ namespace Infrastructure.Data
             dbProduct.Description = product.Description;
             dbProduct.ProductBrandId = product.ProductBrandId;
             dbProduct.ProductTypeId = product.ProductTypeId;
+            // dbProduct.ProductSize = product.ProductSize;
             await _context.SaveChangesAsync();
             return dbProduct;
         }
@@ -69,6 +70,16 @@ namespace Infrastructure.Data
         {
             return await _context.ProductBrands.ToListAsync();
         }
+
+        // public async Task<IReadOnlyList<Size>> GetProductSizeAsync()
+        // {
+        //     return await _context.Sizes.ToListAsync();
+        // }
+
+        // public async Task<IReadOnlyList<Color>> GetProductColorAsync()
+        // {
+        //     return await _context.Colors.ToListAsync();
+        // }
 
         public async Task<Product> GetProductByIdAsync(int id)
         {

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Http;
 
@@ -15,7 +16,7 @@ namespace Core.Entities
         public int ProductTypeId { get; set; }
         public ProductBrand ProductBrand { get; set; }
         public int ProductBrandId { get; set; }
-
-
+        public ICollection<ProductSize> ProductSize { get; set; }
+        public ICollection<ProductColor> ProductColor { get; set; }
     }
 }

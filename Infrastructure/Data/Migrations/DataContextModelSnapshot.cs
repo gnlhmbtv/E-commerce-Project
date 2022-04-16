@@ -76,7 +76,7 @@ namespace Infrastructure.Data.Migrations
                             Id = 1,
                             Description = "Lorem  Ipsum Doler sit amet",
                             PhotoUrl = "01_blog.jpg",
-                            PublishTime = new DateTime(2022, 4, 16, 14, 1, 21, 276, DateTimeKind.Local).AddTicks(2787),
+                            PublishTime = new DateTime(2022, 4, 17, 3, 27, 8, 88, DateTimeKind.Local).AddTicks(6113),
                             Title = "New Mascara by Maybelline",
                             Topic = "Mascara , Maybelline"
                         });

@@ -8,6 +8,7 @@ import { AdminProductDetailsComponent } from './admin-product-details/admin-prod
 import { AdminProductUpdateComponent } from './admin-product-update/admin-product-update.component';
 import { AdminProductItemComponent } from './admin-product-item/admin-product-item.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
@@ -23,7 +24,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     CommonModule,
     AdminProductRoutingModule,
     ReactiveFormsModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    SharedModule
   ]
 })
 export class AdminProductModule { }

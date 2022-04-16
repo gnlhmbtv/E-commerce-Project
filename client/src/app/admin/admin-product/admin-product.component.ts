@@ -22,10 +22,22 @@ export class AdminProductComponent implements OnInit {
   constructor(private shopService:ShopService,private toastr:ToastrService) { }
 
   ngOnInit(): void {
-    this.getAllProducts();
+    this.getProducts();
   }
 
-  getAllProducts(){
+  // getAllProducts(){
+  //   this.shopService.getProducts(this.shopParams)
+  //   .subscribe(response => {
+  //     this.products = response.data;
+  //     this.shopParams.pageNumber = response.pageIndex;
+  //     this.shopParams.pageSize = response.pageSize;
+  //     this.totalCount = response.count;
+  //   }, error => {
+  //     console.log(error);
+  //   });
+  // }
+
+  getProducts(){
     this.shopService.getProducts(this.shopParams)
     .subscribe(response => {
       this.products = response.data;
@@ -34,15 +46,22 @@ export class AdminProductComponent implements OnInit {
       this.totalCount = response.count;
     }, error => {
       console.log(error);
+
     });
   }
 
   onDelete(product:IProduct) {
     this.shopService.deleteProduct(product.id)
       .subscribe(x=>{
-        this.getAllProducts();
+        this.getProducts();
         this.toastr.warning(product.name + ' is deleted');
       },error => console.log(error))
+  }
+
+  onPageChanged(event: any) {
+    if(this.shopParams.pageNumber !== event){
+      this.shopParams.pageNumber = event;
+    }
   }
 
 }

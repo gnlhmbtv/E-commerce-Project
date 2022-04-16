@@ -3,14 +3,16 @@ using System;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Infrastructure.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20220416074846_CommentAndReplyComment")]
+    partial class CommentAndReplyComment
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -69,17 +71,6 @@ namespace Infrastructure.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Blogs");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Description = "Lorem  Ipsum Doler sit amet",
-                            PhotoUrl = "01_blog.jpg",
-                            PublishTime = new DateTime(2022, 4, 16, 14, 1, 21, 276, DateTimeKind.Local).AddTicks(2787),
-                            Title = "New Mascara by Maybelline",
-                            Topic = "Mascara , Maybelline"
-                        });
                 });
 
             modelBuilder.Entity("Core.Entities.Comment", b =>
@@ -390,7 +381,7 @@ namespace Infrastructure.Data.Migrations
             modelBuilder.Entity("Core.Entities.Comment", b =>
                 {
                     b.HasOne("Core.Entities.Blog", "Blog")
-                        .WithMany("Comments")
+                        .WithMany()
                         .HasForeignKey("BlogId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

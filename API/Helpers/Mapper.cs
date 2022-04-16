@@ -1,3 +1,4 @@
+using System.Linq;
 using API.Dto;
 using AutoMapper;
 using Core.Entities;
@@ -9,7 +10,9 @@ namespace API.Helpers
     public class Mapper : Profile
     {
         // private static string BaseUrlProduct = "http://localhost:5000/images/shop/";
-        private static string BaseUrlAbout = "http://localhost:5000/images/about/";
+        private static string BaseUrlAbout = "http://localhost:5001/images/about/";
+        private static string BaseUrlBlog = "http://localhost:5001/images/blog/";
+
 
         public Mapper()
         {
@@ -34,6 +37,22 @@ namespace API.Helpers
             CreateMap<About, AboutReturnDto>()
                 .ForMember(x => x.PhotoUrl, o => o.MapFrom(x => BaseUrlAbout+x.PhotoUrl));
             CreateMap<ContactCreateDto, Contact>();
+            CreateMap<Blog, BlogReturnDto>()
+                .ForMember(x => x.Comments
+                    , o =>
+                        o.MapFrom(x => x.Comments.Select(x => x.Context)))
+                .ForMember(x => x.PhotoUrl
+                    , o =>
+                        o.MapFrom(x => BaseUrlBlog+x.PhotoUrl));
+            CreateMap<Comment, CommentReturnDto>()
+                .ForMember(x => x.Blog
+                    , o =>
+                        o.MapFrom(x => x.Blog.Title))
+                .ForMember(x => x.User
+                    , o =>
+                        o.MapFrom(x => x.User.UserName));;
+            CreateMap<BlogCreateDto,Blog>();
+            CreateMap<BlogUpdateDto, Blog>();
             // CreateMap<Product,ProductReturnDto>()
             //     .ForMember(x => x.ProductType
             //         , o =>

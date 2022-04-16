@@ -24,6 +24,9 @@ namespace Infrastructure.Data
         public DbSet<DeliveryMethod> DeliveryMethods { get; set; }
         public DbSet<About> Abouts { get; set; }
         public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+        public DbSet<ReplyToComment> ReplyToComments { get; set; }
 
 
 
@@ -59,6 +62,17 @@ namespace Infrastructure.Data
                     Title = "largest Online fashion destination",
                     PhotoUrl = "assets/images/inner-page/review-image/8.jpg",
                     Description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, culpa! Asperiores labore amet nemo ullam odit atque adipisci, hic, aliquid animi fugiat praesentium quidem.  Perspiciatis, expedita!"
+                }
+            );
+             modelBuilder.Entity<Blog>().HasData(
+                new Blog
+                {
+                    Id = 1, Title = "New Mascara by Maybelline",
+                    PhotoUrl = "01_blog.jpg",Topic = "Mascara , Maybelline",
+                    PublishTime = DateTime.Now,
+                    Description = "Lorem  " +
+                                  "Ipsum " +
+                                  "Doler sit amet"                               
                 }
             );
             }

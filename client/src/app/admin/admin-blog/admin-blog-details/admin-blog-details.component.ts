@@ -6,7 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { AccountService } from 'src/app/account/account.service';
 import { BlogService } from 'src/app/blog-page/blog.service';
 import { CommentService } from 'src/app/comment/comment.service';
-import { Blog } from 'src/app/shared/models/blog';
+import { IBlog } from 'src/app/shared/models/blog';
 import { Commment } from 'src/app/shared/models/comment';
 
 @Component({
@@ -18,21 +18,23 @@ export class AdminBlogDetailsComponent implements OnInit {
 
   jwtHelper=new JwtHelperService();
   form: FormGroup;
-  blog:Blog;
+  blog:IBlog;
   commments:Commment[];
   id:number;
-  constructor(private blogService:BlogService
+  constructor(
+    private blogService:BlogService
     ,private activatedRoute:ActivatedRoute
     ,private commentService:CommentService
     ,private route:Router
     ,private toastrService: ToastrService
-    ,private authService:AccountService) { }
+    ,private authService:AccountService
+    ) { }
 
   ngOnInit(): void {
-    this.getBlogById()
-    this.getCommentsByBlog()
-    this.formCreate()
-    this.id=parseInt(this.authService.decodedToken?.nameid)
+    this.getBlogById();
+    // this.getCommentsByBlog()
+     this.formCreate()
+     this.id=parseInt(this.authService.decodedToken?.nameid)
   }
 
 

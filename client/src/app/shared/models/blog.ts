@@ -1,10 +1,14 @@
-export class Blog {
+export interface IBlog {
     id:number
     title:string;
     topic:string;
     description:string;
     publishTime:Date;
-    comments:Comment[]=[];
     photoUrl:string;
   }
+
+  export class Blog{
+    comments:Comment[]=[];
+  }
+  
   

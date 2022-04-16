@@ -10,6 +10,7 @@ import { AdminBlogItemComponent } from './admin-blog-item/admin-blog-item.compon
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { RouterModule } from '@angular/router';
+import { AdminBlogRoutingModule } from './admin-blog-routing.module';
 
 
 
@@ -17,15 +18,15 @@ import { RouterModule } from '@angular/router';
   declarations: [
     AdminBlogComponent,
     AdminBlogCreateComponent,
-     AdminBlogUpdateComponent,
+    AdminBlogUpdateComponent,
     AdminBlogDetailsComponent,
-     AdminBlogItemComponent
+    AdminBlogItemComponent
   ],
   imports: [
     CommonModule,
+    AdminBlogRoutingModule,
     ReactiveFormsModule,
     ModalModule.forRoot(),
-    RouterModule,
     SharedModule
   ]
 })

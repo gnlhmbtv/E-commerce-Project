@@ -86,3 +86,4 @@ C:\Users\user\Desktop\e-commerce_final\api\bin\Debug\net5.0\MailKit.dll
 C:\Users\user\Desktop\e-commerce_final\api\bin\Debug\net5.0\MimeKit.dll
 C:\Users\user\Desktop\e-commerce_final\api\bin\Debug\net5.0\NETCore.MailKit.dll
 C:\Users\user\Desktop\e-commerce_final\api\bin\Debug\net5.0\BouncyCastle.Crypto.dll
+C:\Users\user\Desktop\e-commerce_final\api\bin\Debug\net5.0\Newtonsoft.Json.dll

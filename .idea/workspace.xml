@@ -6,50 +6,42 @@
   <component name="ChangeListManager">
     <list default="true" id="8a448bfe-16bc-43de-9608-84cd2b6a6fc6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/API/API.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Controllers/AccountController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/API/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/Controllers/BlogController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Controllers/BlogController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/Controllers/ProductsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Controllers/ProductsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/Helpers/Mapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Helpers/Mapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/Helpers/ProductUrlResolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Helpers/ProductUrlResolver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/API/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/bin/Debug/net5.0/API.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/API/bin/Debug/net5.0/API.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/bin/Debug/net5.0/API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/bin/Debug/net5.0/API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/bin/Debug/net5.0/API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/API/bin/Debug/net5.0/API.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/bin/Debug/net5.0/ref/API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/bin/Debug/net5.0/ref/API.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/obj/API.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/API.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net5.0/API.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net5.0/ref/API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net5.0/ref/API.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/about/about.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/about/about.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/about/about.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/about/about.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Specifications/ProductSpecificationParams.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Specifications/ProductSpecificationParams.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/app/account/account.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/account/account.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/app/account/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/account/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/account/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/account/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-create/admin-blog-create.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-create/admin-blog-create.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-create/admin-blog-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-create/admin-blog-create.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-create/admin-blog-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-create/admin-blog-create.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-details/admin-blog-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-details/admin-blog-details.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-details/admin-blog-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-details/admin-blog-details.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-item/admin-blog-item.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-item/admin-blog-item.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-item/admin-blog-item.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-item/admin-blog-item.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-item/admin-blog-item.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-item/admin-blog-item.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-update/admin-blog-update.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-update/admin-blog-update.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-update/admin-blog-update.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-update/admin-blog-update.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-update/admin-blog-update.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog-update/admin-blog-update.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-blog/admin-blog.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-contact/admin-contact-item/admin-contact-item.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-contact/admin-contact-item/admin-contact-item.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-contact/admin-contact-item/admin-contact-item.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-contact/admin-contact-item/admin-contact-item.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-contact/admin-contact.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-contact/admin-contact.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/admin/admin.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/admin.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/admin/shared/left-sidebar/left-sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/admin/shared/left-sidebar/left-sidebar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/blog-page/blog-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/blog-page/blog-page.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/blog-page/blog.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/blog-page/blog.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/shared/components/main-blog/main-blog.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/shared/components/main-blog/main-blog.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/shared/models/blog.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/shared/models/blog.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/shop/product-item/product-item.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/shop/product-item/product-item.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +61,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="26Ks0Xpklz19Rb3uTFs6qForc9d" />
   <component name="ProjectLevelVcsManager">
@@ -116,6 +111,8 @@
       <workItem from="1648444818583" duration="494000" />
       <workItem from="1650209417196" duration="102000" />
       <workItem from="1650212383980" duration="95000" />
+      <workItem from="1650182022247" duration="3586000" />
+      <workItem from="1650638341333" duration="115000" />
     </task>
     <servers />
   </component>

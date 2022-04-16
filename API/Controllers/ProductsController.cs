@@ -24,7 +24,7 @@ namespace API.Controllers
         private readonly IGenericRepository<ProductType> _productTypeRepository;
         private readonly IGenericRepository<Product> _productsRepository;
         private readonly IProductRepository _productRepository;
-
+    
         private readonly IMapper _mapper;
         private readonly IWebHostEnvironment _env;
 

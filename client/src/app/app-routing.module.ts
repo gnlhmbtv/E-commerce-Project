@@ -19,10 +19,10 @@ const routes: Routes = [
   { path: 'server-error', component: ServerErrorComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: 'contact', component: ContactPageComponent },
-  {path:'blog',component:BlogPageComponent},
-  {path:'forgot-password',component:ForgotPasswordComponent},
-  {path: 'resetpassword', component: ResetPasswordComponent },
-  {path:'blog/detail/:id',component:BlogDetailPageComponent},
+  { path:'blog',component:BlogPageComponent},
+  { path:'forgot-password',component:ForgotPasswordComponent},
+  { path: 'resetpassword', component: ResetPasswordComponent },
+  { path:'blog/detail/:id',component:BlogDetailPageComponent},
   {
     path: 'shop',
     loadChildren: () =>

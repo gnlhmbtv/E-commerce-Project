@@ -45,7 +45,7 @@
                     <div *ngFor="let blog of blogs" class="col-lg-4 col-md-6">
                         <div class="card blog-categority">
                             <a [routerLink]="['/blog/detail/',blog.id]" class="blog-img">
-                                <img src="../../../../assets/images/electronics/product/3.jpg" alt=""
+                                <img src="{{blog.photoUrl}}" alt=""
                                     class="card-img-top blur-up lazyload bg-img">
                             </a>
                             <div class="card-body">
@@ -66,7 +66,7 @@
 
                     
                 </div>
-
+<!-- 
                 <nav class="page-section" *ngIf="totalCount > 0">
                     <ul class="pagination">
                       <app-paging
@@ -75,15 +75,15 @@
                       (pageChanged)="onPageChanged($event)"
                       ></app-paging>
                     </ul>
-                </nav>
+                </nav> -->
             </div>
             <div class="col-lg-3 col-md-5">
                 <div class="left-side">
                     <!-- Search Bar Start -->
                     <div class="search-section">
                         <div class="input-group search-bar">
-                            <input type="search" class="form-control search-input" placeholder="Search">
-                            <button class="input-group-text search-button" id="basic-addon2">
+                            <input (keyup.enter)="onSearch()" #search type="search" class="form-control search-input" placeholder="Search">
+                            <button (click)="onSearch()" class="input-group-text search-button" id="basic-addon2">
                                 <i class="fas fa-search text-color"></i>
                             </button>
                         </div>

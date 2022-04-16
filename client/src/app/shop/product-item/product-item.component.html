@@ -2,9 +2,9 @@
     
 <div class="product-box">
     <div class="img-wrapper">
-        <div class="front">
+        <div style="width: 300px; height: 300px;" class="front">
             <a routerLink="/shop/{{product.id}}">
-                <img  style="width: 300px;" src="{{product.photoUrl}}"
+                <img style="width: 300px;" src="{{product.photoUrl}}"
                     class="bg-img lazyload" alt="{{product.name}}">
             </a>
         </div>
@@ -32,7 +32,7 @@
         </div>
         <div class="main-price">
             <a href="product-left-sidebar.html" class="font-default">
-                <h5 class="ms-0">{{product.name}}</h5>
+                <h5 class="ms-0">{{product.description}}</h5>
             </a>
             <div class="listing-content">
                 <span class="font-light">Regular Fit</span>

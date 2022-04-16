@@ -295,7 +295,6 @@
                         >contact</a>
                     </li>
                     
-                    
 
                     <!-- <li>
                       <a routerLink="/test-error" class="nav-link menu-title"
@@ -342,7 +341,7 @@
                 <li class="onhover-dropdown">
                   <ng-container *ngIf="(currentUser$ | async) === null" >
                     <div  class="cart-media">
-                      <i class="fa-solid fa-user"></i>
+                      <i class="fa fa-solid fa-user"></i>
                     </div>
                   <div class="onhover-div profile-dropdown">
                     <ul>
@@ -363,15 +362,15 @@
                     <ul>
                       <li>
                         <a routerLink="/basket" class="d-block">
-                           <i class="fa fa-shopping-cart mr-3"></i>View Basket</a>
+                           <i class="fa fa-shopping-cart mr-3"></i>  View Basket</a>
                       </li>
                       <li>
                         <a routerLink="/orders" class="d-block">
-                           <i class="fa fa-history mr-3"></i>View Orders</a>
+                           <i class="fa fa-history mr-3"></i>  View Orders</a>
                       </li>
                       <li>
                         <a (click)="logout()" class="d-block">
-                           <i class="fa fa-sign-out mr-3"></i>Logout</a>
+                           <i class="fa fa-sign-out mr-3"></i>  Logout</a>
                       </li>
                     </ul>
                   </div>
@@ -381,7 +380,7 @@
                   <div class="cart-media">
                     <a href="wishlist.html">
                       <i data-feather="heart"></i>
-                      <span class="label label-theme rounded-pill">5</span>
+                      <span class="label label-theme rounded-pill">{{ (basket$ | async).items.length }}</span>
                     </a>
                   </div>
                   <div class="onhover-div">
@@ -402,7 +401,7 @@
                     type="button"
                     class="btn btn-solid-default btn-spacing"
                   >
-                    <i data-feather="shopping-cart" class="pe-2"></i>
+                  <i class="fa fa-solid fa-cart-shopping"></i>
                     <span>$5686.25</span>
                   </button>
                   <div class="onhover-div">

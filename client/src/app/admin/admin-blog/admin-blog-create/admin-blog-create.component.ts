@@ -27,11 +27,13 @@ export class AdminBlogCreateComponent implements OnInit {
   @ViewChild('file') file;
   formData: FormData = new FormData();
   form: FormGroup;
-  constructor(private blogService:BlogService,
-              private route:Router,
-              private toastr: ToastrService,
-              private http:HttpClient,
-              private fb: FormBuilder) { }
+  constructor(
+    private blogService:BlogService,
+    private route:Router,
+    private toastr: ToastrService,
+    private http:HttpClient,
+    private fb: FormBuilder
+    ) { }
 
   ngOnInit(): void {
     this.formCreate();

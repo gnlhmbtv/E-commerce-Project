@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { BlogService } from 'src/app/blog-page/blog.service';
-import { Blog } from '../../models/blog';
+import { IBlog } from '../../models/blog';
+import { BlogParams } from '../../models/blogParams';
 import { ShopParams } from '../../models/shopParams';
 
 @Component({
@@ -9,29 +10,56 @@ import { ShopParams } from '../../models/shopParams';
   styleUrls: ['./main-blog.component.css']
 })
 export class MainBlogComponent implements OnInit {
-  shopParams = new ShopParams();
+  @ViewChild('search', {static: false}) searchTerm: ElementRef;
+  blogs: IBlog[];
+  blogParams = new BlogParams();
   totalCount: number;
-  blogs:Blog[];
   constructor(private blogService:BlogService) { }
 
   ngOnInit(): void {
-    this.getAllBlogs()
+    this.getBlogs()
   }
 
-  getAllBlogs(){
-    this.blogService.getAllBlogs()
-      .subscribe(blogs=>{
-        this.blogs=blogs,
-        error=>console.log(error);
-    })
-  };
+
+
+  getBlogs(){
+    this.blogService.getBlogs(this.blogParams)
+    .subscribe(response => {
+      this.blogs = response.data;
+      this.blogParams.pageNumber = response.pageIndex;
+      this.blogParams.pageSize = response.pageSize;
+      this.totalCount = response.count;
+    }, error => {
+      console.log(error);
+
+    });
+  }
+
+  onSearch(){
+    this.blogParams.search = this.searchTerm.nativeElement.value;
+    this.blogParams.pageNumber = 1;
+    this.getBlogs();
+  }
+
+  onReset(){
+    this.searchTerm.nativeElement.value = '';
+    this.blogParams = new BlogParams();
+    this.getBlogs();
+  }
 
   onPageChanged(event: any) {
-    if(this.shopParams.pageNumber !== event){
-      this.shopParams.pageNumber = event;
-      this.getAllBlogs();
+    if(this.blogParams.pageNumber !== event){
+      this.blogParams.pageNumber = event;
+      this.getBlogs();
     }
   }
+
+  // onPageChanged(event: any) {
+  //   if(this.shopParams.pageNumber !== event){
+  //     this.shopParams.pageNumber = event;
+  //     this.getAllBlogs();
+  //   }
+  // }
 
 
 }

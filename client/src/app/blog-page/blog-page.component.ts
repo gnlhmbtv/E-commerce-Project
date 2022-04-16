@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Blog } from '../shared/models/blog';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { IBlog } from '../shared/models/blog';
+import { BlogParams } from '../shared/models/blogParams';
 import { BlogService } from './blog.service';
 
 @Component({
@@ -9,11 +10,15 @@ import { BlogService } from './blog.service';
 })
 export class BlogPageComponent implements OnInit {
 
-  blogs:Blog[];
+  @ViewChild('search', {static: false}) searchTerm: ElementRef;
+  blogs: IBlog[];
+  blogParams = new BlogParams();
+  totalCount: number;
+
   constructor(private blogService:BlogService) { }
 
   ngOnInit(): void {
-    // this.getAllBlogs()
+
   }
 
   // getAllBlogs(){
@@ -23,5 +28,18 @@ export class BlogPageComponent implements OnInit {
   //       error=>console.log(error);
   //   })
   // }
+
+  getBlogs(){
+    this.blogService.getBlogs(this.blogParams)
+    .subscribe(response => {
+      this.blogs = response.data;
+      this.blogParams.pageNumber = response.pageIndex;
+      this.blogParams.pageSize = response.pageSize;
+      this.totalCount = response.count;
+    }, error => {
+      console.log(error);
+
+    });
+  }
 
 }

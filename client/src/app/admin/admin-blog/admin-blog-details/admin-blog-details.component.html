@@ -4,17 +4,17 @@
         <div class="col-lg-8 offset-lg-2">
           <div class="row">
             <div class="col-md-12">
-              <div class="blog-item">
-                <div class="img-box">
+              <div *ngIf="blog" class="blog-item">
+                <div class="img-box col-8">
                   <a href="#" class="open-post">
-                    <img class="img-fluid" src="{{blog.photoUrl}}" alt="01 Blog">
+                    <img style="width: 150px;" class="img-fluid" src="{{blog.photoUrl}}" alt="01 Blog">
                   </a>
                   <ul>
                     <li><a href="#">{{blog.topic}}</a></li>
                   </ul>
                 </div>
-                <div class="text-box">
-                  <span class="blog-date">{{blog.publishTime|date}}</span>
+                <div class="text-box col-4">
+                  <span class="blog-date">{{blog.publishTime | date}}</span>
                   <h5>{{blog.title}}</h5>
                   <p>{{blog.description}}</p>
                   <div class="share-post">
@@ -48,17 +48,6 @@
                       <button *ngIf="id==comment.userId" class="btn btn-outline-danger btn-sm" (click)="deleteComment(comment.id)">Delete</button>
                     </div>
                   </div>
-                  <!--                <div class="comments-box reply">-->
-                  <!--                  <div class="img-box">-->
-                  <!--                    <img class="img-fluid" src="assets/images/testimonials/02_testimonials.jpg" alt="02 Testimonials">-->
-                  <!--                  </div>-->
-                  <!--                  <div class="text-box">-->
-                  <!--                    <h5>Benjamin Flanco</h5>-->
-                  <!--                    <div class="time">25 Nov 19 10:33 am</div>-->
-                  <!--                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim Magna, sed diam nonumy eirmod tempor.</p>-->
-                  <!--                    <a href="#">Reply</a>-->
-                  <!--                  </div>-->
-                  <!--                </div>-->
                 </div>
               </div>
             </div>

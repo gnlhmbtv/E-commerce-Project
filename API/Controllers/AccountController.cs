@@ -43,6 +43,10 @@ namespace API.Controllers
             _tokenService = tokenService;
             _signInManager = signInManager;
             _userManager = userManager;
+            _httpClient = new HttpClient
+            {
+                BaseAddress = new System.Uri("https://graph.facebook.com")
+            };
         }
 
 
@@ -200,17 +204,18 @@ namespace API.Controllers
 
             var fbInfo = JsonConvert.DeserializeObject<dynamic>(await response.Content.ReadAsStringAsync());
 
-            var username = (string)fbInfo.id;
+            var username = (string) fbInfo.name;
 
             var user = await _userManager.Users
-                .FirstOrDefaultAsync(u => u.UserName == username);
+                .FirstOrDefaultAsync(u => u.DisplayName == username);
 
             if (user != null) return await CreateUserObject(user);
 
             user = new AppUser
             {
-                Email = (string)fbInfo.email,
-                UserName = (string)fbInfo.id,
+                DisplayName = (string) fbInfo.name,
+                Email = (string) fbInfo.email,
+                UserName = (string) fbInfo.email,
             };
 
             user.EmailConfirmed = true;

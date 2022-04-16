@@ -18,16 +18,15 @@ import { MainContactComponent } from './contact/main-contact/main-contact.compon
 import { ContactPageComponent } from './contact/contact-page.component';
 import { ContactModule } from './contact/contact.module';
 import { BlogPageComponent } from './blog-page/blog-page.component';
-import { BlogDetailPageComponent } from './blog-detail-page/blog-detail-page.component';
+import { BlogDetailPageComponent } from './blog-page/blog-detail-page/blog-detail-page.component';
+import { BlogPageModule } from './blog-page/blog-page.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     OrderDetailedComponent,
     OrdersComponent,
-    RolesModalComponent,
-    BlogPageComponent,
-    BlogDetailPageComponent,
+    RolesModalComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +36,8 @@ import { BlogDetailPageComponent } from './blog-detail-page/blog-detail-page.com
     CoreModule,
     HomeModule,
     NgxSpinnerModule,
-    ContactModule
+    ContactModule,
+    BlogPageModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi:true},

@@ -3,11 +3,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { ToastrService } from 'ngx-toastr';
-import { AccountService } from '../account/account.service';
-import { CommentService } from '../comment/comment.service';
-import { Blog } from '../shared/models/blog';
-import { Commment } from '../shared/models/comment';
-import { BlogService } from './blog.service';
+import { AccountService } from '../../account/account.service';
+import { CommentService } from '../../comment/comment.service';
+import { Blog } from '../../shared/models/blog';
+import { Commment } from '../../shared/models/comment';
+import { BlogService } from '../blog.service';
 
 @Component({
   selector: 'app-blog-detail-page',

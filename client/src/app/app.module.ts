@@ -16,15 +16,14 @@ import { OrdersComponent } from './orders/orders.component';
 import { RolesModalComponent } from './modals/roles-modal/roles-modal.component';
 import { MainContactComponent } from './contact/main-contact/main-contact.component';
 import { ContactPageComponent } from './contact/contact-page.component';
+import { ContactModule } from './contact/contact.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     OrderDetailedComponent,
     OrdersComponent,
-    RolesModalComponent
-    // MainContactComponent,
-    // ContactPageComponent
+    RolesModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +32,8 @@ import { ContactPageComponent } from './contact/contact-page.component';
     HttpClientModule,
     CoreModule,
     HomeModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    ContactModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi:true},

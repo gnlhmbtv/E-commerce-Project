@@ -7,7 +7,7 @@ import { ContactPageComponent } from './contact-page.component';
 
 
 @NgModule({
-  declarations: [ContactPageComponent,MainContactComponent],
+  declarations: [ContactPageComponent, MainContactComponent],
   imports: [
     CommonModule,
     SharedModule

@@ -35,7 +35,7 @@ namespace API.Controllers
             return Ok(contact);
         }
 
-         [HttpPost]
+        [HttpPost]
         public async Task<ActionResult> Create([FromForm] ContactCreateDto contactCreateDto)
         {
             Contact contact = new Contact

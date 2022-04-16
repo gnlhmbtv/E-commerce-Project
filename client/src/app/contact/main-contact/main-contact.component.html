@@ -38,29 +38,41 @@
         <div class="row g-4">
             <div class="col-lg-7">
                 <div class="materialContainer">
+                    <div class="material-details">
+                        <div class="title title1 title-effect mb-1 title-left">
+                            <h2>Contact Us</h2>
+                            <p class="ms-0 w-100">Your email address will not be published. Required fields are
+                                marked *</p>
+                        </div>
+                    </div>
+                    <div class="row g-4 mt-md-1 mt-2">
                     <form  [formGroup]="contactform" (ngSubmit)="onSubmit()">
                         <div class="row">
               
-                          <div class="col-md-6 form-item">
-                            <input formControlName="name" type="text" name="name" placeholder="Name">
+                            <div class="col-md-6">
+                                <label for="first" class="form-label">First Name</label>
+                                <input class="form-control" id="first" formControlName="name" type="text" name="name" placeholder="Name">
                             <div class="validation alert alert-danger" *ngIf="_name.invalid && _name.touched">
                               <div *ngIf="_name.errors?.required">
                                 Name required
                               </div>
                             </div>
-                          </div>
-              
-                          <div class="col-md-6 form-item">
-                            <input formControlName="email" type="email" name="email" placeholder="Email">
+                            </div>
+
+
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email</label>
+                                <input formControlName="email" type="email" class="form-control" id="email" name="email" placeholder="Email">
                             <div class="validation alert alert-danger" *ngIf="_email.invalid && _email.touched">
                               <div *ngIf="_email.errors?.required">
                                 Email required
                               </div>
                             </div>
-                          </div>
+                            </div>
               
-                          <div class="col-md-6 form-item">
-                            <input formControlName="phone" type="tel" name="tel" placeholder="Phone">
+                          <div class="col-md-6 ">
+                            <label for="first" class="form-label">Phone</label>
+                            <input class="form-control" id="first" formControlName="phone" type="tel" name="tel" placeholder="Phone">
                             <div class="validation alert alert-danger" *ngIf="_phone.invalid && _phone.touched">
                               <div *ngIf="_phone.errors?.required">
                                 Phone required
@@ -68,8 +80,9 @@
                             </div>
                           </div>
               
-                          <div class="col-md-6 form-item">
-                            <input formControlName="subject" type="tel" name="tel" placeholder="Subject">
+                          <div class="col-md-6">
+                            <label for="first" class="form-label">Subject</label>
+                            <input class="form-control" id="first" formControlName="subject" type="tel" name="tel" placeholder="Subject">
                             <div class="validation alert alert-danger" *ngIf="_subject.invalid && _subject.touched">
                               <div *ngIf="_subject.errors?.required">
                                 Subject required
@@ -77,8 +90,9 @@
                             </div>
                           </div>
               
-                          <div class="col-md-12 form-item">
-                            <textarea formControlName="message" placeholder="Leave Your Message Here....."></textarea>
+                          <div class="col-12 ">
+                            <label for="comment" class="form-label">Message</label>
+                            <textarea formControlName="message" placeholder="Leave Your Message Here....." class="form-control" id="comment" rows="5" required></textarea>
                             <div class="validation alert alert-danger" *ngIf="_message.invalid && _message.touched">
                               <div *ngIf="_message.errors?.required">
                                 Message required
@@ -86,12 +100,13 @@
                             </div>
                           </div>
               
-                          <div class="col-md-12 form-item">
-                            <button type="submit" [disabled]="contactform.invalid" class="btn-1">Send Message</button>
-                          </div>
+                          <div class="col-auto">
+                            <button type="submit" [disabled]="contactform.invalid" class="btn btn-solid-default">Send Message</button>
+                        </div>
               
                         </div>
                       </form>
+                    </div>
                 </div>
             </div>
 

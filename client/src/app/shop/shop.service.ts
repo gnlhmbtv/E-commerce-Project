@@ -1,6 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { IBrand } from '../shared/models/brand';
 import { IPagination } from '../shared/models/pagination';
 import { IProduct } from '../shared/models/product';
@@ -58,7 +59,7 @@ export class ShopService {
   }
 
   createProduct(product:FormData){
-    return this.http.post(this.baseUrl + 'products',product);
+    return this.http.post(environment.apiUrl + 'products',product);
   }
 
   editProduct(id:number,product:FormData){

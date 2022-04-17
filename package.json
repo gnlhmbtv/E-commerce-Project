@@ -5,6 +5,8 @@
   "dependencies": {
     "@angular-devkit/build-angular": "^13.3.2",
     "@auth0/angular-jwt": "^5.0.2",
-    "jquery": "^3.6.0"
+    "jquery": "^3.6.0",
+    "ngx-owl-carousel-o": "^7.0.2",
+    "tslib": "^2.3.1"
   }
 }

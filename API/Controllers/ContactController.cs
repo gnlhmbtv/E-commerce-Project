@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
-    public class ContactController : ControllerBase
+    public class ContactController : BaseApiController
     {
         private readonly DataContext _context;
         private readonly IMapper _mapper;

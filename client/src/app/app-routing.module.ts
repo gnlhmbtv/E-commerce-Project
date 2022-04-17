@@ -17,18 +17,18 @@ const routes: Routes = [
   { path: 'server-error', component: ServerErrorComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: 'contact', component: ContactPageComponent },
-  // {path:'blog',component:BlogPageComponent},
-  {path:'blog/detail/:id',component:BlogDetailPageComponent},
-  {
-    path: 'shop',
-    loadChildren: () =>
-      import('./shop/shop.module').then((mod) => mod.ShopModule),
-  },
-  {
-    path: 'blog',
-    loadChildren: () =>
-      import('./blog-page/blog-page.module').then((mod) => mod.BlogPageModule),
-  },
+  {path:'blog',component:BlogPageComponent},
+  // {path:'blog/detail/:id',component:BlogDetailPageComponent},
+  // {
+  //   path: 'shop',
+  //   loadChildren: () =>
+  //     import('./shop/shop.module').then((mod) => mod.ShopModule),
+  // },
+  // {
+  //   path: 'blog',
+  //   loadChildren: () =>
+  //     import('./blog-page/blog-page.module').then((mod) => mod.BlogPageModule),
+  // },
   {   
     path: 'admin',
     loadChildren: () =>

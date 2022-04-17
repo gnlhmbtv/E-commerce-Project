@@ -15,7 +15,6 @@ import { OrdersComponent } from './orders/orders.component';
 import { RolesModalComponent } from './modals/roles-modal/roles-modal.component';
 import { ContactModule } from './contact/contact.module';
 import { BlogPageModule } from './blog-page/blog-page.module';
-import { SwiperModule } from 'swiper/angular';
 
 
 @NgModule({
@@ -34,8 +33,7 @@ import { SwiperModule } from 'swiper/angular';
     HomeModule,
     NgxSpinnerModule,
     ContactModule,
-    BlogPageModule,
-    SwiperModule
+    BlogPageModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi:true},

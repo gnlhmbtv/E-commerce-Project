@@ -13,15 +13,15 @@ export class BlogPageComponent implements OnInit {
   constructor(private blogService:BlogService) { }
 
   ngOnInit(): void {
-    this.getAllBlogs()
+    // this.getAllBlogs()
   }
 
-  getAllBlogs(){
-    this.blogService.getAllBlogs()
-      .subscribe(blogs=>{
-        this.blogs=blogs,
-        error=>console.log(error);
-    })
-  }
+  // getAllBlogs(){
+  //   this.blogService.getAllBlogs()
+  //     .subscribe(blogs=>{
+  //       this.blogs=blogs,
+  //       error=>console.log(error);
+  //   })
+  // }
 
 }

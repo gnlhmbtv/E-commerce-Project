@@ -51,6 +51,7 @@ namespace API
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IBlogRepository, BlogRepository>();
             services.AddAutoMapper(typeof(Mapper));
             services.AddControllers();
             services.AddDbContext<DataContext>(d =>

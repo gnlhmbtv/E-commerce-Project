@@ -38,9 +38,9 @@ namespace API.Helpers
                 .ForMember(x => x.PhotoUrl, o => o.MapFrom(x => BaseUrlAbout+x.PhotoUrl));
             CreateMap<ContactCreateDto, Contact>();
             CreateMap<Blog, BlogReturnDto>()
-                .ForMember(x => x.Comments
-                    , o =>
-                        o.MapFrom(x => x.Comments.Select(x => x.Context)))
+                 .ForMember(x => x.Comments
+                     , o =>
+                         o.MapFrom(x => x.Comments.Select(x => x.Context)))
                 .ForMember(x => x.PhotoUrl
                     , o =>
                         o.MapFrom(x => BaseUrlBlog+x.PhotoUrl));
